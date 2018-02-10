@@ -1,0 +1,382 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  <html lang="es">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>H2H: Mensaje 00</title>
+    <meta name="date" content="2017-02-14">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">H2H: Mensaje 00 / 00 Message</h1>
+
+    <h2>00: Información Financiera Básica / <span class ="english">Basic Financial Information</span></h2>
+    <p>Descripción del mensaje.</p>
+    <div class="english">
+      <p>Message description.</p>
+    </div>
+
+    <h3 id="indice">Indice / <span class="english">Index</span></h3>
+    <ol>
+      <li><a href="#registro1">Registro 1 / <span class="english">Registry 1</span></a></li>
+      <li><a href="#registro2">Registro 2 en adelante / <span class="english">Registry 2 onwards</span></a></li>
+    </ol>
+    
+    <hr>
+    <h4 style="display: inline;" id="registro1">Registro 1 / <span class="english">Registry 1</span></h4>
+    <p style="display: inline;" class="return_to_menu_link"> (<a href="#indice">Volver al Indice / <span class="english">Back to Index</span></a>)</p>
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message Type</div></td>
+        <td>0</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Tipo Emisora<div class="english">Issuer Type</div></td>
+        <td>2</td>
+        <td>3</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>011: Industriales, Comerciales y de Servicio Largo Plazo<br>013: Grupos Financieros<br>014: Instituciones Bancarias<br>015: Casas de Bolsa<br>016: Industriales, Comerciales y de Servicio Corto Plazo<br>017: Sistema Internacional de Cotizaciones<br>018: Siefores<br>019: Sociedades de Objeto Limitado (Sofol)<br>021: Aseguradoras<br>022: Arrendadoras<br>023: Factoraje<br>024: Almacenadoras<br>025: Afianzadoras<br>051: Gubernamentales (edos y mpos)<br>061: Bolsas de Valores<br>065: Instituciones Gubernamentales<br>083: Sociedades de Inversion de Deuda (Fondos)<br>084: Organismos Financieros Multilaterales<br>085: S.A. Promotora de Inversion Bursatil<br>086: Sociedad Financiera de Objeto Multiple  E.R. (Sofom)<br>087: Sociedad Financiera de Objeto Multiple  E. No R. (Sofom)<br>088: Controladora de Instituciones Financieras
+          <div class="english">11: Industrial, Commercial And Services Long Term<br>013: Financial Groups<br>014: Banking Institutions<br>015: Brokerage Firms<br>016: Industrial, Commercial and Short Term Services<br>017: International Quotation System<br>018: SIEFORES (Pension Funds)<br>019: Limited Object Companies (Sofol)<br>021: Insurance Companies<br>022: Leasing Companies<br>023: Factoring Companies<br>024: Storage Companies<br>025: Guarantor Companies<br>051: Goverment Institutions (States and Municipalities)<br>061: Stock Exchanges<br>065: Goverment Institutions<br>083: Debt Mutual Funds<br>084: Multilateral Financial Institutions<br>085: Stock Exchange Investment Promotors (S.A.)<br>086: Multiple Object Financial Institutions, E.R. (Sofom)<br>087: Multiple Object Financial Institutions, E. No R. (Sofom)<br>088: Financial Institution S Holdings </div>
+        </td>
+      </tr>
+      <tr>
+        <td>Estado Tipo de Cuenta<div class="english">Account Type</div></td>
+        <td>5</td>
+        <td>3</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>101: Balance General<br>102: Resultados (Estado de Resultados Acumulados)<br>103: Resultados Trimestrales (Estado de Resultado solo del Trimestre)<br>104: Cambios (Estado de Cambios en la Situación Financiera)<br>107: Flujo de Efectivo<br>108: Variaciones al Capital<br>NOT: Notas Financieras
+          <div class="english">101: Balance Sheet<br>102: Income Statement (Cumulative Income Statement)<br>103: Quarterly Income Statement (Quarterly Cumulative Income Statement)<br>104: Statement Changes (Financial Position Changes Statement)<br>107: Cash Flow<br>108: Capital Stock Changes<br>NOT: Financial Statements Notes</div>
+         </td>
+      </tr>
+      <tr>
+        <td>Folio<div class="english">Folio</div></td>
+        <td>8</td>
+        <td>5</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>[00001-99999]<div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Secuencia<div class="english">Sequence</div></td>
+        <td>13</td>
+        <td>2</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>[01-99]<div class="english"></div></td>
+      </tr>
+      <tr>
+        <td colspan="5">Datos Información Financiera<div class="english">Financial Information Data</div></td>
+      </tr>
+      <tr>
+        <td>Fecha Alta <div class="english">Registration Date </div></td>
+        <td>15</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>AAAAMMDD<div class="english">YYYYMMDD</div></td>
+      </tr>
+      <tr>
+        <td>Emisora<div class="english">Issuer</div></td>
+        <td>23</td>
+        <td>7</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Frecuencia<div class="english">Frequency</div></td>
+        <td>30</td>
+        <td>2</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Trimestre [01-04]<br>Mes [01-12]<div class="english">Quaterly [01-04]<br>Month [01-12]</div></td>
+      </tr>
+      <tr>
+        <td>Año Ejercicio <div class="english">Years</div></td>
+        <td>32</td>
+        <td>4</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>AAAA<div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Ejercicio Social <div class="english">Fiscal Year</div></td>
+        <td>36</td>
+        <td>8</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>DDMMDDMM<div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Fecha de Actualización <div class="english">Current Date</div></td>
+        <td>44</td>
+        <td>8</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>AAAAMMDD<div class="english">YYYYMMDD</div></td>
+      </tr>
+      <tr>
+        <td>Tipo Información<div class="english">Information Type</div></td>
+        <td>52</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>C: Consolidada<br>" ": No Consolidada<div class="english">C: Consolidated<br>" ": Not Consolidated</div></td>
+      </tr>
+      <tr>
+        <td>Tipo Regularidad<div class="english">Irregular Information</div></td>
+        <td>53</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>I: Irregular<br>R: Regular<div class="english">I: Irregular<br>R: Regular</div></td>
+      </tr>
+      <tr>
+        <td>Información Dictaminada<div class="english">Audited Information</div></td>
+        <td>54</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>D: Dictaminado<br>" ": No Dictaminado<div class="english">D: Dictaminated<br>" ": Not Dictaminated</div></td>
+      </tr>
+      <tr>
+        <td>Indicador Reexpresada<div class="english">Re-issued Information</div></td>
+        <td>55</td>
+        <td>2</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>SI: Información Reexpresada<br>NO: Información No Reexpresada <div class="english">SI: Reissued Information<br>NO: Not Reissued Information</div></td>
+      </tr>
+      <tr>
+        <td>Tipo Reexpresión<div class="english">Re-issued Type</div></td>
+        <td>57</td>
+        <td>3</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>BMV: Reexpresada por BMV<br>EMP: Reexpresada por la empresa
+          <div class="english">BMV: Reexpressed by BMV<br>EMP: Reexpressed by the company</div>
+         </td>
+      </tr>
+      <tr>
+        <td>Fecha Reexpresión <div class="english">Re-issue Date</div></td>
+        <td>60</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>AAAAMMDD<div class="english">YYYYMMDD</div></td>
+      </tr>
+      <tr>
+        <td>Indicador Inscripción<div class="english">Listing Indicator</div></td>
+        <td>68</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>SI: Inscrita en BMV<br>NO: En listado previo
+          <div class="english">SI: Suscribed in BMV<br>NO: Previously enlisted</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Filler<div class="english">Filler</div></td>
+        <td>70</td>
+        <td>152</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>222</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+    <hr>
+    <h4 style="display: inline;" id="registro2">Registro 2 en adelante / <span class="english">Registry 2 onwards</span></h4>
+    <p style="display: inline;" class="return_to_menu_link"> (<a href="#indice">Volver al Indice / <span class="english">Back to Index</span></a>)</p>
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Signo 01<div class="english">Sign 01</div></td>
+        <td>0</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Valor 01<div class="english">Value 01</div></td>
+        <td>1</td>
+        <td>15</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Signo 02<div class="english">Sign 02</div></td>
+        <td>16</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Valor 02<div class="english">Value 02</div></td>
+        <td>17</td>
+        <td>15</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Signo 03<div class="english">Sign 03</div></td>
+        <td>32</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Valor 03<div class="english">Value 03</div></td>
+        <td>33</td>
+        <td>15</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Signo 04<div class="english">Sign 04</div></td>
+        <td>48</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Valor 04<div class="english">Value 04</div></td>
+        <td>49</td>
+        <td>15</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Signo 05<div class="english">Sign 05</div></td>
+        <td>64</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Valor 05<div class="english">Value 05</div></td>
+        <td>65</td>
+        <td>15</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Signo 06<div class="english">Sign 06</div></td>
+        <td>80</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Valor 06<div class="english">Value 06</div></td>
+        <td>81</td>
+        <td>15</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Signo 07<div class="english">Sign 07</div></td>
+        <td>96</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Valor 07<div class="english">Value 07</div></td>
+        <td>97</td>
+        <td>15</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Signo 08<div class="english">Sign 08</div></td>
+        <td>112</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Valor 08<div class="english">Value 08</div></td>
+        <td>113</td>
+        <td>15</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Signo 09<div class="english">Sign 09</div></td>
+        <td>128</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Valor 09<div class="english">Value 09</div></td>
+        <td>129</td>
+        <td>15</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Signo 10<div class="english">Sign 10</div></td>
+        <td>144</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Valor 10<div class="english">Value 10</div></td>
+        <td>145</td>
+        <td>15</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Signo 11<div class="english">Sign 11</div></td>
+        <td>160</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Valor 11<div class="english">Value 11</div></td>
+        <td>161</td>
+        <td>15</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Signo 12<div class="english">Sign 12</div></td>
+        <td>176</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Valor 12<div class="english">Value 12</div></td>
+        <td>177</td>
+        <td>15</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Filler<div class="english">Filler</div></td>
+        <td>192</td>
+        <td>15</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>207</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </body>
+</html>

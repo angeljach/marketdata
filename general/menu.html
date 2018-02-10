@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Menú</title>
+    <meta name="date" content="2017-11-24">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css" title="Style">
+    <script type="text/javascript">
+      var msg_multi = new Array();
+      var msg_h2h = new Array();
+
+      msg_multi['1']='1.html';msg_multi['2']='2.html';msg_multi['3']='3.html';msg_multi['4']='4.html';msg_multi['5']='5.html';
+      msg_multi['a']='_a.html';msg_multi['b']='_b.html';msg_multi['c']='_c.html';msg_multi['d']='_d.html';msg_multi['e']='_e.html';msg_multi['f']='_f.html';msg_multi['g']='_g.html';msg_multi['r']='_r.html';msg_multi['s']='_s.html';msg_multi['t']='_t.html';msg_multi['x']='_x.html';msg_multi['y']='_y.html';msg_multi['z']='_z.html';
+      msg_multi['A']='A.html';msg_multi['B']='B.html';msg_multi['C']='C.html';msg_multi['D']='D.html';msg_multi['E']='E.html';msg_multi['F']='F.html';msg_multi['G']='G.html';msg_multi['H']='H.html';msg_multi['I']='I.html';msg_multi['M']='M.html';msg_multi['O']='O.html';msg_multi['P']='P.html';msg_multi['Q']='Q.html';msg_multi['R']='R.html';msg_multi['S']='S.html';msg_multi['U']='U.html';msg_multi['V']='V.html';msg_multi['W']='W.html';msg_multi['X']='X.html';msg_multi['Y']='Y.html';msg_multi['Z']='Z.html';
+      msg_multi['!']='admin/login.html';msg_multi['#']='admin/rtx_request.html';msg_multi['$']='admin/snpt_request.html';msg_multi['%']='admin/logout.html';msg_multi['&']='admin/login_rspns.html';msg_multi['*']='admin/rtx_rspns.html';msg_multi['+']='admin/snpt_rspns.html';msg_multi['?']='admin/snpt_complete.html';
+
+      msg_h2h['00']='00.html';msg_h2h['01']='01.html';msg_h2h['6']='6.html';msg_h2h['AA']='AA.html';msg_h2h['AC']='AC.html';msg_h2h['CN']='CN.html';msg_h2h['D']='D.html';msg_h2h['FA']='FA-OA.html';msg_h2h['FD']='FD-OD.html';msg_h2h['FG']='FG-OG.html';msg_h2h['FJ']='FJ-OJ.html';msg_h2h['FL']='FL.html';msg_h2h['FM']='FM-OM.html';msg_h2h['FN']='FN-ON.html';msg_h2h['FO']='FO-OO.html';msg_h2h['FP']='FP-OP.html';msg_h2h['FQ']='FQ-OQ.html';msg_h2h['FR']='FR.html';msg_h2h['FT']='FT.html';msg_h2h['FW']='FW.html';msg_h2h['GE']='GE.html';msg_h2h['H1']='H1.html';msg_h2h['HA']='HA.html';msg_h2h['HB']='HB.html';msg_h2h['HC']='HC.html';msg_h2h['HD']='HD.html';msg_h2h['HE']='HE.html';msg_h2h['HF']='HF.html';msg_h2h['HG']='HG.html';msg_h2h['HH']='HH.html';msg_h2h['HI']='HI.html';msg_h2h['HJ']='HJ.html';msg_h2h['HK']='HK.html';msg_h2h['HL']='HL.html';msg_h2h['HM']='HM.html';msg_h2h['IG']='IG.html';msg_h2h['MB']='MB.html';msg_h2h['MC']='MC.html';msg_h2h['ME']='ME.html';msg_h2h['MF']='MF.html';msg_h2h['MH']='MH.html';msg_h2h['MK']='MK.html';msg_h2h['ML']='ML.html';msg_h2h['MO']='MO.html';msg_h2h['MQ']='MQ.html';msg_h2h['MR']='MR.html';msg_h2h['MS']='MS.html';msg_h2h['MT']='MT.html';msg_h2h['MW']='MW.html';msg_h2h['MX']='MX.html';msg_h2h['OA']='FA-OA.html';msg_h2h['OD']='FD-OD.html';msg_h2h['OG']='FG-OG.html';msg_h2h['OJ']='FJ-OJ.html';msg_h2h['OM']='FM-OM.html';msg_h2h['ON']='FN-ON.html';msg_h2h['OO']='FO-OO.html';msg_h2h['OP']='FP-OP.html';msg_h2h['OQ']='FQ-OQ.html';msg_h2h['TH']='TH.html';msg_h2h['VX']='VX.html';msg_h2h['VY']='VY.html';msg_h2h['XB']='XB.html';
+
+      function CheckInputMessageTypeMulticast() {
+        id = document.getElementById('input_message_multicast');
+        var checktype = id.value;
+        var url = msg_multi[checktype];
+        if (url==null) {
+          alert('Tipo de Mensaje "'+checktype+'" desconocido en la especificación Multicast BMV.');
+        } else {
+          parent.contentFrame.location.href = '../multicast/msg/' + url;
+        }
+      }
+      function CheckInputMessageTypeH2H() {
+        id = document.getElementById('input_message_h2h');
+        var checktype = id.value;
+        var url = msg_h2h[checktype.toUpperCase()];
+        if (url==null) {
+          alert('Tipo de Mensaje "'+checktype+'" desconocido en la especificación H2H BMV.');
+        } else {
+          parent.contentFrame.location.href = '../h2h/msg/' + url;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1 class="bar">Especificaciones BMV</h1>
+    <div class="indexContainer">
+      <img src="../images/bmv.gif" alt="Bolsa Mexicana de Valores">
+      <hr>
+      <p><b>Multicast</b></p>
+      <ul>
+          <li><a href="../multicast/specification.html" title="Especificación" target="contentFrame">Especificación / <span class="english">Specification</span></a></li>
+        <li><a href="../multicast/messages.html" title="Mensajes" target="contentFrame">Mensajes / <span class="english">Messages</span></a></li>
+        <li><a href="../multicast/products.html" title="Productos" target="contentFrame">Productos / <span class="english">Products</span></a></li>
+      </ul>
+      <table border="0">
+        <tbody>
+          <tr>
+            <td>Mensaje / <span class="english">Message</span> : </td>
+            <td><input name="input_message_multicast" id="input_message_multicast" size="4" maxlength="4" accept="" onkeydown="if (event.keyCode==13) CheckInputMessageTypeMulticast();" type="text"></td>
+            <td><input value="Buscar" onclick="CheckInputMessageTypeMulticast()" type="button"></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr>
+        
+      <p><b>H2H</b></p>
+      <ul>
+          <li><a href="../h2h/specification.html" title="Especificación" target="contentFrame">Especificación / <span class="english">Specification</span></a></li>
+        <li><a href="../h2h/messages.html" title="Mensajes" target="contentFrame">Mensajes / <span class="english">Messages</span></a></li>
+      </ul>
+      <table border="0">
+        <tbody>
+          <tr>
+            <td>Mensaje / <span class="english">Message</span> : </td>
+            <td><input name="input_message_h2h" id="input_message_h2h" size="4" maxlength="4" accept="" onkeydown="if (event.keyCode==13) CheckInputMessageTypeH2H();" type="text"></td>
+            <td><input value="Buscar" onclick="CheckInputMessageTypeH2H()" type="button"></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr>
+      
+      <p><a href="versions.html" title="Historial de Versiones" target="contentFrame">Historial de Versiones</a></p>
+      <p><a href="contacts.html" title="Contactos" target="contentFrame">Contactos</a></p>
+
+    </div>
+  </body>
+</html>

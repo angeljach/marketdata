@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Multicast: Mensaje Respuesta de inicio de sesión</title>
+        <meta name="date" content="2016-09-06">
+        <link rel="stylesheet" type="text/css" href="../../../css/stylesheet.css" title="Style">
+    </head>
+  <body>
+
+      <h1 class="bar">Multicast: Mensaje Respuesta de inicio de sesión / Login response Message</h1>
+
+      <h2>Mensaje Respuesta de inicio de sesión / <span style="english">Login response Message</span></h2>
+
+      <table>
+          <tr>
+              <th>Campo<div class="english">Field</div></th>
+              <th>Offset</th>
+              <th>Tamaño (byte)<div class="english">Size (byte)</div></th>
+              <th>Tipo<div class="english">Type</div></th>
+              <th>Descripción<div class="english">Description</div></th>
+          </tr>
+         <tr>
+              <td>Tipo Mensaje<div class="english">Message type</div></td>
+              <td>0</td>
+              <td>1</td>
+              <td>ALFA<div class="english">ALPHA</div></td>
+              <td>
+                <table class="insidetable">
+                  <tr>
+                    <th>Valor<div class="english">Value</div></th>
+                    <th>Valor (Hexadecimal)<div class="english">(Hexadecimal) value</div></th>
+                  </tr>
+                  <tr>
+                    <td>&amp;</td>
+                    <td>(0x26)</td>
+                  </tr>
+                </table>
+              </td>
+          </tr>
+          <tr>
+              <td>Estado<div class="english">Status</div></td>
+              <td>1</td>
+              <td>1</td>
+              <td>ALFA<div class="english">ALPHA</div></td>
+              <td>
+                <table class="insidetable">
+                  <tr>
+                    <th>Valor<div class="english">Value</div></th>
+                    <th>Significado<div class="english">Meaning</div></th>
+                  </tr>
+                  <tr>
+                    <td>A</td>
+                    <td>Sesión aceptada<div class="english">Accepted session</div></td>
+                  </tr>
+                  <tr>
+                    <td>B</td>
+                    <td>Grupo Market data inválido<div class="english">Invalid Market Data group</div></td>
+                  </tr>
+                  <tr>
+                    <td>C</td>
+                    <td>Sesión iniciada en otro canal<div class="english">Login on another channel</div></td>
+                  </tr>
+                  <tr>
+                    <td>D</td>
+                    <td>Servicio no disponible (Intermitencia en el servicio solicitado, se sugiere contactar al equipo de soporte)<div class="english">Unavailable service (In case of intermittence from requested service, contact our support team)</div></td>
+                  </tr>
+                </table>
+              </td>
+          </tr>
+          <tr>
+              <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+              <td>2</td>
+              <td></td>
+              <td></td>
+          </tr>
+      </table>
+  </body>
+</html>

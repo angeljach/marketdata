@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Características H2H</title>
+    <meta name="date" content="2017-09-19">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+    <h1 class="bar">Características / <span class="english">Characteristics</span></h1>
+
+    <h2>Características de H2H</h2>
+    <p>
+      <ul>
+        <li>Enviar la información generada en MoNeT en tiempo real y persistir la información conforme se envió a cada cliente.</li>
+        <li>Cada uno de los registros enviados contiene un número de secuencia consecutiva que le es asignado al momento de generarse.</li>
+        <li>Se envía el total de los registros y filtra sólo la información selectiva y confidencial que pertenece a cada Usuario.</li>
+        <li>La recuperación de fallas en la transmisión es automática.</li>
+        <li>Validación en línea del registro recibido.</li>
+        <li>Facilidad de pedir retransmisión automática y manual.</li>
+      </ul>
+    </p>
+
+    <h2>Programa de Recepción del Usuario</h2>
+    <p>Para que el sistema de transmisión H2H funcione adecuadamente, es necesario elaborar un programa que reciba la información, pueda hacer requisiciones de retransmisión y sea capaz de transmitir la información del usuario a BMV; este programa reside en el equipo de cómputo del usuario.</p>
+    <p>Este programa debe ser capaz de llevar a cabo una serie de instrucciones que permitan la recepción y control de la información que le es enviada desde la BMV, verificar el estado del enlace entre ambas computadoras y la continuidad en el flujo de los datos entre uno y otro punto.</p>
+    <p>Para hacer esto, el programa debe contener las rutinas necesarias que le permitan:
+      <ul>
+        <li>Habilitar el enlace a BMV.</li>
+          <li>Permitir conectividad con los servicios de H2H.</li>
+          <li>Recibir la información que se envía de la BMV.</li>
+          <li>Validar la información recibida.</li>
+          <li>Rechazar los registros inválidos o con errores.</li>
+          <li>Solicitar la retransmisión de los registros inválidos recibidos.</li>
+          <li>Verificar la continuidad del flujo de información.</li>
+          <li>Trasladar los registros recibidos a los programas aplicativos del usuario.</li>
+          <li>Enviar la información del usuario a BMV.</li>
+          <li>Atender la retransmisión de BMV hacia el usuario.</li>
+        </ul>
+    </p>
+    <p>El que el Dispositivo Receptor no pueda enviar la llamada de la BMV y por ende la información que ésta le envía, puede deberse a que haya problemas en los equipos o líneas de comunicación, en el software de los computadores o en los computadores mismos.</p>
+    <p>En estos casos, el Dispositivo del Usuario (en el computador del usuario) debe quedarse haciendo  la llamada del Dispositivo Transmisor (en la BMV) hasta que se resuelva el problema de falta de comunicación.</p>
+    <p>El esquema planteado es Cliente - Servidor en donde la BMV es el cliente y el usuario el servidor; con este punto aclarado se establece el siguiente esquema de comunicación:</p>
+
+    <h2>Envío de Información</h2>
+    <p>El sistema envía la información aplicándole la selectividad a partir de los formatos configurados para ese usuario en específico.</p>
+    <p>Es el Dispositivo de comunicación de BMV el que se encarga de seleccionar la información confidencial para cada uno de los usuarios.</p>
+    <p>El H2H efectúa las funciones de enlace y transmisión de datos de forma automática, en el momento que detecta que un usuario está listo para recibir la información.</p>
+    <p>En el momento en que el Dispositivo de BMV detecta que el controlador de comunicaciones del usuario está listo para recibir los datos:
+      <ul>
+        <li>Se envía la informacion que se tiene encolada en el buffer de H2H e inmediatamente despues la informacion que se está generando en el momento.</li>
+        <li>Si el usuario detecta un salto de secuencia, deberá solicitar una retransmision por los medios establecidos en la plataforma de H2H.</li>
+        <li>Si la secuencia solicitada es menor a la enviada en ese momento se suspende el envío de información en línea y se inicia la retransmision, si la secuencia es superior a la enviada, la secuencia se descarta.</li>
+        <li>Si el H2H detecta una perdida de comunicación con el usuario, se intentará conectar cada 20 segundos con el cliente.</li>
+      </ul>
+    </p>
+
+    <div class="english">
+      <h2>H2H Characteristics</h2>
+      <p>
+        <ul>
+          <li>Send the information generated in MoNeT in real time and persist the information as it was sent to each client.</li>
+          <li>Each of the registries sent contains a consecutive sequence number assigned to it at the time of generation.</li>
+          <li>It sents the total registries and only the selective and confidential information belonging to each User is filtered.</li>
+          <li>The recovery from transmission failures is automatic.</li>
+          <li>Validation on line of registry received.</li>
+          <li>Facility to ask for automatic and manual retransmissions.</li>
+        </ul>
+      </p>
+
+      <h2>User’s Reception Program</h2>
+      <p>The proper operation of the H2H transmission system requires the preparation of a program that receives the information and that is able to make requests for retransmission and to transmit the information from the user to the BMV. This program resides in the user's computer equipment.</p>
+      <p>This program must be able to carry out a Series of instructions that allows for the reception and control of the information that is sent to it from the BMV, to verify the status of the link between both computers and the continuity in the point-to-point data flow.</p>
+      <p>To do this, the program must contain the necessary routines that make it possible for it to:
+        <ul>
+          <li>Enable the link to the BMV.</li>
+          <li>Allow connectivity with the H2H services.</li>
+          <li>Receive the information that is sent from the BMV.</li>
+          <li>Validate the received information.</li>
+          <li>Reject invalid or in-error registries.</li>
+          <li>Request retransmission of the invalid registries received.</li>
+          <li>Verify continuity of the information flow.</li>
+          <li>Transfer the received registries to the user's application programs.</li>
+          <li>Send the user's information to BMV.</li>
+          <li>Handle the retransmission from BMV to the user.</li>
+        </ul>
+      </p>
+      <p>The fact that the Receiving device cannot send the call from the BMV and, therefore, the information sent to it by the latter may be attributable to problems in the communication equipment or lines, in the software of computers or in the computers themselves.</p>
+      <p>In these cases, the User's device (in the user's computer) must remain making the call from the Transmitting device (in the BMV) until the problem of lack of communication is solved.</p>
+      <p>The proposed scheme is the Client-Server one, where the BMV is the client and user is the server. Once this point is clear, the following communication scheme is established:</p>
+
+      <h2>Information Transmission</h2>
+      <p>The system sends the information applying to it the selectivity in transmission, based on the formats configured for that specific user.</p>
+      <p>The BMV's communication device is the one in charge of selecting the confidential information for each of the users.</p>
+      <p>The H2H carries out the automated data link and transport functions at the time it detects that a user is ready to receive the information.</p>
+      <p>At the time the BMV's device detects that the user's communications driver is ready to receive the data:
+        <ul>
+          <li>First the buffered information is sent and then the information that is being generated at the moment</li>
+          <li>If your application detects a sequence gap, you must request a retransmission.</li>
+          <li>If the requested sequence is less than the one sent at the time, the sending of information in line is suspended and the retransmission is initiated, if the sequence is higher than the one sent, the sequence is discarded.</li>
+          <li>If the H2H detects a loss of communication with the user, it will attempt to connect every 20 seconds with the client</li>
+          <li>It verifies the last sequence number sent correctly.</li>
+          <li>It communicates with the Communications Manager (CM) to ask it for the following sequence number.</li>
+          <li>If the requested sequence number is the one it has ready to be sent, it transfers this to the BMV's device and the latter outputs it.</li>
+          <li>If the requested sequence number is higher than the last number sent, it rejects the request and it remains waiting for a new request.</li>
+          <li>If the requested sequence number is smaller than the last number sent, the device accesses its database in search of a requested registry and it begins a retransmission from that point on.</li>
+        </ul>
+      </p>
+    </div>
+  </body>
+</html>

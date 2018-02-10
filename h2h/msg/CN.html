@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  <html lang="es">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>H2H: Mensaje CN</title>
+    <meta name="date" content="2017-02-15">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">H2H: Mensaje CN / CN Message</h1>
+
+    <h2>CN: Notas a la Información Complementaria / <span class ="english">Notes to the Complementary Financial Information</span></h2>
+    <p>Descripción del mensaje.</p>
+    <div class="english">
+      <p>Message description.</p>
+    </div>
+
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message Type</div></td>
+        <td></td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Clave Nota<div class="english">Note Key</div></td>
+        <td>2</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>OB: Observ Créditos Bancarios y Bursátiles<br>OC: Observ Cédula de Integración<br>OD: Observ Distribución Ventas por Producto<br>OF: Observ Contratos Futuros y Adelantos<br>OI: Informe del Director General<br>OM: Observ Materias Primas Directas<br>ON: Notas Complementarias<br>OO: Observaciones de Balanza de Divisas y Posición Monetaria<br>OQ: Obligaciones y/o Pagaré a Mediano Plazo Inscritas en la BMV. (Sólo Para Tipo-Emisora = 1)<br>OP: Observ Plantas, Centros Comerciales<br>OR: Observ Operaciones de Reporto<br>OT: Observ Contratos de Opciones<br>OV: Observ Prestamo de Valores<br>IP: Información de Proyectos<br>TM: Transacciones en Moneda Extranjera
+          <div class="english">OB: Observe Bank and Securities Credit<br>OC: Observe Integration Cell<br>OD: Observe Sales Breakdown by Product<br>OF: Observe Futures and Forward Contracts<br>OI: Chief Executive Officer Report<br>OM: Observe Direct Raw Materials<br>ON: Complementary Notes<br>OO: Observe Foreign Currency and Monetary Position Balance<br>OQ: Liabilities and Midterm Notes Listed on MSE (Only for Type = 1 Issuer)<br>OP: Observe Plants, Commercial Centers<br>OR: Observe Repo Transactions<br>OT: Observe Option Contracts<br>OV: Observe Securities Loans<br>IP: Project Information<br>TM: Foreign Currency Transactions</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Clave Emisora<div class="english">Issuer Key</div></td>
+        <td>4</td>
+        <td>7</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Frecuencia<div class="english">Frequence</div></td>
+        <td>11</td>
+        <td>4</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Trimestre [01-04]<br>Mes [01-12]<div class="english">Quaterly [01-04]<br>Month [01-12]</div></div></td>
+      </tr>
+      <tr>
+        <td>Año Ejercicio<div class="english">Year Exercise</div></td>
+        <td>15</td>
+        <td>2</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Secuencia Bloque<div class="english">Block Sequence</div></td>
+        <td>17</td>
+        <td>2</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Tipo Texto<div class="english">Text Type</div></td>
+        <td>19</td>
+        <td>2</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Cuando "Clave Nota"=OQ<br>1: Limitaciones Financieras<br>2: Situación Actual
+          <div class="english">When "Note Key"=OQ<br>1: Financials Limits<br>2: Current Situation</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Tipo Emisora<div class="english">Issuer Type</div></td>
+        <td>21</td>
+        <td>2</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>11: Industriales, Comerciales Y Servicio<br>13: Grupos Financieros<br>14: Instituciones Bancarias (Bancos)<br>15: Casas De Bolsa<br>16: Deuda A Corto Plazo (Pcos)<br>19: Sociedades De Objeto Limitado (Sofol<br>22: Arrendadoras<br>23: Factoraje<br>24: Almacenadoras<br>85: S.A. Promotora De Inversión Bursátil(Sapib)<br>86: Sociedad Financiera De Objeto Multiple  E.R.<br>87: Sociedad Financiera De Objeto Multiple  E. No R.<br>88: Controladora De Instituciones Financieras
+          <div class="english">11: Industrial, Commercial and Services<br>13: Financial Groups<br>14: Banks<br>15: Broker House<br>16: Short Term Debt (Pcos)<br>19: Limited Object Funds (Sofol)<br>22: Leasing<br>23: Factoring<br>24: Storing Companies<br>85: Investment Promoter Companies (Sapib)<br>86: Investment Company of Multiple Object E.R.<br>87: Investment Company of Multiple Object E. No R.<br>88: Controller of Financial Institutions</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Nota Texto<div class="english">Text Note</div></td>
+        <td>23</td>
+        <td>78</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>101</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+</html>

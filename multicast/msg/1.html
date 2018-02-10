@@ -1,0 +1,95 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Multicast: Mensaje 1</title>
+    <meta name="date" content="2016-09-08">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">Multicast: Mensaje 1 / 1 Message</h1>
+
+    <h2>1: Profundidad / <span class ="english">Depth</span></h2>
+    
+      <p>El mensaje contiene los 20 mejores precios de venta o los 20 mejores precios de compra. Se envía al inicio del día con las posturas vigentes y se actualiza durante la sesión normal de operación.</p>
+
+      <p>Cada vez que se modifican los valores de alguno de los 20 niveles de cualquier lado, el mensaje es enviado. Pero no siempre se envían los 20 niveles, eso depende del número de niveles que existan para el instrumento pudiendo llegar a ser menor el número.</p>
+
+      <p>Los niveles están agrupados por precio con el número de órdenes y número de acciones a ese nivel de precio. Los Niveles de compra o venta indican cuantos precios se reciben en el mensaje.</p>
+
+    <div class="english">
+      <p>The message will contain only the 20 best sale or buy prices. Sent at the beginning of the day with current offers and updated during normal trading session.</p>
+
+      <p>Will be sent every time a value (whichever side) of the 20 levels changes. However, 20 levels are not always sent as this depends on the number of existing levels on the instrument being this smaller.</p>
+
+      <p>The levels are grouped by price with number of orders and stocks at such level. Purchase or sale levels indicates how many prices are received by message.</p>
+     </div>
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message type</div></td>
+        <td>0</td>
+        <td>1</td>
+        <td>"1"</td>
+        <td>Profundidad del Mercado<div class="english">Market depth</div></td>
+      </tr>
+      <tr>
+        <td>Número de Instrumento<div class="english">Instrument number</div></td>
+        <td>1</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Código único durante la vida del instrumento<div class="english">Unique code during instruments life</div></td>
+      </tr>
+      <tr>
+        <td>Lado<div class="english">Side</div></td>
+        <td>5</td>
+        <td>1</td>
+        <td>Int8</td>
+        <td>0 - Compra, 1 - Venta<div class="english">O - Buy, 1 - Sell</div></td>
+      </tr>
+      <tr>
+        <td>Niveles de compra o venta<div class="english">Purchase or sale levels</div></td>
+        <td>6</td>
+        <td>1</td>
+        <td>Int8</td>
+        <td>Número de niveles de compra o venta a enviarse<div class="english">Number of buy or sale levels to be sent</div></td>
+      </tr>
+      <tr>
+        <td>Precio-1<div class="english">Price-1</div></td>
+        <td>7</td>
+        <td>8</td>
+        <td>Precio (8)<div class="english">Price (8)</div></td>
+        <td>Precio del primer nivel<div class="english">First level price</div></td>    
+      </tr>
+      <tr>
+        <td>Número de órdenes-1<div class="english">Number of orders-1</div></td>
+        <td>15</td>
+        <td>2</td>
+        <td>Int16</td>
+        <td>Número de órdenes de primer nivel<div class="english">First level number of orders</div></td>
+      </tr>
+      <tr>
+        <td>Volumen-1<div class="english">Volume-1</div></td>
+        <td>17</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Volumen acumulado del primer nivel<div class="english">First level accrued volume</div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">...</td>
+        <td>...</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </body>
+</html>

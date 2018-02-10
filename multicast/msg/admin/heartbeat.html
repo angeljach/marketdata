@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Multicast: Mensaje Heartbeat</title>
+        <meta name="date" content="2016-09-06">
+        <link rel="stylesheet" type="text/css" href="../../../css/stylesheet.css" title="Style">
+    </head>
+  <body>
+
+      <h1 class="bar">Multicast: Mensaje Heartbeat / Heartbeat Message</h1>
+
+      <h2>Mensaje Heartbeat / <span style="english">Heartbeat Message</span></h2>
+
+          <p>Indican la última secuencia que se ha enviado en ese grupo y puerto multicast. Estos mensajes solo se difundirán en caso de inactividad dentro del grupo y se enviarán cada cinco segundos.</p>
+          <p>El mensaje de Heartbeat solo contiene el encabezado con el campo Número de mensajes igual a cero y con la secuencia del último mensaje que se ha enviado.</p>
+
+      <div class="english">
+          <p>The Heartbeat message will be sent every five seconds and only be disseminated in case of group inactivity. This message indicates the last sent sequence in a particular multicast group and port.</p>
+          <p>The same contains only a header with: Number of messages equal to zero and the last sent message sequence.</p>
+      </div>
+  </body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Validación de la información</title>
+    <meta name="date" content="2017-09-19">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">Validación de la información / <span class="english">Validation of information </span></h1>
+
+    <h2>Introducción</h2>
+
+    <p>Una vez establecida la comunicación, el Programa Receptor debe hacer una serie de verificaciones de la información que está recibiendo antes de poder pasar esta a los programas aplicativos del usuario.</p>
+    <p>La información contenida en el Header que acompaña a cada uno de los registros que se envían también debe ser validada, según se muestra más adelante. </p>
+
+    <h2>Formato de recepción de información para el usuario.</h2>
+    <p>&lt;&gt; Información que viaja en binario (los valores representados están convertidos a decimal byte por byte).</p>
+    <p>&lt;&equals; Símbolo para indicar que termina un renglón.</p>
+    <p>EJEMPLO:</p>
+    <p>&lt;128&gt;&lt;0&gt;&lt;&equals;
+      <br>000000002170715378902074032110J&nbsp;Q&nbsp;&nbsp;&nbsp;GFINTER95B-D199512280012280000000010000000&lt;&equals;
+      <br>0000000100000000000001500000050000000100000000AJ199703280007&lt;&equals;
+      <br>&quot; &quot; &lt;----- Carácter opcional, solo cuando el tamaño de la trama es impar.
+      <br>&lt;199&gt;&lt;39&gt;
+    </p>
+    
+
+    <h2>Desglose del registro</h2>
+    
+    <h3>Byte 1 y 2 Longitud</h3>
+    <p>&lt;148&gt;&lt;0&gt; Valor del tamaño de la trama en binario |10010100|00000000| = 148</p>
+
+    <h3>Byte 3 y 2 Banderas</h3>
+    <p>&lt;128&gt;&lt;0&gt; Valor en binario |10000000|00000000| = 128
+      <br>Estos 2 bytes se ocupan para banderas, actualmente solo está ocupado el primer bit del primer byte y hace referencia a la validación del checksum.
+    </p>
+
+    <h3>Byte 5 al 15 Secuencia</h3>
+    <p>00000000217</p>
+
+    <h3>Byte 16 al 23 Hora</h3>
+    <p>07153789 </p>
+    
+    <h3>Bytes 24 y 25 Tipo</h3>
+    <p>02</p>
+    
+    <h3>Bytes 26 al 31 Contenido</h3>
+    <p>074032</p>
+    
+    <h3>Bytes 32 al 34 Longitud</h3>
+    <p>110</p>
+    
+    <h3>Bytes 35 Disponible</h3>
+    <p>&quot; &quot;</p>
+
+    <h3>Bytes 36 al 258 Datos (Tamaño del registro variable depende del tipo de FORMATO, máximo 961)</h3>
+    <p>J&nbsp;Q&nbsp;&nbsp;&nbsp;GFINTER95B-D199512280012280000000010000000&lt;&equals;
+      <br>0000000100000000000001500000050000000100000000AJ199703280007&lt;&equals;
+    </p>
+    
+    <h3>Byte XXX Filler (Depende del tipo de registro</h3>
+    <p>&quot; &quot; &lt;----- Solo cuando la suma de los bytes es impar, para completar el mensaje en par.
+      <br><b>NOTA: Cuando se utiliza el byte para completar el mensaje en par debe sumar 1 a la longitud de la trama.</b></p>
+
+    <h3>&lt;199&gt;&lt;39&gt;</h3>
+    <p>El valor del checksum</p>
+    
+
+    <div class="english">
+      <h2>Introduction</h2>
+      <p>Once the communication is established, the Receiving Program must make a series of verifications of the information it is receiving before it can be passed to the user´s application programs.</p>
+      <p>The information contained in the Header that accompanies each of the records that are sent must also be validated, as shown below.</p>
+      
+      <h2>Format of reception of information for the user</h2>
+      <p>&lt;&gt; Information that traveling in binary (the represented values are converted to decimal byte per byte).</p>
+      <p>&lt;&equals; Symbol to indicate that a line ends.</p>
+      <p>EXAMPLE: </p>
+      
+
+      <p>&lt;128&gt;&lt;0&gt;&lt;&equals;
+        <br>000000002170715378902074032110J&nbsp;Q&nbsp;&nbsp;&nbsp;GFINTER95B-D199512280012280000000010000000&lt;&equals;
+        <br>0000000100000000000001500000050000000100000000AJ199703280007&lt;&equals;
+        <br>&quot; &quot; &lt;----- Optional character, only when the frame size is odd.
+        <br>&lt;199&gt;&lt;39&gt;
+      </p>
+       
+      <h2>Record Breakdown:</h2>
+      
+      <h3>Byte 1 and 2 Longitude</h3>
+      <p>&lt;148&gt;&lt;0&gt; Value of the frame size in binary |10010100|00000000| = 148 </p>
+      
+      <h3>Byte 3 and 2 Flags</h3>
+      <p>&lt;128&gt;&lt;0&gt; Value in binary |10000000|00000000| = 128
+        <br>These 2 bytes are used for flags, currently only the first bit of the first byte is occupied and refers to checksum validation.</p>
+      
+      <h3>Byte 5 to 15 Sequence</h3>
+      <p>00000000217</p>
+      
+      <h3>Byte 16 to 23 Time</h3>
+      <p>07153789</p>
+      
+      <h3>Bytes 24 and 25 Type</h3>
+      <p>02</p>  
+      
+      <h3>Bytes 26 to 31 Content</h3>
+      <p>074032</p>
+      
+      <h3>Bytes 32 to 34 Longitude</h3>
+      <p>110</p>
+      
+      <h3>Bytes 35 Available</h3>
+      <p>&quot; &quot;</p>
+      
+      <h3>Bytes 36 to 258 Data (Variable record size depends on the type of FORMAT, maximum 961)</h3>
+      <p>J&nbsp;Q&nbsp;&nbsp;&nbsp;GFINTER95B-D199512280012280000000010000000&lt;&equals;
+        <br>0000000100000000000001500000050000000100000000AJ199703280007&lt;&equals;
+      </p>
+      
+      <h3>Byte XXX Filler (Depends on the type of record)</h3>
+      <p>&quot; &quot; &lt;----- Only when the sum of the bytes is odd, to complete the message in par.
+        <br><b>NOTE: When using the byte to complete the message in par, add 1 to the length of the frame.</b></p>
+      
+      <h3>&lt;199&gt;&lt;39&gt;</h3>
+      <p>The value of the checksum.</p>
+    </div>
+  </body>
+</html>  
+  
+
+
+

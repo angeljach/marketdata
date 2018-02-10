@@ -1,0 +1,68 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Multicast: Mensaje 3</title>
+    <meta name="date" content="2016-09-08">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">Multicast: Mensaje 3 / 3 Message</h1>
+
+    <h2>3: Inicio de subastas continuas / <span class ="english">Continuous auctions beginning</span></h2>
+    
+      <p>El mensaje es enviado al momento de generarse una de las subastas continuas, de volatilidad o del SIC.</p>
+
+
+    <div class="english">
+      <p>Sent at the moment one of the Continuous, Volatility or SIC auctions is generated.</p>
+    </div>
+     
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message type</div></td>
+        <td>0</td>
+        <td>1</td>
+        <td>"3"</td>
+        <td>Inicio de subastas<div class="english">Auctions start</div></td>
+      </tr>
+      <tr>
+        <td>Número de Instrumento<div class="english">Instrument number</div></td>
+        <td>1</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Código único durante la vida del instrumento<div class="english">Unique code during instruments life</div></td>
+      </tr>
+      <tr>
+        <td>Hora inicio de la subasta<div class="english">Beginning time of auction</div></td>
+        <td>5</td>
+        <td>8</td>
+        <td>Timestamp(2)</td>
+        <td>Hora en la que inicia la subasta<div class="english">Time at which auction begins</div></td> 
+      </tr>
+      <tr>
+        <td>Hora fin de la subasta<div class="english">End auction time</div></td>
+        <td>13</td>
+        <td>8</td>
+        <td>Timestamp(2)</td>
+        <td>Hora en la que concluye la subasta<div class="english">Time at which auction ends</div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>21</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </body>
+</html>

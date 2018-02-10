@@ -1,0 +1,590 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Recuperación Multicast</title>
+        <meta name="date" content="2016-09-09">
+        <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+    </head>
+    <body>
+
+        <h1 class="bar">Recuperación / <span class="english">Recovery</span></h1>
+        
+        <h2>Retransmisión y Snapshot / <span class="english">Replay and Snapshot</span></h2>
+
+        <h3>Pérdida de mensajes del flujo en línea / <span class="english">Loss of on-line flow messages</span></h3>
+        <p>Si una pérdida de mensajes es detectado en el canal multicast, el receptor deberá iniciar alguno de los procesos de recuperación.</p>
+        <div class="english">
+            <p>If a message loss is detected in the multicast channel, the receiver must start one of the recovery processes.</p>
+        </div>
+        
+        <img src="../../images/multicast-recovery_flow.png" alt="Recovery Flow" style="max-width:auto;max-height:500px;">
+        
+        <p>Validación de Secuencias. Se considera una pequeña pérdida de mensajes cuando la cantidad que se ha perdido es menor al límite que se establece para la retransmisión, en este caso es de 20 mil mensajes.</p>
+        <div class="english">
+            <p>Sequence validation. A small message loss is considered when the lost amount is smaller than the limit established for replay, which in this case is 20 thousand messages.</p>
+        </div>
+        
+        <h3>Estableciendo una conexión / <span class="english">Setting up a connection</span></h3>
+        <p>El receptor deberá usar la correspondiente dirección IP y puerto para establecer una sesión TCP/IP con cualquiera de los dos canales unicast. El consumidor debe iniciar una sesión enviando un mensaje de Solicitud de inicio de sesión. El servidor del canal unicast valida usuario, contraseña y dirección IP del solicitante.</p>
+        <p>Una vez que el consumidor es autenticado de manera exitosa, el servidor responderá con un mensaje de Respuesta de inicio de sesión con el campo de estatus igual a “A”.</p>
+        <p>Existen casos en los que el inicio de sesión no es exitoso pero sí se envía una respuesta como se puede apreciar en la siguiente imagen donde si un receptor quien ya inició una sesión envía otro inicio de sesión vía una conexión TCP/IP diferente a la actual, el sistema responde con un mensaje de Respuesta de inicio de sesión con estatus igual a “C” y cierra la segunda conexión TCP/IP. La primer conexión no es cerrada en este caso.</p>
+        <div class="english">
+            <p>The receiver must use the relevant IP address and port to establish a TCP/IP session with any of the two unicast channels. The consumer must log in by sending a login Request message. The unicast channel server validates consumer, password and IP address of the requesting consumer.</p>
+            <p>Once the consumer is authenticated successfully, the server will respond with a login Response message containing the field status equal to “A”.</p>
+            <p>There are cases where login is not successful but a response is actually sent, as shown in next image. If a receiver who has already started a session sends another login through a TCP/IP connection different from the current one, the system responds with login Response message with a status equal to “e” and it closes the second TCP/IP connection. The first connection is not closed in this case.</p>
+        </div>
+        
+        <img src="../../images/multicast-reject_connection.png" alt="Reject Connection" style="max-width:auto;max-height:500px;">
+        
+        <p>También existen casos en los que el inicio de sesión no es exitoso y no se envía una respuesta como se puede ver en la siguiente imagen</p>
+        <ul>
+            <li>Si un intento de inicio de sesión falla porque no es válido el usuario, la contraseña o la dirección IP del consumidor o si un mensaje es enviado al servidor antes de que el inicio de sesión sea establecido, el servidor acabará la conexión TCP/IP con el receptor sin enviar un mensaje de Respuesta de inicio de sesión.</li>
+            <li>Si un mensaje de Solicitud de retransmisión o Solicitud de snapshot no es recibido dentro de los 5 segundos posteriores a un satisfactorio inicio de sesión, el servidor finalizará la conexión TCP/IP con el receptor sin enviar un mensaje notificando el motivo.</li>
+            <li>Si un mensaje de Solicitud de inicio de sesión no es recibido dentro de los 5 segundos posteriores a la conexión TCP/IP establecida el servidor finalizará la conexión TCP/IP sin enviar un mensaje avisando el motivo.</li>
+        </ul>
+        <div class="english">
+            <p>There are also cases where the Login is not successful and an answer is not sent, as it can be seen in next image.</p>
+            <ul>
+                <li>If a login attempt fails because the user, password or IP address of consumer is not valid or if a message is sent to the server before login is established, the server will finish the TCP/IP connection to the receiver without sending a login Response message.</li>
+                <li>If a Replay request or Snapshot request message is not received within 5 seconds subsequent to a satisfactory login, the server will end the TCP/IP connection to the receiver without sending a message notifying the cause.</li>
+                <li>If a login request is not received within 5 seconds after the established TCP/IP connection, the server will end the TCP/IP connection without sending a message notifying the cause.</li>
+            </ul>
+        </div>
+        
+        <img src="../../images/multicast-reject_connection_wo_message.png" alt="Reject Connection Without Message" style="max-width:auto;max-height:500px;">
+        
+        
+        <h3>Servicio de retransmisiones / <span class="english">Replay Channel</span></h3>
+        <p>El canal TCP para Retransmisión debe ser usado por los destinatarios para recuperarse de una pérdida de datos a pequeña escala. Éste permite a los consumidores solicitar retransmisión de un limitado número de mensajes que ya han sido publicados por el canal multicast. El canal está configurado para soportar la retransmisión de los últimos 20,000 mensajes publicados.</p>
+        <div class="english">
+            <p>The TCP replay channel must be used by the intended receivers to recover from a small-scale data loss. This allows users to request replay of a limited number of messages that have already been published by the multicast channel. The channel is configured to support replay of the last 20,000 published messages.</p>
+        </div>
+        
+        <img src="../../images/multicast-rtx_flow.png" alt="RTx Flow" style="max-width:auto;max-height:500px;">
+        
+        <p>Cada receptor puede iniciar sesión en el canal de retransmisión y solicitar el envío de una cierta cantidad de mensajes que se han difundido por un cierto grupo y puerto multicast, pero las solicitudes solo podrán realizarse un limitado número de ocasiones cada día. Los destinatarios pueden solicitar al Administrador de Market Data en la BMV reiniciar su contador de peticiones sobre el canal de retransmisión, ésta funcionalidad intenta ayudar a manejar una situación de emergencia y no debería ser empleada como una práctica normal.</p>
+        <p>Si un mismo consumidor envía múltiples solicitudes sobre el canal de retransmisión, ellas serán procesadas secuencialmente (es decir una a la vez). No se puede cancelar una solicitud de retransmisión.</p>
+        <p>En caso de un problema en el sitio primario en el que no se pueda restablecer la operación, las peticiones de retransmisión tendrán que hacerse en el sitio de respaldo. BMV será el encargado de notificar el momento en el que se migrarán los servicios al sitio de respaldo.</p>
+        <div class="english">
+            <p>Each receiver can log in on the replay channel and request sending of a certain number of messages that have been transmitted by a certain multicast group and port, but requests may only be made a limited number of times every day. Intended receivers can request the Market Data Manager at the BMV to reset their request counter on the replay channel; this feature attempts to help managing an emergency situation and should not be used as a normal practice.</p>
+            <p>If a same consumer sends multiple requests on the replay channel, these will be processed sequentially (namely, one at a time). A replay request cannot be cancelled.</p>
+            <p>In case of a problem at the primary site where the operation cannot be reestablished, replay requests will have to be done at the backup site. BMV will be in charge of notifying the time when services will be migrated to the backup site. </p>
+        </div>
+        
+        <img src="../../images/multicast-rtx_secondary_site.png" alt="RTx Secondary Site" style="max-width:auto;max-height:500px;">
+        
+        <h4>Solicitando mensajes perdidos / <span class="english">Requesting lost messages</span></h4>
+        <p>Una vez conectado al canal de retransmisión, los consumidores pueden usar el mensaje de Solicitud de retransmisión para pedir los mensajes perdidos. La solicitud deberá incluir el número de secuencia del primer mensaje en el rango a ser retransmitido, junto con el número de mensajes a ser retransmitidos.</p>
+        <p>La petición será atendida desde el servidor de caché de los últimos mensajes publicados en el canal multicast. Si la solicitud de retransmisión incluye uno o más mensajes que no están el Servidor de caché, la solicitud entera será rechazada con un mensaje de Respuesta de snapshot y ningún mensaje será retransmitido.</p>
+        
+        <div class="english">
+            <p>Once connected to the replay channel, consumers can use the Replay request message to ask for the lost messages. The request must include the sequence number of the first message in the range to be replayed, together with the number of messages to be replayed.</p>
+            <p>The request will be processed from the cache server of the last messages published on the multicast channel. If the replay request includes one or more messages not located in the cache server, the entire request will be rejected with a Snapshot Response message and no message will be replayed.</p>
+        </div>
+        
+        <h4>Respuesta a una solicitud de retransmisión / <span class="english">Response to a replay request</span></h4>
+        <p>El servidor responderá a un mensaje de Solicitud de retransmisión con un mensaje de Respuesta de retransmisión para indicar si la retransmisión es satisfactoria o no. Un valor diferente de “A” en el campo status indicará que la solicitud ha sido rechazada.</p>
+        <p>En el caso de una solicitud satisfactoria, el servidor retransmitirá los mensajes solicitados inmediatamente después del mensaje de Respuesta de retransmisión. Los números de secuencia de los mensajes retransmitidos serán los mismos como cuando ellos fueron transmitidos por el canal multicast.</p>
+        
+        <div class="english">
+            <p>The server will respond a Replay request message with a Replay response message to indicate whether replay is satisfactory or not. A value different from “A” in the status field will indicate that the request has been rejected.</p>
+            <p>In case of a satisfactory request, the server will replay the requested messages immediately after the Replay response message. The sequence numbers of the replayed messages will be the same as when these were transmitted by the multicast channel.</p>
+        </div>
+        
+        <h4>Terminar conexión / <span class="english">Terminating connection</span></h4>
+        <p>Si el receptor no envía una solicitud de Finalización de sesión y no termina la conexión durante los siguientes 5 segundos posteriores al momento del envío del último mensaje perdido, el servidor finalizará la conexión TCP/IP.</p>
+        <div class="english">
+            <p>If the receiver does not send a Logout request and it fails to terminate the connection during the following 5 seconds following the time the last lost message was sent, the server will end the TCP/IP connection.</p>
+        </div>
+        
+        <h3>Servicio de snapshots / <span class="english">Recovery Channel</span></h3>
+        <p>El canal TCP para Snapshots debe ser usado por los destinatarios para recuperarse de una pérdida de datos a gran escala (es decir a una conexión tardía al mercado o a una gran interrupción).</p>
+        <div class="english">
+            <p>The Snapshots TCP channel must be used by intended receivers to recover from a large-scale data loss (namely, from a late connection to the market or from a major interruption).</p>
+        </div>
+
+        <img src="../../images/multicast-snapshot_flow.png" alt="RTx Secondary Site" style="max-width:auto;max-height:500px;">
+        
+        <p>Los servicios ofrecidos por el canal de distribución de acuerdo al producto asociado son los siguientes:</p>
+        <div class="english">
+            <p>The services offered by the distribution channel according to the associated product are as follows:</p>
+        </div>
+        <ol type='A'>
+            <li>Lista de los instrumentos activos / <span class="english">List of active instruments</span>
+                <ul>
+                    <li>Este servicio será ofrecido en todos los grupos y puertos multicast y se encargará de distribuir los Catálogos de instrumentos.</li>
+                    <li class="english">This service will be offered in all multicast groups and ports and it will be in charge of distributing the Catalogs of instruments.</li>
+                </ul>
+            </li>
+            <li>Si tiene asociado profundidad completa / <span class="english">If it has a complete depth associated</span>
+                <ul>
+                    <li>El sistema tendrá la opción de enviar las órdenes activas de un instrumento o de todos los instrumentos que se distribuyen a través de un grupo y puerto multicast.</li>
+                    <li class="english">The system will have the option to send the active orders of an instrument or of all instruments distributed through a multicast group and port</li>
+                </ul>
+            </li>
+            <li>Si tiene asociado un producto en el que se envíen solo unos cuantos niveles de precio / <span class="english">If it has associated a product in which only a few price levels are sent</span>
+                <ul>
+                    <li>El sistema almacenará en cache el último mensaje de profundidad enviado por instrumento y el consumidor podrá solicitar el último mensaje de un instrumento o de todos los instrumentos que se distribuyen a través de un grupo y puerto multicast.</li>
+                    <li class="english">The system will store in cache the last depth message sent by each instrument and the consumer may request the last message of an instrument or of all instruments distributed through a multicast group and port.</li>
+                </ul>
+            </li>
+            <li>Si tiene asociado algún producto en el que se difundan hechos. / 
+                <span class="english">
+                    If there is an associated product where trades are disseminated.
+                </span>
+                <ul>
+                    <li>El sistema mantendrá en cache todos los hechos generados durante el día. Enviará tanto las altas como las bajas que se hayan generado al momento de la solicitud.</li>
+                    <li class="english">The system will keep in cache every facts generated during the day. It will send both additions and deletions available at the request moment.</li>
+                    <li>Existirá la opción de pedir los hechos de un instrumento o de todos los instrumentos que se distribuyen a través de un grupo y puerto multicast.</li>
+                    <li class="english">There will be the option to request the facts of an instrument or of all the instruments distributed through a multicast group and port.</li>
+                </ul>
+            </li>
+            <li>Si tiene asociado algún producto con el mejor precio de compra o venta. / 
+                <span class="english">
+                    If there is an associated product with best buy or sell price.
+                </span>
+                <ul>
+                    <li>El sistema almacenará en cache el último mensaje de mejor postura enviado por instrumento y el receptor podrá solicitar el último mensaje de un instrumento o de todos los instrumentos que se distribuyen a través de un grupo y puerto multicast.</li>
+                    <li class="english">The system will store in cache the last Best Offer message sent by each instrument and the receiver may request the last message of an instrument or of all the instruments distributed through a multicast group and port.</li>
+                </ul>
+            </li>
+            <li>Combina los servicios A, B y D. / 
+                <span class="english">
+                    It combines the A, B and D services.
+                </span>
+                <ul>
+                    <li>El sistema tendrá la opción de enviar el catálogo del instrumento, las órdenes activas y los hechos de un instrumento o de todos los instrumentos que se distribuyen a través de un grupo y puerto multicast.</li>
+                    <li class="english">The system will have the option to send the instrument's catalog, active orders and every trade from an instrument or all instruments distributed through a multicast group and port.</li>
+                </ul>
+            </li>
+            <li>Combina los servicios A, C y D. / 
+                <span class="english">
+                    It combines the A, C and D services.
+                </span>
+                <ul>
+                    <li>El consumidor podrá solicitar el catálogo del instrumento, el último mensaje de profundidad y los hechos de un instrumento o de todos los instrumentos que se distribuyen a través de un grupo y puerto multicast.</li>
+                    <li class="english">
+                    The consumer may request the instrument's catalog, the last depth message and every trade from an instrument or all instruments distributed through a multicast group and port.</li>
+                </ul>
+            </li>
+            <li>Combina los servicios A, E y D. / 
+                <span class="english">
+                    It combines the A, E and D services.
+                </span>
+                <ul>
+                    <li>Envía el catálogo del instrumento, el último mensaje de mejor postura y los hechos de un instrumento o de todos los instrumentos que se distribuyen a través de un grupo y puerto multicast.</li>
+                    <li class="english">
+                    Sends the instrument's catalog, the last best offer message and every trade from an instrument or all instruments distributed through a multicast group and port.</li>
+                </ul>
+            </li>
+            <li>Combina los servicios A, B y el hecho que fija precio. / 
+                <span class="english">
+                    It combines A and B services, plus price setter trade.
+                </span>
+                <ul>
+                    <li>El sistema tendrá la opción de enviar el catálogo del instrumento, las órdenes activas y el hecho que fija precio de un instrumento o de todos los instrumentos que se distribuyen a través de un grupo y puerto multicast.</li>
+                    <li class="english">
+                    The system will have the option to send the instrument's catalog, active orders and price setter trade from an instrument or all instruments distributed through a multicast group and port.</li>
+                </ul>
+            </li>
+            <li>Combina los servicios A, C y el hecho que fija precio. / 
+                <span class="english">
+                    It combines A and C services, plus price setter trade.
+                </span>
+                <ul>
+                    <li>El consumidor podrá solicitar el catálogo del instrumento, el último mensaje de profundidad y el hecho que fija precio de un instrumento o de todos los instrumentos que se distribuyen a través de un grupo y puerto multicast.</li>
+                    <li class="english">
+                    The consumer may request the instrument's catalog, the last depth message and price setter trade from an instrument or all instruments distributed through a multicast group and port.</li>
+                </ul>
+            </li>
+            <li>Combina los servicios A, E y el hecho que fija precio. / 
+                <span class="english">
+                    It combines A and E services, plus price setter trade.
+                </span>
+                <ul>
+                    <li>Envía el catálogo del instrumento, el último mensaje de mejor postura y el hechos que fija precio de un instrumento o de todos los instrumentos que se distribuyen a través de un grupo y puerto multicast.</li>
+                    <li class="english">Sends the instrument's catalog, the last best offer message and price setter trade from an instrument or all instruments distributed through a multicast group and port.</li>
+                </ul>
+            </li>
+        </ol>
+        
+        <p>Cada consumidor puede iniciar sesión en el canal de snapshots y solicitar él envió de un cierto snapshot, pero las solicitudes solo podrán realizarse un limitado número de ocasiones cada día. Los destinatarios pueden solicitar al Administrador de Market Data en la BMV reiniciar su contador de peticiones sobre este canal, ésta funcionalidad intenta ayudar a manejar una situación de emergencia y no debería ser empleada como una práctica normal.</p>
+        <p>Si un receptor envía múltiples solicitudes sobre este canal, serán procesadas secuencialmente (es decir una a la vez). No se puede cancelar una solicitud.</p>
+        <p>En caso de un problema en el sitio primario en el que no se pueda restablecer la operación, las peticiones de snapshots tendrán que hacerse en el sitio de respaldo.</p>
+        
+        <div class="english">
+            <p>Each consumer can log in on the snapshots channel and request sending of a certain snapshot, but requests may only be done a limited number of times every day. Intended receivers may request the Market Data Manager at the BMV to reset their request counter on this channel. This feature attempts to help managing an emergency situation and it should not be used as a normal practice.</p>
+            <p>If a receiver sends multiple requests on this channel, this will be processed sequentially (that is, one at a time). A request cannot be cancelled.</p>
+            <p>In case of a problem at the primary site where the operation cannot be reestablished, the requests for snapshots will have to be made at the backup site.</p>
+        </div>
+       
+        <img src="../../images/multicast-snapshot_secondary_site.png" alt="Snapshot Secondary Site" style="max-width:auto;max-height:500px;">
+        
+        <h4>Solicitando un snapshot / <span class="english">Requesting a snapshot</span></h4>
+        <p>Cuando el inicio de sesión ha sido aceptado entonces los receptores podrán usar el mensaje de Solicitud de snapshot para descargar la lista de los instrumentos activos, solicitar las órdenes activas, los niveles de precio, mejores posturas o algunos de los últimos hechos que han ocurrido al momento de la petición.</p>
+        <p>Dentro del mensaje de Solicitud de snapshot existe un campo requerido en donde envían el identificador del producto del cual requieren el snapshot, en caso de no enviar el producto la solicitud es rechazada con el mensaje Respuesta de Snapshot.</p>
+        <p>También existe un campo de tipo de snapshot en donde es requerido indicar uno de los 5 tipos de snapshots que existen, en caso de no enviar el tipo de snapshot la solicitud es rechazada con el mensaje Respuesta de Snapshot.</p>
+        <p>El campo identificador del instrumento dentro del mensaje Solicitud de snapshot no es requerido y en caso de que no se envíe, la solicitud será atendida con la información de todos los instrumentos del producto del que se está solicitando el snapshot.</p>
+        <div class="english">
+            <p>When the login has been accepted, then receivers may use the snapshot Request message to download the list of active instruments, request active orders, price levels, best offers or some of the last facts that have occurred at the time of the request.</p>
+            <p>The Snapshot request message contains a requested field where they send the identifier of the product for which they require the snapshot. In case the product is not sent, the request is rejected with the Snapshot Response message.</p>
+            <p>There is also a snapshot field where it is required to indicate one of the 5 types of existing snapshots. In case of not sending the snapshot type, the request is rejected with the Snapshot Response message.</p>
+            <p>The identifying field of the instrument within the snapshot Request message is not required and in case it is not sent, the request will be processed with the information of all the instruments of the product for which the snapshot is being requested.</p>
+        </div>
+        
+        <h4>A. Lista de instrumentos / <span class="english">A. List of instruments</span></h4>
+        <p>Una petición de la lista de instrumentos aceptada genera un mensaje de Respuesta de snapshot indicando que la solicitud será atendida. Posterior a la respuesta se enviaran los Catálogos de instrumentos que fueron difundidos al inicio del día por el grupo y puerto multicast de la solicitud.</p>
+        <p>No se puede solicitar el detalle de un solo instrumento, en este caso siempre se enviará un grupo completo.</p>
+        <p>Al finalizar de enviar los mensajes de Catálogos de instrumentos se enviará un mensaje de Snapshot terminado indicando que la solicitud ha sido completada. En este caso el mensaje de fin incluirá la secuencia con la cual se sincroniza con respecto al flujo en línea.</p>
+        <div class="english">
+            <p>A request of the accepted list of instruments generates a snapshot Response message, indicating that the request will be processed. After the response, the Catalogs of instruments that were disseminated will be sent at the beginning of the day by the multicast group and port of the request.</p>
+            <p>The detail of a single instrument cannot be requested. In this case, a complete group will always be sent.</p>
+            <p>When finishing to send the messages of Catalogs of instruments a Snapshot complete message will be sent, indicating that the request has been completed. In this case the end message will include the sequence with which it is synchronized regarding the flow on line.</p>
+        </div>
+        
+        <h4>B-1. Respuesta a un snapshot de profundidad completa de un solo instrumento / <span class="english">B-1. Response to an in-depth snapshot of a single instrument</span></h4>
+        <p>Una petición aceptada de un snapshot de profundidad completa sobre un instrumento genera un mensaje de Respuesta de snapshot indicando que la solicitud será procesada. Después de eso se enviará un mensaje de Estado del instrumento seguido de las órdenes que están activas dentro del libro principal y al final un mensaje de Snapshot terminado con la secuencia con la que se sincroniza con respecto al canal que distribuye la información en línea.</p>
+        <div class="english">
+            <p>An accepted request of an in-depth snapshot on an instrument generates a Snapshot response message, indicating that the request will be processed. Thereafter, an instrument Status message will be sent, followed by the orders that are active within the main book and at the end of a Snapshot complete message with the sequence with which it is synchronized regarding the channel distributing the information on line.</p>
+        </div>
+        
+        <h4>B-2. Respuesta a un snapshot de profundidad completa de todos los instrumentos que se distribuyen a través de un grupo y puerto multicast / <span class="english">B-2. Response to an in-depth snapshot of all instruments distributed through a multicast group and port</span></h4>
+        <p>Una petición aceptada de un snapshot de profundidad completa sobre un grupo y puerto multicast genera un mensaje de Respuesta de snapshot indicando que la solicitud será procesada. Después se enviaran los mensajes en bloques separados por instrumento. Lo primero que se enviará será un mensaje de Estado del instrumento seguido de las órdenes que están activas dentro del libro principal para ese instrumento. Cuando termine de difundir las órdenes del instrumento se enviará otro mensaje de Estado del instrumento con el siguiente instrumento a ser enviado seguido de sus posturas.</p>
+        <p>Al finalizar con todos los instrumentos se enviará un mensaje de Snapshot terminado con la secuencia con la que se sincroniza con respecto al canal que distribuye la información en línea.</p>
+        <div class="english">
+            <p>An accepted request of an in-depth snapshot on a multicast group and port generates a snapshot Response message, indicating that the request will be processed. Then, the messages will be sent in separate blocks by instrument. The first item to be sent will be an instrument Status message followed by the orders that are active within the main book for such instrument. When it finishes disseminating the instrument orders another instrument Status message will be sent with the following instrument to be sent, followed by its offers.</p>
+            <p>When finishing with all instruments, a Snapshot complete message will be sent   with the sequence with which it is synchronized regarding the channel distributing the information on line.</p>
+        </div>
+        
+        <h4>C-1. Respuesta a un snapshot de niveles de precio de un solo instrumento / <span class="english">C-1. Response to a price level snapshot of a single instrument</span></h4>
+        <p>Una petición aceptada de un snapshot de niveles de precio sobre un instrumento genera un mensaje de Respuesta de snapshot indicando que la solicitud será procesada. Después de eso se enviará un mensaje de Estado del instrumento seguido del último mensaje de profundidad que ha sido enviado para ese instrumento y al final un mensaje de Snapshot terminado con la secuencia con la que se sincroniza con respecto al canal que distribuye la información en línea.</p>
+        <div class="english">
+            <p>An accepted request of a price level snapshot on an instrument generates a Snapshot response message, indicating that the request will be processed. Thereafter, an instrument Status message will be sent, followed by the last depth message that has been sent for such instrument and, at the end, a Snapshot complete message with the sequence with which it is synchronized regarding the channel distributing the information on line.</p>
+        </div>
+        
+        <h4>
+            C-2. Respuesta a un snapshot de niveles de precio de todos los instrumentos que se distribuyen a través de un grupo y puerto multicast. / 
+            <span class="english">
+                C-2. Response to a snapshot on all price levels intruments distributed through a multicast group and port.
+            </span>
+        </h4>
+        <p>Una petición aceptada de un snapshot de niveles de precio sobre un grupo y puerto multicast genera un mensaje de Respuesta de snapshot indicando que la solicitud será procesada. Después se enviaran los mensajes en bloques separados por instrumento. Lo primero que se enviará será un mensaje de Estado del instrumento seguido del último mensaje de profundidad que ha sido enviado para ese instrumento. Cuando termine de difundir el mensaje de profundidad del instrumento se enviará otro mensaje de Estado del instrumento con el siguiente instrumento a ser enviado seguido de su mensaje de profundidad.</p>
+        <p>Al finalizar con todos los instrumentos se enviará un mensaje de Snapshot terminado con la secuencia con la que se sincroniza con respecto al canal que distribuye la información en línea.</p>
+        <div class="english">
+            <p>An accepted request of a price levels snapshot over a multicast group and port indicating the request will be processed. Next, a separately block messages separated by instrument will be sent. First, the instrument’s status followed by the last depth message sent for that particular instrument. When instrument’s depth message is complete, another instrument’s status will be sent for that instrument. A last instrument status will be delivered when depth message diffusion is done, same that will contain next instrument followed by message depth.</p>
+            <p>When all instruments are done, a snapshot complete message will be sent, containing the sequence with which synchronizes with respect to the online information distributing channel.</p>
+        </div>
+        
+        <h4>
+            D-1. Respuesta a un snapshot de hechos de un solo instrumento. / 
+            <span class="english">
+                D-1. Response to a snapshot for trades on a single instrument.
+            </span>
+        </h4>
+        <p>Una petición aceptada de un snapshot de hechos sobre un instrumento genera un mensaje de Respuesta de snapshot indicando que la solicitud será procesada. Después de eso se enviará un mensaje de Estado del instrumento seguido de la cantidad de hechos que hayan sido generados. Las transacciones que se irán almacenando serán tanto las bajas como las altas de hechos. Al terminar de enviarse los hechos se enviará un mensaje de Snapshot complete en donde se indica que ha terminado la transacción.</p>
+        <div class="english">
+            <p>An accepted request of a facts snapshot on an instrument generates a snapshot Response message, indicating that the request will be processed. Thereafter, an instrument Status message will be sent, followed by the quantity of facts that may have been generated. The transactions to be stored will be both the additions and deletions of facts. When finishing to send the facts, a Snapshot complete message will be sent, where it is indicated that the transaction has ended.</p>
+        </div>
+        
+        <h4>
+            D-2. Respuesta a un snapshot de hechos de todos los instrumentos que se distribuyen a través de un grupo y puerto multicast. /
+            <span class="english">
+                D-2. Response to a snapshot for trades on all instruments distributed through a multicast group and port.                     
+            </span>
+        </h4>
+        <p>Una petición aceptada de un snapshot de hechos sobre un grupo y puerto multicast genera un mensaje de Respuesta de snapshot indicando que la solicitud será procesada. Después se enviaran los mensajes en bloques separados por instrumento. Lo primero que se enviará será un mensaje de Estado del instrumento seguido de la cantidad de hechos que hayan sido generados. Cuando se terminen de difundir los hechos se enviará otro mensaje de Estado del instrumento con el siguiente instrumento a ser enviado seguido de sus correspondientes hechos.</p>
+        <p>Al finalizar con todos los instrumentos se enviará un mensaje de Snapshot terminado.</p>
+        <div class="english">
+            <p>An accepted request of a facts snapshot on a multicast group and port generates a snapshot Response message indicating that the request will be processed. Then, the messages will be sent in separate blocks by instrument. The first item to be sent will be an instrument Status message followed by the quantity of facts that may have been generated. When finishing to disseminate the facts, another instrument Status message will be sent with the following instrument to be sent, followed by its relevant facts.</p>
+            <p>When finishing with all instruments, a Snapshot complete message will be sent.</p>
+        </div>
+        
+        <h4>
+            E-1. Respuesta a un snapshot de mejores posturas de un solo instrumento. / 
+            <span class="english">
+                E-1. Response to a snapshot for best offers on a single instrument.
+            </span>
+        </h4>
+        <p>Una petición aceptada de un snapshot de mejores posturas sobre un instrumento genera un mensaje de Respuesta de snapshot indicando que la solicitud será procesada. Después de eso se enviará un mensaje de Estado del instrumento seguido de dos mensajes que indican la mejor postura por lado del instrumento y al final un mensaje de Snapshot terminado con la secuencia con la que se sincroniza con respecto al canal que distribuye la información en línea.</p>
+        <div class="english">
+            <p>An accepted request of a snapshot of best offers on an instrument generates a snapshot Response message indicating that the request will be processed. Thereafter, an instrument Status message will be sent, followed by two messages indicating best offer by side of the instrument and, at the end, a Snapshot complete message with the sequence with which it is synchronized regarding the channel distributing the information on line.</p>
+        </div>
+        
+        <h4>
+            E-2. Respuesta a un snapshot de mejores posturas de todos los instrumentos que se distribuyen a través de un grupo y puerto multicast / 
+            <span class="english">
+                E-2. Response to a snapshot of all instrument's best offers distributed through a multicast group and port.
+            </span>
+        </h4>
+        <p>Una petición aceptada de un snapshot de mejores posturas sobre un grupo y puerto multicast genera un mensaje de Respuesta de snapshot indicando que la solicitud será procesada. Después se enviaran los mensajes en bloques separados por instrumento. Lo primero que se enviará será un mensaje de Estado del instrumento seguido de los mensajes de mejores posturas del instrumento. Cuando termine de difundir los mensajes de mejores posturas se enviará otro mensaje de Estado del instrumento con el siguiente instrumento a ser enviado.</p>
+        <p>Al finalizar con todos los instrumentos se enviará un mensaje de Snapshot terminado con la secuencia con la que se sincroniza con respecto al canal que distribuye la información en línea.</p>
+        <div class="english">
+            <p>An accepted request of a snapshot of best offers on a multicast group and port generates a snapshot Response message, indicating that the request will be processed. Then, the messages will be sent in separate blocks by instrument. The first item to be sent will be an instrument Status message followed by the best offer messages of the instrument. When finishing to disseminate the best offer messages, another instrument Status message will be sent with the following instrument to be sent.</p>
+            <p>When finishing with all instruments, a Snapshot complete message will be sent   with the sequence with which it is synchronized regarding the channel distributing the information on line.</p>
+        </div>
+        
+<!-- Servicios combinados -->        
+<!-- Servicios con todos los hecho. -->
+        <h4>
+            F-1. Respuesta a un snapshot combinado del catálogo del instrumento, los mensajes de profundidad completa y los hechos de un solo instrumento. / 
+            <span class="english">
+                F-1. Response to an instrument's catalog combined snapshot, in-depth messages and single instrument trades.
+            </span>
+        </h4>
+        <p>Una petición aceptada de un snapshot combinado del catálogo del instrumento, los mensajes de profundidad completa y los hechos sobre un instrumento genera un mensaje de Respuesta de snapshot indicando que la solicitud será procesada. Después de eso se enviará un mensaje del catálogo que corresponde al instrumento seguido del mensaje del Estado del instrumento seguido de las órdenes que están activas dentro del libro principal y todos los hechos del instrumento finalizando con un mensaje de Snapshot terminado con la secuencia con la que se sincroniza con respecto al canal que distribuye la información en línea.
+        </p>
+        
+        <div class="english">
+            <p>An accepted request of an instrument's catalog combined snapshot, in-depth messages and trades on an instrument generates a Snapshot response message, indicating the request will be processed. Thereafter, an instrument's catalog message will be sent, followed by the status message, followed by the active orders within the main book and the instrument's trades and finally a complete snapshot message with the sequence with which synchronizes with respect to the online information distributing channel.</p>
+        </div>
+        
+        <h4>
+            F-2. Respuesta a un snapshot combinado del catálogo del instrumento, los mensajes de profundidad completa y los hechos de un grupo y puerto multicast. / 
+            <span class="english">
+                F-2. Response to an instrument's catalog combined snapshot, depth messages and trades of all instruments distributed through a multicast group and port.
+            </span>
+        </h4>
+        <p>Una petición aceptada de un snapshot combinado del catálogo del instrumento, los mensajes de profundidad completa y los hechos sobre un grupo y puerto multicast genera un mensaje de Respuesta de snapshot indicando que la solicitud será procesada. Después se enviaran los mensajes en bloques separados por instrumento. Lo primero que se enviará será el catálogo del instrumento después un mensaje de Estado del instrumento seguido de las órdenes que están activas dentro del libro principal seguido de los hechos para ese instrumento. Cuando termine de difundir los mensajes del instrumento se enviará otro bloque de mensajes en el orden indicado del siguiente instrumento a ser enviado.</p>
+        <p>Al finalizar con todos los instrumentos se enviará un mensaje de Snapshot terminado con la secuencia con la que se sincroniza con respecto al canal que distribuye la información en línea.</p>
+        <div class="english">
+            <p>An accepted request of an instrument's catalog combined snapshot, depth messages and trades over a multicast group and port indicating the request will be processed. Next, a separated block messages by instrument will be sent. First, the instrument's catalog will be sent followed by the active orders within the main book and the instrument's trades. Thereafter, an instrument's catalog message will be sent, followed by the message status, shortly after, the active orders within the main book and the instrument's trades. When finished, another instrument’s block messages will be sent in the previously indicated order.</p>
+            
+            <p>When all instruments are done, a finished snapshot will be sent containing the sequence with which synchronizes with respect to the online information distributing channel.</p>
+        </div>
+        
+        <h4>
+            G-1. Respuesta a un snapshot combinado del catálogo del instrumento, el úlitmo mensaje de niveles de precio y los hechos de un solo instrumento. / 
+            <span class="english">
+                G-1. Response to an instrument's catalog combined snapshot, last price level message and trades from a single instrument.
+            </span>
+        </h4>
+        <p>Una petición aceptada de un snapshot combinado del catálogo del instrumento, el úlitmo mensaje de niveles de precio y los hechos sobre un instrumento genera un mensaje de Respuesta de snapshot indicando que la solicitud será procesada. Después de eso se enviará un mensaje del catálogo del instrumento seguido del mensaje de Estado del instrumento seguido del último mensaje de profundidad que ha sido enviado seguido los hechos para ese instrumento y al final un mensaje de Snapshot terminado con la secuencia con la que se sincroniza con respecto al canal que distribuye la información en línea.</p>
+        <div class="english">
+            <p>An accepted request of an instrument's catalog combined snapshot, last price level message and trades over an instrument generates a snapshot response message indicating request will be processed. Next, an instrument's message catalog followed by instrument status message, then the last depth message sent, followed by trades for that particular instrument and finally a snapshot complete message with the sequence synchronized with respect to the online information distribution channel.</p>
+        </div>
+        
+        <h4>
+            G-2. Respuesta a un snapshot combinado del catálogo del instrumento, el úlitmo mensaje de niveles de precio y los hechos sobre un grupo y puerto multicast. / 
+            <span class="english">
+                G-2. Response to an instrument's catalog combined, the last price level message and trades over a multicast group and port.
+            </span>
+        </h4>
+        <p>Una petición aceptada de un snapshot combinado del catálogo del instrumento, el último mensaje de nivel de precio y los hechos sobre un grupo y puerto multicast genera un mensaje de Respuesta de snapshot indicando que la solicitud será procesada. Después se enviaran los mensajes en bloques separados por instrumento. Lo primero que se enviará será el catálogo del instrumento, seguido del mensaje de Estado del instrumento, después el último mensaje de niveles de precio que ha sido enviado para ese instrumento y los hechos del instrumento. Cuando termine de difundir los mensajes del instrumento se enviará otro bloque de mensajes en el orden indicado del siguiente instrumento.</p>
+        
+        <p>Al finalizar con todos los instrumentos se enviará un mensaje de Snapshot terminado con la secuencia con la que se sincroniza con respecto al canal que distribuye la información en línea.</p>
+        
+        <div class="english">
+            <p>An accepted request of a instrument's catalog combined snapshot, last price level message and trades over a multicast group and port generates a snapshot Response message, indicating that the request will be processed. Next,  the messages will be sent in separate blocks by instrument. The first, the instrument's catalog will be sent followed by an instrument Status message followed by the last price level message and the instrument's trades. when finished, another instrument's block messages will be sent in the previously indicated order.</p>
+            
+            <p>When all instruments are done, a finished snapshot will be sent containing the sequence with which synchronizes with respect to the online information distributing channel.</p>
+        </div>
+        
+        <h4>
+            H-1. Respuesta a un snapshot combinado del catálogo del instrumento, las mejores posturas y los hechos de un solo instrumento. /
+            <span class="english">
+                H-1. Response to and instrument's catalog combined, best offers and trades from a single instrument.
+            </span>
+        </h4>
+        <p>Una petición aceptada de un snapshot combinado del catálogo del instrumento, las mejores posturas y los hechos sobre un instrumento genera un mensaje de Respuesta de snapshot indicando que la solicitud será procesada. Después de eso se enviará un mensaje del catálogo del instrumento seguido del mensaje de Estado del instrumento después los mensajes de mejores posturas seguido de los hechos del instrumento. Al terminar de enviarse los hechos finalizando con un mensaje de Snapshot terminado con la secuencia que se sincroniza con respecto al canal que distribuye la información en línea.</p>
+        <div class="english">
+            <p>An accepted request of an instrument's catalog combined snapshot, best offers and trades from an instrument generates a snapshot response message, indicating that the request will be processed. Thereafter, an instrument's catalog message will be sent, followed by the status message, followed by the best postures and trades from an instrument and finally a complete snapshot message with the sequence with which synchronizes with respect to the online information distributing channel.</p>
+        </div>
+        
+        <h4>
+            H-2. Respuesta a un snapshot combinado del catálogo del instrumento, las mejores posturas y los hechos sobre un grupo y puerto multicast. / 
+            <span class="english">
+                H-2. Response to an instrument's catalog combined, best offers and trades over a multicast group and port.
+            </span>
+        </h4>
+        <p>Una petición aceptada de un snapshot combinado del catálogo del instrumento, las mejores posturas y los hechos sobre un grupo y puerto multicast genera un mensaje de Respuesta de snapshot indicando que la solicitud será procesada. Después se enviaran los mensajes en bloques separados por instrumento. Lo primero que se enviará será el catálogo del instrumento, seguido del mensaje de Estado del instrumento, después el mensaje de mejores posturas que ha sido enviado para ese instrumento y los hechos del instrumento. Cuando termine de difundir los mensajes del instrumento se enviará otro bloque de mensajes en el orden indicado del siguiente instrumento.</p>
+        
+        <p>Al finalizar con todos los instrumentos se enviará un mensaje de Snapshot terminado con la secuencia con la que se sincroniza con respecto al canal que distribuye la información en línea.</p>
+        
+        <div class="english">
+            <p>An accepted request of a instrument's catalog combined snapshot, last price level message and trades over a multicast group and port generates a snapshot Response message, indicating that the request will be processed. Next,  the messages will be sent in separate blocks by instrument. The first, the instrument's catalog will be sent followed by an instrument Status message followed by the best offers message and the instrument's trades. when finished, another instrument's block messages will be sent in the previously indicated order.</p>
+            
+            <p>When all instruments are done, a finished snapshot will be sent containing the sequence with which synchronizes with respect to the online information distributing channel.</p>
+        </div>
+        
+<!-- Servicios con el hecho que FIJA PRECIO. -->
+        <h4>
+            I-1. Respuesta a un snapshot combinado del catálogo del instrumento, los mensajes de profundidad completa y el último hecho que fija precio de un solo instrumento. / 
+            <span class="english">
+                I-1. Response to an instrument's catalog combined snapshot, full depth messages and price setter trade from single instrument.
+            </span>
+        </h4>
+        <p>Una petición aceptada de un snapshot combinado del catálogo del instrumento, los mensajes de profundidad completa y el hecho que fija precio sobre un instrumento genera un mensaje de Respuesta de snapshot indicando que la solicitud será procesada. Después de eso se enviará un mensaje del catálogo que corresponde al instrumento seguido del mensaje del Estado del instrumento seguido de las órdenes que están activas dentro del libro principal y el hecho que fija precio del instrumento finalizando con un mensaje de Snapshot terminado con la secuencia con la que se sincroniza con respecto al canal que distribuye la información en línea.
+        </p>
+        
+        <div class="english">
+            <p>An accepted request of an instrument's catalog combined snapshot, full depth messages and price setter trade from an instrument generates a Snapshot response message, indicating the request will be processed. Thereafter, an instrument's catalog message will be sent, followed by the status message, followed by the active orders within the main book and the price setter trade from an instrument and finally a complete snapshot message with the sequence with which synchronizes with respect to the online information distributing channel.</p>
+        </div>
+        
+        <h4>
+            I-2. Respuesta a un snapshot combinado del catálogo del instrumento, los mensajes de profundidad completa y el hecho que fija precio sobre un grupo y puerto multicast. / 
+            <span class="english">
+                I-2. Response to an instrument's catalog combined snapshot, depth messages and price stter trade over a multicast group and port.
+            </span>
+        </h4>
+        <p>Una petición aceptada de un snapshot combinado del catálogo del instrumento, los mensajes de profundidad completa y el hecho que fija precio sobre un grupo y puerto multicast genera un mensaje de Respuesta de snapshot indicando que la solicitud será procesada. Después se enviaran los mensajes en bloques separados por instrumento. Lo primero que se enviará será el catálogo del instrumento después un mensaje de Estado del instrumento seguido de las órdenes que están activas dentro del libro principal seguido del hecho que fija precio para ese instrumento. Cuando termine de difundir los mensajes del instrumento se enviará otro bloque de mensajes en el orden indicado del siguiente instrumento a ser enviado.</p>
+        <p>Al finalizar con todos los instrumentos se enviará un mensaje de Snapshot terminado con la secuencia con la que se sincroniza con respecto al canal que distribuye la información en línea.</p>
+        <div class="english">
+            <p>An accepted request of an instrument's catalog combined snapshot, full depth messages and price setter trade over a multicast group and port indicating the request will be processed. Next, a separated block messages by instrument will be sent. First, the instrument's catalog will be sent followed by the active orders within the main book and the instrument's trades. Thereafter, an instrument's catalog message will be sent, followed by the message status, shortly after, the active orders within the main book and the price setter trade from an instrument. When finished, another instrument’s block messages will be sent in the previously indicated order.</p>
+            
+            <p>When all instruments are done, a finished snapshot will be sent containing the sequence with which synchronizes with respect to the online information distributing channel.</p>
+        </div>
+        
+        <h4>
+            J-1. Respuesta a un snapshot combinado del catálogo del instrumento, el úlitmo mensaje de niveles de precio y el hecho que fija precio de un solo instrumento. / 
+            <span class="english">
+                J-1. Response to an instrument's catalog combined snapshot, last price level message and price setter trade from a single instrument.
+            </span>
+        </h4>
+        <p>Una petición aceptada de un snapshot combinado del catálogo del instrumento, el úlitmo mensaje de niveles de precio y el hecho que fija precio sobre un instrumento genera un mensaje de Respuesta de snapshot indicando que la solicitud será procesada. Después de eso se enviará un mensaje del catálogo del instrumento seguido del mensaje de Estado del instrumento seguido del último mensaje de profundidad que ha sido enviado seguido del hecho que fija precio para ese instrumento y al final un mensaje de Snapshot terminado con la secuencia con la que se sincroniza con respecto al canal que distribuye la información en línea.</p>
+        <div class="english">
+            <p>An accepted request of an instrument's catalog combined snapshot, last price level message and price setter trade over an instrument generates a snapshot response message indicating request will be processed. Next, an instrument's message catalog followed by instrument status message, then the last depth message sent, followed by price setter trade for that particular instrument and finally a snapshot complete message with the sequence synchronized with respect to the online information distribution channel.</p>
+        </div>
+        
+        <h4>
+            J-2. Respuesta a un snapshot combinado del catálogo del instrumento, el úlitmo mensaje de niveles de precio y el hecho que fija precio sobre un grupo y puerto multicast. / 
+            <span class="english">
+                J-2. Response to an instrument's catalog combined, the last price level message and price setter trade over a multicast group and port.
+            </span>
+        </h4>
+        <p>Una petición aceptada de un snapshot combinado del catálogo del instrumento, el último mensaje de nivel de precio y el hecho que fija precio sobre un grupo y puerto multicast genera un mensaje de Respuesta de snapshot indicando que la solicitud será procesada. Después se enviaran los mensajes en bloques separados por instrumento. Lo primero que se enviará será el catálogo del instrumento, seguido del mensaje de Estado del instrumento, después el último mensaje de niveles de precio que ha sido enviado para ese instrumento y el hecho que fija precio del instrumento. Cuando termine de difundir los mensajes del instrumento se enviará otro bloque de mensajes en el orden indicado del siguiente instrumento.</p>
+        
+        <p>Al finalizar con todos los instrumentos se enviará un mensaje de Snapshot terminado con la secuencia con la que se sincroniza con respecto al canal que distribuye la información en línea.</p>
+        
+        <div class="english">
+            <p>An accepted request of a instrument's catalog combined snapshot, last price level message and price setter trade over a multicast group and port generates a snapshot Response message, indicating that the request will be processed. Next,  the messages will be sent in separate blocks by instrument. The first, the instrument's catalog will be sent followed by an instrument Status message followed by the last price level message and the price setter trade from an instrument. when finished, another instrument's block messages will be sent in the previously indicated order.</p>
+            
+            <p>When all instruments are done, a finished snapshot will be sent containing the sequence with which synchronizes with respect to the online information distributing channel.</p>
+        </div>
+        
+        <h4>
+            K-1. Respuesta a un snapshot combinado del catálogo del instrumento, las mejores posturas y el hecho que fija precio de un solo instrumento. /
+            <span class="english">
+                K-1. Response to and instrument's catalog combined, best offers and price setter trade from a single instrument.
+            </span>
+        </h4>
+        <p>Una petición aceptada de un snapshot combinado del catálogo del instrumento, las mejores posturas y el hecho que fija precio sobre un instrumento genera un mensaje de Respuesta de snapshot indicando que la solicitud será procesada. Después de eso se enviará un mensaje del catálogo del instrumento seguido del mensaje de Estado del instrumento después los mensajes de mejores posturas seguido del hecho que fija precio del instrumento. Al terminar de enviarse los hechos finalizando con un mensaje de Snapshot terminado con la secuencia que se sincroniza con respecto al canal que distribuye la información en línea.</p>
+        <div class="english">
+            <p>An accepted request of an instrument's catalog combined snapshot, best offers and price setter trade from an instrument generates a snapshot response message, indicating that the request will be processed. Thereafter, an instrument's catalog message will be sent, followed by the status message, followed by the best postures and price setter trade from an instrument and finally a complete snapshot message with the sequence with which synchronizes with respect to the online information distributing channel.</p>
+        </div>
+        
+        <h4>
+            K-2. Respuesta a un snapshot combinado del catálogo del instrumento, las mejores posturas y el hecho que fija precio sobre un grupo y puerto multicast. / 
+            <span class="english">
+                K-2. Response to an instrument's catalog combined, best offers and price setter trade over a multicast group and port.
+            </span>
+        </h4>
+        <p>Una petición aceptada de un snapshot combinado del catálogo del instrumento, las mejores posturas y el hecho que fija precio sobre un grupo y puerto multicast genera un mensaje de Respuesta de snapshot indicando que la solicitud será procesada. Después se enviaran los mensajes en bloques separados por instrumento. Lo primero que se enviará será el catálogo del instrumento, seguido del mensaje de Estado del instrumento, después el mensaje de mejores posturas que ha sido enviado para ese instrumento y el hecho que fija precio del instrumento. Cuando termine de difundir los mensajes del instrumento se enviará otro bloque de mensajes en el orden indicado del siguiente instrumento.</p>
+        
+        <p>Al finalizar con todos los instrumentos se enviará un mensaje de Snapshot terminado con la secuencia con la que se sincroniza con respecto al canal que distribuye la información en línea.</p>
+        
+        <div class="english">
+            <p>An accepted request of a instrument's catalog combined snapshot, last price level message and price setter trade over a multicast group and port generates a snapshot Response message, indicating that the request will be processed. Next, the messages will be sent in separate blocks by instrument. The first, the instrument's catalog will be sent followed by an instrument Status message followed by the best offers message and the price setter trade from an instrument. when finished, another instrument's block messages will be sent in the previously indicated order.</p>
+            
+            <p>When all instruments are done, a finished snapshot will be sent containing the sequence with which synchronizes with respect to the online information distributing channel.</p>
+        </div>
+        
+<!-- Fin servicios combinados -->
+        
+        <h2>
+            Recuperación de servicios en la recepción y solicitud de mensajes / 
+            <span class="english">
+                Receipt and request messages service recovery.
+            </span>
+        </h2>
+        <p>Visto de manera muy general, como ya se ha dicho el protocolo BMV Multicast para Market Data se compone de:</p>
+        <div class="english">
+            <p>In overview, as it has already been mentioned, the BMV Multicast protocol for Market Data is made up of:</p>
+        </div>
+        <ul>
+            <li>Servicio de información en línea que distribuye la misma información por medio de dos aplicaciones (denominados Feeds) sobre canales multicast diferentes.</li>
+            <li class="english">On-line information service distributing the same information through two applications (known as Feeds) on different Multicast Channels.</li>
+            <li>Servicio de retransmisiones, destinado a la recuperación de una cantidad de mensajes menores a 20 mil.</li>
+            <li class="english">Replay service, allocated to the recovery of a number of messages lower than 20 thousand.</li>
+            <li>Servicio de snapshots, destinado a la recuperación ante una gran pérdida de mensajes o de una conexión a destiempo al mercado.</li>
+            <li class="english">Snapshots service, allocated to recovery in the event of a major loss of messages or of an untimely connection to the market.</li>
+        </ul>
+        
+        <p>El siguiente apartado presenta la forma de actuar de cada uno de los componentes luego de algún fallo presentado en uno o más de ellos y que acciones podrían ejecutar los consumidores del Market Data.</p>
+        <div class="english">
+            <p>The following section shows how each component acts after a failure occurring in one or more of them and which actions Market Data consumers may carry out.</p>
+        </div>
+        
+        <h3>Fallos en distribución y recepción sobre el Servicio de información en línea / <span class="english">Distribution and receipt failures on the on-line information service</span></h3>
+        
+        <h4>Fallo de una de las aplicaciones encargada de distribuir uno de los dos feeds que envían la información de alguno de los productos ofrecidos vía multicast / <span class="english">Failure of one of the applications in charge of distributing one of the two feeds sending the information of one of the products offered via multicast</span></h4>
+        
+        <p>Existen dos aplicaciones distribuyendo la misma información, por canales multicast diferentes. Suponga el escenario de que uno de ellos falle por alguna razón, considere el Feed A por ejemplo: </p>
+        <p>Por un lado el Feed B, que permanece en servicio seguirá proporcionando mensajes de forma normal; es decir, se mantendrá el flujo y envío de mensajes que salen de él, sin alterar o perder la secuencia de los mismos. Una vez restablecido el servicio en el Feed A, que presentó la falla, se continúa con el envío de mensajes en la misma secuencia en que se encuentre el Feed B al momento de dicho restablecimiento.</p>
+        <p>En resumen, ¿Cómo se vería éste escenario con un ejemplo?. Suponga al inicio que el Feed A y B están funcionando a la par enviando los mismos mensajes. Ahora suponga que el Feed  A falla luego del envío de la secuencia 1,000,000 durante la sesión 1. El Feed B continuará trabajando ininterrumpidamente. Posteriormente, el Feed A restablece su servicio cuando el  Feed B se encuentra en la secuencia  1'500,000, el mensaje y secuencia con que iniciará ese Feed A será justo la correspondiente al mensaje  1'500,000 del Feed B.</p>
+        <p>Es importante señalar en éste punto que bajo el presente escenario, el valor del campo identificador de sesión que se envía en todos los encabezados de los mensajes enviados a través de los canales multicast y unicast seguirá siendo el mismo.</p>
+        <div class="english">
+            <p>There are two applications distributing the same information through different Multicast Channels. Assume a scenario where one of these fails for some reason, consider Feed A, for example:</p>
+            <p>On the one hand, Feed B, which remains in service, will continue to provide messages normally; namely, the flow and sending of outgoing messages will be maintained, without altering or losing the sequence thereof.Once service on failed Feed A is restored, messages continue to be sent in the same sequence where Feed B is at the time of such restoration.</p>
+            <p>In summary, how would this scenario look like with an example? Let’s assume in principle that Feed A and B are working simultaneously, sending the same messages. Now, let’s assume that Feed A fails after sending sequence 1,000,000 during session 1. Feed B will continue to work uninterruptedly. Later on, Feed A restores its service when Feed B is in sequence 1'500,000, the message and sequence with which such Feed A will begin will be exactly that corresponding to message 1’500,000 of Feed B.</p>
+            <p>It is important to state at this point that under this scenario, the value of the session identifier field sent in all the headers of the messages sent through multicast and unicast channels will continue to be the same.</p>
+        </div>
+        
+        <h4>Fallo en la recepción de ambos feeds que se encargan de difundir la información por completo de alguno de los productos que se ofrecen vía multicast / <span class="english">Failure in the receipt of both feeds in charge of disseminating the complete information of one of the products offered via multicast</span></h4>
+        <p>La recepción de mensajes puede verse interrumpida de forma natural por espacios breves de tiempo si y sólo si durante ese lapso de tiempo no se han generado mensajes, pero como se señaló previamente en la documentación,  existe un mensaje administrativo denominado Heartbeat que será difundido cada 5 segundos en periodos de inactividad. Derivado de lo anterior en cada uno de los canales multicast deberá fluir por lo menos un mensaje cada 5 segundos.</p>
+        <p>Los periodos en los cuales se debe de distribuir por lo menos un mensaje cada 5 segundos es entre la recepción del mensaje de Eventos del sistema con código A, que denota las horas de inicio de los sistemas y con la recepción del mensaje de Eventos del sistema con código K, que significa que han terminado las horas en las que los sistemas permanecen en funcionamiento.</p>
+        <p>La no recepción de mensajes (incluido el de Heartbeat) es sinónimo de un problema en curso y para lo cual deben consultar al área de soporte Market Data para el apoyo en el diagnóstico del problema.</p>
+        <div class="english">
+            <p>The receipt of messages may be naturally interrupted for short time periods if and only if during such period no messages have been generated, but as it was previously stated in the documentation, there is an administrative message called Heartbeat, which will be disseminated every 5 seconds during idle periods. As a result of the foregoing, at least one message must flow in each of the multicast channels every 5 seconds.</p>
+            <p>The periods during which at least one message must be distributed every 5 seconds are between receipt of the system Events message with code A, which shows the starting times of the systems and the receipt of the system Events message with code K, which means that the times when the systems remain operating have ended.</p>
+            <p>The failure to receive messages (including that of Heartbeat) means that a problem is in process and the Market Data support area must be consulted for such purpose in order to obtain support in diagnosing the problem.</p>
+        </div>
+        
+        <h3>Fallo en el servicio de retransmisiones / <span class="english">Failure in the replay service</span></h3>
+        <p>El servicio de retransmisiones se compone de dos aplicaciones destinadas a la retransmisión de mensajes vía unicast. Una de ellas denominada primaria y una más secundaría o alterna. Todas las solicitudes de retransmisión deben ser dirigidas  a la aplicación primaria.</p>
+        <p>Suponga el escenario donde no es posible establecer comunicación con la aplicación de retransmisión primaria, es decir no es posible realizar una solicitud de retransmisión. Después de tres intentos de conexión al servicio primario con un lapso entre intentos de conexión de 5 segundos deberá intentarse la conexión con el servicio alterno. Si el servicio alterno contesta las peticiones entonces ahí se deberán seguir haciendo las solicitudes.</p>
+        <p>En el caso en el que no responda ni el servicio primario ni el servicio alterno, entonces deberá ponerse en contacto con el equipo de soporte de Market Data de la BMV para conocer el estatus del servicio.</p>
+        <p>Respecto a la aplicación de retransmisión secundaria, ésta solo estará disponible a los usuarios sí la aplicación primaria no está disponible de•	Las peticiones de retransmisión se atenderán sobre este nuevo secuenciador, perdiendo la historia de los mensajes que se hayan difundido con la sesión anterior.bido a un fallo. En el caso en el que se hagan peticiones el servicio alterno y el servicio primario esté disponible, entonces las solicitudes serán rechazadas.</p>
+        <p>Es importante señalar en éste punto que bajo el presente escenario, el valor del campo identificador de sesión que se envía en todos los encabezados de los mensajes enviados a través de los canales multicast y unicast seguirá siendo el mismo.</p>
+        <div class="english">
+            <p>The replay service is made up of two applications used for message replay via unicast. One of these is called primary and another is called secondary or alternate. All replay requests must be directed to the primary application.</p>
+            <p>Let’s assume a scenario where it is not possible to establish communication with the primary replay application, namely, it is not possible to make a replay request. After three attempts to connect to the primary service with an interval of 5 seconds between connection attempts, the connection must be attempted with the alternate service. If the alternate service answers the requests, then requests should continue to be made there.</p>
+            <p>If there is no answer neither from the primary service or the alternate service, then the BMV’s Market Data support team must be contacted in order to learn about the service status.</p>
+            <p>Regarding the secondary replay application, this will only be available for users if the primary application is not available due to a failure. If requests are made to the alternate service and the primary service is available, then the requests will be rejected.</p>
+            <p>At this point, it is important to state that in this scenario the value of the session identifier field sent in all the headers of the messages sent through multicast and unicast channels will continue to be the same.</p>
+        </div>
+        
+        <h3>Fallo en el servicio de snapshots / <span class="english">Failure in the snapshots service</span></h3>
+        <p>El servicio de snapshots se compone de dos aplicaciones destinadas al envío de mensajes vía unicast. Una de ellas denominada primaria y una más secundaría o alterna. Todas las solicitudes de snapshots deben ser dirigidas  a la aplicación primaria.</p>
+        <p>Suponga el escenario donde no es posible establecer comunicación con la aplicación de snapshots primaria. Después de tres intentos de conexión al servicio primario con un lapso entre intentos de conexión de 5 segundos deberá intentarse la conexión con el servicio alterno. Si el servicio alterno contesta las peticiones entonces ahí se deberán seguir haciendo las solicitudes.</p>
+        <p>En el caso en el que no responda ni el servicio primario ni el servicio alterno, entonces deberá ponerse en contacto con el equipo de soporte de Market Data de la BMV para conocer el estatus del servicio.</p>
+        <p>Respecto a la aplicación de snpashots secundaria, ésta solo estará disponible a los usuarios sí la aplicación primaria no está disponible debido a un fallo. En el caso en el que se hagan peticiones el servicio alterno y el servicio primario esté disponible, entonces las solicitudes serán rechazadas.</p>
+        <p>Es importante señalar en éste punto que bajo el presente escenario, el valor del campo identificador de sesión que se envía en todos los encabezados de los mensajes enviados a través de los canales multicast y unicast seguirá siendo el mismo.</p>
+        <div class="english">
+            <p>The snapshots service consists of two applications allocated to the transmission of messages via unicast. One of these is called primary and another is called secondary or alternate. All snapshot requests must be directed to the primary application.</p>
+            <p>Assume the scenario where it is not possible to establish communication with the primary snapshot application. After three connection attempts to the primary service with a 5-second interval between attempts, connection to the alternate service must be attempted. If the alternate service answers the requests, then the requests will continue to be made there.</p>
+            <p>In the event neither the primary service nor the alternate service answers, then the BMV’s Market Data support team must be contacted to learn about the service status.</p>
+            <p>Regarding the secondary snapshot application, this will only be available to the users if the primary application is not available due to a failure. In the event requests are made to the alternate service and the primary service is available, then the requests will be rejected.</p>
+            <p>It is important to state now that under this scenario the value of the session identifier field sent in all the headers of the messages sent through multicast and unicast channels will continue to be the same.</p>
+        </div>
+        
+        <h3>Cambio de sesión y reinicio de secuencias en los diferentes canales de comunicación / <span class="english">Change of session and sequence reset in the various communication channels</span></h3>
+        <p>Al ocurrir un problema en la difusión de la información de Market Data y por la cual se necesiten reiniciar las secuencias el procedimiento será el siguiente:</p>
+        <div class="english">
+            <p>When a problem occurs in the dissemination of Market Data information and for which reason the sequences need to be reset, the procedure will be as follows:</p>
+        </div>
+        <ul>
+            <li>Tanto los canales multicast como los canales unicast comenzaran a enviar un nuevo valor en el campo de Identificador de sesión en el encabezado comenzando de nuevo desde la secuencia uno.</li>
+            <li class="english">Both multicast channels and unicast channels will start to send a new value in the session identifier field in the header, starting again from sequence one.</li>
+            <li>Las peticiones de retransmisión se atenderán sobre este nuevo secuenciador, perdiendo la historia de los mensajes que se hayan difundido con la sesión anterior.</li>
+            <li class="english">Replay requests will be processed on this new sequencer, losing the history of messages that have been disseminated with the previous session.</li>
+            <li>El servicio de snapshots no perderá la historia de los mensajes y podrá seguir atendiendo las peticiones, solo que ahora cuando mande el mensaje de Snapshot terminado informará la sesión y secuencias nuevas del flujo en línea.</li>
+            <li class="english">The snapshots service will not lose the history of messages and it may continue to process the requests, except that when it sends now the Snapshot complete message it will disclose the new session and sequences of the on-line flow.</li>
+        </ul>
+        
+        <p>Es de vital importancia que todos receptores del protocolo BMV Multicast para Market Data tengan presente dichas consideraciones en sus correspondientes desarrollos para consumir y solicitar la información contenida en los mensajes de forma adecuada.</p>
+        <div class="english">
+            <p>It is of utmost importance that all receivers of the BMV Multicast protocol for Market Data bear in mind such considerations in their relevant developments to properly use and request the information contained in the messages.</p>
+        </div>
+    </body>
+</html>

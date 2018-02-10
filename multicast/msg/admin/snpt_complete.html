@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Multicast: Snapshot Terminado</title>
+        <meta name="date" content="2017-07-20">
+        <link rel="stylesheet" type="text/css" href="../../../css/stylesheet.css" title="Style">
+    </head>
+  <body>
+
+      <h1 class="bar">Multicast: Snapshot Terminado/ Snapshot complete Message</h1>
+
+      <h2>Snapshot Terminado / <span style="english">Snapshot complete Message</span></h2>
+
+      <table>
+          <tr>
+              <th>Campo<div class="english">Field</div></th>
+              <th>Offset</th>
+              <th>Tamaño (byte)<div class="english">Size (byte)</div></th>
+              <th>Tipo<div class="english">Type</div></th>
+              <th>Descripción<div class="english">Description</div></th>
+          </tr>
+          <tr>
+              <td>Tipo Mensaje<div class="english">Message type</div></td>
+              <td>0</td>
+              <td>1</td>
+              <td>ALFA<div class="english">ALPHA</div></td>
+              <td>
+                <table class="insidetable">
+                  <tr>
+                    <th>Valor<div class="english">Value</div></td>
+                    <th>Valor (Hexadecimal)<div class="english">(Hexadecimal) value</div></td>
+                  </tr>
+                  <tr>
+                    <td>?</td>
+                    <td>(0x3F)</td>
+                  </tr>
+                </table>
+              </td>
+          </tr>
+          <tr>
+              <td>Número de secuencia<div class="english">Sequence number</div></td>
+              <td>1</td>
+              <td>4</td>
+              <td>Int32</td>
+              <td>Número de secuencia con el cual el snapshot está sincronizado con respecto al canal en línea.<div class="english">Sequence number on to which the snapshot synchronizes with respect to the online channel.</div></td> 
+          </tr>
+          <tr>
+              <td>Grupo Market Data<div class="english">Market Data Group</div></td>
+              <td>5</td>
+              <td>1</td>
+              <td>Int8</td>
+              <td>Ver <a href="../structure/catalogs.html#cat_grupo_market_data">Catálogo de Grupos de Market Data</a><div class="english">See <a href="../structure/catalogs.html#cat_grupo_market_data">Market Data Groups Catalog</a></div></div></td>
+          </tr>
+          <tr>
+              <td>Tipo snapshot<div class="english">Snapshot type</div></td>
+              <td>6</td>
+              <td>1</td>
+              <td>Int8</td>
+              <td>Ver <a href="../structure/catalogs.html#cat_snapshot">Catálogo de Tipos de Snapshot</a>. Los tipos de Snapshot permitidos por producto se visualizan en el <a href="../structure/catalogs.html#cat_snapshot_product">Catálogo de Snapshot por Producto</a><div class="english">See <a href="../structure/catalogs.html#cat_snapshot">Snapshot Type Catalog</a>. The types of Snapshot allowed by each of the multicast product are listed in the <a href="../structure/catalogs.html#cat_snapshot_product">Snapshot by Product Catalog</a></div></div></td>
+          </tr>
+          <tr>
+              <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+              <td>7</td>
+              <td></td>
+              <td></td>
+          </tr>
+      </table>
+  </body>
+</html>

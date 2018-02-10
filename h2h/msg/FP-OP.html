@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  <html lang="es">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>H2H: Mensaje FP-OP</title>
+    <meta name="date" content="2017-01-12">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">H2H: Mensaje FP-OP / FP-OP Message</h1>
+
+    <h2>FP-OP: Catálogo de Series para Futuros (Exclusivo para la CNBV) / <span class ="english">Series Catalog for Futures (Exclusive for CNBV)</span></h2>
+    <p>Descripción del mensaje.</p>
+    <div class="english">
+      <p>Message description.</p>
+    </div>
+
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message Type</div></td>
+        <td></td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Fecha Mensaje<div class="english">Message Date</div></td>
+        <td>2</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Fecha de mensaje  (AAAAMMDD)              <div class="english">Message date (YYYYMMDD)</div></td>
+      </tr>
+      <tr>
+        <td>Clase<div class="english">Class</div></td>
+        <td>10</td>
+        <td>7</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Descripción FV<div class="english">FV Description </div></td>
+        <td>17</td>
+        <td>4</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Fecha de Vencimiento<br>Blancos cuando se trata de un SWAP.
+          <div class="english">Maturity date<br>Blanks when it is a SWAP.</div></td>
+        </tr>
+      </tr>
+      <tr>
+        <td>Descripción Precio<div class="english">Price Description </div></td>
+        <td>21</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Descripción Tipo<div class="english">Type Description </div></td>
+        <td>27</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Fecha Emisión<div class="english">Issue Date</div></td>
+        <td>28</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Última Fecha Operación<div class="english">Last Operation Date</div></td>
+        <td>36</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Fecha Vencimiento<div class="english">Exercise Date</div></td>
+        <td>44</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Precio Ejercicio<div class="english">Exercise Price</div></td>
+        <td>52</td>
+        <td>6,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Tamaño Contrato<div class="english">Contract Size</div></td>
+        <td>64</td>
+        <td>7</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Puja<div class="english">Bid</div></td>
+        <td>71</td>
+        <td>6,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Precio Liquidación Anterior<div class="english">Previous Settlement Price</div></td>
+        <td>83</td>
+        <td>6,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Contrato Abierto<div class="english">Open Contracts</div></td>
+        <td>95</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Precio Última Operación<div class="english">Last Transaction Price</div></td>
+        <td>103</td>
+        <td>6,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Fecha Última Operación<div class="english">Last Transaction Date</div></td>
+        <td>115</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Precio Máximo Histórico<div class="english">Maximum Historical Price</div></td>
+        <td>123</td>
+        <td>6,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Fecha Máximo Histórico<div class="english">Maximum Historical Date</div></td>
+        <td>135</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Precio Mínimo Histórico<div class="english">Minimum Historical Price</div></td>
+        <td>143</td>
+        <td>6,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Fecha Mínimo Histórico <div class="english">Minimum Historical Date</div></td>
+        <td>155</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Valor Subyacente<div class="english">Underlying Security Type</div></td>
+        <td>163</td>
+        <td>4</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Emisora Subyacente<div class="english">Underlying Issue</div></td>
+        <td>167</td>
+        <td>7</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Emisión del subyacente<div class="english">Underlying issue</div></td>
+      </tr>
+      <tr>
+        <td>Serie Subyacente<div class="english">Underlying Series</div></td>
+        <td>174</td>
+        <td>5</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Serie del valor subyacente<div class="english">Underlying security series</div></td>
+      </tr>
+      <tr>
+        <td>Fecha Liquidación<div class="english">Settlement Date</div></td>
+        <td>179</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>187</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Multicast: Bloque de Mensaje</title>
+        <meta name="date" content="2016-09-06">
+        <link rel="stylesheet" type="text/css" href="../../../css/stylesheet.css" title="Style">
+    </head>
+  <body>
+
+      <h1 class="bar">Multicast: Bloque de Mensaje / Message Block</h1>
+
+      <h2>Bloque / <span style="english">Block</span></h2>
+
+      <p>El primer campo de un bloque de mensajes es la longitud del mensaje. El primer bloque de mensaje comenzará inmediatamente después del encabezado. Subsecuentes bloques de mensajes comenzaran después del último byte del bloque de mensaje previo.</p>
+      <div class="english">
+          <p>First field of a message block is the message length. The first message block will start immediately after the header. Subsequent message blocks will start after the last byte of the previous message block.</p>
+      </div>
+
+      <table>
+          <tr>
+              <th>Campo</th>
+              <th>Offset</th>
+              <th>Tamaño</th>
+              <th>Valor</th>
+              <th>Descripción</th>
+          </tr>
+          <tr>
+              <td>Longitud del mensaje<div class="english">Message length</div></td>
+              <td>*</td>
+              <td>2</td>
+              <td>Int16</td>
+              <td>Indica la longitud del mensaje contenido en este bloque de mensaje<div class="english">Indicates message length contained in this message block</div></td>
+          </tr>
+          <tr>
+              <td>Mensajes<div class="english">Total Messages</div></td>
+              <td>*</td>
+              <td>*</td>
+              <td></td>
+              <td>El contenido del mensaje con longitud variable<div class="english">Message content with variable length</div></td>
+          </tr>
+      </table>
+
+      <p>En la siguiente imagen se puede apreciar una representación de los bits en un ejemplo con dos mensajes en un paquete. El primer mensaje con 10 bytes de longitud y el segundo con 5 bytes.</p>
+      <div class="english">
+          <p>The following image shows a representation of bits in a two message example in a packet. The first message with 10 bytes length and second with 5 bytes.</p>
+      </div>
+      
+      <img src="../../../images/multicast-message_block.png" alt="Message Block" style="max-width:auto;max-height:500px;">
+      
+  </body>
+</html>

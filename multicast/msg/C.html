@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Multicast: Mensaje C</title>
+    <meta name="date" content="2016-09-06">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">Multicast: Mensaje C / C Message</h1>
+
+    <h2>C: Ejecución de Órdenes / <span class="english">Execution of Orders</span></h2>
+
+    <p>El mensaje es difundido al momento en que existe un calce o cierre en el sistema electrónico de la BMV. Por cada operación se generan dos mensajes, uno por la participación de venta y otro por la participación de compra.</p>
+    <p>La orden que está participando en la operación se identifica por el Instrumento, Fecha y Folio, el volumen cerrado de la orden, asociándose al folio del hecho y el precio al que se ejecutó la operación. Éste precio puede ser diferente al de la orden.</p>
+    <p>Este mensaje solo es difundido para las órdenes ejecutadas del libro principal o de contado "CO".</p>
+
+    <div class="english">
+      <p>The message is disseminated at the time there is a matching or closing in BMV’s electronic system. Two messages are generated for each operation, one by the sell participation and another by the buy participation.</p>
+      <p>The order participating in the operation is identified by the Instrument, Date and Number, the closed volume of order, becoming associated to the fact number and to the price at which the operation was performed. This price can be different from that of the order.</p>
+      <p>This message is disseminated only for the executed orders of the main or cash “CO” book.</p>
+    </div>
+
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message Type</div></td>
+        <td>0</td>
+        <td>1</td>
+        <td>"C"</td>
+        <td>Ejecución de una orden<div class="english">Execution of an order</div></td>
+      </tr>
+      <tr>
+        <td>Número de Instrumento<div class="english">Instrument number</div></td>
+        <td>1</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Código único durante la vida del instrumento<div class="english">Unique code during instruments life</div></td>
+      </tr>
+      <tr>
+        <td>Fecha<div class="english">Date</div></td>
+        <td>5</td>
+        <td>8</td>
+        <td>Timestamp(1)</td>
+        <td>Fecha del alta de la orden<div class="english">Date for the addition of order</div></td>
+      </tr>
+      <tr>
+        <td>Folio<div class="english">Number</div></td>
+        <td>13</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Folio Asignado a la orden, cuando es registrada<div class="english">Number allocated to the order when registered</div></td>
+      </tr>
+      <tr>
+        <td>Volumen<div class="english">Volume</div></td>
+        <td>17</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Volumen de la orden<div class="english">Order volume</div></td>
+      </tr>
+      <tr>
+        <td>Folio del Hecho<div class="english">Fact Number</div></td>
+        <td>21</td>
+        <td>4</td>
+        <td>Int 32</td>
+        <td>Folio del hecho con el que se ejecutó la orden<div class="english">Trade number with which the order was executed.</div></td>
+      </tr>
+      <tr>
+        <td>Precio de ejecución<div class="english">Execution price</div></td>
+        <td>25</td>
+        <td>8</td>
+        <td>Precio (8)<div class="english">Price(8)</div></td>
+        <td>Precio con el que se hizo el hecho.<div class="english">Price with which the trade was made.</div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>33</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </body>
+</html>

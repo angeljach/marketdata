@@ -1,0 +1,501 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  <html lang="es">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>H2H: Mensaje HJ</title>
+    <meta name="date" content="2017-03-15">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">H2H: Mensaje HJ / HJ Message</h1>
+
+    <h2>HJ: Características de Instrumentos de Deuda Cuponados / <span class ="english">Couponing Debt Instruments Features</span></h2>
+    <p>Descripción del mensaje.</p>
+    <div class="english">
+      <p>Message description.</p>
+    </div>
+
+    <h3 id="indice">Indice / <span class="english">Index</span></h3>
+    <ol>
+      <li><a href="#registro1">Registro 1 / <span class="english">Registry 1</span></a></li>
+      <li><a href="#registro2">Registro 2 / <span class="english">Registry 2</span></a></li>
+      <li><a href="#registro3">Registro 3 / <span class="english">Registry 3</span></a></li>
+      <li><a href="#registro4">Registro 4 / <span class="english">Registry 4</span></a></li>
+    </ol>
+
+    <hr>
+    <h4 style="display: inline;" id="registro1">Registro 1 / <span class="english">Registry 1</span></h4>
+    <p style="display: inline;" class="return_to_menu_link"> (<a href="#indice">Volver al Indice / <span class="english">Back to Index</span></a>)</p>
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message Type</div></td>
+        <td>0</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Número de Registro<div class="english">Registry Number</div></td>
+        <td>2</td>
+        <td>1</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Valor "1"<div class="english">Value "1"</div></td>
+      </tr>
+      <tr>
+        <td>Fecha de Cálculo<div class="english">Calculation Date</div></td>
+        <td>3</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>AAAAMMDD<div class="english">YYYYMMDD</div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Valor<div class="english">Security Type</div></td>
+        <td>11</td>
+        <td>4</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Emisora<div class="english">Issuer</div></td>
+        <td>15</td>
+        <td>7</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Serie<div class="english">Series </div></td>
+        <td>22</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Razón Social<div class="english">Company Name</div></td>
+        <td>28</td>
+        <td>100</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Valores por Títulos<div class="english">Securities per Share</div></td>
+        <td>128</td>
+        <td>2</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Plazo en Días<div class="english">Term Days</div></td>
+        <td>130</td>
+        <td>5</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Inscrita en BMV<div class="english">BMV Listed</div></td>
+        <td>135</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>SI: Inscrita<br>NO: No Inscrita<div class="english">SI: Listed<br>NO: Not Listed</div></td>
+      </tr>
+      <tr>
+        <td>Días Transcurridos<div class="english">Days Elapsed</div></td>
+        <td>137</td>
+        <td>6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Valor Nominal Original<div class="english">Original Nominal Value</div></td>
+        <td>143</td>
+        <td>9,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Forma de Pago<div class="english">Payment Method</div></td>
+        <td>158</td>
+        <td>20</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Periodo de Gracia<div class="english">Grace Period</div></td>
+        <td>178</td>
+        <td>8</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Importe de la Emisión<div class="english">Issue Amount</div></td>
+        <td>186</td>
+        <td>15</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Sobretasa Puntos<div class="english">Surcharge Points</div></td>
+        <td>201</td>
+        <td>3,3</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Pago Variable<div class="english">Variable Payment</div></td>
+        <td>207</td>
+        <td>3</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>210</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+    <hr>
+    <h4 style="display: inline;" id="registro2">Registro 2 / <span class="english">Registry 2</span></h4>
+    <p style="display: inline;" class="return_to_menu_link"> (<a href="#indice">Volver al Indice / <span class="english">Back to Index</span></a>)</p>
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message Type</div></td>
+        <td>0</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Número de Registro<div class="english">Registry Number</div></td>
+        <td>2</td>
+        <td>1</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Valor "2"<div class="english">Value "2"</div></td>
+      </tr>
+      <tr>
+        <td>Fecha de Cálculo<div class="english">Calculation Date</div></td>
+        <td>3</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>AAAAMMDD<div class="english">YYYYMMDD</div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Valor<div class="english">Security Type</div></td>
+        <td>11</td>
+        <td>4</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Emisora<div class="english">Issuer</div></td>
+        <td>15</td>
+        <td>7</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Serie<div class="english">Series </div></td>
+        <td>22</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Cálculo de Intereses<div class="english">Interests Calculation</div></td>
+        <td>28</td>
+        <td>2</td>
+        <td>ALFA<div class="english"></div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Nombre de Tasa (Modelo)<div class="english">Rate Name (Model)</div></td>
+        <td>30</td>
+        <td>30</td>
+        <td>ALFA<div class="english"></div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Intereses Mismo Día<div class="english">Same Day Interest </div></td>
+        <td>60</td>
+        <td>6,6</td>
+        <td>NUM<div class="english"></div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Fecha Inicial<div class="english">Initial Date</div></td>
+        <td>72</td>
+        <td>8</td>
+        <td>NUM<div class="english"></div></td>
+        <td>AAAAMMDD<div class="english">YYYYMMDD</div></td>
+      </tr>
+      <tr>
+        <td>Fecha Final<div class="english">Final Date</div></td>
+        <td>80</td>
+        <td>8</td>
+        <td>NUM<div class="english"></div></td>
+        <td>AAAAMMDD<div class="english">YYYYMMDD</div></td>
+      </tr>
+      <tr>
+        <td>Cupón Pagado<div class="english">Paid Coupon</div></td>
+        <td>88</td>
+        <td>4</td>
+        <td>NUM<div class="english"></div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Cupón Vigente<div class="english">Current Coupon</div></td>
+        <td>92</td>
+        <td>4</td>
+        <td>NUM<div class="english"></div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Tasa Bruta Promedio Ponderado<div class="english">Gross Weighted Average Rate</div></td>
+        <td>96</td>
+        <td>6,6</td>
+        <td>NUM<div class="english"></div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Protección vs. Inflación<div class="english">Protection vs Inflation</div></td>
+        <td>108</td>
+        <td>2</td>
+        <td>ALFA<div class="english"></div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Gross UP (ISR)<div class="english">Gross Up (ISR)</div></td>
+        <td>110</td>
+        <td>6</td>
+        <td>NUM<div class="english"></div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Fecha Pago Intereses Anterior<div class="english">Previous Interest Payment Date </div></td>
+        <td>116</td>
+        <td>8</td>
+        <td>NUM<div class="english"></div></td>
+        <td>AAAAMMDD        Si trae ceros significa que no hay fecha<div class="english">YYYYMMDD        If zeros, there is no date</div></td>
+      </tr>
+      <tr>
+        <td>Fecha Pago Intereses Anterior 1<div class="english">Previous Interest 1 Payment Date </div></td>
+        <td>124</td>
+        <td>8</td>
+        <td>NUM<div class="english"></div></td>
+        <td>AAAAMMDD        Si trae ceros significa que no hay fecha<div class="english">YYYYMMDD        If zeros, there is no date</div></td>
+      </tr>
+      <tr>
+        <td>Fecha Pago Intereses Anterior 2<div class="english">Previous Interest 2 Payment Date </div></td>
+        <td>132</td>
+        <td>8</td>
+        <td>NUM<div class="english"></div></td>
+        <td>AAAAMMDD        Si trae ceros significa que no hay fecha<div class="english">YYYYMMDD        If zeros, there is no date</div></td>
+      </tr>
+      <tr>
+        <td>Fecha Pago Intereses Anterior 3<div class="english">Previous Interest 3 Payment Date </div></td>
+        <td>140</td>
+        <td>8</td>
+        <td>NUM <div class="english"></div></td>
+        <td>AAAAMMDD        Si trae ceros significa que no hay fecha<div class="english">YYYYMMDD        If zeros, there is no date</div></td>
+      </tr>
+      <tr>
+        <td>Valor Nominal Actualizado<div class="english">Updated Nominal Value </div></td>
+        <td>148</td>
+        <td>15</td>
+        <td>NUM<div class="english"></div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>163</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+    <hr>
+    <h4 style="display: inline;" id="registro3">Registro 3 / <span class="english">Registry 3</span></h4>
+    <p style="display: inline;" class="return_to_menu_link"> (<a href="#indice">Volver al Indice / <span class="english">Back to Index</span></a>)</p>
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message Type</div></td>
+        <td></td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Número de Registro<div class="english">Registry Number</div></td>
+        <td>2</td>
+        <td>1</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Valor "3"<div class="english">Value "3"</div></td>
+      </tr>
+      <tr>
+        <td>Fecha de Cálculo<div class="english">Calculation Date</div></td>
+        <td>3</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>AAAAMMDD<div class="english">YYYYMMDD</div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Valor<div class="english">Security Type</div></td>
+        <td>11</td>
+        <td>4</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Emisora<div class="english">Issuer</div></td>
+        <td>15</td>
+        <td>7</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Serie<div class="english">Series </div></td>
+        <td>22</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td># de Amortizaciones<div class="english"># of Amortizations</div></td>
+        <td>28</td>
+        <td>3</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Fecha de Amortización<div class="english">Amortization Date</div></td>
+        <td>31</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Títulos a Amortizar<div class="english">Shares to Amortize</div></td>
+        <td>39</td>
+        <td>12</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Importe por Amortizar<div class="english">Amount to Amortize</div></td>
+        <td>51</td>
+        <td>18</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>69</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+    <hr>
+    <h4 style="display: inline;" id="registro4">Registro 4 / <span class="english">Registry 4</span></h4>
+    <p style="display: inline;" class="return_to_menu_link"> (<a href="#indice">Volver al Indice / <span class="english">Back to Index</span></a>)</p>
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message Type</div></td>
+        <td>0</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Número de Registro<div class="english">Registry Number</div></td>
+        <td>2</td>
+        <td>1</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Valor "4"<div class="english">Value "4"</div></td>
+      </tr>
+      <tr>
+        <td>Fecha de Cálculo<div class="english">Calculation Date</div></td>
+        <td>3</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>AAAAMMDD<div class="english">YYYYMMDD</div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Valor<div class="english">Security Type</div></td>
+        <td>11</td>
+        <td>4</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Emisora<div class="english">Issuer</div></td>
+        <td>15</td>
+        <td>7</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Serie<div class="english">Series </div></td>
+        <td>22</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Tasa Bruta<div class="english">Gross Rate</div></td>
+        <td>28</td>
+        <td>3,3</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Tasa Inicial<div class="english">Initial Date</div></td>
+        <td>34</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Fecha Final<div class="english">Final Date</div></td>
+        <td>42</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>50</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+</html>

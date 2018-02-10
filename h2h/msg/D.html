@@ -1,0 +1,260 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  <html lang="es">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>H2H: Mensaje D</title>
+    <meta name="date" content="2017-01-09">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">H2H: Mensaje D / D Message</h1>
+
+    <h2>D: Información General sobre Avisos de Derecho / <span class ="english">General Information on Notices of Rights</span></h2>
+    <p>Descripción del mensaje.</p>
+    <div class="english">
+      <p>Message description.</p>
+    </div>
+
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message Type</div></td>
+        <td>0</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Texto de la Información<div class="english">Information Text</div></td>
+        <td>2</td>
+        <td>80</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>82</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+    <hr>
+    <h2>D: Recepción de Casa Cliente (Formato de Entrada) / <span class ="english">Reception of Brokerage Client (Input Format)</span></h2>
+    <p>Descripción del mensaje.</p>
+    <div class="english">
+      <p>Message description.</p>
+    </div>
+
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message Type</div></td>
+        <td>0</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Folio<div class="english">Folio</div></td>
+        <td>2</td>
+        <td>5</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Folio de la operación<div class="english">Folio transaction</div></td>
+      </tr>
+      <tr>
+        <td>Fecha operación<div class="english">Operation Date</div></td>
+        <td>7</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>AAAAMMDD<div class="english">YYYYMMDD</div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Valor<div class="english">Security Type</div></td>
+        <td>15</td>
+        <td>4</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Alineado a la izquierda<div class="english">Left aligned</div></td>
+      </tr>
+      <tr>
+        <td>Emisora<div class="english">Issuer</div></td>
+        <td>19</td>
+        <td>7</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave emisora<div class="english">Issuers code</div></td>
+      </tr>
+      <tr>
+        <td>Serie<div class="english">Series</div></td>
+        <td>26</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de la Serie Alineado a la izquierda<div class="english">Series code left aligned</div></td>
+      </tr>
+      <tr>
+        <td>Cupón<div class="english">Coupon</div></td>
+        <td>32</td>
+        <td>3</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>    <div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Vende<div class="english">Sell </div></td>
+        <td>35</td>
+        <td>5</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave vendedor<div class="english">Seller code</div></td>
+      </tr>
+      <tr>
+        <td>Cuenta Vende<div class="english">Sell Account</div></td>
+        <td>40</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de cuenta vende<div class="english">Seller account code</div></td>
+      </tr>
+      <tr>
+        <td>Compra<div class="english">Buy</div></td>
+        <td>42</td>
+        <td>5</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave comprador<div class="english">Buyers code</div></td>
+      </tr>
+      <tr>
+        <td>Cuenta Compra<div class="english">Buy Account</div></td>
+        <td>47</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de cuenta compra<div class="english">Buyers account code</div></td>
+      </tr>
+      <tr>
+        <td>Volumen<div class="english">Volume</div></td>
+        <td>49</td>
+        <td>18</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Número de titulos<div class="english">Number of titles</div></td>
+      </tr>
+      <tr>
+        <td>Signo<div class="english">Sign</div></td>
+        <td>67</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>" ": positivo<br>-: negativo<div class="english">" ": positive<br>-: negative</div></td>
+      </tr>
+      <tr>
+        <td>Tasa Descuento<div class="english">Discount Rate</div></td>
+        <td>68</td>
+        <td>3,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Precio<div class="english">Price</div></td>
+        <td>77</td>
+        <td>8,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Precio de la operación<div class="english">Operation price</div></td>
+      </tr>
+      <tr>
+        <td>Signo<div class="english">Sign</div></td>
+        <td>91</td>
+        <td>1</td>
+        <td>ALFA <div class="english">ALPHA </div></td>
+        <td>" ": positivo<br>-: negativo<div class="english">" ": positive<br>-: negative</div></td>
+      </tr>
+      <tr>
+        <td>Tasa Premio<div class="english">Premium Rate</div></td>
+        <td>92</td>
+        <td>3,6</td>
+        <td>NUM <div class="english">NUM </div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Operación <div class="english">Transaction</div></td>
+        <td>101</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de la operación<div class="english">Operations code</div></td>
+      </tr>
+      <tr>
+        <td>Días Reporto<div class="english">Repo Days</div></td>
+        <td>103</td>
+        <td>4</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Modalidad del reporto<div class="english">Repo Mode</div></td>
+        <td>107</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de modalidad del reporte<div class="english">Report mode code</div></td>
+      </tr>
+      <tr>
+        <td>Liquidación<div class="english">Settlement</div></td>
+        <td>109</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de liquidación<div class="english">Settlement code</div></td>
+      </tr>
+      <tr>
+        <td>Intermediario<div class="english">Broker</div></td>
+        <td>111</td>
+        <td>5</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave del intermediario<div class="english">Brokers code</div></td>
+      </tr>
+      <tr>
+        <td>Monto Valor Nominal<div class="english">Nominal Value Amount</div></td>
+        <td>116</td>
+        <td>20</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Días por vencer<div class="english">Days to Maturity</div></td>
+        <td>136</td>
+        <td>5</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Días por vencer del instrumento<div class="english">Instruments days to maturity</div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Cambio<div class="english">Exchange Rate</div></td>
+        <td>141</td>
+        <td>3,4</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Signo<div class="english">Sign</div></td>
+        <td>148</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>" ": positivo<br>-: negativo<div class="english">" ": positive<br>-: negative</div></td>
+      </tr>
+      <tr>
+        <td>Tasa Real ó Sobretasa<div class="english">Current Rate</div></td>
+        <td>149</td>
+        <td>3,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Tasa real ó sobretasa<div class="english">Current rate or surcharge</div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>158</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+</html>

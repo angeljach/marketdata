@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Multicast: Solicitud de retransmisión</title>
+        <meta name="date" content="2016-09-12">
+        <link rel="stylesheet" type="text/css" href="../../../css/stylesheet.css" title="Style">
+    </head>
+  <body>
+
+      <h1 class="bar">Multicast: Solicitud de retransmisión / Replay request Message</h1>
+
+      <h2>Solicitud de retransmisión / <span style="english">Replay request Message</span></h2>
+
+      <table>
+          <tr>
+              <th>Campo<div class="english">Field</div></th>
+              <th>Offset</th>
+              <th>Tamaño (byte)<div class="english">Size (byte)</div></th>
+              <th>Tipo<div class="english">Type</div></th>
+              <th>Descripción<div class="english">Description</div></th>
+          </tr>
+          <tr>
+              <td>Longitud<div class="english">Length</div></td>
+              <td>0</td>
+              <td>1</td>
+              <td>Int8</td>
+              <td>Longitud de mensaje incluyendo este campo<div class="english">Message length including this field</div></td>
+          </tr>
+         <tr>
+              <td>Tipo Mensaje<div class="english">Message type</div></td>
+              <td>1</td>
+              <td>1</td>
+              <td>ALFA<div class="english">ALPHA</div></td>
+              <td>
+                <table class="insidetable">
+                  <tr>
+                    <th>Valor<div class="english">Value</div></td>
+                    <th>Valor (Hexadecimal)<div class="english">(Hexadecimal) value</div></td>
+                  </tr>
+                  <tr>
+                    <td>#</td>
+                    <td>(0x23)</td>
+                  </tr>
+                </table>
+              </td>
+          </tr>
+          <tr>
+              <td>Grupo Market Data<div class="english">Market Data Group</div></td>
+              <td>2</td>
+              <td>1</td>
+              <td>Int8</td>
+              <td>Ver <a href="../structure/catalogs.html#cat_grupo_market_data">Catálogo de Grupos de Market Data</a><div class="english">See <a href="../structure/catalogs.html#cat_grupo_market_data">Market Data Groups Catalog</a></div></td>
+          </tr>
+          <tr>
+              <td>Primer mensaje<div class="english">First Message</div></td>
+              <td>3</td>
+              <td>4</td>
+              <td>Int32</td>
+              <td>Número de secuencia del primer mensaje que se quiere recuperar<div class="english">Sequence number of the first message intended to recover</div></td>
+          </tr>
+          <tr>
+              <td>Cantidad<div class="english">Quantity</div></td>
+              <td>7</td>
+              <td>2</td>
+              <td>Int16</td>
+              <td>Cantidad de mensajes solicitados.<div class="english">Quantity of requested messages</div></td>
+          </tr>
+          <tr>
+              <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+              <td>9</td>
+              <td></td>
+              <td></td>
+          </tr>
+      </table>
+  </body>
+</html>

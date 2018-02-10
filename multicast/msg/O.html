@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Multicast: Mensaje O</title>
+    <meta name="date" content="2016-09-07">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">Multicast: Mensaje O / O Message</h1>
+
+    <h2>O: Mejor Postura / <span class ="english">Best Offer</span></h2>
+
+      <p>Mensaje enviado por instrumento cuando se modifica la mejor postura en el libro electrónico, indica el lado que se modifica, la venta o la compra.</p>
+      <p>Se envía desde la primera fase de una sesión de remate hasta la finalización de negociación continua.</p>
+  
+
+    <div class="english">
+      <p>Message sent by instrument when best offer changes in the electronic book. It indicates which side has changed, sell or buy.</p>
+      <p>Sent from the first trading session phase onto the completion of continuous trading.</p>
+      
+    </div>
+
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message type</div></td>
+        <td>0</td>
+        <td>1</td>
+        <td>"O"</td>
+        <td>Respuesta de Alta de Ordenes<div class="english">Best offer by instrument</div></td>
+      </tr>
+      <tr>
+        <td>Número de Instrumento<div class="english">Instrument number</div></td>
+        <td>1</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Código único durante la vida del instrumento<div class="english">Unique code during instruments life</div></td>
+      </tr>
+        <td>Volumen<div class="english">Volume</div></td>
+        <td>5</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Volumen de la orden<div class="english">Best offer volume</div></td>
+      </tr>
+      <tr>
+        <td>Precio/Tasa<div class="english">Price/Rate</div></td>
+        <td>9</td>
+        <td>8</td>
+        <td>Precio (8)<div class="english">Price (8)</div></td>
+        <td>Precio de la mejor postura<div class="english">Best offer price</div></td>
+      </tr>
+      <tr>
+        <td>Sentido de la postura<div class="english">Offer direction</div></td>
+        <td>17</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>C-Compra<br>V-Venta<div class="english">C-Buy<br>V-Sell</div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Operación<div class="english">Operation type</div></td>
+        <td>18</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Ver <a href="structure/catalogs.html#cat_tipo_oper">Catálogo de Tipo de Operación</a><div class="english">See <a href="structure/catalogs.html#cat_tipo_oper">Operation Type Catalog</a></div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>19</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </body>
+</html>

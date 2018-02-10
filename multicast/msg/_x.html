@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Multicast: Mensaje x</title>
+    <meta name="date" content="2016-09-12">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">Multicast: Mensaje x / x Message</h1>
+
+    <h2>x: Benchmark / <span class ="english">Benchmark </span></h2>
+
+     
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message type</div></td>
+        <td>0</td>
+        <td>1</td>
+        <td>"x"</td>
+        <td>Benchmark<div class="english">Benchmark</td>
+      </tr>
+      <tr>
+        <td>Nombre del Benchmark<div class="english">Benchmark Name</div></td>
+        <td>1</td>
+        <td>40</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Nombre del Benchmark<div class="english">Benchmark Name</td>
+      </tr>      
+      <tr>
+        <td>Día del benchmark<div class="english">Benchmark Date</div></td>
+        <td>41</td>
+        <td>8</td>
+        <td>Timestamp(1)<div class="english">Timestamp(1)</div></td>
+        <td>Día del benchmark<div class="english">Benchmark Date</div></td>
+      </tr>
+      <tr>
+        <td>Circulación<div class="english">Outstanding</div></td>
+        <td>49</td>
+        <td>8</td>
+        <td>Int64<div class="english">Int64</div></td>
+        <td>Sumatoria de los titulos en circulación de todos los agrupadores a la fecha de calculo<div class="english">Sum of outstanding shares of all groups up to calculation date</div></td>
+      </tr>
+      <tr>
+        <td>Monto entero<div class="english">Integer Amount</div></td>
+        <td>57</td>
+        <td>8</td>
+        <td>Int64<div class="english">Int64</div></td>
+        <td>Parte entera de la sumatoria de los montos en circulación <div class="english">Integer amount of Circulation field</div></td>
+      </tr>
+      <tr>
+        <td>Monto decimal<div class="english">Decimal Amount</div></td>
+        <td>65</td>
+        <td>4</td>
+        <td>Int32<div class="english">Int32</div></td>
+        <td>Parte decimal de la sumatoria de los montos en circulación <div class="english">Decimal amount of Circulation field</div></td>
+      </tr>
+      <tr>
+        <td>Índice<div class="english">Index</div></td>
+        <td>69</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>Valor del benchmark a la fecha de cálculo<div class="english">Benchmark value at calculation date</div></td>
+      </tr>
+      <tr>
+        <td>Índice 24<div class="english">Index 24</div></td>
+        <td>77</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>Valor del benchmark 24 horas a la fecha de cálculo<div class="english">Benchmark value 24 hours at calculation date</div></td>
+      </tr>
+      <tr>
+        <td>Rebalanceo<div class="english">Rebalance</div></td>
+        <td>85</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>"R" si el benchmark fue rebalanceado en esta fecha de cálculo, en caso contrario "N"<div class="english">"R" if benchmark was rebalanced in this calculation date, "N" otherwise</div></td>
+      </tr>
+      <tr>
+        <td>Rendimiento Diario<div class="english">Daily Performance</div></td>
+        <td>86</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>Rendimiento Diario<div class="english">Daily Performance</div></td>
+      </tr>
+      <tr>
+        <td>Rendimiento Anual<div class="english">Annual Performance</div></td>
+        <td>94</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>Rendimiento Anual<div class="english">Annual Performance</div></td>
+      </tr>
+      <tr>
+        <td>Rendimiento Mensual<div class="english">Monthly Performance</div></td>
+        <td>102</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>Rendimiento Mensual<div class="english">Monthly Performance</div></td>
+      </tr>
+      <tr>
+        <td>Rendimiento Últimos 12 Meses<div class="english">Last 12 Months Performance</div></td>
+        <td>110</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>Rendimiento Últimos 12 Meses<div class="english">Last 12 Months Performance</div></td>
+      </tr>
+      <tr>
+        <td>Rendimiento Diario 24 Horas<div class="english">24 Hours Daily Performance</div></td>
+        <td>118</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>Rendimiento Diario 24 Horas<div class="english">24 HoursDaily Performance</div></td>
+      </tr>
+      <tr>
+        <td>Rendimiento Anual 24 Horas<div class="english">24 Hours Annual Performance</div></td>
+        <td>126</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>Rendimiento Anual 24 Horas<div class="english">24 Hours Annual Performance</div></td>
+      </tr>
+      <tr>
+        <td>Rendimiento Mensual 24 Horas<div class="english">24 Hours Monthly Performance</div></td>
+        <td>134</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>Rendimiento Mensual 24 Horas<div class="english">24 Hours Monthly Performance</div></td>
+      </tr>
+      <tr>
+        <td>Rendimiento Últimos 12 Meses 24 Horas<div class="english">Last 12 Months 24 Hours Performance</div></td>
+        <td>142</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>Rendimiento Últimos 12 Meses 24 Horas<div class="english">Last 12 Months 24 Hours Performance</div></td>
+      </tr>      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>150</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Multicast: Mensaje S</title>
+    <meta name="date" content="2016-09-07">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">Multicast: Mensaje S / S Message</h1>
+
+    <h2>S: Eventos de sistema / <span class ="english">Events system</span></h2>
+
+    <p>El mensaje de eventos de sistema es usado para informar de que ha ocurrido un evento, el cual necesita ser del dominio público para su atención.</p>
+      
+
+    <div class="english">
+      <p>The system of events message is used to inform that an event has occurred, which needs to be of pulic domain.</p>
+      </div>
+     
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message type</div></td>
+        <td>0</td>
+        <td>1</td>
+        <td>"S"</td>
+        <td>Evento del sistema<div class="english">Event of system</div></td>
+      </tr>
+      <tr>
+        <td>Número de Instrumento<div class="english">Instrument number</div></td>
+        <td>1</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Siempre será cero<div class="english">Always zero</div></td>
+      </tr>
+      <tr>
+        <td>Código de evento<div class="english">Event code</div></td>
+        <td>5</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Ver <a href="structure/catalogs.html#cat_codigo_evento_sistema">Catálogo de Códigos de Evento del Sistema</a><div class="english">See <a href="structure/catalogs.html#cat_codigo_evento_sistema">System Event Codes Catalog</a></div></td>
+      </tr>
+      <tr>
+        <td>Mercado<div class="english">Market</div></td>
+        <td>6</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Ver <a href="structure/catalogs.html#cat_mercados">Catálogo de Mercados</a> (solo se usa en caso de notificaciones de receso administrativo)<div class="english">See <a href="structure/catalogs.html#cat_mercados">Markets Catalog</a> (only used when there is an official halt)</div></td>
+      </tr>
+      <tr>
+        <td>Hora de envió<div class="english">Sending time</div></td>
+        <td>7</td>
+        <td>8</td>
+        <td>Timestamp(2)</td>
+        <td>Hora de envío de receso administrativo.Solo se usa en caso de notificaciones de receso administrativo.<div class="english">Halt's official sending time. Only used when official halt has occurred.</div></td>
+      </tr>
+      <td>Hora termino<div class="english">Ending time</div></td>
+        <td>15</td>
+        <td>8</td>
+        <td>Timestamp(2)</td>
+        <td>Hora de término de receso administrativo. Solo se usa en caso de notificaciones de receso administrativo y en el caso de un receso automático.<div class="english">Halt's official ending time. Only used when an official halt or automatic halt occurred.</div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>23</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </body>
+</html>

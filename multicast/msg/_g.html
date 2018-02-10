@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Multicast: Mensaje g</title>
+    <meta name="date" content="2016-09-09">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">Multicast: Mensaje g / g Message</h1>
+
+    <h2>g: Catálogo enviado para instrumentos que pertenecen al mercado de derivados de estrategias / <span class ="english">Catalog sent for instruments belonging to the strategy derivative market</span></h2>
+
+         
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message type</div></td>
+        <td>0</td>
+        <td>1</td>
+        <td>"g"</td>
+        <td>Catálogo de estrategias<div class="english">Strategies catalog</div></td>
+      </tr>
+      <tr>
+        <td>Número del instrumento<div class="english">Instrument number</div></td>
+        <td>1</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Código único durante la vida del instrumento<div class="english">Unique code during instruments life</div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Valor<div class="english">Value type</div></td>
+        <td>5</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave del Tipo de Valor<div class="english">Value type code</div></td>
+      </tr>
+      <tr>
+        <td>Clase<div class="english">Class</div></td>
+        <td>6</td>
+        <td>7</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Nombre de la Clase<div class="english">Class name</div></td>
+      </tr>
+      <tr>
+        <td>Vencimiento<div class="english">Maturity</div></td>
+        <td>14</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave del vencimiento<div class="english">Maturity code</div></td>
+      </tr>
+      <tr>
+        <td>Tipo de estrategia<div class="english">Type of strategy</div></td>
+        <td>20</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>R-Rollover<br>E-Engrapado<br>F-Forward(estrategia de divisa)<div class="english">R-Rollover<br>E-Engrapado(Chain of forwards)<br>F-Forward(Foreign currency strategy)</div></td>
+      </tr>
+      <tr>
+      <td>Puja<div class="english">Bid</div></td>
+        <td>21</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>Puja múltiplo del precio<div class="english">Multiple bid price</div></td>
+      </tr>
+      <tr>
+        <td>Última fecha de operación<div class="english">Last date operation</div></td>
+        <td>29</td>
+        <td>8</td>
+        <td>Timestamp(1)</td>
+        <td>Fecha última operación<div class="english">Last operation date</div></td>
+      </tr>
+      <tr>
+        <td>Fecha de vencimiento<div class="english">Maturity date</div></td>
+        <td>37</td>
+        <td>8</td>
+        <td>Timestamp(1)</td>
+        <td>Fecha de vencimiento del derivado<div class="english">Derivative maturity date</div></td>
+      </tr>
+      <tr>
+      <td>Identificador de instrumento de pata corta<div class="english">Short leg instrument identifier</div></td>
+        <td>45</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Solo aplica en Rollovers y forwards.<div class="english">Applicable only in rollovers and forwards</div></td>
+      </tr>
+      <tr>
+      <td>Id de instrumento de pata larga<div class="english">Long leg instruments id</div></td>
+        <td>49</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Solo aplica en Rollovers y forwards.<div class="english">Applicable only in rollovers and forwards</div></td>
+      </tr>
+      <tr>
+      <td>Periodicidad<div class="english">Frequency</div></td>
+        <td>53</td>
+        <td>1</td>
+        <td>Int8</td>
+        <td>Solo aplica para Engrapados<div class="english">Applicable only for forward chains</div></td>
+      </tr>
+      <tr>
+      <td>Número de vencimientos<div class="english">Number of maturities</div></td>
+        <td>54</td>
+        <td>1</td>
+        <td>Int8</td>
+        <td>Solo aplica para Engrapados<div class="english">Applicable only for forward chains</div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>55</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </body>
+</html>
+
+

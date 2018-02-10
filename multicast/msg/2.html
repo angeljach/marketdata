@@ -1,0 +1,72 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Multicast: Mensaje 2</title>
+    <meta name="date" content="2016-09-08">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">Multicast: Mensaje 2 / 2 Message</h1>
+
+    <h2>2: Precio probable de asignación/ <span class ="english">Probable allocation price</span></h2>
+    
+      <p>El mensaje es enviado durante cualquier tipo de subasta (Apertura, Continua, Volatilidad e Intradía) y únicamente en los instrumentos donde ya existe un calce virtual o pre asignación.</p>
+
+      <p>Contiene el precio probable y el volumen máximo que se asignaría el instrumento al finalizar la subasta. Se envía al instante en que se modifica alguno de esos 2 datos.</p>
+
+
+    <div class="english">
+      <p>Sent during any auction type (Opening, Continuous, Volatility and Intraday) and only on instruments where there is already a virtual match or preallocation.</p>
+
+      <p>Contains probable price and maximum volume to be allocated to the instrument at the end of the auction. Sent as soon as a one of these 2 data is changed.</p>
+    </div>
+     
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message type</div></td>
+        <td>0</td>
+        <td>1</td>
+        <td>"2"</td>
+        <td>Precio probable de asignación<div class="english">Probable allocation price</div></td>
+      </tr>
+      <tr>
+        <td>Número de Instrumento<div class="english">Instrument number</div></td>
+        <td>1</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Código único durante la vida del instrumento<div class="english">Unique code during instruments life</div></td>
+      </tr>
+      <tr>
+        <td>Precio probable de asignación<div class="english">Probable allocation price</div></td>
+        <td>5</td>
+        <td>8</td>
+        <td>Precio (8)<div class="english">Price (8)</div></td>
+        <td></td>    
+      </tr>
+      <tr>
+        <td>Volumen<div class="english">Volume</div></td>
+        <td>13</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Volumen máximo a operar<div class="english">Maximum volume to be traded</div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>17</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </body>
+</html>

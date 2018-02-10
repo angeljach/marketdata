@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Manual de Instalación Certificado de Seguridad en Microsoft Outlook</title>
+        <meta name="date" content="2016-10-26">
+        <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+    </head>
+    <body>
+        <h1 class="bar">Manual de Instalación Certificado de Seguridad en Microsoft Outlook / <span class="english">Security Certificate Installation Manual in Microsoft Outlook</span></h1>
+
+        <h2>Introducción / <span class="english">Introduction</span></h2>
+        <p>Descripción del procedimiento para instalar un certificado de seguridad en el correo electrónico (Microsoft Outlook) a fin de poder recibir y leer información encriptada correctamente.</p>
+        <div class="english">
+        	<p>Description procedure to install a security certificate in the (Microsoft Outlook) mail, to correctly receive and read the encripted information.</p>
+        </div>
+
+        <h2>Prerequisitos / <span class="english">Pre requirements</span></h2>
+        <p>Contar con el archivo "keystore_mcast.p12" y la contraseña asociada al certificado. En caso de no contar con el archivo y la contraseña favor de solicitarlo al equipo de <a href="../../general/contacts.html">Soporte Market Data</a>.</p>
+        <div class="english">
+        	<p>Must have previously obtain the "keystore_mcast.p12" and password associated to the same certificate. In case you do not possess either one, please send a requirement to <a href="../../general/contacts.html">Market Data Support</a> team.</p>
+        </div>
+
+        <h2>Procedimiento / <span class="english">Procedure</span></h2>
+        <ol>
+        	<li style="margin: 10px 0;">Ingresar a Microsoft Outlook.
+	        	<div class="english">
+		        	<p>Login to Microsoft Outlook</p>
+		        </div>
+        	</li>
+        	<li style="margin: 10px 0;">Ir a Archivo y posteriormente dar click en "Opciones".
+	        	<div class="english">
+		        	<p>Go to "Files" and click on "Options".</p>
+		        </div>
+        		<br/><img src="../../images/man_inst_cert_email-01.png" alt="01" style="max-width:auto;max-height:500px;">
+        	</li>
+        	<li style="margin: 10px 0;">Ir a la opción "Centro de Confianza" y dar click en "Configuración del Centro de confianza".
+	        	<div class="english">
+		        	<p>Go to the "Trust Center" button, then click on "Trust center settings".</p>
+		        </div>
+        		<br/><img src="../../images/man_inst_cert_email-02.png" alt="02" style="max-width:auto;max-height:500px;">
+        	</li>
+        	<li style="margin: 10px 0;">Ir a la opción de "Seguridad del correo electrónico" y dar click en "Importar o Exportar".
+	        	<div class="english">
+		        	<p>Search for the "E-mail Security" option and click on "Import/Export".</p>
+		        </div>
+        		<br/><img src="../../images/man_inst_cert_email-03.png" alt="03" style="max-width:auto;max-height:500px;">
+        	</li>
+        	<li style="margin: 10px 0;">Dentro de "Importar o Exportar" llenar la información con base en lo siguiente:
+        		<ul>
+        			<li>En "Importar archivo" dar click en el botón "Examinar" y seleccionar el archivo "keystore_mcast.p12" (este archivo debió haber sido porporcionado por el equipo de <a href="../../general/contacts.html">Soporte Market Data</a>).</li>
+        			<li>En "Contraseña", introducir la contraseña proporcionada por el equipo de <a href="../../general/contacts.html">Soporte Market Data</a>.</li>
+        			<li>En "Nombre del Id. digital" asignar un nombre (se propone el nombre de "bmvmcorp").</li>
+		        	<li>Dar click en aceptar</li>
+        		</ul>
+
+	        	<div class="english">
+		        	<p>Inside the "Import/Export" option fill in the information based on the following:</p>
+		        	<ul>
+		        		<li>Inside the "Import/Export" option, click on "Browse" and select the "keystore_mcast.p12" file (this file must have been provided to you by the <a href="../../general/contacts.html">Soporte Market Support</a> team).</li>
+		        		<li>In "Password", introduce the previously provided password by the <a href="../../general/contacts.html">Market Data Support</a> team.</li>
+		        		<li>In "Digital ID. Name", assign a name (suggested name is "bmvcorp")</li>
+		        		<li>Click accept.</li>
+		        	</ul>
+		        </div>
+        		<br/><img src="../../images/man_inst_cert_email-04.png" alt="04" style="max-width:auto;max-height:500px;">
+        	</li>
+        </ol>
+    </body>
+</html>

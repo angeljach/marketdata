@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  <html lang="es">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>H2H: Mensaje IG</title>
+    <meta name="date" content="2017-02-16">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">H2H: Mensaje IG / IG Message</h1>
+
+    <h2>IG: Información general, Hechos Relevantes / <span class ="english">General Infortmation, Outstanding Events</span></h2>
+    <p>Descripción del mensaje.</p>
+    <div class="english">
+      <p>Message description.</p>
+    </div>
+
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message Type</div></td>
+        <td>0</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Fecha de Recepción<div class="english">Reception Date</div></td>
+        <td>2</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Fecha de Publicación<div class="english">Publication Date</div></td>
+      </tr>
+      <tr>
+        <td>Hora Recepción<div class="english">Reception Time</div></td>
+        <td>10</td>
+        <td>4</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Hora Envío<div class="english">Sent Time</div></td>
+        <td>14</td>
+        <td>4</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Tipo<div class="english">Type</div></td>
+        <td>18</td>
+        <td>3</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>1: Eventos Relevantes<br>2: Eventos Relevantes Relacionados a una Suspensión<br>10: Aviso de Suspensión de BMV<br>11: Aviso de Levantamiento Suspension por parte de BMV<br>12: Aviso de Mercado de BMV<br>13: Comunicado de Bolsa<br>14: Eventos Relevantes de Calificadoras<br>15: Eventos Relevantes de Representantes Comunes<br>26: Aviso de Inicio de Subasta
+          <div class="english">1: Outstanding Notices<br>2: Outstanding events related to suspension<br>10: BMV suspension notice<br>11: BMV suspension removal<br>12: BMV market notice<br>13: BMV notice<br>14: Rating agencies outstanding events<br>15: Common representatives outstanding events<br>26: Auction start notice</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Folio<div class="english">Folio</div></td>
+        <td>21</td>
+        <td>7</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Emisora<div class="english">Issuer</div></td>
+        <td>28</td>
+        <td>7</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Secuencia<div class="english">Sequence</div></td>
+        <td>35</td>
+        <td>4</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Texto<div class="english">Text</div></td>
+        <td>39</td>
+        <td>160</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>199</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+</html>

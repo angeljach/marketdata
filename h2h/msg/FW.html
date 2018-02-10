@@ -1,0 +1,328 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  <html lang="es">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>H2H: Mensaje FW</title>
+    <meta name="date" content="2017-01-12">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">H2H: Mensaje FW / FW Message</h1>
+
+    <h2>FW: Hechos de SWAPS / <span class ="english">SWAPS Facts</span></h2>
+    <p>Descripción del mensaje.</p>
+    <div class="english">
+      <p>Message description.</p>
+    </div>
+
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message Type</div></td>
+        <td></td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Fecha Mensaje<div class="english">Message Date</div></td>
+        <td>2</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Fecha de mensaje  (AAAAMMDD)<div class="english">Message date (YYYYMMDD)</div></td>
+      </tr>
+      <tr>
+        <td>Folio Hecho<div class="english">Folio Trade</div></td>
+        <td>10</td>
+        <td>5</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Hora Hecho<div class="english">Trade Time</div></td>
+        <td>15</td>
+        <td>6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Folio Hecho Original<div class="english">Original Trade Folio</div></td>
+        <td>21</td>
+        <td>6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Folio de hecho relacionado con la operación unwind ó sustitución (AAAAMMDD)<div class="english">Trade folio related to Unwind or Sustitution transaction</div></td>
+      </tr>
+      <tr>
+        <td>Fecha Hecho Original<div class="english">Original Trade Date</div></td>
+        <td>27</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Fecha de hecho relacionado con la operación unwind ó sustitución (AAAAMMDD)<div class="english">Date folio related to Unwind or Sustitution transaction</div></td>
+      </tr>
+      <tr>
+        <td>Filler<div class="english">Filler</div></td>
+        <td>35</td>
+        <td>14</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Espacios<div class="english">Blank spaces</div></td>
+      </tr>
+      <tr>
+        <td>Clase Swap<div class="english">Swap Class</div></td>
+        <td>49</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Identificador del SWAP<div class="english">Swap Identifier</div></td>
+      </tr>
+      <tr>
+        <td>Fecha Vencimiento<div class="english">Maturity Date</div></td>
+        <td>55</td>
+        <td>6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Fecha vencimiento (DDMMAA)<div class="english">Maturity date (DDMMYY)</div></td>
+      </tr>
+      <tr>
+        <td>Fecha Efectiva<div class="english">Effective Date</div></td>
+        <td>61</td>
+        <td>6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Fecha efectiva (DDMMAA)<div class="english">Effective date (DDMMYY)</div></td>
+      </tr>
+      <tr>
+        <td>Volúmen<div class="english">Volume</div></td>
+        <td>67</td>
+        <td>6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Precio Hecho<div class="english">Fact Price</div></td>
+        <td>73</td>
+        <td>6,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Clave Comprador<div class="english">Buyer Code</div></td>
+        <td>85</td>
+        <td>5</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de casa compradora<div class="english">Buyers firm code</div></td>
+      </tr>
+      <tr>
+        <td>Perfil Comprador<div class="english">Buyer Profile</div></td>
+        <td>90</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Código de perfil de comprador<br>MM: 4<br>NO: 1<div class="english">Sellers profile code<br>MM: 4<br>NO: 1</div></td>
+      </tr>
+      <tr>
+        <td>Filler<div class="english">Filler</div></td>
+        <td>91</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Uso interno de MexDer<div class="english">Mexder internal use only</div></td>
+      </tr>
+      <tr>
+        <td>Clave Vendedor<div class="english">Seller Code</div></td>
+        <td>93</td>
+        <td>5</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de la casa vendedora<div class="english">Sellers firm code</div></td>
+      </tr>
+      <tr>
+        <td>Perfil Vendedor<div class="english">Seller Profile</div></td>
+        <td>98</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Código de perfil de vendedor<br>MM: 4<br>NO: 1<div class="english">Buyers profile code<br>MM: 4<br>NO: 1</div></td>
+      </tr>
+      <tr>
+        <td>Filler<div class="english">Filler</div></td>
+        <td>99</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Uso interno de MexDer<div class="english">Mexder internal use only</div></td>
+      </tr>
+      <tr>
+        <td>Volúmen Acumulado<div class="english">Cumulative Volume</div></td>
+        <td>101</td>
+        <td>6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Volumen acumulado de la emisión<div class="english">Issues cumulative volume</div></td>
+      </tr>
+      <tr>
+        <td>Identificador de Variacion<div class="english">Variation Identifier</div></td>
+        <td>107</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Signo de Variación, posibles valores:<br> +: Más<br>-: Menos<br>0: Cero
+          <div class="english">Variation sign, possible values:<br>+: Plus<br>-: Less<br>0: Zero</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Variación<div class="english">Variation</div></td>
+        <td>108</td>
+        <td>3,2</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Variación (Con respecto al precio de liquidación del día anterior y en porcentaje)<div class="english">Variation (w.r.t. to previous day settlement price in percentage)</div></td>
+      </tr>
+      <tr>
+        <td>Tipo Movimiento<div class="english">Movement Type</div></td>
+        <td>113</td>
+        <td>2</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>00: Baja del Hecho<br>04: Primera Operación<br>07: Segunda Operación en Adelante<br>33: Modificaciones
+          <div class="english">00: Downward trade<br>04: First transaction<br>07: From second transaction further<br>33: Modifications</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Tipo Concertación<div class="english">Transaction Type</div></td>
+        <td>115</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Concertación del hecho<div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Comprador Liquidador<div class="english">Clearing Buyer</div></td>
+        <td>117</td>
+        <td>5</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de transmisión del liquidador del comprador<div class="english">Buyer clearing member transmission code</div></td>
+      </tr>
+      <tr>
+        <td>Vendedor Liquidador<div class="english">Clearing Seller</div></td>
+        <td>122</td>
+        <td>5</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de transmisión del liquidador del vendedor<div class="english">Seller clearing member transmission code</div></td>
+      </tr>
+      <tr>
+        <td>Transmite Comprador<div class="english">Trans Buyer</div></td>
+        <td>127</td>
+        <td>5</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de transmisión del comprador<div class="english">Buyers transmission code</div></td>
+      </tr>
+      <tr>
+        <td>Transmite Vendedor<div class="english">Transa Seller</div></td>
+        <td>132</td>
+        <td>5</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de transmisión del vendedor<div class="english">Sellers transmission code</div></td>
+      </tr>
+      <tr>
+        <td>Engrapado<div class="english">Stapled Strategy</div></td>
+        <td>137</td>
+        <td>7</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de engrapado (4 primeros caracteres)<div class="english">Stapled code (first 4 characters)</div></td>
+      </tr>
+      <tr>
+        <td>Tipo Estrategia<div class="english">Strategy Type</div></td>
+        <td>144</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Tipo de estrategia que originó el hecho<br>ED: Estrategia de Divisa<br>RL: Roll Over<br>Blanco: No hay estrategia
+          <div class="english">Strategy type that originated the trade:<br>ED: Currency strategy<br>RL: Rollover<br>Blanco: No strategy</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Identificador de Estrategia<div class="english">Strategy Identifier</div></td>
+        <td>146</td>
+        <td>5</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Folio de la Estrategia Padre, no es el folio del hecho, si varios  hechos tienen el mismo número en este campo es que fueron originados por la misma estrategia.<div class="english">“Father” strategy folio, not the trade folio, if several trades have the folio sale field, means they where originated by the same strategy.</div></td>
+      </tr>
+      <tr>
+        <td>Secuencia de Estrategia<div class="english">Sequence Strategy</div></td>
+        <td>151</td>
+        <td>2</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Secuencia con que se generó el hecho dentro de una Estrategia:<br>1: Pata Corta (Vencimiento Cercano)<br>2: Pata Larga (Vencimiento Lejano)
+          <div class="english">Sequence for which the trade was generated inside a strategy:<br>1: Short Leg (Close to maturity)<br>2: Long Leg (Far to maturity)</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Clordid Comprador<div class="english">Clordid Buyer</div></td>
+        <td>153</td>
+        <td>10</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Identificador de la Orden de Compra Recibida por MexFix<div class="english">Buy order identifier received by Mexfix</div></td>
+      </tr>
+      <tr>
+        <td>Referencia Comprador<div class="english">Buyer Reference</div></td>
+        <td>163</td>
+        <td>5</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Referencia de la Orden de Compra Recibida por MexFix<div class="english">Buy order referenced received by Mexfix</div></td>
+      </tr>
+      <tr>
+        <td>Clordid Vendedor<div class="english">Clordid Seller</div></td>
+        <td>168</td>
+        <td>10</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Identificador de la Orden de Venta Recibida por MexFix<div class="english">Sell order identifier received by Mexfix</div></td>
+      </tr>
+      <tr>
+        <td>Referencia Vendedor<div class="english">Seller Reference</div></td>
+        <td>178</td>
+        <td>5</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Referencia de la Orden Recibida por MexFix<div class="english">Sell order referenced received by Mexfix</div></td>
+      </tr>
+      <tr>
+        <td>Bandera Give Up Comprador<div class="english">Give Up Flag Buyer</div></td>
+        <td>183</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>1: Es un give-up<br>Cualquier otro valor indica que no lo es
+          <div class="english">1: A give-up<br>Any other value Indicates is not</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Bandera Give Up Venderor<div class="english">Give Up Flag Seller</div></td>
+        <td>184</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>1: Es un give-up<br>Cualquier otro valor indica que no lo es
+          <div class="english">1: A give-up<br>Any other value Indicates is not</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Importe Comprador<div class="english">Buyer Amount</div></td>
+        <td>185</td>
+        <td>13,2</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Importe del Vendedor a Pagar/Recibir por el Unwind/Sustitución<div class="english">Buyers payable amount to receive for the Unwind/Substitution</div></td>
+      </tr>
+      <tr>
+        <td>Importe Vendedor<div class="english">Seller Amount</div></td>
+        <td>200</td>
+        <td>13,2</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Importe del Vendedor a Pagar/Recibir por el Unwind/Sustitución<div class="english">Sellers payable amount to receive for the Unwind/Substitution</div></td>
+      </tr>
+      <tr>
+        <td>Lado Cierra Posicion<div class="english">Closing side</div></td>
+        <td>215</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Solo para sustitución, indica el lado que cierra la posición<br>VE: Venta<br>CO: Compra<br>Si no es sustitución tendrá espacios
+          <div class="english">Only for substitution, indicates closing side position:<br>VE: Sell<br>CO: Buy<br>Blank for when not a substitution</div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>217</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Tipos de Datos Multicast</title>
+    <meta name="date" content="2017-09-22">
+    <link rel="stylesheet" type="text/css" href="../../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">Tipos de Datos Multicast</h1>
+
+    <p>Todos los campos enteros están ordenados bajo el sistema big-endian y son con signo.</p>
+    <p>Todos los campos ALFA son ISO 8859-1 justificados a la izquierda y llenos a la derecha con espacios.</p>
+    <p>En la tabla se pueden apreciar los diferentes tipos de datos utilizados en BMV Multicast para Market data.</p>
+
+    <div class="english">
+      <p>All integer fields are ordered under the big-endian system and have a sign.</p>
+      <p>All ALPHA fields are ISO 8859-1, left aligned and filled on the right with spaces.</p>
+      <p>Table shows the different types of data used in BMV Multicast for Market Data.</p>
+    </div>
+
+    <table>
+      <tr>
+        <th>Tipo de Dato<div class="english">Type of data</div></th>
+        <th>Longitud en Bytes<div class="english">Length in Bytes</div></th>
+        <th>Rango Inicial<div class="english">Initial Range</div></th>
+        <th>Rango Final<div class="english">Final Range</div></th>
+        <th>Descripción<div class="english">Description</div></th>
+      </tr>
+      <tr>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Variable<div class="english">Variable</div></td>
+        <td></td>
+        <td></td>
+        <td>Esos campos usan bytes de caracteres estándar ISO 8859-1. Justificados a la izquierda y llenos a la derecha por espacios.<div class="english">Those fields use standard ISO 8859-1 characters bytes. Justified to the left and blank spaces to the right.</div></td>
+      </tr>
+      <tr>
+        <td>Timestamp(1)</td>
+        <td>8</td>
+        <td>0</td>
+        <td>9223372036854775807</td>
+        <td>8 bytes para representar solo la fecha.<div class="english">8 bytes to indicate the date.</div></td>
+      </tr>
+      <tr>
+        <td>Timestamp(2)</td>
+        <td>8</td>
+        <td>0</td>
+        <td>9223372036854775807</td>
+        <td>8 bytes para representar la fecha y hora, con una precisión de segundos.<div class="english">8 bytes to indicate date and time, with a precision of seconds.</div></td>
+      </tr>
+      <tr>
+        <td>Timestamp(3)</td>
+        <td>8</td>
+        <td>0</td>
+        <td>9223372036854775807</td>
+        <td>8 bytes para representar la fecha y hora, con una precisión de milisegundos.<div class="english">8 bytes to indicate date and time, with a precision of milliseconds.</div></td>
+      </tr>
+      <tr>
+        <td>Int8</td>
+        <td>1</td>
+        <td>-128</td>
+        <td>127</td>
+        <td>8 bit enteros con signo<div class="english">8 integer bits with sign</div></td>
+      </tr>
+      <tr>
+        <td>Int16</td>
+        <td>2</td>
+        <td>-32768</td>
+        <td>32767</td>
+        <td>16 bit enteros con signo<div class="english">16 integer bits with sign</div></td>
+      </tr>
+      <tr>
+        <td>Int32</td>
+        <td>4</td>
+        <td>-2147483648</td>
+        <td>2147483647</td>
+        <td>32 bit enteros con signo<div class="english">32 integer bits with sign</div></td>
+      </tr>
+      <tr>
+        <td>Int64</td>
+        <td>8</td>
+        <td>-9223372036854775808</td>
+        <td>9223372036854775807</td>
+        <td>64 bit enteros con signo<div class="english">64 integer bits with sign</div></td>
+      </tr>
+      <tr>
+        <td>Precio(4)<div class="english">Price(4)</div></td>
+        <td>4</td>
+        <td>-214748<span style="color:red;">3648</span></td>
+        <td>214748<span style="color:red;">3647</span></td>
+        <td>32 bit enteros con signo en donde las últimas 4 posiciones denotan la parte decimal. La parte decimal es la que está marcado con rojo<div class="english">32 integer bits with sign, where the last 4 positions indicate the decimal part. The decimal part is the one marked in red</div></td>
+      </tr>
+      <tr>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>8</td>
+        <td>-92233720368<span style="color:red;">54775808</span></td>
+        <td>92233720368<span style="color:red;">54775807</span></td>
+        <td>64 bit enteros con signo en donde las últimas 8 posiciones denotan la parte decimal. La parte decimal es la que está marcado con rojo<div class="english">64 integer bits with sign, where the last 8 positions are the decimal part and redmarked/div></td>
+      </tr>
+    </table>
+
+  </body>
+</html>

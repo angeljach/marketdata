@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Multicast: Mensaje Z</title>
+    <meta name="date" content="2016-09-08">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">Multicast: Mensaje Z / Z Message</h1>
+
+    <h2>Z: Operaciones de registro / <span class ="english">Registry Operations</span></h2>
+
+    <p>Se envía cada que hay una colocación de un instrumento de deuda o capitales.</p>
+    
+
+    <div class="english">
+    <p>Sent whenever there is a debt or capital instrument placement.</p> 
+    </div>
+
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message type</div></td>
+        <td>0</td>
+        <td>1</td>
+        <td>"Z"</td>
+        <td>Operaciones de registro<div class="english">Registered operations</div></td>
+      </tr>
+      <tr>
+        <td>Número de Instrumento<div class="english">Instrument Number</div></td>
+        <td>1</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Código único durante la vida del instrumento<div class="english">Unique code during instruments life</div></td>
+      </tr>
+      <tr>
+        <td>Tipo de oferta<div class="english">Offer Type</div></td>
+        <td>5</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Ver <a href="structure/catalogs.html#cat_tipo_oferta_publica">Catálogo de Tipos de Oferta Pública</a><div class="english">See <a href="structure/catalogs.html#cat_tipo_oferta_publica">Public Offerings Catalog</a></div></td>
+      </tr>
+      <tr>
+        <td>Renta<div class="english">Income</div></td>
+        <td>6</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>V-Renta Variable<br>F-Renta Fija<br>W-Warrants<div class="english">V-Variable income<br>F-Fixed Income<br>W-Warrants</div></td>
+      </tr>
+      <tr>
+        <td>Tipo de valor<div class="english">Value type</div></td>
+        <td>7</td>
+        <td>4</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Tipo de valor<div class="english">Value type</div></td>    
+      </tr>
+      <tr>
+        <td>Emisora<div class="english">Issuer</div></td>
+        <td>11</td>
+        <td>7</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de la emisora<div class="english">Issuers code</div></td> 
+      </tr>
+      <tr>
+        <td>Serie<div class="english">Series</div></td>
+        <td>18</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de la serie<div class="english">Series code</div></td>
+      </tr>
+      <tr>
+        <td>Volumen máximo<div class="english">Maximum Volume</div></td>
+        <td>24</td>
+        <td>8</td>
+        <td>Int64</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Volumen registrado<div class="english">Registered Volume</div></td>
+        <td>32</td>
+        <td>8</td>
+        <td>Int64</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Precio/Tasa<div class="english">Price/Rate</div></td>
+        <td>40</td>
+        <td>8</td>
+        <td>Precio (8)<div class="english">Price (8)</div></td>
+        <td>Precio de la operación de registro<div class="english">Operation registry price</div></td>
+      </tr>
+      <tr>
+        <td>Fecha de Liquidación<div class="english">Settlement date</div></td>
+        <td>48</td>
+        <td>8</td>
+        <td>Timestamp(1)</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Casa<div class="english">Firm</div></td>
+        <td>56</td>
+        <td>5</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Casa colocadora<div class="english">Managing Brokerage Firm</div></td>
+      </tr>
+      <tr>
+        <td>Movimiento<div class="english">Movement</div></td>
+        <td>61</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>A-Alta de la operación<br>U-Autorización de la operación<br>C-Colocación de la operación<br>B-Baja de la operación<div class="english">A-Registry operation<br>U-Operation authorization<br>C-Placement operation<br>B-Delete operation</div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>62</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </body>
+</html>

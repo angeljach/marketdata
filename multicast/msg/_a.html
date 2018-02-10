@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Multicast: Mensaje a</title>
+    <meta name="date" content="2016-09-08">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">Multicast: Mensaje a / a Message</h1>
+
+    <h2>a: Catálogos de instrumentos del mercado accionario local y global / <span class ="english">Catalog for instruments belonging to the local and global stock market</span></h2>
+
+      <p>Existen 6 catálogos de instrumentos que contienen la información de los diferentes mercados que se operan en la Bolsa Mexicana de Valores.</p>
+      
+
+    <div class="english">
+      <p>There are 6 instrument catalogs containing information on various markets traded in the Mexican Stock Exchange.</p>
+    </div>
+     
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message type</div></td>
+        <td>0</td>
+        <td>1</td>
+        <td>"a"</td>
+        <td>Mercado accionario local y global<div class="english">Local and global stock market</div></td>
+      </tr>
+      <tr>
+        <td>Número del instrumento<div class="english">Instrument number</div></td>
+        <td>1</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Código único durante la vida del instrumento<div class="english">Unique code during instruments life</div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Valor<div class="english">Value type</div></td>
+        <td>5</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave del Tipo de Valor<div class="english">Value type code</div></td>
+      </tr>
+      <tr>
+        <td>Emisora<div class="english">Issuer</div></td>
+        <td>7</td>
+        <td>7</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de la Emisora<div class="english">Issuer code</div></td>
+      </tr>
+      <tr>
+        <td>Serie<div class="english">Series</div></td>
+        <td>14</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de la Serie<div class="english">Series code</div></td>
+      </tr>
+      <tr>
+        <td>Ultimo precio<div class="english">Last price</div></td>
+        <td>20</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>Último precio de referencia<div class="english">Last reference price</div></td>
+      </tr>
+      <tr>
+        <td>PPP<div class="english">WAP</div></td>
+        <td>28</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>Precio promedio ponderado<div class="english">Weighted Average Price (PPP)</div></td>
+      </tr>
+      <tr>
+        <td>Fecha de referencia<div class="english">Reference date</div></td>
+        <td>36</td>
+        <td>8</td>
+        <td>Timestamp(1)</td>
+        <td>Fecha de última referencia<div class="english">Last reference date</div></td>
+      </tr>
+      <tr>
+        <td>Referencia<div class="english">Reference</div></td>
+        <td>44</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Ver <a href="structure/catalogs.html#cat_referencia">Catálogo de Referencia</a><div class="english">See <a href="structure/catalogs.html#cat_referencia">Reference Catalog</a></div></td>
+      </tr>
+      <tr>
+        <td>Cupón Vigente<div class="english">Current coupon</div></td>
+        <td>45</td>
+        <td>2</td>
+        <td>Int16</div></td>
+        <td>Número de cupón vigente<div class="english">Current coupon number</div></td>
+      </tr>
+      <tr>
+        <td>Bursatilidad<div class="english">Tradability</div></td>
+        <td>47</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Ver <a href="structure/catalogs.html#cat_bursatilidad">Catálogo de Bursatilidad</a><div class="english">See <a href="structure/catalogs.html#cat_bursatilidad">Tradability Catalog</a></div></td>
+      </tr>
+      <tr>
+      <td>Bursatilidad Numérica<div class="english">Numeric tradability</div></td>
+        <td>48</td>
+        <td>4</td>
+        <td>Precio(4)<div class="english">Price(4)</div></td>
+        <td>Consultar <a href="http://www.bmv.com.mx/docs-pub/INDICES/CTEN_INOT/BMV_METODOLOGIA_INDICE_BURSATILIDAD.PDF">Metodología de índice de Bursatilidad BMV</a><div class="english">View <a href="http://www.bmv.com.mx/docs-pub/INDICES/CTEN_INOT/BMV_MARKETABILITY_INDEX_METHODOLOGY.PDF">BMV Marketability Index Methodology</a></div>
+      </td>
+      </tr>
+      <tr>
+      <td>ISIN<div class="english">ISIN</div></td>
+        <td>52</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de ISIN del instrumento<div class="english">ISIN instrument code</div></td>
+      </tr>
+      <tr>
+      <td>Mercado<div class="english">Market</div></td>
+        <td>64</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Ver <a href="structure/catalogs.html#cat_mercados">Catálogo de Mercados</a><div class="english">See <a href="structure/catalogs.html#cat_mercados">Markets Catalog</a></div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>65</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </body>
+</html>

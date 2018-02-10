@@ -1,0 +1,1156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  <html lang="es">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>H2H: Mensaje 01</title>
+    <meta name="date" content="2017-03-15">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">H2H: Mensaje 01 / 01 Message</h1>
+
+    <h2>01: Anexo T y Notas / <span class ="english">T and Notes</span></h2>
+    <p>Descripción del mensaje.</p>
+    <div class="english">
+      <p>Message description.</p>
+    </div>
+
+    <h3 id="indice">Indice / <span class="english">Index</span></h3>
+    <ol>
+      <li><a href="#reg_encabezado">Encabezado / <span class="english">Header</span></a></li>
+      <li>
+        Tipo de Información / <span class="english">Information Type</span>
+        <ol>
+          <li>DGF
+            <ul>
+              <li><a href="#reg_tipo_dgf1">Registro 1 / <span class="english">Registry 1</span></a></li>
+              <li><a href="#reg_tipo_dgf2">Registro 2 / <span class="english">Registry 2</span></a></li>
+              <li><a href="#reg_tipo_dgf3">Registro 3 / <span class="english">Registry 3</span></a></li>
+              <li><a href="#reg_tipo_dgf4">Registro 4 / <span class="english">Registry 4</span></a></li>
+              <li><a href="#reg_tipo_dgf5">Registro 5 / <span class="english">Registry 5</span></a></li>
+              <li><a href="#reg_tipo_dgf6">Registro 6 / <span class="english">Registry 6</span></a></li>
+            </ul>
+          </li>
+          <li><a href="#reg_tipo_dnf">DNF</a></li>
+          <li><a href="#reg_tipo_dsf">DSF</a></li>
+          <li><a href="#reg_tipo_dtf">DTF</a></li>
+          <li><a href="#reg_tipo_dtx">DTX</a></li>
+          <li><a href="#reg_tipo_dps">DPS</a></li>
+          <li><a href="#reg_tipo_not">NOT</a></li>
+        </ol>
+      </li>
+    </ol>
+
+    <hr>
+    <h4 style="display: inline;" id="reg_encabezado">Encabezado / <span class="english">Header</span></h4>
+    <p style="display: inline;" class="return_to_menu_link"> (<a href="#indice">Volver al Indice / <span class="english">Back to Index</span></a>)</p>
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message Type</div></td>
+        <td>0</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Tipo Emisora<div class="english">Issuer</div></td>
+        <td>2</td>
+        <td>3</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Tipo Información<div class="english">Information Type</div></td>
+        <td>5</td>
+        <td>3</td>
+        <td>ALFA<div class="english">ALFA</div></td>
+        <td>DGF: Datos generales fideicomiso<br>DNF: Datos numéricos fideicomiso<br>DSF: Datos series fideicomiso<br>DTF: Datos tabulares fideicomiso<br>DTX: Datos texto fideicomiso<br>DPS: Datos preguntas serie<br>NOT: Notas Fideicomiso<div class="english">DGF: General Trust Data<br>DNF: Trust Numerical Data<br>DSF: Trust Series Data<br>DTF: Trust Tabular Data<br>DTX: Trust Text Data<br>DPS: Series Question Data<br>NOT: Trust Notes</div></td>
+      </tr>
+      <tr>
+        <td>Clave Emisora<div class="english">Issuer Code</div></td>
+        <td>8</td>
+        <td>7</td>
+        <td>ALFA<div class="english">ALFA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Registro<div class="english">Registry Type</div></td>
+        <td>15</td>
+        <td>3</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Folio: 001 a 999<div class="english">Folio: 001 to 999</div></td>
+      </tr>
+      <tr>
+        <td>Secuencia<div class="english">Sequence</div></td>
+        <td>18</td>
+        <td>3</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>001 a 999<div class="english">001 to 999</div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>21</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+    <hr>
+    <h4 style="display: inline;" id="reg_tipo_dgf1">DGF (Registro 1) / <span class="english">DGF (Registry 1)</span></h4>
+    <p style="display: inline;" class="return_to_menu_link"> (<a href="#indice">Volver al Indice / <span class="english">Back to Index</span></a>)</p>
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td> CABECERA<div class="english">HEADER</div></td>
+        <td>0</td>
+        <td>21</td>
+        <td><div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Número Contrato Fideicomiso<div class="english">Agreement Number </div></td>
+        <td>21</td>
+        <td>15</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Periodo Recibido<div class="english">Received Period</div></td>
+        <td>36</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>MM: Mensual<br>BM: Bimestral<br>TM: Trimestral<div class="english">MM: Monthly<br>BM: Quarterly<br>TM: Trimestral</div></td>
+      </tr>
+      <tr>
+        <td>Valor Periodo<div class="english">Period Value</div></td>
+        <td>38</td>
+        <td>2</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>01 a 12<div class="english">01 to 12</div></td>
+      </tr>
+      <tr>
+        <td>Año Ejercicio<div class="english">Fiscal Year</div></td>
+        <td>40</td>
+        <td>4</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>AAAA<div class="english">YYYY</div></td>
+      </tr>
+      <tr>
+        <td>Fecha Recepción<div class="english">Received Date</div></td>
+        <td>44</td>
+        <td>12</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>AAAAMMDDMNSS<div class="english">YYYYMMDDMNSS</div></td>
+      </tr>
+      <tr>
+        <td>Moneda Emisión<div class="english">Currency Issue</div></td>
+        <td>56</td>
+        <td>10</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Texto abierto<div class="english">Open text</div></td>
+      </tr>
+      <tr>
+        <td>Filler<div class="english">Filler</div></td>
+        <td>66</td>
+        <td>154</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>220</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+    <hr>
+    <h4 style="display: inline;" id="reg_tipo_dgf2">DGF (Registro 2) / <span class="english">DGF (Registry 2)</span></h4>
+    <p style="display: inline;" class="return_to_menu_link"> (<a href="#indice">Volver al Indice / <span class="english">Back to Index</span></a>)</p>
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>CABECERA<div class="english">HEADER</div></td>
+        <td>0</td>
+        <td>21</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Clave Representante<div class="english">Representative Code</div></td>
+        <td>21</td>
+        <td>7</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Razón Social Representante<div class="english">Representative Corporate Name</div></td>
+        <td>28</td>
+        <td>194</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>La razón social del representante puede ser de 200 caracteres , por lo que puede ir cortada en caso de que sea mayor a 194 caracteres<div class="english">The Representative Corporate Name may be longer that 200 characters, in case of more than 194, information can be cutted.</div></td>
+      </tr>
+      <tr>
+        <td>Filler<div class="english">Filler</div></td>
+        <td>222</td>
+        <td>0</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>222</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+    <hr>
+    <h4 style="display: inline;" id="reg_tipo_dgf3">DGF (Registro 3) / <span class="english">DGF (Registry 3)</span></h4>
+    <p style="display: inline;" class="return_to_menu_link"> (<a href="#indice">Volver al Indice / <span class="english">Back to Index</span></a>)</p>
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>CABECERA<div class="english">HEADER</div></td>
+        <td>0</td>
+        <td>21</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Garante/Aval<div class="english">Guarantor/Endorsement</div></td>
+        <td>21</td>
+        <td>10</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Valor Máximo 16 Secuencias<div class="english">Maximum 16 Sequences Value</div></td>
+        <td>31</td>
+        <td>78</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Texto abierto con el (o los) nombre (s) de la persona física o moral que son garantes o avales<div class="english">Open text with the name(s) of the individual or corporation that act as guarantor or endorsment.</div></td>
+      </tr>
+      <tr>
+        <td>Filler<div class="english">Filler</div></td>
+        <td>109</td>
+        <td>113</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>222</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+    <hr>
+    <h4 style="display: inline;" id="reg_tipo_dgf4">DGF (Registro 4) / <span class="english">DGF (Registry 4)</span></h4>
+    <p style="display: inline;" class="return_to_menu_link"> (<a href="#indice">Volver al Indice / <span class="english">Back to Index</span></a>)</p>
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>CABECERA<div class="english">HEADER</div></td>
+        <td>0</td>
+        <td>21</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Tipo Garantía<div class="english">Guarantee Type</div></td>
+        <td>21</td>
+        <td>10</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Valor Máximo 16 Secuencias<div class="english">Maximum 16 Sequences Value</div></td>
+        <td>31</td>
+        <td>78</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Texto abierto<div class="english">Open Text</div></td>
+      </tr>
+      <tr>
+        <td>Filler<div class="english">Filler</div></td>
+        <td>109</td>
+        <td>113</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>222</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+    <hr>
+    <h4 style="display: inline;" id="reg_tipo_dgf5">DGF (Registro 5) / <span class="english">DGF (Registry 5)</span></h4>
+    <p style="display: inline;" class="return_to_menu_link"> (<a href="#indice">Volver al Indice / <span class="english">Back to Index</span></a>)</p>
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>CABECERA<div class="english">HEADER</div></td>
+        <td>0</td>
+        <td>21</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Administración/Operador<div class="english">Manager/Broker</div></td>
+        <td>21</td>
+        <td>10</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Valor Máximo 16 Secuencias<div class="english">Maximum 16 Sequences Value</div></td>
+        <td>31</td>
+        <td>78</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Texto abierto<div class="english">Open Text</div></td>
+      </tr>
+      <tr>
+        <td>Filler<div class="english">Filler</div></td>
+        <td>109</td>
+        <td>113</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>222</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+    <hr>
+    <h4 style="display: inline;" id="reg_tipo_dgf6">DGF (Registro 6) / <span class="english">DGF (Registry 6)</span></h4>
+    <p style="display: inline;" class="return_to_menu_link"> (<a href="#indice">Volver al Indice / <span class="english">Back to Index</span></a>)</p>
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>CABECERA<div class="english">HEADER</div></td>
+        <td>0</td>
+        <td>21</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Razón Social<div class="english">Corporate Name</div></td>
+        <td>21</td>
+        <td>200</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Razón Social del Fiduciario Emisor<div class="english">Issuers trustee corporate name</div></td>
+      </tr>
+      <tr>
+        <td>Filler<div class="english">Filler</div></td>
+        <td>221</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>222</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+    <hr>
+    <h4 style="display: inline;" id="reg_tipo_dsf">DSF / <span class="english">DSF</span></h4>
+    <p style="display: inline;" class="return_to_menu_link"> (<a href="#indice">Volver al Indice / <span class="english">Back to Index</span></a>)</p>
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>CABECERA<div class="english">CABECERA</div></td>
+        <td>0</td>
+        <td>21</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Serie 1<div class="english">Series 1</div></td>
+        <td>21</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Serie 2<div class="english">Series 2</div></td>
+        <td>27</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Serie 3<div class="english">Series 3</div></td>
+        <td>33</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Serie 4<div class="english">Series 4</div></td>
+        <td>39</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Serie 5<div class="english">Series 5</div></td>
+        <td>45</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Serie 6<div class="english">Series 6</div></td>
+        <td>51</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Serie 7<div class="english">Series 7</div></td>
+        <td>57</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Serie 8<div class="english">Series 8</div></td>
+        <td>63</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Serie 9<div class="english">Series 9</div></td>
+        <td>69</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Serie 10<div class="english">Series 10</div></td>
+        <td>75</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Filler<div class="english">Filler</div></td>
+        <td>81</td>
+        <td>141</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>222</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <p>NOTA: Las series se transmiten en bloques de 10 series, si existen más de 10 se enviarán en otra secuencia y así sucesivamente hasta enviar todas las series.</p>
+    <p><span class="english">NOTE: Series are transmitte in blocks of 10 series, if there are more than 10, they will be sent in another sequence, and so on and so forth until all are sent.</span></p>
+
+    <hr>
+    <h4 style="display: inline;" id="reg_tipo_dnf">DNF / <span class="english">DNF</span></h4>
+    <p style="display: inline;" class="return_to_menu_link"> (<a href="#indice">Volver al Indice / <span class="english">Back to Index</span></a>)</p>
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>CABECERA<div class="english">HEADER</div></td>
+        <td>0</td>
+        <td>21</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Pregunta 1<div class="english">Question 1</div></td>
+        <td>21</td>
+        <td>3</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Signo 1<div class="english">Ticker Symbol 1</div></td>
+        <td>24</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Valor 1<div class="english">Value 1</div></td>
+        <td>25</td>
+        <td>15</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Pregunta 2<div class="english">Question 2</div></td>
+        <td>40</td>
+        <td>3</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Signo 2<div class="english">Ticker Symbol 2</div></td>
+        <td>43</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Valor 2<div class="english">Value 2</div></td>
+        <td>44</td>
+        <td>15</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Pregunta 3<div class="english">Question 3</div></td>
+        <td>59</td>
+        <td>3</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Signo 3<div class="english">Ticker Symbol 3</div></td>
+        <td>62</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Valor 3<div class="english">Value 3</div></td>
+        <td>63</td>
+        <td>15</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Pregunta 4<div class="english">Question 4</div></td>
+        <td>78</td>
+        <td>3</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Signo 4<div class="english">Ticker Symbol 4</div></td>
+        <td>81</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Valor 4<div class="english">Value 4</div></td>
+        <td>82</td>
+        <td>15</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Pregunta 5<div class="english">Question 5</div></td>
+        <td>97</td>
+        <td>3</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Signo 5<div class="english">Ticker Symbol 5</div></td>
+        <td>100</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Valor 5<div class="english">Value 5</div></td>
+        <td>101</td>
+        <td>15</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Pregunta 6<div class="english">Question 6</div></td>
+        <td>116</td>
+        <td>3</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Signo 6<div class="english">Ticker Symbol 6</div></td>
+        <td>119</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Valor 6<div class="english">Value 6</div></td>
+        <td>120</td>
+        <td>15</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Pregunta 7<div class="english">Question 7</div></td>
+        <td>135</td>
+        <td>3</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Signo 7<div class="english">Ticker Symbol 7</div></td>
+        <td>138</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Valor 7<div class="english">Value 7</div></td>
+        <td>139</td>
+        <td>15</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Pregunta 8<div class="english">Question 8</div></td>
+        <td>154</td>
+        <td>3</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Signo 8<div class="english">Ticker Symbol 8</div></td>
+        <td>157</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Valor 8<div class="english">Value 8</div></td>
+        <td>158</td>
+        <td>15</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Pregunta 9<div class="english">Question 9</div></td>
+        <td>173</td>
+        <td>3</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Signo 9<div class="english">Ticker Symbol 9</div></td>
+        <td>176</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Valor 9<div class="english">Value 9</div></td>
+        <td>177</td>
+        <td>15</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Pregunta 10<div class="english">Question 10</div></td>
+        <td>192</td>
+        <td>3</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Signo  10<div class="english">Ticker Symbol 10</div></td>
+        <td>195</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Valor 10<div class="english">Value 10</div></td>
+        <td>196</td>
+        <td>15</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Filler <div class="english">Filler</div></td>
+        <td>211</td>
+        <td>18</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>229</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <p>Cuando campo esté expresado en números enteros, el campo valor contendrá 15 dígitos entero.<br>
+      Cuando cifras expresadas en Porcentaje, el campo valor contendrá 13 dígitos enteros y 2 decimales<br>
+      Cuando cifras expresadas en valores decimales (tipo de cambio), el campo valor contendrá 11 dígitos enteros y 4  decimales.
+    </p>
+    <p>
+      <span class="english">
+        When field is expressed in whole numbers, the value will contain 15 whole digits.<br>
+        When figures expressed in percentage, the value field will contain 13 whole digits and 2 decimals.<br>
+        When figures expressed in decimal values (exchange rate), the value field will contain 11 whole digits and 4 decimals.
+      </span>
+    </p>
+
+    <hr>
+    <h4 style="display: inline;" id="reg_tipo_dtx">DTX / <span class="english">DTX</span></h4>
+    <p style="display: inline;" class="return_to_menu_link"> (<a href="#indice">Volver al Indice / <span class="english">Back to Index</span></a>)</p>
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>CABECERA<div class="english">HEADER</div></td>
+        <td>0</td>
+        <td>21</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Pregunta<div class="english">Question</div></td>
+        <td>21</td>
+        <td>3</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Valor<div class="english">Security</div></td>
+        <td>24</td>
+        <td>78</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Filler<div class="english">Filler</div></td>
+        <td>102</td>
+        <td>120</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>222</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <p>NOTA: Si los caracteres  exceden el valor de 78,  estas seguirán en la secuencia siguiente y así consecutivamente hasta que se acabe todo el texto de la nota.</p>
+    <p><span class="english">NOTE: If characters exceed 78 in value, these will follow the next sequence and so forth until the entire text finishes.</span></p>
+
+    <hr>
+    <h4 style="display: inline;" id="reg_tipo_dtf">DTF / <span class="english">DTF</span></h4>
+    <p style="display: inline;" class="return_to_menu_link"> (<a href="#indice">Volver al Indice / <span class="english">Back to Index</span></a>)</p>
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>CABECERA<div class="english">HEADER</div></td>
+        <td>0</td>
+        <td>21</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Pregunta<div class="english">Question</div></td>
+        <td>21</td>
+        <td>3</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Mes <div class="english">Month</div></td>
+        <td>24</td>
+        <td>3</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>ACT: Actual<br>ANT: Anterior <div class="english">ACT: Current<br>ANT: Previous </div></td>
+      </tr>
+      <tr>
+        <td>Signo<div class="english">Sign</div></td>
+        <td>27</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>>30 Días<div class="english">>30 Days</div></td>
+        <td>28</td>
+        <td>15</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Signo<div class="english">Sign</div></td>
+        <td>43</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>>31 ó = 60 Días<div class="english">>31 or = 60 Days</div></td>
+        <td>44</td>
+        <td>15</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Signo<div class="english">Sign</div></td>
+        <td>59</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>>61 ó = 90 Días<div class="english">>61 or = 90 Days</div></td>
+        <td>60</td>
+        <td>15</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Signo<div class="english">Sign</div></td>
+        <td>75</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>>91 ó = 120 Días<div class="english">>91 or = 120 Days</div></td>
+        <td>76</td>
+        <td>15</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Signo<div class="english">Sign</div></td>
+        <td>91</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>>121 ó = 150 Días<div class="english">>121 or = 150 Days</div></td>
+        <td>92</td>
+        <td>15</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Signo<div class="english">Sign</div></td>
+        <td>107</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>>151 ó = 180 Días<div class="english">>151 or = 180 Days</div></td>
+        <td>108</td>
+        <td>15</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Signo<div class="english">Sign</div></td>
+        <td>123</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>>181 Días ó > 6 Meses<div class="english">>181 Days or > 6 Months</div></td>
+        <td>124</td>
+        <td>15</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Signo<div class="english">Sign</div></td>
+        <td>139</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>En Proceso Judicial<div class="english">On Judiciary Process</div></td>
+        <td>140</td>
+        <td>15</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Signo<div class="english">Sign</div></td>
+        <td>155</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Prorroga<div class="english">Extension</div></td>
+        <td>156</td>
+        <td>15</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Filler <div class="english">Filler </div></td>
+        <td>171</td>
+        <td>61</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>232</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <p>NOTA: Esta tabla solo aplica para las preguntas 59 y 60 y se forman 2 registros por pregunta, el primero para el Valor actual y el segundo para el valor anterior.</p>
+    <p><span class="english">NOTE: This table applies only for questions 59 and 60 and it is made up of 2 registries per question; the first one for the current Value and the second one for the previous value.</span></p>
+
+    <hr>
+    <h4 style="display: inline;" id="reg_tipo_dps">DPS / <span class="english">DPS</span></h4>
+    <p style="display: inline;" class="return_to_menu_link"> (<a href="#indice">Volver al Indice / <span class="english">Back to Index</span></a>)</p>
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>CABECERA<div class="english">HEADER</div></td>
+        <td>0</td>
+        <td>21</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Pregunta<div class="english">Question</div></td>
+        <td>21</td>
+        <td>3</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Serie1<div class="english">Series1</div></td>
+        <td>24</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Valor<div class="english">Security</div></td>
+        <td>30</td>
+        <td>15</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Serie2<div class="english">Series2</div></td>
+        <td>45</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Valor<div class="english">Security</div></td>
+        <td>51</td>
+        <td>15</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Serie3<div class="english">Series3</div></td>
+        <td>66</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Valor<div class="english">Security</div></td>
+        <td>72</td>
+        <td>15</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Serie4<div class="english">Series4</div></td>
+        <td>87</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Valor<div class="english">Security</div></td>
+        <td>93</td>
+        <td>15</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Serie5<div class="english">Series5</div></td>
+        <td>108</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Valor<div class="english">Security</div></td>
+        <td>114</td>
+        <td>15</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Filler<div class="english">Filler</div></td>
+        <td>129</td>
+        <td>93</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>222</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <p>NOTA: Si el fideicomiso tiene más de 5 series en una misma pregunta se seguirá en la trama siguiente.</p>
+    <p><span class="english">NOTE: If trust has more than 5 series in the same question, it will continue in the next sequence.</span></p>
+
+    <hr>
+    <h4 style="display: inline;" id="reg_tipo_not">NOT / <span class="english">NOT</span></h4>
+    <p style="display: inline;" class="return_to_menu_link"> (<a href="#indice">Volver al Indice / <span class="english">Back to Index</span></a>)</p>
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>CABECERA<div class="english">HEADER</div></td>
+        <td>0</td>
+        <td>21</td>
+        <td>ALFA<div class="english">ALFA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Pregunta<div class="english">Question</div></td>
+        <td>21</td>
+        <td>3</td>
+        <td>ALFA<div class="english">ALFA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Valor<div class="english">Security</div></td>
+        <td>24</td>
+        <td>78</td>
+        <td>ALFA<div class="english"></div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Filler<div class="english">Filler</div></td>
+        <td>102</td>
+        <td>120</td>
+        <td>ALFA<div class="english">ALFA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>222</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <p>NOTA: Solo se envían las preguntas que tienen valor.<br>
+    Si los caracteres de las notas exceden el valor de 78,  estas seguirán en la secuencia siguiente y así consecutivamente hasta que se acabe todo el texto de la nota.
+    </p>
+    <p><span class="english">NOTE: Only questions with a value are sent.<br>
+      If the characters of the notes exceed 78 in value, these will continue in the following sequence and so forth until the entire text of the note finishes.</span>
+    </p>
+  </body>
+</html>

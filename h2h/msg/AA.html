@@ -1,0 +1,772 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  <html lang="es">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>H2H: Mensaje AA</title>
+    <meta name="date" content="2017-02-09">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">H2H: Mensaje AA / AA Message</h1>
+
+    <h2>AA: Nivel de Endeudamiento / <span class ="english">Indebtedness Level</span></h2>
+    <p>Descripción del mensaje.</p>
+    <div class="english">
+      <p>Message description.</p>
+    </div>
+
+
+    <h3 id="indice">Indice / <span class="english">Index</span></h3>
+    <ol>
+      <li><a href="#registro1">Tipo Formato "401" / <span class="english">Type Format "401"</span></a></li>
+      <li><a href="#registro2">Tipo Formato "401" / <span class="english">Type Format "401"</span></a></li>
+      <li><a href="#registro3">Tipo Formato "401" / <span class="english">Type Format "401"</span></a></li>
+      <li><a href="#registro4">Tipo Formato "402" / <span class="english">Type Format "402"</span></a></li>
+      <li><a href="#registro5">Tipo Formato "402" / <span class="english">Type Format "402"</span></a></li>
+    </ol>
+
+    <hr>
+    <h4 style="display: inline;" id="registro1">Tipo Formato "401" / <span class="english">Type Format "401"</span></h4>
+    <p style="display: inline;" class="return_to_menu_link"> (<a href="#indice">Volver al Indice / <span class="english">Back to Index</span></a>)</p>
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message Type</div></td>
+        <td></td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Clave Emisora<div class="english">Issuer</div></td>
+        <td>2</td>
+        <td>7</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Frecuencia<div class="english">Frequency</div></td>
+        <td>9</td>
+        <td>2</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>01: Primer Periodo trimestral<br>02: Segundo periodo trimestral<br>03: Tercer periodo trimestral<br>04: Cuarto periodo trimestral
+          <div class="english">01: First quarterly period<br>02: Second quarterly period<br>03: Third quarterly period<br>04: Fourth quarterly period</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Año de Ejercicio<div class="english">Exercise Price</div></td>
+        <td>11</td>
+        <td>4</td>
+        <td>NUM <div class="english">NUM </div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Formato<div class="english">Format Type</div></td>
+        <td>15</td>
+        <td>3</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>401: Nivel de endeudamiento<div class="english">401: Indebtness level</div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Crédito<div class="english">Credit Type</div></td>
+        <td>18</td>
+        <td>1</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>1: Bancario<br>2: Bursatil<br>3: Otros pasivos circulantes
+          <div class="english">1: Banking<br>2: Marketability<br>3: Other current liabilities</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Clasificación - Tipo Crédito Bursátil<sup><a href="#cite_01">[1]</a></sup><div class="english">Classification Type - Marketability Credit</div></td>
+        <td>19</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>1: Listadas en bolsa (1)<br>2: Colocaciones privadas<br>" ": Sin clasificación
+          <div class="english">1: Listed in stock exchange (1)<br>2: Private placements<br>" ": Without classification</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Folio<sup><a href="#cite_02">[2]</a></sup><div class="english">Folio</div></td>
+        <td>20</td>
+        <td>5</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>[00000-99999]</td>
+      </tr>
+      <tr>
+        <td>Secuencia<div class="english">Sequence</div></td>
+        <td>25</td>
+        <td>4</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>[0000-9999]</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Institución ISIN Acreedor<div class="english">ISIN Institution Creditor</div></td>
+        <td>29</td>
+        <td>50</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Contrato Listadas Concepto<div class="english">Listed Contract Concept</div></td>
+        <td>79</td>
+        <td>50</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Crédito Esquema<div class="english">Credit Sketch</div></td>
+        <td>129</td>
+        <td>50</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Moneda<div class="english">Currency</div></td>
+        <td>179</td>
+        <td>3</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Código ISO de la moneda, ejemplo<br>MNX - Pesos mexicanos<br>USD - Dólar americano<br>EUR - Euro
+          <div class="english">Currency ISO code, example<br>MNX - Mexican pesos<br>USD - American dollar<br>EUR - Euro</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Cláusula<div class="english">Refinement Clause</div></td>
+        <td>182</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>SI<br>NO</td>
+      </tr>
+      <tr>
+        <td>Filler<div class="english">Filler</div></td>
+        <td>184</td>
+        <td>37</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Indicador Útima Trama<div class="english">Last Plot Indicator</div></td>
+        <td>221</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>" ": Existe siguiente trama<br>F: Última trama<div class="english">" ": Exists next plot<br>F: Last plot</div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>222</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <p>La información se manda de bloques de 4 cuentas por cada Folio (incluyendo el número de cuenta así como el valor del campo). / <span class="english">The information is sent in blocks of 4 counts for each folio (incluyed the account number as well as the field value).</span></p>
+
+    <hr>
+    <h4 style="display: inline;" id="registro2">Tipo Formato "401" / <span class="english">Type Format "401"</span></h4>
+    <p style="display: inline;" class="return_to_menu_link"> (<a href="#indice">Volver al Indice / <span class="english">Back to Index</span></a>)</p>
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Información<div class="english">Information type </div></td>
+        <td>Offset</td>
+        <td>Tamaño</td>
+        <td>Valor<div class="english">Value</div></td>
+        <td>Notas<div class="english">Notes</div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message Type</div></td>
+        <td></td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Clave Emisora<div class="english">Issuer</div></td>
+        <td>2</td>
+        <td>7</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Frecuencia<div class="english">Frequency</div></td>
+        <td>9</td>
+        <td>2</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>01: Primer Periodo trimestral<br>02: Segundo periodo trimestral<br>03: Tercer periodo trimestral<br>04: Cuarto periodo trimestral
+          <div class="english">01: First quarterly period<br>02: Second quarterly period<br>03: Third quarterly period<br>04: Fourth quarterly period</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Año de Ejercicio<div class="english">Exercise Price</div></td>
+        <td>11</td>
+        <td>4</td>
+        <td>NUM <div class="english">NUM </div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Formato<div class="english">Format Type</div></td>
+        <td>15</td>
+        <td>3</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>401: Nivel de endeudamiento<div class="english">401: Indebtness level</div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Crédito<div class="english">Credit Type</div></td>
+        <td>18</td>
+        <td>1</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>1: Bancario<br>2: Bursatil<br>3: Otros pasivos circulantes
+          <div class="english">1: Banking<br>2: Marketability<br>3: Other current liabilities</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Clasificación - Tipo Crédito Bursátil<sup><a href="#cite_01">[1]</a></sup><div class="english">Classification Type - Marketability Credit</div></td>
+        <td>19</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>1: Listadas en bolsa (1)<br>2: Colocaciones privadas<br>" ": Sin clasificación
+          <div class="english">1: Listed in stock exchange (1)<br>2: Private placements<br>" ": Without classification</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Folio<sup><a href="#cite_02">[2]</a></sup><div class="english">Folio</div></td>
+        <td>20</td>
+        <td>5</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>[00000-99999]</td>
+      </tr>
+      <tr>
+        <td>Secuencia<div class="english">Sequence</div></td>
+        <td>25</td>
+        <td>4</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>[0000-9999]</td>
+      </tr>
+      <tr>
+        <td>Prelación Pago<div class="english">Precendence Payment</div></td>
+        <td>29</td>
+        <td>50</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Fecha Firma Contrato<div class="english">Signature Date Contract</div></td>
+        <td>79</td>
+        <td>8</td>
+        <td>NUM<div class="english">ALPHA</div></td>
+        <td>DDMMAAAA<div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Fecha Vencimiento<div class="english">Expiry Date</div></td>
+        <td>87</td>
+        <td>8</td>
+        <td>NUM<div class="english">ALPHA</div></td>
+        <td>DDMMAAAA<div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Tasa Referencia<div class="english">Reference Rate</div></td>
+        <td>95</td>
+        <td>50</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Tasa Interés<div class="english">Interest Rate</div></td>
+        <td>145</td>
+        <td>2,2</td>
+        <td>NUM<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Descuento Garantía Características<div class="english">Guarantee Description Characteristics</div></td>
+        <td>149</td>
+        <td>50</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Línea Crédito Inicial<div class="english">Initial Line Credit</div></td>
+        <td>199</td>
+        <td>13</td>
+        <td>NUM<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Filler<div class="english">Filler</div></td>
+        <td>212</td>
+        <td>9</td>
+        <td>ALFA<div class="english"></div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Indicador Última Trama<div class="english">Last Plot Indicator</div></td>
+        <td>221</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>" ": Existe siguiente trama<br>F: Última trama<br><div class="english">" ": Exists next plot<br>F: Last plot</div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>222</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <p>La información se manda de bloques de 4 cuentas por cada Folio (incluyendo el número de cuenta así como el valor del campo). / <span class="english">The information is sent in blocks of 4 counts for each folio (incluyed the account number as well as the field value).</span></p>
+
+    <hr>
+    <h4 style="display: inline;" id="registro3">Tipo Formato "401" / <span class="english">Type Format "401"</span></h4>
+    <p style="display: inline;" class="return_to_menu_link"> (<a href="#indice">Volver al Indice / <span class="english">Back to Index</span></a>)</p>
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Información<div class="english">Information type </div></td>
+        <td>Offset</td>
+        <td>Tamaño</td>
+        <td>Valor<div class="english">Value</div></td>
+        <td>Notas<div class="english">Notes</div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message Type</div></td>
+        <td></td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Clave Emisora<div class="english">Issuer</div></td>
+        <td>2</td>
+        <td>7</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Frecuencia<div class="english">Frequency</div></td>
+        <td>9</td>
+        <td>2</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>01: Primer Periodo trimestral<br>02: Segundo periodo trimestral<br>03: Tercer periodo trimestral<br>04: Cuarto periodo trimestral
+          <div class="english">01: First quarterly period<br>02: Second quarterly period<br>03: Third quarterly period<br>04: Fourth quarterly period</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Año de Ejercicio<div class="english">Exercise Year</div></td>
+        <td>11</td>
+        <td>4</td>
+        <td>NUM <div class="english">NUM </div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Formato<div class="english">Format Type</div></td>
+        <td>15</td>
+        <td>3</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>401: Nivel de endeudamiento<div class="english">401: Indebtness level</div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Crédito<div class="english">Credit Type</div></td>
+        <td>18</td>
+        <td>1</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>1: Bancario<br>2: Bursatil<br>3: Otros pasivos circulantes
+          <div class="english">1: Banking<br>2: Marketability<br>3: Other current liabilities</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Clasificación - Tipo Crédito Bursátil<sup><a href="#cite_01">[1]</a></sup><div class="english">Classification Type - Marketability Credit</div></td>
+        <td>19</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>1: Listadas en bolsa (1)<br>2: Colocaciones privadas<br>" ": Sin clasificación
+          <div class="english">1: Listed in stock exchange (1)<br>2: Private placements<br>" ": Without classification</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Folio<sup><a href="#cite_02">[2]</a></sup><div class="english">Folio</div></td>
+        <td>20</td>
+        <td>5</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>[00000-99999]</td>
+      </tr>
+      <tr>
+        <td>Secuencia<div class="english">Sequence</div></td>
+        <td>25</td>
+        <td>4</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>[0000-9999]</td>
+      </tr>
+      <tr>
+        <td>Saldo Insoluto<div class="english">Precedence Payment</div></td>
+        <td>29</td>
+        <td>13</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>0 - 6 Meses<div class="english">0 - 6 Months</div></td>
+        <td>42</td>
+        <td>13</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>7 - 12 Meses<div class="english">7 - 12 Months</div></td>
+        <td>55</td>
+        <td>13</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>13 - 18 Meses<div class="english">13 - 18 Months</div></td>
+        <td>68</td>
+        <td>13</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Código ISO de la moneda, ejemplo<br>MNX - Pesos mexicanos<br>USD - Dólar americano<br>EUR - Euro
+          <div class="english">Currency ISO code, example<br>MNX - Mexican pesos<br>USD - American dollar<br>EUR - Euro</div>
+        </td>
+      </tr>
+      <tr>
+        <td>19- 36 Meses<div class="english">19- 36 Months</div></td>
+        <td>81</td>
+        <td>13</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>SI<br>NO</td>
+      </tr>
+      <tr>
+        <td>37 Meses o más<div class="english">37 Months or more</div></td>
+        <td>94</td>
+        <td>13</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Intereses Devengados<div class="english">Accrued Interest</div></td>
+        <td>107</td>
+        <td>13</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Porcentaje Deuda Total<div class="english">Total Outstanding Percentage</div></td>
+        <td>120</td>
+        <td>3,2</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Meses Atraso<div class="english">Overdue Months</div></td>
+        <td>125</td>
+        <td>3</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Filler<div class="english">Filler</div></td>
+        <td>128</td>
+        <td>93</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Indicador Última Trama<div class="english">Last Plot Indicator</div></td>
+        <td>221</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>" ": Existe siguiente trama<br>F: Última trama<br><div class="english">" ": Exists next plot<br>F: Last plot</div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>222</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <p>La información se manda de bloques de 4 cuentas por cada Folio (incluyendo el número de cuenta así como el valor del campo). / <span class="english">The information is sent in blocks of 4 counts for each folio (incluyed the account number as well as the field value).</span></p>
+
+    <hr>
+    <h4 style="display: inline;" id="registro4">Tipo Formato "402" / <span class="english">Type Format "402"</span></h4>
+    <p style="display: inline;" class="return_to_menu_link"> (<a href="#indice">Volver al Indice / <span class="english">Back to Index</span></a>)</p>
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Información<div class="english">Information type </div></td>
+        <td>Offset</td>
+        <td>Tamaño</td>
+        <td>Valor<div class="english">Value</div></td>
+        <td>Notas<div class="english">Notes</div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message Type</div></td>
+        <td></td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Clave Emisora<div class="english">Issuer</div></td>
+        <td>2</td>
+        <td>7</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Frecuencia<div class="english">Frequency</div></td>
+        <td>9</td>
+        <td>2</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>01: Primer Periodo trimestral<br>02: Segundo periodo trimestral<br>03: Tercer periodo trimestral<br>04: Cuarto periodo trimestral<div class="english">01: First quarterly period<br>02: Second quarterly period<br>03: Third quarterly period<br>04: Fourth quarterly period</div></td>
+      </tr>
+      <tr>
+        <td>Año de Ejercicio<div class="english">Exercise Year</div></td>
+        <td>11</td>
+        <td>4</td>
+        <td>NUM <div class="english">NUM </div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Formato<div class="english">Format Type</div></td>
+        <td>15</td>
+        <td>3</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>401: Nivel de endeudamiento<div class="english">401: Indebtness level</div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Crédito<div class="english">Credit Type</div></td>
+        <td>18</td>
+        <td>1</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>1: Bancario<br>2: Bursatil<br>3: Otros pasivos circulantes
+          <div class="english">1: Banking<br>2: Marketability<br>3: Other current liabilities</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Clasificación - Tipo Crédito Bursátil<div class="english">Classification Type - Marketability Credit</div></td>
+        <td>19</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>1: Listadas en bolsa (1)<br>2: Colocaciones privadas<br>" ": Sin clasificación
+          <div class="english">1: Listed in stock exchange (1)<br>2: Private placements<br>" ": Without classification</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Folio<div class="english">Folio</div></td>
+        <td>20</td>
+        <td>5</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>[00000-99999]</td>
+      </tr>
+      <tr>
+        <td>Secuencia<div class="english">Sequence</div></td>
+        <td>25</td>
+        <td>4</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>[0000-9999]</td>
+      </tr>
+      <tr>
+        <td>Índice Cobertura Servicio Deuda<div class="english">Precedence Payment</div></td>
+        <td>29</td>
+        <td>13</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Activos Líquidos<div class="english">0 - 6 Months</div></td>
+        <td>42</td>
+        <td>13</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>IVA a recuperar<div class="english">7 - 12 Months</div></td>
+        <td>55</td>
+        <td>13</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Utilidad Operativa Estimada<div class="english">13 - 18 Months</div></td>
+        <td>68</td>
+        <td>13</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Línea Crédito Revolvente<div class="english">19- 36 Months</div></td>
+        <td>81</td>
+        <td>13</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Amortización Estimada de Interéses<div class="english">37 Months or more</div></td>
+        <td>94</td>
+        <td>13</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Amortización Programada de Capital<div class="english">Accrued Interest</div></td>
+        <td>107</td>
+        <td>13</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Amortización Pagada de Capital<div class="english">Total Outstanding Percentage</div></td>
+        <td>120</td>
+        <td>3,2</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Gastos Recurrentes de Capital Estimados<div class="english">Overdue Months</div></td>
+        <td>125</td>
+        <td>3</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Gastos Desarrollo No Discrecional Estimados<div class="english">Filler</div></td>
+        <td>128</td>
+        <td>93</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Indicador Última Trama<div class="english">Last Plot Indicator</div></td>
+        <td>221</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>" ": Existe siguiente trama<br>F: Última trama<br><div class="english">" ": Exists next plot<br>F: Last plot</div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>222</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <p>El número de FEED's depende del número de registros en el archivo de carga; es decir por Filtro válido. / <span class="english">The number of FEED's it depends of the registry number in the load file; that is say by valid filter.</span></p>
+
+    <hr>
+    <h4 style="display: inline;" id="registro5">Tipo Formato "402" / <span class="english">Type Format "402"</span></h4>
+    <p style="display: inline;" class="return_to_menu_link"> (<a href="#indice">Volver al Indice / <span class="english">Back to Index</span></a>)</p>
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Información<div class="english">Information type </div></td>
+        <td>Offset</td>
+        <td>Tamaño</td>
+        <td>Valor<div class="english">Value</div></td>
+        <td>Notas<div class="english">Notes</div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message Type</div></td>
+        <td></td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Clave Emisora<div class="english">Issuer</div></td>
+        <td>2</td>
+        <td>7</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Frecuencia<div class="english">Frequency</div></td>
+        <td>9</td>
+        <td>2</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>01: Primer Periodo trimestral<br>02: Segundo periodo trimestral<br>03: Tercer periodo trimestral<br>04: Cuarto periodo trimestral
+          <div class="english">01: First quarterly period<br>02: Second quarterly period<br>03: Third quarterly period<br>04: Fourth quarterly period</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Año de Ejercicio<div class="english">Exercise Year</div></td>
+        <td>11</td>
+        <td>4</td>
+        <td>NUM <div class="english">NUM </div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Formato<div class="english">Format Type</div></td>
+        <td>15</td>
+        <td>3</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>402: Índice de cobertura de servicios de la deuda<div class="english">402: Debt services coverage index</div></td>
+      </tr>
+      <tr>
+        <td>Folio<div class="english">Folio</div></td>
+        <td>18</td>
+        <td>5</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>[00000-99999]</td>
+      </tr>
+      <tr>
+        <td>Secuencia<div class="english">Sequence</div></td>
+        <td>23</td>
+        <td>4</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>[0000-9999]</td>
+      </tr>
+      <tr>
+        <td>Comentario<div class="english">Precedence Payment</div></td>
+        <td>27</td>
+        <td>194</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Indicador Última Trama<div class="english">Last Plot Indicator</div></td>
+        <td>221</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>" ": Existe siguiente trama<br>F: Última trama<br><div class="english">" ": Exists next plot<br>F: Last plot</div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>222</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <p>El número de FEED's depende del número de registros en el archivo de carga; es decir por Filtro válido.<br>El número de registros (secuencia) para la configuración del comentario depende del número de caracteres que se encuentren en el archivo de carga.<br>El Filler del último registro dependerá del tamaño que conforme la última parte del comentario, la sección de control (29 caracteres) y el Indicador de la última trama (1 carácter).<div class="english">The number of FEED's it depends of the registry number in the load file; that is say by valid filter.<br>The number of registries /sequence) for the commentary configuration, it depends on the number of characters that are in the load file.<br>The Filler of the last registry will depends on the size that shapes the last part of the commentary, the control section (29 characteres) and the indicator of the last trama (1 character).</div></p>
+
+    <hr>
+    
+    <p id="cite_01"><sup>[1]</sup>: Los dos primeros valores ("1" y "2") del campo "Clasificación - Tipo Crédito Bursátil" aplican sólo cuando se presenta el valor "BURSATIL" ("2") en el campo "Tipo de Crédito". El tercer valor ("e") del campo "Clasificación - Tipo Crédito Bursátil" aplica solo cuando se presentan los valores "1" o "3" del campo "Tipo de Crédito". / <span class ="english">The first two values ("1" and "2") of the field "Classification Type - Marketability Credit" just apply when the value “Market Ability" ("2") appears in the field called "Credit Type". The third value ("e") in the field "Classification Type - Marketability Credit" just applies when the values "1" or "e" in the field "Credit Type".</span></p>
+    <p id="cite_02"><sup>[2]</sup>: El campo "Folio" agrupa la información de un mismo Filtro. / <span class="english">The field "Folio" groups the information of the same filter.</span></p>
+
+  </body>
+</html>

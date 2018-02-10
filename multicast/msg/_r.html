@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Multicast: Mensaje r</title>
+    <meta name="date" content="2016-09-12">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">Multicast: Mensaje r / r Message</h1>
+
+    <h2>r: Compra Venta de Dólares / <span class ="english">Dollar Buy/Sell</span></h2>
+
+     
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message type</div></td>
+        <td>0</td>
+        <td>1</td>
+        <td>"r"</td>
+        <td>Compra Venta de Dólares<div class="english">Dollar Buy/Sell</td>
+      </tr>
+      <tr>
+        <td>Fecha y Hora de la Postura<div class="english">Posture Date</div></td>
+        <td>1</td>
+        <td>8</td>
+        <td>Timestamp(2)<div class="english">Timestamp(2)</div></td>
+        <td>Fecha y Hora de la Postura<div class="english">Posture Date</div></td>      
+      </tr>      
+      <tr>
+        <td>Divisa<div class="english">Currency</div></td>
+        <td>9</td>
+        <td>5</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Divisa<div class="english">Currency</div></td>
+      </tr>
+      <tr>
+        <td>Sentido<div class="english">Side</div></td>
+        <td>14</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Sentido<div class="english">Side</div></td>
+     </tr>
+      <tr>
+        <td>Compra<div class="english">Buy</div></td>
+        <td>15</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>Compra<div class="english">Buy</div></td>
+      </tr>
+      <tr>
+        <td>Venta<div class="english">Sell</div></td>
+        <td>23</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>Venta<div class="english">Sell</div></td>
+      </tr>
+      <tr>
+        <td>Último Hecho<div class="english">Last Deal</div></td>
+        <td>31</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>Último Hecho<div class="english">Last Deal</div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>39</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </body>
+</html>

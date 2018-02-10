@@ -1,0 +1,233 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  <html lang="es">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>H2H: Mensaje FQ-OQ</title>
+    <meta name="date" content="2017-01-12">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">H2H: Mensaje FQ-OQ / FQ-OQ Message</h1>
+
+    <h2>FQ-OQ: Operatividad por Serie (Exclusivo para la CNBV) / <span class ="english">Tradeability per Series (Exclusive for CNVB)</span></h2>
+    <p>Descripción del mensaje.</p>
+    <div class="english">
+      <p>Message description.</p>
+    </div>
+
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message Type</div></td>
+        <td></td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Fecha Mensaje<div class="english">Message Date</div></td>
+        <td>2</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Fecha de mensaje  (AAAAMMDD)              <div class="english">Message date (YYYYMMDD)</div></td>
+      </tr>
+      <tr>
+        <td>Clase<div class="english">Class</div></td>
+        <td>10</td>
+        <td>7</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>(Las 4 primeras posiciones irán llenas, el resto en blancos) (Ejemplo: CMXB que significa Cemex B)<div class="english">(The first 4 positions will be filled out, the rest in blanks) (example: CMXB that means CEMEX B)</div></td>
+      </tr>
+      <tr>
+        <td>Descripción FV<div class="english">FV Description </div></td>
+        <td>17</td>
+        <td>4</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Fecha de Vencimiento (MMAA)<br>Ejemplo: OC95 que significa Octubre 1995<br>Blancos cuando se trata de un SWAP.
+          <div class="english">Maturity date (MMYY)<br>Example: OC95 that means october 1995 that means October 1995<br>Blanks when it is a SWAP.</div></td>
+      </tr>
+      <tr>
+        <td>Descripción Precio<div class="english">Price Description </div></td>
+        <td>21</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Precio de ejercicio<br>Ejem: bb28.5 significa dos blancos 28.5
+          <div class="english">Price for the year<br>Example: BB28.5 means two blanks 28.5</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Descripción Tipo<div class="english">Type Description </div></td>
+        <td>27</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Tipo<br>C: Call<br>P: Put<div class="english">Type<br>C: Call<br>P: Put</div></td>
+      </tr>
+      <tr>
+        <td>Precio Liquidación<div class="english">Settlemente Price</div></td>
+        <td>28</td>
+        <td>6,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Precio de liquidación del día<div class="english">Settlement price for the day</div></td>
+      </tr>
+      <tr>
+        <td>Precio de Cierre<div class="english">Closing Price</div></td>
+        <td>40</td>
+        <td>6,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Precio de la última operación registrada<div class="english">Price of the last registered transaction</div></td>
+      </tr>
+      <tr>
+        <td>Total Operaciones<div class="english">Total Transactions</div></td>
+        <td>52</td>
+        <td>6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Volúmen Compra<div class="english">Buyers Volume</div></td>
+        <td>58</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Volumen acumulado (compra)<div class="english">Cumulative volume (Buy)</div></td>
+      </tr>
+      <tr>
+        <td>Órdenes Compra<div class="english">Buyer Orders</div></td>
+        <td>66</td>
+        <td>4</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Cantidad de órdenes de compra<div class="english">Amount of purchase orders</div></td>
+      </tr>
+      <tr>
+        <td>Precio de Compra<div class="english">Buyers Price</div></td>
+        <td>70</td>
+        <td>6,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Volúmen Venta<div class="english">Sellers Volume</div></td>
+        <td>82</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Volumen acumulado (venta)<div class="english">Cumulative volume (Buy)</div></td>
+      </tr>
+      <tr>
+        <td>Órdenes Venta<div class="english">Sellers Order</div></td>
+        <td>90</td>
+        <td>4</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Cantidad de órdenes de venta<div class="english">Amount of purchase orders</div></td>
+      </tr>
+      <tr>
+        <td>Precio de Venta<div class="english">Sellers Price</div></td>
+        <td>94</td>
+        <td>6,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Precio Máximo<div class="english">Maximum Price</div></td>
+        <td>106</td>
+        <td>6,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Precio Mínimo<div class="english">Minimum Price</div></td>
+        <td>118</td>
+        <td>6,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Precio Apertura<div class="english">Opening Price</div></td>
+        <td>130</td>
+        <td>6,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Signo Variación<div class="english">Variation Sign</div></td>
+        <td>142</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Signo de variación<br>+: más<br>-: menos<br>0: cero<div class="english">Variation Sign<br>+: more<br>-: less<br>0: zero</div></td>
+      </tr>
+      <tr>
+        <td>Variación<div class="english">Variation</div></td>
+        <td>143</td>
+        <td>3,2</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Variación (Con respecto al precio de liquidación del día anterior y en porcentaje)<div class="english">Variation (w.r.t. to previous day settlement price in percentage)</div></td>
+      </tr>
+      <tr>
+        <td>Total Volúmen Negociado<div class="english">Total Negotiated Volume</div></td>
+        <td>148</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Volúmen acumulado<div class="english">Cumulative volume </div></td>
+      </tr>
+      <tr>
+        <td>Contratos Abiertos<div class="english">Open Contracts</div></td>
+        <td>156</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Número de contratos abiertos al cierre del día<div class="english">Number of end of the day contracts</div></td>
+      </tr>
+      <tr>
+        <td>Precio Subyacente<div class="english">Uncerlying Price</div></td>
+        <td>164</td>
+        <td>6,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Vencimiento<div class="english">Maturity</div></td>
+        <td>176</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Vencimiento formato (AAAAMMDD)<div class="english">Maturity format (AAAAMMDD)</div></td>
+      </tr>
+      <tr>
+        <td>Signo Delta<div class="english">Delta Sign</div></td>
+        <td>184</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Signo Delta<br>+: más<br>-: menos<br>0: cero<div class="english">Delta Sign<br>+: more<br>-: less<br>0: zero</div></td>
+      </tr>
+      <tr>
+        <td>Delta<div class="english">Delta</div></td>
+        <td>185</td>
+        <td>6,7</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Signo Volatilidad<div class="english">Volatility Sign</div></td>
+        <td>198</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Signo de Volatilidad<br>+: más<br>-: menos<br>0: cero<div class="english">Volatility Sign<br>+: more<br>-: less<br>0: zero</div></td>
+      </tr>
+      <tr>
+        <td>Volatilidad<div class="english">Volatility</div></td>
+        <td>199</td>
+        <td>6,7</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>212</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+</html>

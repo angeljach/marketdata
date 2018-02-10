@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Multicast: Encabezado de Mensaje</title>
+        <meta name="date" content="2016-09-06">
+        <link rel="stylesheet" type="text/css" href="../../../css/stylesheet.css" title="Style">
+    </head>
+  <body>
+
+      <h1 class="bar">Multicast: Encabezado de Mensaje / Message Header</h1>
+
+      <h2>Encabezado / <span style="english">Header</span></h2>
+
+      <p>El Encabezado BMV Multicast es utilizado para entregar todos los mensajes administrativos y los de aplicación en los tres diferentes canales. El Encabezado BMV Multicast podría contener cero, uno o más mensajes. Mientras un Encabezado BMV Multicast podría contener múltiples mensajes de aplicación, nunca contendrá más de un mensaje administrativo y tampoco contendrá una mezcla de ambos.</p>
+      <div class="english">
+          <p>The BMV Multicast Header is used to deliver all administrative and application messages in the three different channels. The BMV Multicast Header may contain zero, one or more messages. While a BMV Multicast Header may contain multiple application messages, it will never contain more than one administrative message and it will not contain a mixture of both either.</p>
+      </div>
+
+      <table>
+          <tr>
+              <th>Campo</th>
+              <th>Offset</th>
+              <th>Tamaño</th>
+              <th>Valor</th>
+              <th>Descripción</th>
+          </tr>
+          <tr>
+              <td>Longitud<div class="english">Length</div></td>
+              <td>0</td>
+              <td>2</td>
+              <td>Int16</td>
+              <td>Longitud del paquete, incluye encabezado y todos los mensajes adheridos<div class="english">Packet length, including header and all attached messages</div></td>
+          </tr>
+          <tr>
+              <td>Total Mensajes<div class="english">Total Messages</div></td>
+              <td>2</td>
+              <td>1</td>
+              <td>Int8</td>
+              <td>Número de mensajes que seguirán al encabezado<div class="english">Number of messages after the header</div></td>
+          </tr>
+          <tr>
+              <td>Grupo Market Data<div class="english">Market Data Group</div></td>
+              <td>3</td>
+              <td>1</td>
+              <td>Int8</td>
+              <td>Ver Catálogo de <a href="catalogs.html#cat_grupo_market_data">Grupos de Market Data</a><div class="english">See<a href="catalogs.html#cat_grupo_market_data">Market Data Groups Catalog</a></div></td>
+          </tr>
+          <tr>
+              <td>Sesión<div class="english">Session</div></td>
+              <td>4</td>
+              <td>1</td>
+              <td>Int8</td>
+              <td>Identificador de sesión actual<div class="english">Current session identifier</div></td>
+          </tr>
+          <tr>
+              <td>Número Secuencia<div class="english">Sequence Number</div></td>
+              <td>5</td>
+              <td>4</td>
+              <td>Int32</td>
+              <td>Número de secuencia del primer mensaje adherido al encabezado<div class="english">Sequence number of the first message attached to header</div></td>
+          </tr>
+          <tr>
+              <td>Fecha-Hora<div class="english">Date-Time</div></td>
+              <td>9</td>
+              <td>8</td>
+              <td>Timestamp(3)</td>
+              <td>Fecha y hora en que se crea el paquete<div class="english">Date and time the packet is created</div></td>
+          </tr>
+          <tr>
+              <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+              <td>17</td>
+              <td></td>
+              <td></td>
+          </tr>
+
+      </table>
+
+  </body>
+</html>

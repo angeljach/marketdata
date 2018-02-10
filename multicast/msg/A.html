@@ -1,0 +1,100 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Multicast: Mensaje A</title>
+    <meta name="date" content="2016-09-06">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">Multicast: Mensaje A / A Message</h1>
+
+    <h2>A: Alta de Orden / <span class ="english">Order Adition</span></h2>
+
+    <p>Al momento en que la orden es aceptada por el sistema central de la BMV, se difunde este mensaje a los medios correspondientes.</p>
+    <p>La orden tiene una identificación única por: Instrumento, Fecha y Folio asignados por el sistema de BMV. El Sentido de la orden indica el lado del libro electrónico donde se colocará la postura.</p>
+    <p>El folio con el que se identifica la orden es único por instrumento y día. Es un consecutivo que se va asignando conforme van ingresando las ordenes. Es igual al folio SENTRA.</p>
+    <p>Solo se difunden las órdenes que ingresan al libro principal o de contado "CO".</p>
+
+    <div class="english">
+      <p>The moment an order is being accepted by the BMV central system, this message is diffused to the corresponding media. </p>
+    <p>The order has a unique ID assigned by the BMV system for: instrument, date and number. Order’s direction indicates side of the electronic book where offer is placed. </p>
+    <p> The ID number to identify the order is serial and unique by instrument and day which is assigned as the orders come in; the number is the same as in SENTRA. </p>
+    <p>The only orders diffused are from the main order book and the “CO”. </p>
+    </div>
+
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message type</div></td>
+        <td>0</td>
+        <td>1</td>
+        <td>"A"</td>
+        <td>Respuesta de Alta de Ordenes<div class="english">Orders addition response</div></td>
+      </tr>
+      <tr>
+        <td>Número de Instrumento<div class="english">Instrument number</div></td>
+        <td>1</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Código único durante la vida del instrumento<div class="english">Unique code during instruments life</div></td>
+      </tr>
+      <tr>
+        <td>Fecha y Hora<div class="english">Date and Time</div></td>
+        <td>5</td>
+        <td>8</td>
+        <td>Timestamp(2)</td>
+        <td>Fecha y hora del alta de la orden<div class="english">Date and time for the addition of order</div></td>
+      </tr>
+      <tr>
+        <td>Folio<div class="english">Number</div></td>
+        <td>13</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Folio Asignado a la orden, cuando es registrada<div class="english">Assigned number to the order when registered</div></td>
+      </tr>
+      <tr>
+        <td>Sentido<div class="english">Direction</div></td>
+        <td>17</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>C - Compra<br>V - Venta<div class="english">C - Buy<br>V - Sell</div></td>
+      </tr>
+      <tr>
+        <td>Volumen<div class="english">Volume</div></td>
+        <td>18</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Volumen de la orden<div class="english">Order volume</div></td>
+      </tr>
+      <tr>
+        <td>Precio<div class="english">Price</div></td>
+        <td>22</td>
+        <td>8</td>
+        <td>Precio(8)</td>
+        <td>Precio de la orden<div class="english">Order price</div></td>
+      </tr>
+      <tr>
+        <td>Participante<div class="english">Participant</div></td>
+        <td>30</td>
+        <td>5</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave corta de la casa participante<div class="english">Short key of participant</div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>35</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </body>
+</html>

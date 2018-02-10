@@ -1,0 +1,356 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  <html lang="es">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>H2H: Mensaje FN-ON</title>
+    <meta name="date" content="2017-01-12">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">H2H: Mensaje FN-ON / FN-ON Message</h1>
+
+    <h2>FN-ON: Asignación de Cuenta y Posición / <span class ="english">Allocation of Account and Position</span></h2>
+    <p>Descripción del mensaje.</p>
+    <div class="english">
+      <p>Message description.</p>
+    </div>
+
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message Type</div></td>
+        <td></td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Fecha Mensaje<div class="english">Message Date</div></td>
+        <td>2</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Fecha de mensaje  (AAAAMMDD)              <div class="english">Message date (YYYYMMDD)</div></td>
+      </tr>
+      <tr>
+        <td>Hora Mensaje<div class="english">Time Message</div></td>
+        <td>10</td>
+        <td>6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Hora en la que se envía el mensaje (HHMMSS)<div class="english">Time when message is sent (HHMMSS)</div></td>
+      </tr>
+      <tr>
+        <td>Número Mensaje<div class="english">Message Number</div></td>
+        <td>16</td>
+        <td>2</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Número de mensaje actual para el lado del hecho<div class="english">Number of current message from trade side</div></td>
+      </tr>
+      <tr>
+        <td>Total Mensaje<div class="english">Total Messages</div></td>
+        <td>18</td>
+        <td>2</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Número total de mensajes para el lado del hecho<div class="english">Total number of messages from trade side</div></td>
+      </tr>
+      <tr>
+        <td>Folio Hecho<div class="english">Trade Folio</div></td>
+        <td>20</td>
+        <td>5</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Intermediario<div class="english">Broker</div></td>
+        <td>25</td>
+        <td>5</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de Sentra de Intermediario que envia<div class="english">Transmitting broker Sentra code </div></td>
+      </tr>
+      <tr>
+        <td>Lado<div class="english">Side</div></td>
+        <td>30</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Lado afectado<br>CO: Compra<br>VE: Venta<div class="english">Affected side<br>CO: Buy<br>VE: Sale </div></td>
+      </tr>
+      <tr>
+        <td>Total Cuentas<div class="english">Total Accounts</div></td>
+        <td>32</td>
+        <td>1</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Total de cuentas que se envían en el presente mensaje.<div class="english">Total number of accounts sent in this MESSAGE.</div></td>
+      </tr>
+      <tr>
+        <td>Cuenta 1<div class="english">Account 1</div></td>
+        <td>33</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>P: Propia<br>T: Terceros<br>G: Grupo<br>F:Formador<div class="english">P: Owned<br>T: Third parties<br>G: Group<br>F: Maker</div></td>
+      </tr>
+      <tr>
+        <td>Subcuenta 1<div class="english">Subaccount 1</div></td>
+        <td>34</td>
+        <td>10</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Cuenta única<div class="english">Sole account</div></td>
+      </tr>
+      <tr>
+        <td>Volúmen 1<div class="english">Volume </div></td>
+        <td>44</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Número de contratos asignados a la subcuenta<div class="english">Number of subaccount agreements</div></td>
+      </tr>
+      <tr>
+        <td>Abre/Cierra 1<div class="english">Open/Closes 1</div></td>
+        <td>52</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>A: Abre<br>C: Cierra<div class="english">A: Opens<br>C: Closes</div></td>
+      </tr>
+      <tr>
+        <td>Cuenta 2<div class="english">Account 2</div></td>
+        <td>53</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>P: Propia<br>T: Terceros<br>G: Grupo<br>F:Formador<div class="english">P: Owned<br>T: Third parties<br>G: Group<br>F: Maker</div></td>
+      </tr>
+      <tr>
+        <td>Subcuenta 2<div class="english">Subaccount 2</div></td>
+        <td>54</td>
+        <td>10</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Cuenta única<div class="english">Sole account</div></td>
+      </tr>
+      <tr>
+        <td>Volúmen 2<div class="english">Volume 2</div></td>
+        <td>64</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Número de contratos asignados a la subcuenta<div class="english">Number of subaccount agreements</div></td>
+      </tr>
+      <tr>
+        <td>Abre/Cierra 2<div class="english">Open/Closes 2</div></td>
+        <td>72</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>A: Abre<br>C: Cierra<div class="english">A: Opens<br>C: Closes</div></td>
+      </tr>
+      <tr>
+        <td>Cuenta 3<div class="english">Account 3</div></td>
+        <td>73</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>P: Propia<br>T: Terceros<br>G: Grupo<br>F:Formador<div class="english">P: Owned<br>T: Third parties<br>G: Group<br>F: Maker</div></td>
+      </tr>
+      <tr>
+        <td>Subcuenta 3<div class="english">Subaccount 3</div></td>
+        <td>74</td>
+        <td>10</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Cuenta única<div class="english">Sole account</div></td>
+      </tr>
+      <tr>
+        <td>Volúmen 3<div class="english">Volume 3</div></td>
+        <td>84</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Número de contratos asignados a la subcuenta<div class="english">Number of subaccount agreements</div></td>
+      </tr>
+      <tr>
+        <td>Abre/Cierra 3<div class="english">Open/Closes 3</div></td>
+        <td>92</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>A: Abre<br>C: Cierra<div class="english">A: Opens<br>C: Closes</div></td>
+      </tr>
+      <tr>
+        <td>Cuenta 4<div class="english">Account 4</div></td>
+        <td>93</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>P: Propia<br>T: Terceros<br>G: Grupo<br>F:Formador<div class="english">P: Owned<br>T: Third parties<br>G: Group<br>F: Maker</div></td>
+      </tr>
+      <tr>
+        <td>Subcuenta 4<div class="english">Subaccount 4</div></td>
+        <td>94</td>
+        <td>10</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Cuenta única<div class="english">Sole account</div></td>
+      </tr>
+      <tr>
+        <td>Volúmen 4<div class="english">Volume 4</div></td>
+        <td>104</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Número de contratos asignados a la subcuenta<div class="english">Number of subaccount agreements</div></td>
+      </tr>
+      <tr>
+        <td>Abre/Cierra 4<div class="english">Open/Closes 4</div></td>
+        <td>112</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>A: Abre<br>C: Cierra<div class="english">A: Opens<br>C: Closes</div></td>
+      </tr>
+      <tr>
+        <td>Cuenta 5<div class="english">Account 5</div></td>
+        <td>113</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>P: Propia<br>T: Terceros<br>G: Grupo<br>F:Formador<div class="english">P: Owned<br>T: Third parties<br>G: Group<br>F: Maker</div></td>
+      </tr>
+      <tr>
+        <td>Subcuenta 5<div class="english">Subaccount 5</div></td>
+        <td>114</td>
+        <td>10</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Cuenta única<div class="english">Sole account</div></td>
+      </tr>
+      <tr>
+        <td>Volúmen 5<div class="english">Volume 5</div></td>
+        <td>124</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Número de contratos asignados a la subcuenta<div class="english">Number of subaccount agreements</div></td>
+      </tr>
+      <tr>
+        <td>Abre/Cierra 5<div class="english">Open/Closes 5</div></td>
+        <td>132</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>A: Abre<br>C: Cierra<div class="english">A: Opens<br>C: Closes</div></td>
+      </tr>
+      <tr>
+        <td>Cuenta 6<div class="english">Account 6</div></td>
+        <td>133</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>P: Propia<br>T: Terceros<br>G: Grupo<br>F:Formador<div class="english">P: Owned<br>T: Third parties<br>G: Group<br>F: Maker</div></td>
+      </tr>
+      <tr>
+        <td>Subcuenta 6<div class="english">Subaccount 6</div></td>
+        <td>134</td>
+        <td>10</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Cuenta única<div class="english">Sole account</div></td>
+      </tr>
+      <tr>
+        <td>Volúmen 6<div class="english">Volume 6</div></td>
+        <td>144</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Número de contratos asignados a la subcuenta<div class="english">Number of subaccount agreements</div></td>
+      </tr>
+      <tr>
+        <td>Abre/Cierra 6<div class="english">Open/Closes 6</div></td>
+        <td>152</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>A: Abre<br>C: Cierra<div class="english">A: Opens<br>C: Closes</div></td>
+      </tr>
+      <tr>
+        <td>Cuenta 7<div class="english">Account 7</div></td>
+        <td>153</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>P: Propia<br>T: Terceros<br>G: Grupo<br>F:Formador<div class="english">P: Owned<br>T: Third parties<br>G: Group<br>F: Maker</div></td>
+      </tr>
+      <tr>
+        <td>Subcuenta 7<div class="english">Subaccount 7</div></td>
+        <td>154</td>
+        <td>10</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Cuenta única<div class="english">Sole account</div></td>
+      </tr>
+      <tr>
+        <td>Volúmen 7<div class="english">Volume 7</div></td>
+        <td>164</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Número de contratos asignados a la subcuenta<div class="english">Number of subaccount agreements</div></td>
+      </tr>
+      <tr>
+        <td>Abre/Cierra 7<div class="english">Open/Closes 7</div></td>
+        <td>172</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>A: Abre<br>C: Cierra<div class="english">A: Opens<br>C: Closes</div></td>
+      </tr>
+      <tr>
+        <td>Cuenta 8<div class="english">Account 8</div></td>
+        <td>173</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>P: Propia<br>T: Terceros<br>G: Grupo<br>F:Formador<div class="english">P: Owned<br>T: Third parties<br>G: Group<br>F: Maker</div></td>
+      </tr>
+      <tr>
+        <td>Subcuenta 8<div class="english">Subaccount 8</div></td>
+        <td>174</td>
+        <td>10</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Cuenta única<div class="english">Sole account</div></td>
+      </tr>
+      <tr>
+        <td>Volúmen 8<div class="english">Volume 8</div></td>
+        <td>184</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Número de contratos asignados a la subcuenta<div class="english">Number of subaccount agreements</div></td>
+      </tr>
+      <tr>
+        <td>Abre/Cierra 8<div class="english">Open/Closes 8</div></td>
+        <td>192</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>A: Abre<br>C: Cierra<div class="english">A: Opens<br>C: Closes</div></td>
+      </tr>
+      <tr>
+        <td>Cuenta 9<div class="english">Account 9</div></td>
+        <td>193</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>P: Propia<br>T: Terceros<br>G: Grupo<br>F:Formador<div class="english">P: Owned<br>T: Third parties<br>G: Group<br>F: Maker</div></td>
+      </tr>
+      <tr>
+        <td>Subcuenta 9<div class="english">Subaccount 9</div></td>
+        <td>194</td>
+        <td>10</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Cuenta única<div class="english">Sole account</div></td>
+      </tr>
+      <tr>
+        <td>Volúmen 9<div class="english">Volume 9</div></td>
+        <td>204</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Número de contratos asignados a la subcuenta<div class="english">Number of subaccount agreements</div></td>
+      </tr>
+      <tr>
+        <td>Abre/Cierra 9<div class="english">Open/Closes 9</div></td>
+        <td>212</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>A: Abre<br>C: Cierra<div class="english">A: Opens<br>C: Closes</div></td>
+      </tr>
+      <tr>
+        <td>Receptor<div class="english">Recipient</div></td>
+        <td>213</td>
+        <td>5</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>ID del miembro que recibe la operación Give Up<div class="english">ID of the member that receives the Give Up transaction </div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>218</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+</html>

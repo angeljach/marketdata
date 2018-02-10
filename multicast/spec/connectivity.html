@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Conectividad Multicast</title>
+        <meta name="date" content="2016-09-09">
+        <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+    </head>
+    <body>
+
+        <h1 class="bar">Conectividad / <span class="english">Connectivity</span></h1>
+
+        <h2>Canales Multicast / <span class="english">Multicast Channels</span></h2>
+        <p>Multicast es el envío de la información en múltiples redes a múltiples destinos simultáneamente.</p>
+        <p>Antes del envío de la información, deben establecerse una serie de parámetros. Para poder recibirla, es necesario establecer lo que se denomina "grupo multicast". Ese grupo multicast tiene asociado una dirección de internet. La versión actual del protocolo de internet, conocida como IPv4, reserva las direcciones de tipo D para la multidifusión.</p>
+        <p>Una dirección multicast está asociada con un grupo de receptores interesados. De acuerdo al <a href="https://tools.ietf.org/html/rfc3171">RFC 3171</a> las direcciones desde la 224.0.0.0 a la 239.255.255.255 están destinadas para ser direcciones de multicast. Este rango se llama formalmente "Clase D". El emisor envía un único datagrama (desde la dirección unicast del emisor) a la dirección multicast y el router se encargará de hacer copias y enviarlas a todos los receptores que hayan informado de su interés por los datos de ese emisor.</p>
+        <p>El canal multicast utiliza UDP sobre IPv4. Cada datagrama UDP contendrá solo un Encabezado BMV Multicast.</p>
+        <div class="english">
+            <p>Multicast is the sending of information through multiple networks to multiple destinations simultaneously.</p>
+            <p>Before information is sent, a series of parameters must be established. To be able to receive it, it is necessary to establish what is known as “multicast group". That multicast group has an associated url. The current version of the internet protocol, known as IPv4, reserves D type addresses for multicasting.</p>
+            <p>A multicast address is associated to a group of interested receivers. According to <a href="https://tools.ietf.org/html/rfc3171">RFC 3171</a> addresses from 224.0.0.0 to 239.255.255.255 are allocated to be multicast addresses. This range is formally called "D Class". The issuer sends a single datagram (from the issuer’s unicast address) to the multicast address and the router will ensure that copies are made and sent to all receivers who have informed of their interest for the data of such issuer.</p>
+            <p>The multicast channel uses UDP over IPv4. Each UDP datagram will contain only one BMV Multicast Header.</p>
+        </div>
+        
+        <h2>Canales Unicast / <span class="english">Unicast Channels</span></h2>
+        <p>Los servicios de retransmisión y de snapshots utilizan TCP sobre IPv4.</p>
+        <p>Cada cliente que desee conectarse a estos servicios deberá avisar previamente al grupo de <a href="../../general/contacts.html">Soporte Market Data</a> para que su IP, usuario y password sea registrado. El mismo usuario y password será utilizado para el inicio de sesión en los servicios de retransmisión y snapshots. Las credenciales serán enviadas por correo electrónico de forma encriptada por lo que para poder visualizar el contenido se deberá seguir el procedimiento definido en el <a href="man_inst_cert_email.html">Manual de Instalación Certificado de Seguridad en Microsoft Outlook</a>).</p>
+        <p>En la siguiente imagen se puede apreciar una diferencia entre Multicast y Unicast.</p>
+        <div class="english">
+            <p>Replay and snapshots services use TCP over IPv4.</p>
+            <p>Every client intending to connect to these services must previously advise the <a href="../../general/contacts.html"> Market Data Support</a> group to have its IP, consumer name and password registered. The same consumer and password will be used for login into the replay and snapshots services. The credentials will be sent encripted by email, so to display the content should follow the procedure defined in <a href="man_inst_cert_email.html">Security Certificate Installation Manual in Microsoft Outlook</a>).</p>
+            <p>The following image shows a difference between Multicast and Unicast.</p>
+        </div>
+        <img src="../../images/multicast-multivast_vs_unicast.png" alt="Multicast VS Unicast">
+        
+        <h2>Homologación de Conceptos / <span class="english">Standardization of concepts</span></h2>
+        <p>Se usará el término paquete para referirnos a la información de Market Data que fluye a través de UDP y de TCP/IP.</p>
+        <div class="english">
+            <p>The term packet will be used to refer to the Market Data information flowing through UDP and TCP/IP.</p>
+        </div>
+        
+    </body>
+</html>

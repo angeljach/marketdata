@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Multicast: Mensaje Respuesta de retransmisión</title>
+        <meta name="date" content="2016-09-06">
+        <link rel="stylesheet" type="text/css" href="../../../css/stylesheet.css" title="Style">
+    </head>
+  <body>
+
+      <h1 class="bar">Multicast: Mensaje Respuesta de retransmisión / Replay response Message</h1>
+
+      <h2>Mensaje Respuesta de retransmisión / <span style="english">Replay response Message</span></h2>
+
+      <table>
+          <tr>
+              <th>Campo<div class="english">Field</div></th>
+              <th>Offset</th>
+              <th>Tamaño (byte)<div class="english">Size (byte)</div></th>
+              <th>Tipo<div class="english">Type</div></th>
+              <th>Descripción<div class="english">Description</div></th>
+          </tr>
+         <tr>
+              <td>Tipo Mensaje<div class="english">Message type</div></td>
+              <td>0</td>
+              <td>1</td>
+              <td>ALFA<div class="english">ALPHA</div></td>
+              <td>
+                <table class="insidetable">
+                  <tr>
+                    <th>Valor<div class="english">Value</div></td>
+                    <th>Valor (Hexadecimal)<div class="english">(Hexadecimal) value</div></td>
+                  </tr>
+                  <tr>
+                    <td>*</td>
+                    <td>(0x2A)</td>
+                  </tr>
+                </table>
+              </td>
+          </tr>
+          <tr>
+              <td>Grupo Market Data<div class="english">Market Data Group</div></td>
+              <td>1</td>
+              <td>1</td>
+              <td>Int8</td>
+              <td>Ver <a href="../structure/catalogs.html#cat_grupo_market_data">Catálogo de Grupos de Market Data</a><div class="english">See <a href="../structure/catalogs.html#cat_grupo_market_data">Market Data Groups Catalog</a></div></td>
+          </tr>
+          <tr>
+              <td>Primer mensaje<div class="english">First message</div></td>
+              <td>2</td>
+              <td>4</td>
+              <td>Int32</td>
+              <td>Número de secuencia del primer mensaje a ser transmitido. Este será cero si la solicitud no fue aceptada<div class="english">Sequence number of the first message to be transmitted. Zero when request not accepted.</div></td> 
+          </tr>
+          <tr>
+              <td>Cantidad<div class="english">Quantity</div></td>
+              <td>6</td>
+              <td>2</td>
+              <td>Int16</td>
+              <td>Número de mensajes a ser retransmitidos. Este será cero si la solicitud no fue aceptada<div class="english">Number of messages to be replayed. Zero when request not accepted.</div></td>
+          </tr> 
+           <tr>
+              <td>Estado<div class="english">Status</div></td>
+              <td>8</td>
+              <td>1</td>
+              <td>ALFA<div class="english">ALPHA</div></td>
+              <td>
+                <table class="insidetable">
+                  <tr>
+                    <th>Valor<div class="english">Value</div></td>
+                    <th>Significado<div class="english">Meaning</div></td>
+                  </tr>
+                  <tr>
+                    <td>A</td>
+                    <td>Solicitud aceptada<div class="english">Accepted request</div></td>
+                  </tr>
+                  <tr>
+                    <td>B</td>
+                    <td>Grupo Market data inválido<div class="english">Invalid Market data group</div></td>
+                  </tr>
+                  <tr>
+                    <td>D</td>
+                    <td>Servicio no disponible (Intermitencia en el servicio solicitado, se sugiere contactar al equipo de soporte)<div class="english">Unavailable Service (Intermittence over requested service, we suggest to contact our support team)</div></td>
+                  </tr>
+                  <tr>
+                    <td>E</td>
+                    <td>Sesión no iniciada<div class="english">Not logged in</div></td>
+                  </tr>
+                  <tr>
+                    <td>F</td>
+                    <td>Sobrepasa límite de peticiones<div class="english">Surpass requests limit</div></td>
+                  </tr>
+                  <tr>
+                    <td>G</td>
+                    <td>Fuera de rango<div class="english">Out of range</div></td>
+                  </tr>
+                  <tr>
+                    <td>J</td>
+                    <td>Primer mensaje inválido<div class="english">First invalid message</div></td>
+                  </tr>
+                  <tr>
+                    <td>K</td>
+                    <td>Cantidad inválida<div class="english">Invalid quantity</div></td>
+                  </tr>
+                </table>
+              </td>
+          </tr>
+          <tr>
+              <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+              <td>9</td>
+              <td></td>
+              <td></td>
+          </tr>
+      </table>
+  </body>
+</html>

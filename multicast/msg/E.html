@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Multicast: Mensaje E</title>
+    <meta name="date" content="2016-09-12">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">Multicast: Mensaje E / E Message</h1>
+
+    <h2>E: Operatividad / <span class ="english">Tradability </span></h2>
+
+    <p>Mensaje que se envía cada media hora durante la sesión de remate informando la operatividad general por instrumento.</p>
+    </div>
+      
+
+    <div class="english">
+      <p>Message sent every half hour during trading session, informing general tradability by instrument.</p>
+      </div>
+     
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message type</div></td>
+        <td>0</td>
+        <td>1</td>
+        <td>"E"</td>
+        <td>Estadística por Instrumento<div class="english">Statistics per instrument</div></td>
+      </tr>
+      <tr>
+        <td>Número de Instrumento<div class="english">Instrument Number</div></td>
+        <td>1</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Código único durante la vida del instrumento<div class="english">Unique code during instruments life</div></td>
+      </tr>
+      <tr>
+        <td>Número de Operaciones<div class="english">Number of operations </div></td>
+        <td>5</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Número de operaciones<div class="english">Number of operations </div></td>
+      </tr>
+      <tr>
+        <td>Volúmen<div class="english">Volume</div></td>
+        <td>9</td>
+        <td>8</td>
+        <td>Int64</td>
+        <td>Volúmen operado<div class="english">Traded volume</div></td>
+      </tr>
+      <tr>
+        <td>Importe<div class="english">Amount</div></td>
+        <td>17</td>
+        <td>8</td>
+        <td>Precio (8)<div class="english">Price (8)</div></td>
+        <td>Importe Operado<div class="english">Traded amount</div></td>
+      </tr>
+      <tr>
+        <td>Apertura<div class="english">Opening Price </div></td>
+        <td>25</td>
+        <td>8</td>
+        <td>Precio (8)<div class="english">Price (8)</div></td>
+        <td>Precio de apertura<div class="english">Opening price</div></td>
+      </tr>
+      <tr>
+        <td>Máximo<div class="english">Maximum</div></td>
+        <td>33</td>
+        <td>8</td>
+        <td>Precio (8)<div class="english">Price (8)</div></td>
+        <td>Precio máximo<div class="english">Maximum price</div></td>
+      </tr>
+      <tr>
+        <td>Mínimo<div class="english">Minimun</div></td>
+        <td>41</td>
+        <td>8</td>
+        <td>Precio (8)<div class="english">Price (8)</div></td>
+        <td>Precio míimo<div class="english">Minimum price</div></td>
+      </tr>
+      <tr>
+        <td>Promedio<div class="english">Average</div></td>
+        <td>49</td>
+        <td>8</td>
+        <td>Precio (8)<div class="english">Price (8)</div></td>
+        <td>Precio promedio del día<div class="english">Average price of the day</div></td>
+      </tr>
+      <tr>
+        <td>Último<div class="english">Last</div></td>
+        <td>57</td>
+        <td>8</td>
+        <td>Precio (8)<div class="english">Price (8)</div></td>
+        <td>Precio último del momento<div class="english">Last time price</div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>65</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </body>
+</html>

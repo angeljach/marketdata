@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Multicast: Mensaje z</title>
+    <meta name="date" content="2016-09-12">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">Multicast: Mensaje z / z Message</h1>
+
+    <h2>z: Reglas de Capitalización / <span class ="english">Capitalization Rules </span></h2>
+
+     
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message type</div></td>
+        <td>0</td>
+        <td>1</td>
+        <td>"z"</td>
+        <td>Reglas de Capitalización<div class="english">Capitalization Rules</td>
+      </tr>
+      <tr>
+        <td>Número del instrumento<div class="english">Instrument number</div></td>
+        <td>1</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Código único durante la vida del instrumento<div class="english">Unique code during instruments life</div></td>
+      </tr>
+      <tr>
+        <td>Fecha de los indicadores<div class="english">Date indicators</div></td>
+        <td>5</td>
+        <td>8</td>
+        <td>Timestamp(1)<div class="english">Timestamp(1)</div></td>
+        <td>Fecha de los indicadores<div class="english">Date indicators</div></td>
+      </tr>
+      <tr>
+        <td>Indice de Bursatilidad<div class="english">Bursatility Index</div></td>
+        <td>13</td>
+        <td>4</td>
+        <td>Precio(4)<div class="english">Price(4)</div></td>
+        <td>Indice de Bursatilidad<div class="english">Bursatility Index</div></td>
+      </tr>
+      <tr>
+        <td>Signo del indice de bursatilidad<div class="english">Bursatility Index Sign</div></td>
+        <td>17</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Signo del indice de bursatilidad: " " - Positivo "_" - Negativo<div class="english">Bursatility Index Sign: " " - Positive, "_" - Negative</div></td>
+      </tr>
+      <tr>
+        <td>Coeficiente Beta<div class="english">Beta Coefficient</div></td>
+        <td>18</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>Coeficiente Beta<div class="english">Beta Coefficient</div></td>
+      </tr>
+      <tr>
+        <td>Signo del Coeficiente Beta<div class="english">Beta Coefficient Sign</div></td>
+        <td>26</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Signo del coeficiente beta: " " - Positivo, "_" - Negativo<div class="english">Beta Coefficient Sign: " " - Positive, "_" - Negative</div></td>
+      </tr>
+      <tr>
+        <td>Coeficiente de Correlación<div class="english">Correlation Coefficient</div></td>
+        <td>27</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>Coeficiente de Correlación<div class="english">Correlation Coefficient</div></td>
+      </tr>
+      <tr>
+        <td>Signo del Coeficiente de Correlación<div class="english">Correlation Coefficient Sign</div></td>
+        <td>35</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Signo del coeficiente de correlación: " " - Positivo, "_" - Negativo<div class="english">Correlation Coefficient Sign: " " - Positive, "_" - Negative</div></td>
+      </tr>
+      <tr>
+        <td>Diferencia Delta<div class="english">Delta Difference</div></td>
+        <td>36</td>
+        <td>4</td>
+        <td>Precio(4)<div class="english">Price(4)</div></td>
+        <td>Diferencia Delta<div class="english">Delta Difference</div></td>
+      </tr>      
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>40</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </body>
+</html>

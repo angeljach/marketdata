@@ -1,0 +1,120 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Multicast: Mensaje F</title>
+    <meta name="date" content="2016-09-08">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">Multicast: Mensaje F / F Message</h1>
+
+    <h2>F: Modificación de órdenes/ <span class ="english">Order change</span></h2>
+    
+      <p>Mensaje enviado cuando la orden modifica alguno de sus datos, el sistema le asigna nueva prelación en el libro electrónico, la orden a sustituir se identifica con el Instrumento, Fecha y Folio original, la nueva asignación de prelación en el libro electrónico vienen en los campos Fecha y Folio Nuevos.</p>
+
+    
+      <p>Por ejemplo:</p>
+      <ul>
+        <li>Incremento en el volumen de una orden.</li>
+        <li>Cambio de precio.</li>
+        <li>Derivado de otras reglas señaladas en el manual operativo.</li>
+      </ul>
+    
+
+    <div class="english">
+      <p>Message sent when the order changes one of its data, the system allocates to it a new priority in the electronic book, the order to be replaced is identified with the original Instrument, Date and Number, the new allocation of priority in the electronic book appears in the New Date and Number fields.</p>
+    
+
+       <p>For example:</p>
+      <ul>
+        <li>Increasing volume of an order.</li>
+        <li>Price change</li>
+        <li>From other rules outlined in the operating manual.</li>
+      </ul>
+    </div>
+
+     
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message type</div></td>
+        <td>0</td>
+        <td>1</td>
+        <td>"F"</td>
+        <td>Respuesta de Modificación de órdenes<div class="english">Change of orders response</div></td>
+      </tr>
+      <tr>
+        <td>Número de Instrumento<div class="english">Instrument number</div></td>
+        <td>1</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Código único durante la vida del instrumento<div class="english">Unique code during instruments life</div></td>
+      </tr>
+      <tr>
+        <td>Fecha original<div class="english">Original date</div></td>
+        <td>5</td>
+        <td>8</td>
+        <td>Timestamp(2)</td>
+        <td>Fecha y hora en la que fue registrada la orden<div class="english">Date and time when the order was registered</div></td>
+      </tr>
+      <tr>
+        <td>Folio original<div class="english">Original number</div></td>
+        <td>13</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Folio Asignado originalmente a la orden<div class="english">Number originally allocated to the order</div></td>
+      </tr>
+      <tr>
+        <td>Nueva fecha<div class="english">Original date</div></td>
+        <td>17</td>
+        <td>8</td>
+        <td>Timestamp(2)</td>
+        <td>Nueva fecha y hora en la que fue registrada la orden<div class="english">New Date and time when the order was registered</div></td>
+      </tr>
+      <tr>
+        <td>Folio nuevo<div class="english">New number</div></td>
+        <td>25</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Folio Asignado a la nueva orden<div class="english">Number allocated to the new order</div></td>
+      </tr>
+      <tr>
+        <td>Sentido<div class="english">Direction</div></td>
+        <td>29</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>C - Compra<br>V - Venta<div class="english">C - Buy<br>V - Sell</div></td>
+      </tr>
+      <tr>
+        <td>Volúmen<div class="english">Volume</div></td>
+        <td>30</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Volúmen de orden<div class="english">Order volume</div></td>
+      </tr>
+      <tr>
+        <td>Precio<div class="english">Price</div></td>
+        <td>34</td>
+        <td>8</td>
+        <td>Precio (8)<div class="english">Price (8)</div></td>
+        <td>Precio máximo registrado en el día<div class="english">Price of order</div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>42</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </body>
+</html>

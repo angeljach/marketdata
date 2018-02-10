@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Multicast: Mensaje b</title>
+    <meta name="date" content="2016-09-08">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">Multicast: Mensaje b / b Message</h1>
+
+    <h2>b: Catálogo enviado para instrumentos que pertenecen al mercado de Deuda, metales y dinero / <span class ="english">Catalog sent for instruments that belong to the debt, metals and money market</span></h2>
+
+         
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message type</div></td>
+        <td>0</td>
+        <td>1</td>
+        <td>"b"</td>
+        <td>Catálogo del mercado de deuda y dinero<div class="english">Debt and Money Market catalog</div></td>
+      </tr>
+      <tr>
+        <td>Número del instrumento<div class="english">Instrument number</div></td>
+        <td>1</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Código único durante la vida del instrumento<div class="english">Unique code during instruments life</div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Valor<div class="english">Value type</div></td>
+        <td>5</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave del Tipo de Valor<div class="english">Value type code</div></td>
+      </tr>
+      <tr>
+        <td>Emisora<div class="english">Issuer</div></td>
+        <td>7</td>
+        <td>7</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de la Emisora<div class="english">Issuer code</div></td>
+      </tr>
+      <tr>
+        <td>Emisión<div class="english">Issue</div></td>
+        <td>14</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de la Emisión<div class="english">Issue code</div></td>
+      </tr>
+      <tr>
+        <td>Fecha de Emisión<div class="english">Issue date</div></td>
+        <td>20</td>
+        <td>8</td>
+        <td>Timestamp(1)</td>
+        <td>Fecha de emisión y colocación<div class="english">Placement and issue date</div></td>
+      </tr>
+      <tr>
+        <td>Fecha de vencimiento<div class="english">Maturity date</div></td>
+        <td>28</td>
+        <td>8</td>
+        <td>Timestamp(1)</td>
+        <td>Fecha de vencimiento<div class="english">Maturity date</div></td>
+      </tr>
+      <tr>
+      <td>Precio/tasa de Referencia<div class="english">Reference price/rate</div></td>
+        <td>36</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>Precio o tasa de última referencia<div class="english">Last reference price or rate</div></td>
+      </tr>
+      <tr>
+        <td>Fecha de referencia<div class="english">Reference date</div></td>
+        <td>44</td>
+        <td>8</td>
+        <td>Timestamp(1)</td>
+        <td>Fecha de última referencia<div class="english">Last reference date</div></td>
+      </tr>
+      <td>Referencia<div class="english">Reference</div></td>
+        <td>52</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Ver <a href="structure/catalogs.html#cat_referencia">Catálogo de Referencia</a><div class="english">See <a href="structure/catalogs.html#cat_referencia">Reference Catalog</a></div></td>
+      </tr>
+      <tr>
+        <td>Días Plazo<div class="english">Current coupon</div></td>
+        <td>53</td>
+        <td>2</td>
+        <td>Int16</div></td>
+        <td>Días plazo de la emisión<div class="english">Term days issue</div></td>
+      </tr>
+      <tr>
+        <td>Cupón/Periodo<div class="english">Current coupon</div></td>
+        <td>55</td>
+        <td>2</td>
+        <td>Int16</div></td>
+        <td>Número de cupón vigenteo número de periodo<div class="english">Current coupon number or period number</div></td>
+      </tr>
+      <tr>
+      <td>ISIN<div class="english">ISIN</div></td>
+        <td>57</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave del ISIN del instrumento<div class="english">Instrument ISIN code</div></td>
+      </tr>
+      <tr>
+      <td>Mercado<div class="english">Market</div></td>
+        <td>69</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Ver <a href="structure/catalogs.html#cat_mercados">Catálogo de Mercados</a><div class="english">See <a href="structure/catalogs.html#cat_mercados">Markets Catalog</a></div></td>
+      </tr>
+      <tr>
+      <td>Valor Nominal Actual<div class="english">Current Nominal Value</div></td>
+        <td>70</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>Valor Nominal Actual<div class="english">Current Nominal Value</div></td>
+      </tr>
+      <tr>
+      <td>Valor Nominal Original<div class="english">Original Nominal Value</div></td>
+        <td>78</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>Valor Nominal Original<div class="english">Original Nominal Value</div></td>
+      </tr>
+      <tr>
+      <td>Acciones en Circulación<div class="english">Outstanding Shares</div></td>
+        <td>86</td>
+        <td>8</td>
+        <td>Int64<div class="english">Int64</div></td>
+        <td>Acciones en Circulación<div class="english">Outstanding Shares</div></td>
+      </tr>
+      <tr>
+      <td>Monto Colocado<div class="english">Amount Placed</div></td>
+        <td>94</td>
+        <td>8</td>
+        <td>Int64<div class="english">Int64</div></td>
+        <td>Monto Colocado<div class="english">Amount Placed</div></td>
+      </tr>
+      <tr>
+      <td>Opera Tasa/Precio<div class="english">Operate Price/Rate</div></td>
+        <td>102</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>T - Tasa<br>P - Precio<br>" " - Por defecto<div class="english">T - Rate<br>P - Price<br>" " - Default</div></td>
+      </tr>                              
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>103</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </body>
+</html>
+
+

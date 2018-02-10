@@ -1,0 +1,218 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  <html lang="es">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>H2H: Mensaje XB</title>
+    <meta name="date" content="2017-02-15">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">H2H: Mensaje XB / XB Message</h1>
+
+    <h2>XB: Información Financiera en Formato XBRL / <span class ="english">Financial Information in XBRL Format </span></h2>
+    <p>eXtensible Business Reporting Language.</p>
+    <div class="english">
+      <p>eXtensible Business Reporting Language.</p>
+    </div>
+
+    <h3 id="indice">Indice / <span class="english">Index</span></h3>
+    <ol>
+      <li><a href="#registro1">Registro 1 / <span class="english">Registry 1</span></a></li>
+      <li><a href="#registro2">Registro 2 / <span class="english">Registry 2</span></a></li>
+      <li><a href="#registro3">Registro 3 / <span class="english">Registry 3</span></a></li>
+    </ol>
+
+    <hr>
+    <h4 style="display: inline;" id="registro1">Registro 1 / <span class="english">Registry 1</span></h4>
+    <p style="display: inline;" class="return_to_menu_link"> (<a href="#indice">Volver al Indice / <span class="english">Back to Index</span></a>)</p>
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message Type</div></td>
+        <td>0</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Trama<div class="english">Weave Type</div></td>
+        <td>2</td>
+        <td>1</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>1: Corresponde a la trama encabezado con los datos generales del archivo XBRL<div class="english">1: Refers to the header weave with the general information of the XBRL file</div></td>
+      </tr>
+      <tr>
+        <td>Emisora<div class="english">Issuer</div></td>
+        <td>3</td>
+        <td>7</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de la emisora<div class="english">Issuer Ticker</div></td>
+      </tr>
+      <tr>
+        <td>Frecuencia<div class="english">Frequency</div></td>
+        <td>10</td>
+        <td>2</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Periodo Trimestral (01,02,03,04)<div class="english">Quarterly Period (01, 02, 03, 04)</div></td>
+      </tr>
+      <tr>
+        <td>Año Ejercicio<div class="english">Reporting Year</div></td>
+        <td>12</td>
+        <td>4</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>AAAA<div class="english">YYYY</div></td>
+      </tr>
+      <tr>
+        <td>Dictaminado<div class="english">Dictamination</div></td>
+        <td>16</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>D: Dictaminado<br>" ": No Dictaminado<div class="english">D: Audited<br>" ": Not Audited</div></td>
+      </tr>
+      <tr>
+        <td>Folio Único Emisnet<div class="english">Emisnet Unique Folio</div></td>
+        <td>17</td>
+        <td>10</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Para distinguir entre envíos de archivos XBRL.<div class="english">To distinguish between transmissions of XBRL files</div></td>
+      </tr>
+      <tr>
+        <td>Fideicomitente<div class="english">Trustor</div></td>
+        <td>27</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>S: Envío por parte del Fideicomitente<br>N: Envío por parte del Fiduciario Emisor
+          <div class="english">S: Transmission from the Trustor<br>N: Transmission from the Issuer Fiduciary</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Número Fideicomiso<div class="english">Trust Number</div></td>
+        <td>28</td>
+        <td>15</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Número de Fideicomiso, este valor sólo vendrá cuando Fideicomitente sea 'S', de lo contrario, se llena con espacios.<div class="english">This value will only appear when the Trutir is ‘S’, otherwise, it’s filled with spaces.</div></td>
+      </tr>
+      <tr>
+        <td>Razón Social Emisora/Fideicomitente<div class="english">Business Name</div></td>
+        <td>43</td>
+        <td>200</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Cuando Fideicomitente sea 'S', será la Razón Social del Fideicomitente, de lo contrario, será de la Razón Social de la Emisora<div class="english">Trade name of the company which the XBRL file refers to, it could be the Issuer Fiduciary and the Trustor</div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>243</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+    <hr>
+    <h4 style="display: inline;" id="registro2">Registro 2 / <span class="english">Registry 2</span></h4>
+    <p style="display: inline;" class="return_to_menu_link"> (<a href="#indice">Volver al Indice / <span class="english">Back to Index</span></a>)</p>
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message Type</div></td>
+        <td>0</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Trama<div class="english">Weave Type</div></td>
+        <td>2</td>
+        <td>1</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>2: Corresponde a una trama con el contenido del archivo XBRL<div class="english">2: Corresponds to a plot inside the XBRL file</div></td>
+      </tr>
+      <tr>
+        <td>Número Secuencia<div class="english">Sequence Number</div></td>
+        <td>3</td>
+        <td>5</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>[00002-{total_tramas - 2}]<div class="english">[00002-{total_plot - 2}]</div></td>
+      </tr>
+      <tr>
+        <td>Folio Único Emisnet<div class="english">Emisnet Unique Folio</div></td>
+        <td>8</td>
+        <td>10</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Para distinguir entre envíos de archivos XBRL.<div class="english">To distinguish between transmissions of XBRL files</div></td>
+      </tr>
+      <tr>
+        <td>Contenido<div class="english">Content</div></td>
+        <td>18</td>
+        <td>1-972</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Fragmento del contenido del archivo XBRL. Longitud máxima posible (la última trama podría no llenar la trama completamente)<div class="english">Fragment of the XBRL file content. Maximum possible length (the last weave could not fill completely the total weave)</div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>19-990</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+    <hr>
+    <h4 style="display: inline;" id="registro3">Registro 3 / <span class="english">Registry 3</span></h4>
+    <p style="display: inline;" class="return_to_menu_link"> (<a href="#indice">Volver al Indice / <span class="english">Back to Index</span></a>)</p>
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message Type</div></td>
+        <td>0</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Trama<div class="english">Weave Type</div></td>
+        <td>2</td>
+        <td>1</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>3: Corresponde a la trama final del envío<div class="english">3: Refers to the last weave transmission</div></td>
+      </tr>
+      <tr>
+        <td>Número Secuencia<div class="english">Sequence Number</div></td>
+        <td>3</td>
+        <td>5</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Número de trama del envío, que en este caso corresponde al número total de tramas del envío<div class="english">Weave number of the transmission, which in this case, refers to the total number of transmission weaves.</div></td>
+      </tr>
+      <tr>
+        <td>Folio Único Emisnet<div class="english">Emisnet Unique Folio</div></td>
+        <td>8</td>
+        <td>10</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Para distinguir entre envíos de archivos XBRL<div class="english">To distinguish between transmissions of XBRL files</div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>18</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </body>
+</html>

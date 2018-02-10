@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Multicast: Mensaje G</title>
+    <meta name="date" content="2016-09-07">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">Multicast: Mensaje G / G Message</h1>
+
+    <h2>G: INAV / <span class ="english">INAV </span></h2>
+
+    <p>Difusión de los TRACS durante las horas de negociación del mercado continuo.</p>
+      
+
+    <div class="english">
+      <p>TRACS dissemination during continuous market trading hours.</p>
+    </div> 
+
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message type</div></td>
+        <td>0</td>
+        <td>1</td>
+        <td>"G"</td>
+        <td>Difusión del valor teórico de los Tracs durante el remate<div class="english">Tracs theoretical value dissemination during trading.</div></td>
+      </tr>
+      <tr>
+        <td>Número del Trac<div class="english">Trac Number</div></td>
+        <td>1</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Código único asignado a los TRACs<div class="english">Unique code during TRACs life</div></td>
+      </tr>
+      <tr>
+        <td>Precio Teórico Actual<div class="english">Theoretical Current  Price </div></td>
+        <td>5</td>
+        <td>8</td>
+        <td>Precio (8)<div class="english">Price (8)</div></td>
+        <td>Precio Teórico último del Trac<div class="english">Tracs' last theoretical price</div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>13</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Multicast: Mensaje Respuesta de snapshot</title>
+        <meta name="date" content="2017-08-01">
+        <link rel="stylesheet" type="text/css" href="../../../css/stylesheet.css" title="Style">
+    </head>
+  <body>
+
+      <h1 class="bar">Multicast: Mensaje Respuesta de snapshot / Snapshot response message</h1>
+
+      <h2>Mensaje Respuesta de snapshot / <span style="english">Snapshot response message</span></h2>
+
+      <table>
+          <tr>
+              <th>Campo<div class="english">Field</div></th>
+              <th>Offset</th>
+              <th>Tamaño (byte)<div class="english">Size (byte)</div></th>
+              <th>Tipo<div class="english">Type</div></th>
+              <th>Descripción<div class="english">Description</div></th>
+          </tr>
+          <tr>
+              <td>Tipo Mensaje<div class="english">Message type</div></td>
+              <td>0</td>
+              <td>1</td>
+              <td>ALFA<div class="english">ALPHA</div></td>
+              <td>
+                <table class="insidetable">
+                  <tr>
+                    <th>Valor<div class="english">Value</div></td>
+                    <th>Valor (Hexadecimal)<div class="english">(Hexadecimal) Value</div></td>
+                  </tr>
+                  <tr>
+                    <td>+</td>
+                    <td>(0x2B)</td>
+                  </tr>
+                </table>
+              </td>
+          </tr>
+          <tr>
+              <td>Cantidad de mensajes<div class="english">Quantity of messages</div></td>
+              <td>1</td>
+              <td>4</td>
+              <td>Int32</td>
+              <td>Número de mensajes que serán transmitidos para atender la solicitud de snapshot. En el conteo de mensajes también se incluyen los mensajes de Estado del instrumento y el mensaje final de Snapshot terminado. Éste será cero en caso de que la solicitud no haya sido aceptada<div class="english">Number of messages to be transmitted in order to attend snapshot request. Also included, instrument status messages and Snapshot complete final message. The same will be zero for not accepted request.</div></td>
+          </tr>
+          <tr>
+              <td>Estado<div class="english">Status</div></td>
+              <td>5</td>
+              <td>1</td>
+              <td>ALFA<div class="english">ALPHA</div></td>
+              <td>
+                <table class="insidetable">
+                  <tr>
+                    <th>Valor<div class="english">Value</div></td>
+                    <th>Significado<div class="english">Meaning</div></td>
+                  </tr>
+                  <tr>
+                    <td>A</td>
+                    <td>Solicitud aceptada<div class="english">Accepted request</div></td>
+                  </tr>
+                  <tr>
+                    <td>B</td>
+                    <td>Grupo Market data inválido<div class="english">Invalid Market Data group</div></td>
+                  </tr>
+                  <tr>
+                    <td>D</td>
+                    <td>Servicio no disponible (Intermitencia en el servicio solicitado, se sugiere contactar al equipo de soporte)<div class="english">Unavailable service (Experiencing intermittence on requested service, contact support team)</div></td>
+                  </tr>
+                  <tr>
+                    <td>E</td>
+                    <td>Sesión no iniciada<div class="english">Not logged in</div></td>
+                  </tr>
+                  <tr>
+                    <td>F</td>
+                    <td>Sobrepasa límite de peticiones<div class="english">Surpass requests limit</div></td>
+                  </tr>
+                  <tr>
+                    <td>H</td>
+                    <td>Tipo de SNAPSHOT inválido<div class="english">Invalid SNAPSHOT type</div></td>
+                  </tr>
+                  <tr>
+                  <tr>
+                    <td>I</td>
+                    <td>Identificador del instrumento inválido, no es parte de la lista de instrumentos del grupo de market data.
+                    <div class="english">Invalid identifier instrument. Not included on the market data instruments list group.</div></td>
+                  </tr>
+                  <tr>
+                    <td>L</td>
+                    <td>Combinación Market Data / Tipo Snapshot no disponible<div class="english">Market Data combination/ Unavailable snapshot type</div></td>
+                  </tr>
+                  <tr>
+                    <td>M</td>
+                    <td>Corro del instrumento solicitado vacio.<div class="english">Empty information from requested instrument.</div></td>
+                  </tr>
+                  <tr>
+                    <td>S</td>
+                    <td>Muestra inv&aacute;lida.<div class="english">Invalid sample.</div></td>
+                  </tr>
+               </table>
+              <tr>
+              <td>Tipo snapshot<div class="english">Snapshot type</div></td>
+              <td>6</td>
+              <td>1</td>
+              <td>Int8</td>
+              <td>Ver <a href="../structure/catalogs.html#cat_snapshot">Catálogo de Tipos de Snapshot</a>. Los tipos de Snapshot permitidos por producto se visualizan en el <a href="../structure/catalogs.html#cat_snapshot_product">Catálogo de Snapshot por Producto</a><div class="english">See <a href="../structure/catalogs.html#cat_snapshot">Snapshot Type Catalog</a>. The types of Snapshot allowed by each of the multicast product are listed in the <a href="../structure/catalogs.html#cat_snapshot_product">Snapshot by Product Catalog</a></div></div></td>
+          </tr>
+           <tr>
+              <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+              <td>7</td>
+              <td></td>
+              <td></td>
+          </tr>
+      </table>
+  </body>
+</html>

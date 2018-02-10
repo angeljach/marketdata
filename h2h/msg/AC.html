@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  <html lang="es">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>H2H: Mensaje AC</title>
+    <meta name="date" content="2017-03-15">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">H2H: Mensaje AC / AC Message</h1>
+
+    <h2>AC: Acuse de recibo de Hechos de SWAPS proveniente de Brokers / <span class ="english">SWAPS Trades acknowledgment of receipt from Brokers</span></h2>
+    <p>Descripción del mensaje.</p>
+    <div class="english">
+      <p>Message description.</p>
+    </div>
+
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message Type</div></td>
+        <td>0</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Fecha Mensaje<div class="english">Message Date</div></td>
+        <td>2</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Fecha en que se genera el mensaje<div class="english">Date when message is created</div></td>
+      </tr>
+      <tr>
+        <td>Hora Mensaje<div class="english">Message Time</div></td>
+        <td>10</td>
+        <td>6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Hora en que se envía el mensaje<div class="english">Time when message is sent</div></td>
+      </tr>
+      <tr>
+        <td>Folio Hecho<div class="english">Folio Trade</div></td>
+        <td>16</td>
+        <td>5</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Clave Miembro<div class="english">Members Code</div></td>
+        <td>21</td>
+        <td>5</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave del Intermediario que envía<div class="english">Intermediary code</div></td>
+      </tr>
+      <tr>
+        <td>Lado a Confirmar<div class="english">Side to Confirm</div></td>
+        <td>26</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de la Serie Alineado a la izquierda<div class="english">Series code, left aligned</div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>28</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+</html>

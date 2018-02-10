@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  <html lang="es">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>H2H: Mensaje FO-OO</title>
+    <meta name="date" content="2017-01-12">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">H2H: Mensaje FO-OO / FO-OO Message</h1>
+
+    <h2>FO-OO: Confirmación de la Asignación / <span class ="english">Confirmation of Allocation</span></h2>
+    <p>Descripción del mensaje.</p>
+    <div class="english">
+      <p>Message description.</p>
+    </div>
+
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message Type</div></td>
+        <td></td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Fecha Mensaje<div class="english">Message Date</div></td>
+        <td>2</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Fecha de mensaje  (AAAAMMDD)              <div class="english">Message date (YYYYMMDD)</div></td>
+      </tr>
+      <tr>
+        <td>Hora Mensaje<div class="english">Time Message</div></td>
+        <td>10</td>
+        <td>6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Hora en la que se envía el mensaje (HHMMSS)<div class="english">Time when message is sent (HHMMSS)</div></td>
+      </tr>
+      <tr>
+        <td>Folio Hecho<div class="english">Folio Trade</div></td>
+        <td>16</td>
+        <td>5</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Intermediario<div class="english">Broker</div></td>
+        <td>21</td>
+        <td>5</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de SENTRA derivados de intermediario al que se le envía<div class="english">SENTRA broker code to whom is sent</div></td>
+      </tr>
+      <tr>
+        <td>Lado<div class="english">Side</div></td>
+        <td>26</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Lado afectado<br>CO: Compra<br>VE: Venta<div class="english">Affected side<br>CO: Buy<br>VE: Sale</div></td>
+      </tr>
+      <tr>
+        <td>Código<div class="english">Code</div></td>
+        <td>28</td>
+        <td>2</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Código de respuesta<div class="english">Response code</div></td>
+      </tr>
+      <tr>
+        <td>Mensaje<div class="english">Message</div></td>
+        <td>30</td>
+        <td>30</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Mensaje de error<div class="english">Error message</div></td>
+      </tr>
+      <tr>
+        <td>Intermediario transmite<div class="english">Broker Transmits</div></td>
+        <td>60</td>
+        <td>5</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de transmisión del intermediario<div class="english">Brokers transmission code</div></td>
+      </tr>
+      <tr>
+        <td>Receptor<div class="english">Receptor</div></td>
+        <td>65</td>
+        <td>5</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>ID del miembro que recibe la operación GIVE UP<div class="english">Members ID receiving the operation</div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>70</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <p>Este formato será enviado de los Sistemas de MexDer vía SETRIB a los sistemas de los socios liquidadores para confirmar la recepción y la ejecución de la confirmación de Cuenta y Posición de un hecho. El mensaje contendrá el folio del hecho al que se le asignó cuenta y posición a través del formato FN. Tendrá un código de respuesta (campo “código”), el cual tendrá el valor de cero si la transacción fue exitosa, si tuvo algún error y no se realizó la operación, el código será diferente de cero y la descripción del error estará en el campo “Mensaje”.  La descripción de los diferentes códigos de error es la siguiente:</p>
+    <p>
+      <span class="english">
+        This format will be sent to the settling partner systems from MEXDER through SETRIB in order to confirm position trade reception and execution. The message will contain trade folio for which the accoun and position is allocated through the FN format. Same will have a response code ("Code" field) containing a zero for successful transaction. If there is an error, and transaction not carried out, code will be different and error description will be the "Message" field. Different error codes are as follows:
+      </span>
+    </p>
+
+    <table>
+      <tr>
+        <th>Código</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>00</td>
+        <td>Éxito<div class="english">Success</div></td>
+      </tr>
+      <tr>
+        <td>01</td>
+        <td>No existe el folio del hecho<div class="english">The folio of the fact does not exist</div></td>
+      </tr>
+      <tr>
+        <td>02</td>
+        <td>Intermediario no participa en el hecho<div class="english">Broker does not participate in the fact</div></td>
+      </tr>
+      <tr>
+        <td>03</td>
+        <td>El hecho esta cancelado<div class="english">The trade is cancelled</div></td>
+      </tr>
+      <tr>
+        <td>04</td>
+        <td>El hecho ya tenía asignado cuenta y posición<div class="english">The trade already had an account and position allocated</div></td>
+      </tr>
+      <tr>
+        <td>05</td>
+        <td>Clave de intermediario inválida<div class="english">Invalid Broker code</div></td>
+      </tr>
+      <tr>
+        <td>06</td>
+        <td>Clave de lado inválida debe ser "CO" o "VE"<div class="english">Invalid side code must be "CO" or "VE"</div></td>
+      </tr>
+      <tr>
+        <td>07</td>
+        <td>Volumen inválido, debe ser numérico<div class="english">Invalid volume, it must be numeric</div></td>
+      </tr>
+      <tr>
+        <td>08</td>
+        <td>La suma del volumen de las asignaciones no corresponde al volumen original<div class="english">The sum of the volume of the allocations does not correspond to the original volume</div></td>
+      </tr>
+      <tr>
+        <td>09</td>
+        <td>No tiene permiso para operar a propias<div class="english">It does not have permission to operate on one's own account</div></td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>No tiene permiso para operar a terceros<div class="english">It does not have a permit to operate on behalf of third parties</div></td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>No tiene permiso para operar grupos<div class="english">It does not have a permit to operate groups</div></td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>Error interno del sistema<div class="english"></div>Internal system error</td>
+      </tr>
+    </table>
+
+  </body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Multicast: Mensaje t</title>
+    <meta name="date" content="2016-09-12">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">Multicast: Mensaje t / t Message</h1>
+
+    <h2>t: Multiplos del Mercado de Capitales / <span class ="english">Capital Market Multiples</span></h2>
+
+     
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message type</div></td>
+        <td>0</td>
+        <td>1</td>
+        <td>"t"</td>
+        <td>Multiplos del Mercado de Capitales<div class="english">Capital Market Multiples</td>
+      </tr>
+      <tr>
+        <td>Numero de instrumento<div class="english">Instrument Id</div></td>
+        <td>1</td>
+        <td>4</td>
+        <td>Int32<div class="english">Int32</div></td>
+        <td>Código único durante la vida del instrumento<div class="english">Unique code during instruments life</div></td>      
+      </tr>      
+      <tr>
+        <td>Tipo Multiplo<div class="english">Multiple Type</div></td>
+        <td>5</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>"E"=Múltiplo de mercado por emisora, "S"=Múltiplo de mercado por sector<div class="english">"E"=Multiple of market by transmitter, "S"=Multiple of market by sector</div></td>
+      </tr>
+      <tr>
+        <td>Numero de registro<div class="english">Registry Number</div></td>
+        <td>6</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Numero de registros enviados<div class="english">Registries sent number</div></td>
+     </tr>
+      <tr>
+        <td>Sector<div class="english">Sector</div></td>
+        <td>7</td>
+        <td>1</td>
+        <td>Int8<div class="english">Int8</div></td>
+        <td>Sector<div class="english">Sector</div></td>
+      </tr>
+      <tr>
+        <td>Subsector<div class="english">Subsector</div></td>
+        <td>8</td>
+        <td>1</td>
+        <td>Int8<div class="english">Int8</div></td>
+        <td>Subsector<div class="english">Subsector</div></td>
+      </tr>
+      <tr>
+        <td>Ramo<div class="english">Business Line</div></td>
+        <td>9</td>
+        <td>1</td>
+        <td>Int8<div class="english">Int8</div></td>
+        <td>Ramo<div class="english">Business Line</div></td>
+      </tr>
+      <tr>
+        <td>Subramo<div class="english">Sub-Line</div></td>
+        <td>10</td>
+        <td>1</td>
+        <td>Int8<div class="english">Int8</div></td>
+        <td>Subramo<div class="english">Sub-Line</div></td>
+      </tr>
+      <tr>
+        <td>Múltiplo P/FLEPA<div class="english">P/FLEPA Multiple</div></td>
+        <td>11</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>Múltiplo P/FLEPA<div class="english">P/FLEPA Multiple</div></td>
+      </tr>
+      <tr>
+        <td>Múltiplo P/FEPA<div class="english">P/FEPA Multiple</div></td>
+        <td>19</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>Múltiplo P/FEPA<div class="english">P/FEPA Multiple</div></td>
+      </tr>
+      <tr>
+        <td>Múltiplo VE-UAIIDA<div class="english">VE-UAIIDA Multiple</div></td>
+        <td>27</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>Múltiplo VE-UAIIDA<div class="english">VE-UAIIDA Multiple</div></td>
+      </tr>
+      <tr>
+        <td>P U<div class="english">P U</div></td>
+        <td>35</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>P U<div class="english">P U</div></td>
+      </tr>
+      <tr>
+        <td>P VL<div class="english">P VL</div></td>
+        <td>43</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>P VL<div class="english">P VL</div></td>
+      </tr>
+      <tr>
+        <td>F1_P_UNOC<div class="english">F1_P_UNOC</div></td>
+        <td>51</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>F1_P_UNOC<div class="english">F1_P_UNOC</div></td>
+      </tr>
+      <tr>
+        <td>F2_P_UNOC<div class="english">F2_P_UNOC</div></td>
+        <td>59</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>F2_P_UNOC<div class="english">F2_P_UNOC</div></td>
+      </tr>
+      <tr>
+        <td>F1_P_UE<div class="english">F1_P_UE</div></td>
+        <td>67</td>
+        <td>8</td>
+        <td>Precio1(8)<div class="english">Price(8)</div></td>
+        <td>F1_P_UE<div class="english">F1_P_UE</div></td>
+      </tr>
+      <tr>
+        <td>F2_P_UE<div class="english">F2_P_UE</div></td>
+        <td>75</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>F2_P_UE<div class="english">F2_P_UE</div></td>
+      </tr>
+      <tr>
+        <td>F1_VE_UAIIDA<div class="english">F1_VE_UAIIDA</div></td>
+        <td>83</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>F1_VE_UAIIDA<div class="english">F1_VE_UAIIDA</div></td>
+      </tr>
+      <tr>
+        <td>F2_VE_UAIIDA<div class="english">F2_VE_UAIIDA</div></td>
+        <td>91</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>F2_VE_UAIIDA<div class="english">F2_VE_UAIIDA</div></td>
+      </tr> 
+      <tr>
+        <td>F1_P_U<div class="english">F1_P_U</div></td>
+        <td>99</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>F1_P_U<div class="english">F1_P_U</div></td>
+      </tr>
+      <tr>
+        <td>F2_P_U<div class="english">F2_P_U</div></td>
+        <td>107</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>F2_P_U<div class="english">F2_P_U</div></td>
+      </tr> 
+      <tr>
+        <td>F1_P_VL<div class="english">F1_P_VL</div></td>
+        <td>115</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>F1_P_VL<div class="english">F1_P_VL</div></td>
+      </tr>
+      <tr>
+        <td>F2_P_VL<div class="english">F2_P_VL</div></td>
+        <td>123</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>F2_P_VL<div class="english">F2_P_VL</div></td>
+      </tr>                               
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>131</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </body>
+</html>

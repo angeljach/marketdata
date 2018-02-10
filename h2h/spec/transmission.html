@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Registro de Transmisión</title>
+        <meta name="date" content="2017-09-19">
+        <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+
+        <style>
+          table, th, td {
+              border: 1px solid black;
+          }
+        </style>
+    </head>
+  <body>
+
+    <h1 class="bar">Registro de Transmisión/ <span class="english">Transmission Record</span></h1>
+
+    <h2>Desglose del registro / <span class="english">Record breakdown</span></h2>
+
+    <table style="width:100%">
+      <tr>
+          <th>Campo<div class="english">Field</div></th>
+          <th>Longitud[bytes]<div class="english">Length[bytes]</div></th>
+          <th>Contenido<div class="english">Content</div></th> 
+      </tr>
+      <tr>
+          <td>Longitud<div class="english">Length</div></td>
+          <td>2</td>
+          <td>Longitud total del mensaje, incluyendo la longitud del header. Esta información viaja en binario, el orden de los bytes es de izquierda a derecha; es decir el byte de la izquierda es el más significativo y el byte de la derecha el menos significativo<div class="english">Total message length, including header length. This information travels in binary, the order of the bytes is left to right; ie the left byte is the most significant and the rightmost byte the least significant</div></td>
+      </tr>
+      <tr>
+          <td>Banderas<div class="english">Flags</div></td>
+          <td>2</td>
+          <td>Actualmente solo se ocupa el primer byte y hace referencia al checksum, si el primer byte trae un 1 indica que el checksum está activado y que esperamos un valor en el campo de checksum, si trae un 0 indica que no vamos a esperar un valor en el campo de checksum.<div class="english">Currently only the first byte is occupied and refers to the checksum, if the first byte brings a 1 indicates that the checksum is activated and that we expect a value in the checksum field, if it brings a 0 indicates that we will not expect a value in the checksum field.</div></td>
+      </tr>
+      <tr>
+          <td>Secuencia<div class="english">Sequence</div></td>
+          <td>11</td>
+          <td>Número de secuencia que se está transmitiendo<div class="english">Sequence number being transmitted</div></td>
+      </tr>
+      <tr>
+          <td>Hora<div class="english">Time</div></td>
+          <td>8</td>
+          <td>Hora del registro en el cual se capturo o se generó dicho registro para ser transmitido<div class="english">Time of the record in which said record was captured or generated to be transmitted</div></td>
+      </tr>
+      <tr>
+          <td>Tipo<div class="english">Type</div></td>
+          <td>2</td>
+          <td>Tipo de comando utilizado, se utiliza para identificar un registro de retransmisión o de recepción de información<div class="english">Type of command used, it is used to identify a record of retransmission or reception of information</div></td>
+      </tr>
+      <tr>
+          <td>Contenido<div class="english">Content</div></td>
+          <td>6</td>
+          <td>Valor en ascii del formato, en donde los 3 primeros campos son el valor del primer campo del formato y los 3 siguientes para el segundo campo del formato<div class="english">Ascii value of the format, where the first 3 fields are the value of the first field of the format and the 3 following for the second field of the format</div></td>
+      </tr>
+          <td>Longitud<div class="english">Longitude</div></td>
+          <td>3</td>
+          <td>Longitud de los datos transmitidos, sin incluir el header de TCP/IP, ni el header de transmisión<div class="english">Length of data transmitted, not including the TCP / IP header, nor the transmission header</div></td>
+      </tr>
+      </tr>
+          <td>Disponible<div class="english">Available</div></td>
+          <td>1</td>
+          <td>Espacios<div class="english">Spaces</div></td>
+      </tr>
+      <tr>
+          <td>Datos<div class="english">Data</div></td>
+          <td>1 - 961</td>
+          <td>Datos que se transmiten (máximo 961 caracteres)<div class="english">Data transmitted (maximum 961 characters)</div></td>
+      </tr>
+      <tr>
+          <td>Filler<div class="english">Filler</div></td>
+          <td>1</td>
+          <td>Espacio, sirve para completar el mensaje en par cuando la longitud de la trama termina en impar, para el cálculo del Checksum debe terminar en par.<div class="english">Space, serves to complete the message in par when the length of the frame ends in odd, for the calculation of Checksum must end in par.</div></td>
+      </tr>
+      <tr>
+          <td>Checksum<div class="english">Checksum</div></td>
+          <td>2</td>
+          <td>Checksum del mensaje completo, incluyendo el header de TCP/IP<div class="english">Checksum of the complete message, including the TCP/IP Header</div></td>
+      </tr>
+    </table>
+  </body>
+</html>

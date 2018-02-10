@@ -1,0 +1,226 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Mensajes H2H</title>
+    <meta name="date" content="2016-10-14">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">Mensajes H2H / <span class="english">H2H Messages</span></h1>
+
+    <h3 id="indice">Indice / <span class="english">Index</span></h3>
+    <ol>
+      <li><a href="#estructura">Estructura / <span class="english">Structure</span></a></li>
+      <li>Tipo de Mensajes / <span class="english"></span>
+        <ul>
+          <li><a href="#msg_dinero">Mercado de Dinero / <span class="english">Money Market</span></a></li>
+          <li><a href="#msg_capitales">Mercado de Capitales / <span class="english">Capitals Market</span></a></li>
+          <li><a href="#msg_derivados">Mercado de Derivados / <span class="english">Derivatives Market</span></a>
+            <ul>
+              <li><a href="#msg_derivados_opc">Opciones / <span class="english">Options</span></a></li>
+              <li><a href="#msg_derivados_fut">Futuros / <span class="english">Futures</span></a></li>
+            </ul>
+          </li>
+          <li><a href="#msg_financiera">Información Financiera / <span class="english">Financial Information</span></a>
+            <ul>
+              <li><a href="#msg_fin_cat_aseguradoras">Aseguradoras / <span class="english">Insurance</span></a></li>
+              <li><a href="#msg_fin_cat_almacenes">Almacenes Generales de Depósito / <span class="english">Bonded Warehouse</span></a></li>
+              <li><a href="#msg_fin_cat_casa_bolsa">Casas de Bolsa / <span class="english">Broker Houses</span></a></li>
+              <li><a href="#msg_fin_cat_contr_grupos_fin">Controladoras de Grupos Financieros / <span class="english">Financial Groups Holdings</span></a></li>
+              <li><a href="#msg_fin_cat_grupos_fin">Grupos Financieros / <span class="english">Financial Groups</span></a></li>
+              <li><a href="#msg_fin_cat_inst_cred">Instituciones de Crédito / <span class="english">Credit Institutions</span></a></li>
+              <li><a href="#msg_fin_cat_sofom">SOFOMES / <span class="english">SOFOM</span></a></li>
+            </ul>
+          </li>
+          <li><a href="#msg_financiera_compl">Información Financiera Complementaria / <span class="english">Supplementary Financial Information</span></a></li>
+          <li><a href="#msg_general">Información General / <span class="english">General Information</span></a></li>
+          <li><a href="#msg_casa_cliente">Casa Cliente / <span class="english">Brokerage Client</span></a></li>
+          <li><a href="#msg_asigna">ASIGNA / <span class="english">ASIGNA</span></a></li>
+          <li><a href="#msg_valmer">VALMER / <span class="english">VALMER</span></a></li>
+        </ul>
+      </li>
+    </ol>
+    <hr>
+
+
+    <h2 id="estructura">Estructura / <span class="english">Structure</span></h2>
+    <ul>
+      <li><a href="msg/structure/format.html">Formato de Transmisión / <span class="english">Transmission Format</span></a></li>
+    </ul>
+
+    <h2>Tipo de Mensajes / <span class="english">Messages Type</span></h2>
+    <h3 id="msg_dinero">Mercado de Dinero / <span class="english">Money Market</span></h3>
+    <ul>
+      <li><a href="msg/D.html">D: Información General sobre Avisos de Derecho / <span class="english">General Information on Notices of Rights</span></a></li>
+    </ul>
+
+    <h3 id="msg_capitales">Mercado de Capitales / <span class="english">Capitals Market</span></h3>
+    <ul>
+      <li><a href="msg/MT.html">MT: Resumen de Series de Renta Variable de Mercado de Capitales / <span class="english">Equity Capital Markets Series Summary</span></a></li>
+      <li><a href="msg/TH.html">TH: Receso administrativo / <span class="english">Trading Halt</span></a></li>
+    </ul>
+
+    <h3 id="msg_derivados">Mercado de Derivados (Opciones y Futuros) / <span class="english">Derivatives Market (Options and Futures)</span></h3>
+    <ul>
+      <li><a href="msg/FW.html">FW: Hechos de SWAPS / <span class="english">SWAPS Trades</span></a></li>
+      <li><a href="msg/FT.html">FT: Hechos Generados por SPLITS / <span class="english">SPLITS Generated Trades</span></a></li>
+    </ul>
+    <h4 id="msg_derivados_opc">Formatos de Opciones / <span class="english">Options Formats</span></h4>
+    <ul>
+      <li><a href="msg/OA.html">OA: Catálogo de Series * / <span class="english">Series Catalog *</span></a></li>
+      <li><a href="msg/OD.html">OD: Hechos de Mercado * / <span class="english">Market Trades *</span></a></li>
+      <li><a href="msg/OG.html">OG: Precios de Monitor * / <span class="english">Monitor Prices *</span></a></li>
+      <li><a href="msg/OJ.html">OJ: Operatividad por Serie * / <span class="english">Tradeability per Series *</span></a></li>
+      <li><a href="msg/OM.html">OM: Hechos de Mercado / <span class="english">Market Trades</span></a></li>
+      <li><a href="msg/ON.html">ON: Asignación de Cuenta y Posición * / <span class="english">Allocation of Account and Position *</span></a></li>
+      <li><a href="msg/OO.html">OO: Confirmación de la Asignación / <span class="english">Confirmation of Allocation</span></a></li>
+      <li><a href="msg/OP.html">OP: Catálogo de Series para Futuros (Exclusivo para la CNBV) * / <span class="english">Series Catalog for Futures (Exclusive for CNBV) *</span></a></li>
+      <li><a href="msg/OQ.html">OQ: Operatividad por Serie (Exclusivo para la CNBV) * / <span class="english">Tradeability per Series (Exclusive for CNVB) *</span></a></li>
+      <li><a href="msg/OS.html">OS: Actualización de Estadísticas * / <span class="english">Statistics Update *</span></a></li>
+    </ul>
+    <p>* Información a mantener en H2H durante 2018. / <span class="english">The information will remain in H2H during 2018.</span> </p>
+
+    <h4 id="msg_derivados_fut">Formatos de Futuros / <span class="english">Futures Formats</span></h4>
+    <ul>
+      <li><a href="msg/FA.html">FA: Catálogo de Series * / <span class="english">Series Catalog *</span></a></li>
+      <li><a href="msg/FD.html">FD: Hechos de Mercado * / <span class="english">Market Trades *</span></a></li>
+      <li><a href="msg/FG.html">FG: Precios de Monitor * / <span class="english">Monitor Prices *</span></a></li>
+      <li><a href="msg/FJ.html">FJ: Operatividad por Serie * / <span class="english">Tradeability per Series *</span></a></li>
+      <li><a href="msg/FL.html">FL: Precios de Liquidación / <span class="english">Settlement Prices</span></a></li>
+      <li><a href="msg/FM.html">FM: Hechos de Mercado / <span class="english">Market Trades</span></a></li>
+      <li><a href="msg/FN.html">FN: Asignación de Cuenta y Posición * / <span class="english">Allocation of Account and Position *</span></a></li>
+      <li><a href="msg/FO.html">FO: Confirmación de la Asignación / <span class="english">Confirmation of Allocation</span></a></li>
+      <li><a href="msg/FP.html">FP: Catálogo de Series para Futuros (Exclusivo para la CNBV) * / <span class="english">Series Catalog for Futures (Exclusive for CNBV) *</span></a></li>
+      <li><a href="msg/FQ.html">FQ: Operatividad por Serie (Exclusivo para la CNBV) * / <span class="english">Tradeability per Series (Exclusive for CNVB) *</span></a></li>
+      <li><a href="msg/FR.html">FR: Precios del Mercado (Exclusivo para ASIGNA) / <span class="english">Market Prices (Exclusive for ASIGNA)</span></a></li>
+      <li><a href="msg/FS.html">FS: Actualización de Estadísticas * / <span class="english">Statistics Update *</span></a></li>
+    </ul>
+    <p>* Información a mantener en H2H durante 2018. / <span class="english">The information will remain in H2H during 2018.</span> </p>
+
+    <h3 id="msg_financiera">Información Financiera / <span class="english">Financial Information</span></h3>
+    <h4>Formatos / <span class="english">Formats</span></h4>
+    <ul>
+      <li><a href="msg/AA.html">AA: Nivel de Endeudamiento / <span class="english">Indebtedness Level</span></a></li>
+      <li><a href="msg/00.html">00: Información Financiera Básica / <span class="english">Basic Financial Information</span></a></li>
+      <li><a href="msg/01.html">01: T y NOTAS / <span class="english">T and NOTES</span></a></li>
+      <li><a href="msg/XB.html">XB: Información Financiera en formato XBRL / <span class="english">Financial Information in XBRL format</span></a></li>
+    </ul>
+    <h4>Catálogos / <span class="english">Catalogs</span></h4>
+    <ul>
+      <li id="msg_fin_cat_aseguradoras">Aseguradoras / <span class="english">Insurance</span>
+        <ul>
+          <li><a href="msg/cat/fin/aseg_bg.html">Balance General / <span class="english">Balance Sheet</span></a></li>
+          <li><a href="msg/cat/fin/aseg_er.html">Estado de Resultados / <span class="english">Statement of Income</span></a></li>
+          <li><a href="msg/cat/fin/aseg_fe.html">Estado de Flujo de Efectivo / <span class="english">Cash Flow Statement</span></a></li>
+          <li><a href="msg/cat/fin/aseg_evcc.html">Estado de Variaciones al Capital Contable / <span class="english">Statement of Changes in Stockholders' Equity</span></a></li>
+        </ul>
+      </li>
+      <li id="msg_fin_cat_almacenes">Almacenes Generales de Depósito / <span class="english">Bonded Warehouse</span>
+        <ul>
+          <li><a href="msg/cat/fin/almacen_bg.html">Balance General / <span class="english">Balance Sheet</span></a></li>
+          <li><a href="msg/cat/fin/almacen_er.html">Estado de Resultados / <span class="english">Statement of Income</span></a></li>
+          <li><a href="msg/cat/fin/almacen_fe.html">Estado de Flujo de Efectivo / <span class="english">Cash Flow Statement</span></a></li>
+          <li><a href="msg/cat/fin/almacen_evcc.html">Estado de Variaciones al Capital Contable / <span class="english">Statement of Changes in Stockholders' Equity</span></a></li>
+        </ul>
+      </li>
+      <li id="msg_fin_cat_casa_bolsa">Casas de Bolsa / <span class="english">Broker Houses</span>
+        <ul>
+          <li><a href="msg/cat/fin/cb_bg.html">Balance General / <span class="english">Balance Sheet</span></a></li>
+          <li><a href="msg/cat/fin/cb_er.html">Estado de Resultados / <span class="english">Statement of Income</span></a></li>
+          <li><a href="msg/cat/fin/cb_fe.html">Estado de Flujo de Efectivo / <span class="english">Cash Flow Statement</span></a></li>
+          <li><a href="msg/cat/fin/cb_evcc.html">Estado de Variaciones al Capital Contable / <span class="english">Statement of Changes in Stockholders' Equity</span></a></li>
+        </ul>
+      </li>
+      <li id="msg_fin_cat_contr_grupos_fin">Controladoras de Grupos Financieros / <span class="english">Financial Groups Holdings</span>
+        <ul>
+          <li><a href="msg/cat/fin/congrupfin_bg.html">Balance General / <span class="english">Balance Sheet</span></a></li>
+          <li><a href="msg/cat/fin/congrupfin_er.html">Estado de Resultados / <span class="english">Statement of Income</span></a></li>
+          <li><a href="msg/cat/fin/congrupfin_fe.html">Estado de Flujo de Efectivo / <span class="english">Cash Flow Statement</span></a></li>
+          <li><a href="msg/cat/fin/congrupfin_evcc.html">Estado de Variaciones al Capital Contable / <span class="english">Statement of Changes in Stockholders' Equity</span></a></li>
+        </ul>
+      </li>
+      <li id="msg_fin_cat_grupos_fin">Grupos Financieros / <span class="english">Financial Groups</span>
+        <ul>
+          <li><a href="msg/cat/fin/grupfin_bg.html">Balance General / <span class="english">Balance Sheet</span></a></li>
+          <li><a href="msg/cat/fin/grupfin_er.html">Estado de Resultados / <span class="english">Statement of Income</span></a></li>
+          <li><a href="msg/cat/fin/grupfin_fe.html">Estado de Flujo de Efectivo / <span class="english">Cash Flow Statement</span></a></li>
+          <li><a href="msg/cat/fin/grupfin_evcc.html">Estado de Variaciones al Capital Contable / <span class="english">Statement of Changes in Stockholders' Equity</span></a></li>
+        </ul>
+      </li>
+      <li id="msg_fin_cat_inst_cred">Instituciones de Crédito / <span class="english">Credit Institutions</span>
+        <ul>
+          <li><a href="msg/cat/fin/instcred_bg.html">Balance General / <span class="english">Balance Sheet</span></a></li>
+          <li><a href="msg/cat/fin/instcred_er.html">Estado de Resultados / <span class="english">Statement of Income</span></a></li>
+          <li><a href="msg/cat/fin/instcred_fe.html">Estado de Flujo de Efectivo / <span class="english">Cash Flow Statement</span></a></li>
+          <li><a href="msg/cat/fin/instcred_evcc.html">Estado de Variaciones al Capital Contable / <span class="english">Statement of Changes in Stockholders' Equity</span></a></li>
+        </ul>
+      </li>
+      <li id="msg_fin_cat_sofom">SOFOMES / <span class="english">SOFOM</span>
+        <ul>
+          <li><a href="msg/cat/fin/sofom_bg.html">Balance General / <span class="english">Balance Sheet</span></a></li>
+          <li><a href="msg/cat/fin/sofom_er.html">Estado de Resultados / <span class="english">Statement of Income</span></a></li>
+          <li><a href="msg/cat/fin/sofom_fe.html">Estado de Flujo de Efectivo / <span class="english">Cash Flow Statement</span></a></li>
+          <li><a href="msg/cat/fin/sofom_evcc.html">Estado de Variaciones al Capital Contable / <span class="english">Statement of Changes in Stockholders' Equity</span></a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3 id="msg_financiera_compl">Información Financiera Complementaria / <span class="english">Supplementary Financial Information</span></h3>
+    <ul>
+      <li><a href="msg/CN.html">CN: Notas a la Información Complementaria / <span class="english">CN Notes to Supplementary Financial Information</span></a></li>
+    </ul>
+
+    <h3 id="msg_general">Información General / <span class="english">General Information</span></h3>
+    <ul>
+      <li><a href="msg/IG.html">IG: Información General (Hechos Relevantes de Emisnet) / <span class="english">General Information (Outstanding Events from Emisnet)</span></a></li>
+      <li><a href="msg/GE.html">GE: Asambleas / <span class="english">Shareholders' Meetings</span></a></li>
+      <li><a href="msg/MB.html">MB: Desglose de Aviso de Derecho / <span class="english">Notice of Right Breakdown</span></a></li>
+      <li><a href="msg/MC.html">MC: Recompra de Acciones / <span class="english">Stock Repurchase</span></a></li>
+      <li><a href="msg/ME.html">ME: Actualización de la Inscripción / <span class="english">Update of the Registry</span></a></li>
+      <li><a href="msg/MF.html">MF: Actualización de la Inscripción de Representantes Comunes / <span class="english">Update of the Registry of Common Representatives</span></a></li>
+      <li><a href="msg/MH.html">MH: Cambio de Auditor Externo / <span class="english">Auditor Change</span></a></li>
+      <li><a href="msg/MK.html">MK: Aviso de extemporaneidad de la entrega de la información / <span class="english">Notice of lateness in the Delivering of information</span></a></li>
+      <li><a href="msg/ML.html">ML: Grado de Avance / <span class="english">Work in Process</span></a></li>
+      <li><a href="msg/MO.html">MO: Informe Anual / <span class="english">Annual Report</span></a></li>
+      <li><a href="msg/MQ.html">MQ: Cambio de Políticas Contables y Reporte del Auditor / <span class="english">Change in Accounting Policies and Auditor's Report</span></a></li>
+      <li><a href="msg/MR.html">MR: Programa para subsanar incumplimientos / <span class="english">Program to fill breaches</span></a></li>
+      <li><a href="msg/MS.html">MS: Servicios adicionales del Auditor externo aprobados por el Comité de Auditoria / <span class="english">Additional services of the external auditor approved by the Audit Committee</span></a></li>
+      <li><a href="msg/MW.html">MW: Resumen de Series de Renta Fija y Renta Variable de Mercado de Capitales / <span class="english">Series Summary for Fixed Income and Equity Capital Markets</span></a></li>
+      <li><a href="msg/MX.html">MX: Resumen de Series de Warrants de Mercado de Capitales / <span class="english">Series Summary of Warrants of the Capital Market</span></a></li>
+    </ul>
+
+    <h3 id="msg_casa_cliente">Casa Cliente / <span class="english">Brokerage Client</span></h3>
+    <ul>
+      <li><a href="msg/D.html">D: Recepción de Casa Cliente / <span class="english">Reception of Brokerage Client</span></a></li>
+      <li><a href="msg/6.html">6: Envío de Errores de Casa Cliente / <span class="english">Error Sending of Brokerage Client</span></a></li>
+    </ul>
+
+    <h3 id="msg_asigna">ASIGNA / <span class="english">ASIGNA</span></h3>
+    <ul>
+      <li><a href="msg/AC.html">AC: Acuse de recibo de Hechos de SWAPS proveniente de Brokers / <span class="english">SWAPS Trades acknowledgment of receipt from Brokers</span></a></li>
+      <li><a href="msg/AS.html">AS: Hechos de SWAPS provenientes de Brokers / <span class="english">SWAPS Trades from Brokers</span></a></li>
+    </ul>
+
+    <h3 id="msg_valmer">VALMER / <span class="english">VALMER</span></h3>
+    <ul>
+      <li><a href="msg/H1.html">H1: Precios Valuados Mercado de Capitales y Mercado de Dinero / <span class="english">Valuated Prices, Capital Market and Money Market</span></a></li>
+      <li><a href="msg/HA.html">HA: Vector de Precios Detallado / <span class="english">Detailed Price Vector</span></a></li>
+      <li><a href="msg/HB.html">HB: Vector de Precios Detallado / <span class="english">Detailed Price Vector</span></a></li>
+      <li><a href="msg/HC.html">HC: Vector de Precios Detallado / <span class="english">Detailed Price Vector</span></a></li>
+      <li><a href="msg/HD.html">HD: Base Corporativa / <span class="english">Corporate Base</span></a></li>
+      <li><a href="msg/HE.html">HE: Vector de Calificaciones (Emisoras) / <span class="english">Vector of Ratings (Issuers)</span></a></li>
+      <li><a href="msg/VX.html">VX: Vector de Calificaciones Extendido (Emisoras) / <span class="english">Vector of Ratings Extended (Issuers)</span></a></li>
+      <li><a href="msg/HF.html">HF: Vector de Calificaciones (Intermediarios y Emisores) / <span class="english">Vector of Ratings (Brokers and Issuers)</span></a></li>
+      <li><a href="msg/VY.html">VY: Vector de Calificaciones Extendido (Intermediarios y Emisores) / <span class="english">Vector of Ratings Extended (Brokers and Issuers)</span></a></li>
+      <li><a href="msg/HG.html">HG: Vector de Indicadores y Referencias / <span class="english">Vector of Indicators and References</span></a></li>
+      <li><a href="msg/HH.html">HH: Vector de Precios Promedio / <span class="english">Vector of Average Prices</span></a></li>
+      <li><a href="msg/HI.html">HI: Características de Eurobonos / <span class="english">Eurobonds Features</span></a></li>
+      <li><a href="msg/HJ.html">HJ: Características de Instrumentos de Deuda Cuponados / <span class="english">Couponing Debt Instruments Features</span></a></li>
+      <li><a href="msg/HK.html">HK: Base Características / <span class="english">Basic Features</span></a></li>
+      <li><a href="msg/HL.html">HL: Vector de Precios 29 columnas / <span class="english">29 Columns Price Table</span></a></li>
+      <li><a href="msg/HM.html">HM: Base Notas Estructuradas / <span class="english">Based Structured Notes</span></a></li>
+    </ul>
+  </body>
+</html>

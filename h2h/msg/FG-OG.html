@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  <html lang="es">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>H2H: Mensaje FG-OG</title>
+    <meta name="date" content="2017-01-16">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">H2H: Mensaje FG-OG / FG-OG Message</h1>
+
+    <h2>FG-OG: Precios de Monitor / <span class ="english">Monitor Prices</span></h2>
+    <p>Descripción del mensaje.</p>
+    <div class="english">
+      <p>Message description.</p>
+    </div>
+
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message Type</div></td>
+        <td>0</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Fecha Mensaje<div class="english">Message Date</div></td>
+        <td>2</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Fecha de mensaje  (AAAAMMDD)              <div class="english">Message date (YYYYMMDD)</div></td>
+      </tr>
+      <tr>
+        <td>Descripción<div class="english">Description</div></td>
+        <td>10</td>
+        <td></td>
+        <td><div class="english"></div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Clase<div class="english">Class</div></td>
+        <td>10</td>
+        <td>7</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>4 primeras posiciones irán llenas, el resto en blancos<br>Ejemplo: IPC que significa Índice de Precios y Cotizaciones)
+          <div class="english">4 first positions will be filled out, the rest in blanks<br>Example: IPC that means Price and Quotations Index</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Descripción K<div class="english">Description K</div></td>
+        <td>17</td>
+        <td></td>
+        <td><div class="english"></div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Descripción FV<div class="english">Description FV</div></td>
+        <td>17</td>
+        <td>4</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Fecha de vencimiento (MMAA)<br>Ejemplo: AG95 que significa Agosto 1995
+          <div class="english">Maturity date (MMAA)<br>Example: AG95 that means August 1995</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Descripción Precio<div class="english">Description Price</div></td>
+        <td>21</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Precio de ejercicio<br>Ejemplo: bb2415 que significa dos blancos 2415
+          <div class="english">Exercise price<br>Example: bb2415 that means two blanks 2415</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Descripción Tipo<div class="english">Description Type</div></td>
+        <td>27</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>C: Call<br>P: Put<div class="english">C: Call<br>P: Put</div></td>
+      </tr>
+      <tr>
+        <td>Precio Liquidación Anterior<div class="english">Previous Settlement Price</div></td>
+        <td>28</td>
+        <td>6,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Precio Postura Venta<div class="english">Sell Position Price</div></td>
+        <td>40</td>
+        <td>6,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Volúmen Postura Venta<div class="english">Sell Position Volume</div></td>
+        <td>52</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Precio Postura Compra<div class="english">Buy Position Price</div></td>
+        <td>60</td>
+        <td>6,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Volúmen Postura Compra<div class="english">Buy Position Volume</div></td>
+        <td>72</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Precio Apertura<div class="english">Opening Price</div></td>
+        <td>80</td>
+        <td>6,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Primer precio del día o precio de la apertura<div class="english">First price of the day or opening price</div></td>
+      </tr>
+      <tr>
+        <td>Precio Máximo Día<div class="english">Maximum Price Day</div></td>
+        <td>92</td>
+        <td>6,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Precio máximo registrado en el día<div class="english">Maximum price recorded in the day</div></td>
+      </tr>
+      <tr>
+        <td>Precio Mínimo Día<div class="english">Minimum Price Day</div></td>
+        <td>104</td>
+        <td>6,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Precio mínimo registrado en el día<div class="english">Minimum price recorded in the day</div></td>
+      </tr>
+      <tr>
+        <td>Precio Último Día<div class="english">Last Price Day</div></td>
+        <td>116</td>
+        <td>6,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Precio último registrado en el día<div class="english">Last price recorded in the day</div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>128</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Multicast: Mensaje Q</title>
+    <meta name="date" content="2017-03-30">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">Multicast: Mensaje Q / Q Message</h1>
+
+    <h2>Q: Hechos del mercado de derivados / <span class ="english">Derivatives market trades</span></h2>
+
+    <p>Se informa de cualquier operación que fue aceptada en MexDer.</p>
+    
+
+    <div class="english">
+      <p>Contains information on any MexDer accepted transaction.</p>
+     
+    </div>
+
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message type</div></td>
+        <td>0</td>
+        <td>1</td>
+        <td>"Q"</td>
+        <td>Hechos del Mercado de derivados<div class="english">Derivatives market trades</div></td>
+      </tr>
+      <tr>
+        <td>Número de Instrumento<div class="english">Instrument number</div></td>
+        <td>1</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Código único durante la vida del instrumento<div class="english">Unique code during instruments life</div></td>
+      </tr>
+      <tr>
+        <td>Hora del Hecho<div class="english">Trade time</div></td>
+        <td>5</td>
+        <td>8</td>
+        <td>Timestamp(2)</td>
+        <td>Hora en que se realizó la operación.<div class="english">Time the operation was carried out</div></td>
+      </tr>
+      <tr>
+        <td>Volumen<div class="english">Volume</div></td>
+        <td>13</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Acciones negociadas<div class="english">Traded agreements</div></td>
+      </tr>
+      <tr>
+        <td>Precio/Tasa<div class="english">Price/Rate</div></td>
+        <td>17</td>
+        <td>8</td>
+        <td>Precio (8)<div class="english">Price (8)</div></td>
+        <td>Precio de la operación<div class="english">Operation price</div></td>      
+      </tr>
+      <tr>
+        <td>Tipo de Concertación<div class="english">Concertation type</div></td>
+        <td>25</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Ver <a href="structure/catalogs.html#cat_tipo_concertacion">Catálogo de Tipo de Concertación</a><div class="english">See <a href="structure/catalogs.html#cat_tipo_concertacion">Concertation Type Catalog</a></div></td>
+      </tr>
+      <tr>
+        <td>Folio del Hecho<div class="english">Trade number</div></td>
+        <td>26</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Foliador por instrumento<div class="english">Stamp number by instrument</div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Operación<div class="english">Operation type</div></td>
+        <td>30</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Ver <a href="structure/catalogs.html#cat_tipo_oper">Catálogo de Tipo de Operación</a><div class="english">See <a href="structure/catalogs.html#cat_tipo_oper">Operation Type Catalog</a></div></td>
+      </tr>
+      <tr>
+        <td>Importe<div class="english">Amount</div></td>
+        <td>31</td>
+        <td>8</td>
+        <td>Precio (8)<div class="english">Price (8)</div></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Folio del hecho padre<div class="english">Parent trade number</div></td>
+        <td>39</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Solamente contendrá un valor en caso de que sea pata de una estrategia.<div class="english">Will only contain a value if and only if is about a strategy leg.</div></td>
+      </tr>
+      <tr>
+        <td>Tipo de pata<div class="english">Leg type</div></td>
+        <td>43</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>L-Pata larga<br>C-Pata corta<br>X-Pata de Engrapado<br>P-Indica que es la estrategia padre<br>""-Es un hecho que no fue generado a partir de una estrategia<div class="english">L-Long leg<br>C-Short leg<br>X-Forwards chain leg<br>P-Indicates if is parent strategy<br>""-Fact not generated from a strategy</div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>44</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </body>
+</html>

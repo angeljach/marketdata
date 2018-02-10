@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Multicast: Números de Secuencia</title>
+        <meta name="date" content="2016-09-06">
+        <link rel="stylesheet" type="text/css" href="../../../css/stylesheet.css" title="Style">
+    </head>
+  <body>
+
+      <h1 class="bar">Multicast: Números de Secuencia / Sequence Numbers</h1>
+
+      <h2>Números de Secuencia / <span style="english">Sequence Numbers</span></h2>
+
+      <p>Todos los mensajes de aplicación transmitidos por el canal multicast y el de retransmisiones son secuenciados. El Encabezado BMV Multicast solo contiene el número de secuencia del primer mensaje y cada subsecuente mensaje tendrá una secuencia un número más grande que la anterior.</p>
+      <p>Los mensajes de aplicación enviados en el servicio de snapshots y todos los mensajes administrativos tendrán un valor cero para el campo de secuencia dentro del Encabezado BMV Multicast usado para transportar dichos mensajes. El único mensaje administrativo que contendrá un valor en el campo de secuencia será el de Heartbeat.</p>
+      <div class="english">
+          <p>All application messages transmitted through multicast channel and replay channel are sequenced. The BMV Multicast Header only contains the first message sequence number and each subsequent message will have an scaling sequence number.</p>
+          <p>The app messages sent through the snapshot services, and every administrative messages will a hace a zero value for the sequence number inside the Multicast BMV header use to send those messages. The only administrative message containing a value fot the sequence field will be the Heartbeat.</p>
+      </div>
+  </body>
+</html>

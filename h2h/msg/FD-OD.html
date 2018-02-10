@@ -1,0 +1,241 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  <html lang="es">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>H2H: Mensaje FD-OD</title>
+    <meta name="date" content="2017-01-16">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">H2H: Mensaje FD-OD / FD-OD Message</h1>
+
+    <h2>FD-OD: Hechos de Mercado / <span class ="english">Market Facts</span></h2>
+    <p>Descripción del mensaje.</p>
+    <div class="english">
+      <p>Message description.</p>
+    </div>
+
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message Type</div></td>
+        <td>0</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Fecha Mensaje<div class="english">Message Date</div></td>
+        <td>2</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Fecha de mensaje  (AAAAMMDD)<div class="english">Message date (YYYYMMDD)</div></td>
+      </tr>
+      <tr>
+        <td>Folio Hecho<div class="english">Trade Folio</div></td>
+        <td>10</td>
+        <td>5</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Folio del hecho<div class="english">Trade folio</div></td>
+      </tr>
+      <tr>
+        <td>Hora Hecho<div class="english">Trade Time</div></td>
+        <td>15</td>
+        <td>6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Hora del hecho<div class="english">Trade time</div></td>
+      </tr>
+      <tr>
+        <td>Folio Orden Compra<div class="english">Buyer Order Folio</div></td>
+        <td>21</td>
+        <td>6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Folio de la orden de compra<div class="english">Purchase order folio</div></td>
+      </tr>
+      <tr>
+        <td>Fecha Orden Compra<div class="english">Buyer Order Date</div></td>
+        <td>27</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Fecha de la orden de compra<div class="english">Purchase order date</div></td>
+      </tr>
+      <tr>
+        <td>Folio Orden Venta<div class="english">Seller Order Folio</div></td>
+        <td>35</td>
+        <td>6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Folio de la orden de venta<div class="english">Sale order folio</div></td>
+      </tr>
+      <tr>
+        <td>Fecha Orden Venta<div class="english">Seller Order Date</div></td>
+        <td>41</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Fecha de la orden de venta<div class="english">Sale order date</div></td>
+      </tr>
+      <tr>
+        <td>Descripción<div class="english">Description</div></td>
+        <td>49</td>
+        <td></td>
+        <td><div class="english"></div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Clase<div class="english">Class</div></td>
+        <td>49</td>
+        <td>7</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clase (Hasta las 4 primeras posiciones irán llenas, el resto en blancos)(Ejemplo: IPC que significa Índice de Precios y Cotizaciones) <div class="english">Class (Up to the first 4 positions will be filled out, the rest will be in blank) (Example: IPC that means Price and Quotations Index)</div></td>
+      </tr>
+      <tr>
+        <td>Descripción K<div class="english">Description K</div></td>
+        <td>56</td>
+        <td></td>
+        <td><div class="english"></div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Descripción FV<div class="english">Description FV</div></td>
+        <td>56</td>
+        <td>4</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Fecha de vencimiento (MMAA) (Ejemplo: AG95 que significa Agosto 1995)<div class="english">Maturity date (MMYY) (Example: AG95 that means August 1995)</div></td>
+      </tr>
+      <tr>
+        <td>Descripción Precio<div class="english">Description Price</div></td>
+        <td>60</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Precio de ejercicio (Ejemplo: bb2415 que significa dos blancos 2415) <div class="english">Exercise price (Example: bb2415 that means two blanks 2415)</div></td>
+      </tr>
+      <tr>
+        <td>Descripción Tipo<div class="english">Description Type</div></td>
+        <td>66</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Sólo para Opciones<br>C: Call<br>P: Put<div class="english">Options only<br>C: Call<br>P: Put</div></td>
+      </tr>
+      <tr>
+        <td>Volúmen<div class="english">Volume</div></td>
+        <td>67</td>
+        <td>6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Volumen del hecho<div class="english">Trade volume</div></td>
+      </tr>
+      <tr>
+        <td>Precio Hecho<div class="english">Trade Price</div></td>
+        <td>73</td>
+        <td>6,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Código Comprador<div class="english">Buyer Code</div></td>
+        <td>85</td>
+        <td>5</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de casa compradora          <div class="english">Buying firm code         </div></td>
+      </tr>
+      <tr>
+        <td>Indicador Comprador<div class="english">Buyer Indicator</div></td>
+        <td>90</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Código de perfil de comprador<br>MM: 4<br>no: 1<div class="english">Buyer code profile<br>MM: 4<br>no: 1</div></td>
+      </tr>
+      <tr>
+        <td>Cuenta Comprador<div class="english">Buyer Account</div></td>
+        <td>91</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>P: Por cuenta propia<br>T: Por cuenta de terceros<div class="english">P: Own account<br>T: Third party account</div></td>
+      </tr>
+      <tr>
+        <td>Compra abre-cierra<div class="english">Buyer open-close</div></td>
+        <td>92</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>A: Abre<br>C: Cierra<div class="english">A: Opens<br>C: Closes</div></td>
+      </tr>
+      <tr>
+        <td>Código Vendedor<div class="english">Seller Code</div></td>
+        <td>93</td>
+        <td>5</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de casa vendedora.                <div class="english">Seller firm code                </div></td>
+      </tr>
+      <tr>
+        <td>Indicador Vendedor<div class="english">Seller Indicator</div></td>
+        <td>98</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Código de perfil de vendedor<br>MM: 4<br>no: 1<div class="english">Seller code profile<br>MM: 4<br>no: 1</div></td>
+      </tr>
+      <tr>
+        <td>Cuenta Vendedor<div class="english">Seller Account</div></td>
+        <td>99</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>P: Por cuenta propia<br>T: Por cuenta de terceros<div class="english">P: Own account<br>T: Third party account</div></td>
+      </tr>
+      <tr>
+        <td>Venta Abre-Cierra<div class="english">Seller open-close</div></td>
+        <td>100</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>A: Abre<br>C: Cierra<div class="english">A: Opens<br>C: Closes</div></td>
+      </tr>
+      <tr>
+        <td>Volúmen Acumulado<div class="english">Acumulated Volume</div></td>
+        <td>101</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Volumen acumulado de la emisión. <div class="english">Cumulative Volume Issue </div></td>
+      </tr>
+      <tr>
+        <td>Signo<div class="english">Sign</div></td>
+        <td>107</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Signo de variación<br>+: más<br>-: menos<br>0: cero<div class="english">Variation Sign<br>+: more<br>-: less<br>0: zero</div></td>
+      </tr>
+      <tr>
+        <td>Variación<div class="english">Variation</div></td>
+        <td>108</td>
+        <td>3,2</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Variación (Con respecto al precio  de liquidación del día anterior y en porcentaje)<div class="english">Variation (With respect to previous day settlement price and in percentage)</div></td>
+      </tr>
+      <tr>
+        <td>Indicador Información<div class="english">Information Indicator</div></td>
+        <td>113</td>
+        <td>2</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>00: Baja de Hecho<br>04: Primera Operación<br>07: Segunda Operación en Adelante<br>33: Modificaciones
+          <div class="english">00: Trade Desregistration<br>04: First Transaction<br>07: Second Transaction Onward<br>33: Changes</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Tipo Concertación<div class="english">Transaction Type</div></td>
+        <td>115</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>CO: Cierre de Ordenes<br>HC: Operacion a precio de cierre<br>CR: Operacion de Cruce<br>AC: Autoentrada de compra<br>AV: Autoentrada de venta<br>BN: Blocktrade<br>BS: Pata de blocktrade de engrapado<br>CE: Pata de engrapado<br>D1: Pata de cruce de estrategia de divisa<br>D2: Pata de autoentrada de venta de estrategia de divisa<br>D3: Pata de autoentrada de compra de estrategia de divisa<br>DI: Pata de estrategia de divisas<br>DR: Pata de ronda de estrategia de divisa<br>E1: Pata de cruce de engrapado<br>E2: Pata de autoentrada de venta de engrapado<br>E3: Pata de autoentrada de compra de engrapado<br>EP: Pata de engrapado de subasta<br>ER: Pata de ronda de engrapado<br>GR: Engrapados<br>L1: Pata de cruce de rollover<br>L2: Pata de autoentrada de venta de rollover<br>L3: Pata de autoentrada de compra de rollover<br>LR: Pata de ronda de rollover<br>P2: Profundidad de ronda de engrapado<br>PE: Subasta de engrapado<br>PR: Profundidad de ronda<br>RE: Ronda de engrapado<br>RL: Rollover SENTRA<br>RO: Tipo Ronda<br>SB: Subastas<br>T1: Pata de blocktrade de rollover<br>T2: Pata de blocktrade de estrategia de divisa<br>TD: Blocktrade de estrategia de divisa<br>TE: Blocktrade de engrapado<br>TR: Blocktrade de rollover<br>X1: Cruce de engrapado<br>X2: Autoentrada de venta de engrapado<br>X3: Autoentrada de compra de engrapado<br>BA: Block trade de SWAP<br>BW: Block trade de SWAP con Cupón Corrido<br>BC: Block trade de UNWIND<br>BU: Block trade de Sustitución
+          <div class="english">CO: Orders Closing<br>HC: Closing Price Trade<br>CR: Cross Trade<br>AC: Buy Self Entrance<br>AV: Sell Self Entrance<br>BN: Blocktrade<br>BS: Stapled Blocktrade<br>CE: Stapled<br>D1: Currencies Strategy Cross<br>D2: Self Entrance Sell of Currencies’ Strategy<br>D3: Self Entrance Buy of Currencies’ Strategy<br>DI: Currencies Strategy<br>DR: Currencies Strategy Round<br>E1: Stapled Cross<br>E2:  Self Entrance Stapled Buy<br>EP: Self Stapled Auction<br>ER: Stapled Round<br>GR: Staples<br>L1: Rollover Cross<br>L2: Self Entrance Rollover Buy<br>L3: Self Entrance Rollover Sell<br>LR: Rollover Round<br>P2: Stapled Round Depth<br>PE: Stapled Auction<br>PR: Round Depth<br>RE: Stapled Round<br>Rl: Sentra Rollover<br>RO: Auction Type<br>SB: Auctions<br>T1: Rollover Blocktrade<br>T2: Currency Strategy Blocktrade<br>TD: Blocktrade for Strategic Cross<br>TE: Stapled Blocktrade<br>TR: Rollover Blocktrade<br>X1: Stapled Cross<br>X2: Self Entrance of Stapled Sell<br>X3: Self Entrance of Stapled Buy<br>BA: Swap Blocktrade<br>BW: Swap Blocktrade with Accrued Interest<br>BC: Unwind Blocktrade<br>BU:  Substitution Blocktrade</div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>117</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+</html>

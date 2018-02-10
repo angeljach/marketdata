@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  <html lang="es">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>H2H: Mensaje HG</title>
+    <meta name="date" content="2017-03-15">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">H2H: Mensaje HG / HG Message</h1>
+
+    <h2>HG: Vector de Indicadores y Referencias / <span class ="english">Vector of Indicators and References</span></h2>
+    <p>Descripción del mensaje.</p>
+    <div class="english">
+      <p>Message description.</p>
+    </div>
+
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message Type</div></td>
+        <td>0</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Fecha del Vector<div class="english">Vector Date</div></td>
+        <td>2</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Fecha de operación<div class="english">Transaction date</div></td>
+      </tr>
+      <tr>
+        <td>Clave<div class="english">Code</div></td>
+        <td>10</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave del índice<div class="english">Index code</div></td>
+      </tr>
+      <tr>
+        <td>Valor<div class="english">Value</div></td>
+        <td>16</td>
+        <td>9,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Valor del índice<div class="english">Index value</div></td>
+      </tr>
+      <tr>
+        <td>Fecha Inicio<div class="english">Initial Date</div></td>
+        <td>31</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Fecha inicial del periodo<div class="english">Initial period date</div></td>
+      </tr>
+      <tr>
+        <td>Fecha Fin<div class="english">Ending Date</div></td>
+        <td>39</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Fecha final del periodo<div class="english">Final period date</div></td>
+      </tr>
+      <tr>
+        <td>Libre<div class="english">Free</div></td>
+        <td>47</td>
+        <td>35</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Espacios<div class="english">Blank spaces</div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>82</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+</html>

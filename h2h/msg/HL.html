@@ -1,0 +1,425 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  <html lang="es">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>H2H: Mensaje HL</title>
+    <meta name="date" content="2017-03-15">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">H2H: Mensaje HL / HL Message</h1>
+
+    <h2>HL: Vector de Precios 29 Columnas / <span class ="english">29 Columns Price Table</span></h2>
+    <p>Descripción del mensaje.</p>
+    <div class="english">
+      <p>Message description.</p>
+    </div>
+
+    <h3 id="indice">Indice / <span class="english">Index</span></h3>
+    <ol>
+      <li><a href="#registro1">Registro 1 / <span class="english">Registry 1</span></a></li>
+      <li><a href="#registro2">Registro 2 / <span class="english">Registry 2</span></a></li>
+      <li><a href="#registro3">Registro 3 / <span class="english">Registry 3</span></a></li>
+    </ol>
+
+    <hr>
+    <h4 style="display: inline;" id="registro1">Registro 1 / <span class="english">Registry 1</span></h4>
+    <p style="display: inline;" class="return_to_menu_link"> (<a href="#indice">Volver al Indice / <span class="english">Back to Index</span></a>)</p>    
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message Type</div></td>
+        <td>0</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Fecha<div class="english">Date </div></td>
+        <td>2</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>AAAAMMDD<div class="english">YYYYMMDD</div></td>
+      </tr>
+      <tr>
+        <td>Línea 1<div class="english">Line 1</div></td>
+        <td>10</td>
+        <td>1</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Valor<div class="english">Security Type</div></td>
+        <td>11</td>
+        <td>4</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Emisora<div class="english">Issuer</div></td>
+        <td>15</td>
+        <td>7</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Serie<div class="english">Series</div></td>
+        <td>22</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Mercado<div class="english">Market Type</div></td>
+        <td>28</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Precio Sucio<div class="english">Dirty Price</div></td>
+        <td>30</td>
+        <td>9,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Precio Limpio<div class="english">Clean Price</div></td>
+        <td>45</td>
+        <td>9,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Intereses Devengados<div class="english">Accrued Interests</div></td>
+        <td>60</td>
+        <td>9,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Días por Vencer<div class="english">Days to Maturity</div></td>
+        <td>75</td>
+        <td>5</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Tasa de Descuento<div class="english">Discount Rate</div></td>
+        <td>80</td>
+        <td>9,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Precio Sucio 24 Horas<div class="english">24 Hours Dirty Price</div></td>
+        <td>95</td>
+        <td>9,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Precio Limpio 24 Horas<div class="english">24 Hours Clean Price</div></td>
+        <td>110</td>
+        <td>9,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Intereses Devengados 24 Horas<div class="english">24 HoursAccrued Interests</div></td>
+        <td>125</td>
+        <td>9,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Días por Vencer 24 Horas<div class="english">24 Hours Days to Maturity</div></td>
+        <td>140</td>
+        <td>5</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Tasa de Descuento 24 Horas<div class="english">24 Hours Discount Rate</div></td>
+        <td>145</td>
+        <td>9,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Plazo <div class="english">Term</div></td>
+        <td>160</td>
+        <td>5</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Sobretasa<div class="english">Surcharge</div></td>
+        <td>165</td>
+        <td>6,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Clave Proveedor<div class="english">Supplier Code</div></td>
+        <td>177</td>
+        <td>9</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Envío<div class="english">Send Type</div></td>
+        <td>186</td>
+        <td>1</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Duración<div class="english">Duration </div></td>
+        <td>187</td>
+        <td>6,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Convexidad<div class="english">Convexity</div></td>
+        <td>199</td>
+        <td>6,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>211</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+    <hr>
+    <h4 style="display: inline;" id="registro2">Registro 2 / <span class="english">Registry 2</span></h4>
+    <p style="display: inline;" class="return_to_menu_link"> (<a href="#indice">Volver al Indice / <span class="english">Back to Index</span></a>)</p>
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message Type</div></td>
+        <td>0</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Fecha 2<div class="english">Date 2</div></td>
+        <td>2</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>AAAAMMDD<div class="english">YYYYMMDD</div></td>
+      </tr>
+      <tr>
+        <td>Línea 2<div class="english">Line 2</div></td>
+        <td>10</td>
+        <td>1</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Valor 2<div class="english">Security Type 2</div></td>
+        <td>11</td>
+        <td>4</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Emisora 2<div class="english">Issuer 2</div></td>
+        <td>15</td>
+        <td>7</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Serie 2<div class="english">Series 2</div></td>
+        <td>22</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Rendimiento<div class="english">Return</div></td>
+        <td>28</td>
+        <td>6,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Instrumento<div class="english">Security</div></td>
+        <td>40</td>
+        <td>19</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Fecha Inicio Cupón<div class="english">Initial Coupon Day</div></td>
+        <td>59</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Fecha Fin Cupón<div class="english">Final Coupon Day</div></td>
+        <td>67</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Tasa Cupón Vigente<div class="english">Active Coupon Rate</div></td>
+        <td>75</td>
+        <td>2,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Tasa Cupón Vigente 24 Horas<div class="english">24 Hours Active Coupon Rate</div></td>
+        <td>83</td>
+        <td>2,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Moneda<div class="english">Currency</div></td>
+        <td>91</td>
+        <td>4</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>ISIN<div class="english">ISIN</div></td>
+        <td>95</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Emisor<div class="english">Issuer Company</div></td>
+        <td>107</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>País de Origen<div class="english">Country of Origin</div></td>
+        <td>113</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Descripción<div class="english">Description</div></td>
+        <td>115</td>
+        <td>95</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>210</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+    <hr>
+    <h4 style="display: inline;" id="registro3">Registro 3 / <span class="english">Registry 3</span></h4>
+    <p style="display: inline;" class="return_to_menu_link"> (<a href="#indice">Volver al Indice / <span class="english">Back to Index</span></a>)</p>
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message Type</div></td>
+        <td>0</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Fecha 3<div class="english">Date 3</div></td>
+        <td>2</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>AAAAMMDD<div class="english">YYYYMMDD</div></td>
+      </tr>
+      <tr>
+        <td>Línea 3<div class="english">Line 3</div></td>
+        <td>10</td>
+        <td>1</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Valor 3<div class="english">Security Type 3</div></td>
+        <td>11</td>
+        <td>4</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Emisora 3<div class="english">Issuer 3</div></td>
+        <td>15</td>
+        <td>7</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Serie 3<div class="english">Series 3</div></td>
+        <td>22</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Acciones en Circulación<div class="english">Outstanding Stocks</div></td>
+        <td>28</td>
+        <td>20</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Bursatilidad<div class="english">Marketability</div></td>
+        <td>48</td>
+        <td>20</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Volúmen Operado<div class="english">Traded Volume</div></td>
+        <td>68</td>
+        <td>20</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>88</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+</html>

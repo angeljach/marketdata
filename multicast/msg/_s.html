@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Multicast: Mensaje s</title>
+    <meta name="date" content="2016-09-12">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">Multicast: Mensaje s / s Message</h1>
+
+    <h2>s: Saldos de Ventas en Corto por Instrumento / <span class ="english">Short sales balances per instrument</span></h2>
+
+     
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message type</div></td>
+        <td>0</td>
+        <td>1</td>
+        <td>"s"</td>
+        <td>Saldos de Ventas en Corto por Instrumento<div class="english">Short sales balances per instrument</td>
+      </tr>
+      <tr>
+        <td>Numero de instrumento<div class="english">Instrument Number</div></td>
+        <td>1</td>
+        <td>4</td>
+        <td>Int32<div class="english">Int32</div></td>
+        <td>Código único durante la vida del instrumento<div class="english">Unique code during instruments life</div></td>      
+      </tr>      
+      <tr>
+        <td>Fecha<div class="english">Date</div></td>
+        <td>5</td>
+        <td>8</td>
+        <td>Timestamp(1)<div class="english">Timestamp(1)</div></td>
+        <td>Fecha de la información<div class="english">Information Date</div></td>
+      </tr>
+      <tr>
+        <td>Saldo Anterior<div class="english">Previous Balance</div></td>
+        <td>13</td>
+        <td>8</td>
+        <td>Int64<div class="english">Int64</div></td>
+        <td>Saldo Anterior<div class="english">Previous Balance</div></td>
+     </tr>
+      <tr>
+        <td>Monto Operado<div class="english">Amount Traded</div></td>
+        <td>21</td>
+        <td>8</td>
+        <td>Int64<div class="english">Int64</div></td>
+        <td>Monto Operado<div class="english">Amount Traded</div></td>
+      </tr>
+      <tr>
+        <td>Recompras<div class="english">Buybacks</div></td>
+        <td>29</td>
+        <td>8</td>
+        <td>Int64<div class="english">Int64</div></td>
+        <td>Recompras<div class="english">Buybacks</div></td>
+      </tr>
+      <tr>
+        <td>Saldo Actual<div class="english">Current Balance</div></td>
+        <td>37</td>
+        <td>8</td>
+        <td>Int64<div class="english">Int64</div></td>
+        <td>Saldo Actual<div class="english">Current Balance</div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>45</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </body>
+</html>

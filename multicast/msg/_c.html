@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Multicast: Mensaje c</title>
+    <meta name="date" content="2016-09-08">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">Multicast: Mensaje c / c Message</h1>
+
+    <h2>c: Catálogo para instrumentos que pertenecen al mercado de Warrants capitales / <span class ="english">Catalog for instruments belonging to the capital warrants market</span></h2>
+
+     
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message type</div></td>
+        <td>0</td>
+        <td>1</td>
+        <td>"c"</td>
+        <td>Catálogo de Warrants de capitales<div class="english">Capital warrants catalog</div></td>
+      </tr>
+      <tr>
+        <td>Número del instrumento<div class="english">Instrument number</div></td>
+        <td>1</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Código único durante la vida del instrumento<div class="english">Unique code during instruments life</div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Valor<div class="english">Value type</div></td>
+        <td>5</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave del Tipo de Valor<div class="english">Value type code</div></td>
+      </tr>
+      <tr>
+        <td>Emisora<div class="english">Issuer</div></td>
+        <td>7</td>
+        <td>7</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de la Emisora<div class="english">Issuer code</div></td>
+      </tr>
+      <tr>
+        <td>Serie<div class="english">Series</div></td>
+        <td>14</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de la Serie<div class="english">Series code</div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Warrant<div class="english">Warrant type</div></td>
+        <td>20</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Tipo de Warrant:<br>"C"-Compra<br>"V"-Venta<div class="english">Warrant type:<br>"C"-Buy<br>"V"-Sell</div></td>
+      </tr>
+      <tr>
+        <td>Fecha de vencimiento<div class="english">Maturity date</div></td>
+        <td>21</td>
+        <td>8</td>
+        <td>Timestamp(1)</td>
+        <td>Fecha de vencimiento del warrant<div class="english">Maturity date of Warrant</div></td>
+      </tr>
+      <tr>
+      <td>Precio de ejercicio<div class="english">Exercise price</div></td>
+        <td>29</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>Precio para ejercer el warrant<div class="english">Warrant exercise price</div></td>
+      </tr>
+      <tr>
+      <td>Precio de Referencia<div class="english">Reference price</div></td>
+        <td>37</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>Precio de última referencia<div class="english">Last reference price</div></td>
+      </tr>
+      <tr>
+        <td>Fecha de Referencia<div class="english">Reference date</div></td>
+        <td>45</td>
+        <td>8</td>
+        <td>Timestamp(1)</td>
+        <td>Fecha de última referencia<div class="english">Last reference date</div></td>
+      </tr>
+      <tr>
+        <td>Referencia<div class="english">Reference</div></td>
+        <td>53</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Ver <a href="structure/catalogs.html#cat_referencia">Catálogo de Referencia</a><div class="english">See <a href="structure/catalogs.html#cat_referencia">Reference Catalog</a></div></td>
+      </tr>
+      <tr>
+      <td>ISIN<div class="english">ISIN</div></td>
+        <td>54</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de ISIN del instrumento<div class="english">Instrument ISIN code</div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>66</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </body>
+</html>

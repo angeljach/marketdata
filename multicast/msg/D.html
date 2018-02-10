@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Multicast: Mensaje D</title>
+    <meta name="date" content="2016-09-06">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">Multicast: Mensaje D / D Message</h1>
+
+    <h2>D: Cancelación de Ordenes / <span class="english">Order Cancellation</span></h2>
+
+    <p>Este mensaje elimina por completo la orden del corro</p>
+   
+    <div class="english">
+      <p>This message fully eliminates the order from the trading floor.</p>
+    </div>
+
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message type</div></td>
+        <td>0</td>
+        <td>1</td>
+        <td>"D"</td>
+        <td>Notificacion de la Eliminación de Orden<div class="english">Order elimination notification</div></td>
+      </tr>
+      <tr>
+        <td>Número de Instrumento<div class="english">Instrument number</div></td>
+        <td>1</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Código único durante la vida del instrumento<div class="english">Unique code during instruments life</div></td>
+      </tr>
+      <tr>
+        <td>Fecha<div class="english">Date</div></td>
+        <td>5</td>
+        <td>8</td>
+        <td>Timestamp(1)</td>
+        <td>Fecha en la que fue registrada la orden<div class="english">Date when the order was registered</div></td>
+      </tr>
+      <tr>
+        <td>Folio<div class="english">Number</div></td>
+        <td>13</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Folio Asignado a la orden, cuando es registrada<div class="english">Number allocated to the order when registered</div></td>
+      </tr>
+       <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>17</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </body>
+</html>

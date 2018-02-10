@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Multicast: Mensaje P</title>
+    <meta name="date" content="2016-09-07">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">Multicast: Mensaje P / P Message</h1>
+
+    <h2>P: Hechos de capitales / <span class ="english">Capital trades</span></h2>
+
+    <p>Se informa de cualquier operación que fue aceptada en BMV.</p>
+    
+
+    <div class="english">
+    <p>Contains information on any BMV accepted transaction.</p>
+    </div>
+
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message type</div></td>
+        <td>0</td>
+        <td>1</td>
+        <td>"P"</td>
+        <td>Hechos del Mercado de capitales<div class="english">Capital market trades</div></td>
+      </tr>
+      <tr>
+        <td>Número de Instrumento<div class="english">Instrument number</div></td>
+        <td>1</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Código único durante la vida del instrumento<div class="english">Unique code during instruments life</div></td>
+      </tr>
+      <tr>
+        <td>Hora del Hecho<div class="english">Trade time</div></td>
+        <td>5</td>
+        <td>8</td>
+        <td>Timestamp(2)</td>
+        <td>Hora en que se realizó la operación<div class="english">Time the operation was carried out</div></td>
+      </tr>
+      <tr>
+        <td>Volumen<div class="english">Volume</div></td>
+        <td>13</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Acciones negociadas<div class="english">Traded stocks</div></td>
+      </tr>
+      <tr>
+        <td>Precio<div class="english">Price</div></td>
+        <td>17</td>
+        <td>8</td>
+        <td>Precio (8)<div class="english">Price (8)</div></td>
+        <td>Precio de la operación<div class="english">Operation price</div></td>      
+      </tr>
+      <tr>
+        <td>Tipo de Concertación<div class="english">Concertation type</div></td>
+        <td>25</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Ver <a href="structure/catalogs.html#cat_tipo_concertacion">Catálogo de Tipo de Concertación</a><div class="english">See <a href="structure/catalogs.html#cat_tipo_concertacion">Concertation Type Catalog</a></div></td>
+      </tr>
+      <tr>
+        <td>Folio del Hecho<div class="english">Trade Number</div></td>
+        <td>26</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Foliador por instrumento<div class="english">Stamp number by instrument</div></td>
+      </tr>
+      <tr>
+        <td>Fija Precio<div class="english">Price Setter</div></td>
+        <td>30</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>En caso de que el valor sea 1, será tomado como true, en cualquier otro caso será falso.<div class="english">For value equal to 1, be taken as true; otherwise false.</div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Operación<div class="english">Operation type</div></td>
+        <td>31</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Ver <a href="structure/catalogs.html#cat_tipo_oper">Catálogo de Tipo de Operación</a><div class="english">See <a href="structure/catalogs.html#cat_tipo_oper">Type of Operation Catalog</a></div></td>
+      </tr>
+      <tr>
+        <td>Importe<div class="english">Amount</div></td>
+        <td>32</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Compra<div class="english">Buy</div></td>
+        <td>40</td>
+        <td>5</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave corta de casa compradora<div class="english">Buyers brokerage house short key</div></td>
+      </tr>
+      <tr>
+        <td>Vende<div class="english">Sell</div></td>
+        <td>45</td>
+        <td>5</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave corta de casa vendedora<div class="english">Sellers brokerage house short key</div></td>
+      </tr>
+      <tr>
+        <td>Liquidación<div class="english">Settlement</div></td>
+        <td>50</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Ver <a href="structure/catalogs.html#cat_tipo_liquidacion">Catálogo de Tipos de Liquidación</a><div class="english">See <a href="structure/catalogs.html#cat_tipo_liquidacion">Settlement Type Catalog</a></div></td>
+      </tr>
+      <tr>
+        <td>Indicador de Subasta<div class="english">Auction Indicator</div></td>
+        <td>51</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>"P" – Subasta de Apertura </br>"S" – Otras Subastas </br>" " – Mercado Continuo </br> "N" – No aplica 
+        	<div class="english">"P" – Opening Auction </br>"S" – Other Auctions </br>" " – Continuous Market </br> "N" – Not Applicable </div>
+        </td>
+      </tr>      
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>52</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Retransmisión de registro</title>
+        <meta name="date" content="2017-09-19">
+        <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+
+        <style>
+          table, th, td {
+              border: 1px solid black;
+          }
+        </style>
+    </head>
+  <body>
+
+    <h1 class="bar">Retransmisión de registros/ <span class="english">Retransmission of records</span></h1>
+
+      <h2>Formato de Retransmisión / <span class="english">Retransmission record</span></h2>
+      <p>Ejemplo: / <span class="english">Example:</span></p>
+      <p>&lt;X&gt;&lt;X&gt;&lt;128&gt;&lt;0&gt;&lt;&equals;
+        <br>00000000050000000030000000000000&lt;&equals;
+        <br>&lt;&equals;
+        <br>&lt;13&gt;&lt;0&gt;&lt;50&gt;&lt;0&gt;
+      </p>
+      
+      <h2>Desglose del registro / <span class="english">Record breakdown</span></h2>
+        
+        <table style="width:100%">
+          <tr>
+              <th>Campo<div class="english">Field</div></th>
+              <th>Contenido<div class="english">Content</div></th> 
+          </tr>
+          <tr>
+              <td>Longitud<div class="english">Longitude</div></td>
+              <td>&lt;1&gt;&lt;7&gt;</td>
+          </tr>
+          <tr>
+              <td>Banderas<div class="english">Flags</div></td>
+              <td>&lt;128&gt;&lt;0&gt;</td>
+          </tr>
+          <tr>
+              <td>Secuencia Solicitada<div class="english">Sequence requested</div></td>
+              <td>00000000050</td>
+          </tr>
+          <tr>
+              <td>Hora<div class="english">Time</div></td>
+              <td>000000</td>
+          </tr>
+          <tr>
+              <td>Tipo<div class="english">Type</div></td>
+              <td>03</td>
+          </tr>
+          <tr>
+              <td>Origen<div class="english">Origin</div></td>
+              <td>00</td>
+          </tr>
+          <tr>
+              <td>Destino<div class="english">Destiny</div></td>
+              <td>00</td>
+          </tr>
+          <tr>
+              <td>Contenido<div class="english">Content</div></td>
+              <td>000000</td>
+          </tr>
+              <td>Longitud<div class="english">Longitude</div></td>
+              <td>000</td>
+          </tr>
+          <tr>
+              <td>Datos<div class="english">Data</div></td>
+              <td>&quot; &quot; 222 espacios </td>
+          </tr>
+          <tr>
+              <td>Salto de línea<div class="english">Carrier Return</div></td>
+              <td>&lt;13&gt;</td>
+          </tr>
+          <tr>
+              <td>Filler<div class="english">Filler</div></td>
+              <td>&lt;0&gt;</td>
+          </tr>
+          <tr>
+              <td>Checksum<div class="english">Checksum</div></td>
+              <td>&lt;50&gt;</td>
+          </tr>
+        </table>
+  </body>
+</html>

@@ -1,0 +1,675 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Especificación BMV Multicast para Market Data</title>
+        <meta name="date" content="2017-11-24">
+        <link rel="stylesheet" type="text/css" href="../css/stylesheet.css" title="Style">
+    </head>
+    <body>
+
+        <h1 class="bar">Especificación BMV Multicast para Market Data / <span class="english">BMV Multicast specification for Market Data</span></h1>
+
+
+        <p>Versión del Documento 4.2.16.1 / <span class="english">Document Version 4.2.16.1</span></p>
+        <p>24 de Noviembre de 2017 / <span class="english">November 24th, 2017</span></p>
+        
+        <h2>Propósito / <span class="english">Purpose</span></h2>
+        <p>El propósito de este documento es proveer los detalles por completo del servicio de BMV Multicast para market data.</p>
+        <div class="english">
+            <p>The purpose of this document is to supply complete details of the BMV Multicast service for Market Data.</p>
+        </div>
+        
+        <h2>Historia de Versiones / <span class="english">Versions Histogram</span></h2>
+        <table>
+            <tr>
+                <th>Versión</th>
+                <th>Fecha</th>
+                <th>Descripción</th>
+            </tr>
+			<tr>
+                <td>4.2.16.1</td>
+                <td>12 de Enero de 2018 <div class="english">January 12nd, 2018</div></td>
+                <td>Ajuste al detalle del Catalogo de  <a href="../multicast/msg/structure/catalogs.html#cat_mercados">Mercados</a>.
+                    <div class="english">
+                        Adjustment of the detail of the  <a href="../multicast/msg/structure/catalogs.html#cat_mercados">Markets</a> Catalog.
+                    </div>
+                </td>
+            </tr>
+			<tr>
+                <td>4.2.16</td>
+                <td>24 de Noviembre de 2017 <div class="english">November 24th, 2017</div></td>
+                <td>Mensajes <a href="../h2h/msg/VX.html">VX</a> y <a href="../h2h/msg/VY.html">VY</a> de Valmer agregados a H2H.
+                    <div class="english">
+                        Valmer <a href="../h2h/msg/VX.html">VX</a> and <a href="../h2h/msg/VY.html">VY</a> messages added to H2H.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>4.2.15</td>
+                <td>21 de Noviembre de 2017 <div class="english">November 21st, 2017</div></td>
+                <td>Se modifica especificación <a href="../multicast/msg/_x.html">mensaje x</a>.
+                    <div class="english">
+                        The specification is changed to <a href="../multicast/msg/W.html">x message</a>.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>4.2.14</td>
+                <td>13 de Noviembre de 2017 <div class="english">November 13st, 2017</div></td>
+                <td>Se agregan muestras 8 y 9 al <a href="../multicast/msg/structure/catalogs.html#cat_muestra_indices">Catálogo de Muestras de Índices</a>.
+                    <div class="english">
+                        Sample of indices 8 and 9 added to the <a href="../multicast/msg/structure/catalogs.html#cat_muestra_indices">Sample of Indices Catalog</a>.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>4.2.13</td>
+                <td>21 de Septiembre de 2017 <div class="english">September 21st, 2017</div></td>
+                <td>Se agrega <a href="../multicast/msg/structure/catalogs.html#cat_snapshot">tipo de snapshot 12.</a>
+                    <div class="english">
+                        <a href="../multicast/msg/structure/catalogs.html#cat_snapshot">Snapshot type 12</a> added.
+                    </div>
+                </td>
+            </tr>
+			<tr>
+                <td>4.2.12</td>
+                <td>12 de Septiembre de 2017 <div class="english">September 12th, 2017</div></td>
+                <td>Se ajusta informacion de la tabla de <a href="../multicast/msg/structure/catalogs.html#cat_tipo_concertacion">tipo de concertación</a>
+                    <div class="english">
+                        Adjustment information is included in the table of <a href="../multicast/msg/structure/catalogs.html#cat_tipo_concertacion">Type of Concertation.</a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>4.2.11</td>
+                <td>6 de Septiembre de 2017 <div class="english">September 6th, 2017</div></td>
+                <td>Se cambia el nombre al <a href="../multicast/msg/W.html">mensaje W.</a>
+                    <div class="english">
+                        The name is changed to <a href="../multicast/msg/W.html">W message.</a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>4.2.10</td>
+                <td>5 de Septiembre de 2017 <div class="english">September 5th, 2017</div></td>
+                <td>Se quita los campos: subsector, ramo y subramo del <a href="../multicast/msg/W.html">mensaje W.</a>
+                    <div class="english">
+                        Subsector, business line and sub-line are removed from <a href="../multicast/msg/W.html">W message.</a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>4.2.9</td>
+                <td>31 de Agosto de 2017 <div class="english">August 31th, 2017</div></td>
+                <td>Se agregan las muestras IF y FT de Índice de Calidad, Valor y Crecimiento.
+                    <div class="english">
+                        The IF and FT samples of Quality, Value and Growth Index are added.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>4.2.8</td>
+                <td>29 de Agosto de 2017 <div class="english">August 29th, 2017</div></td>
+                <td>Se elimina <a href="../multicast/msg/structure/catalogs.html#cat_grupo_market_data">grupo de Market Data 25.</a>
+                    <div class="english">
+                        <a href="../multicast/msg/structure/catalogs.html#cat_grupo_market_data">Market data Groups 25</a> removed.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>4.2.7</td>
+                <td>21 de Agosto de 2017 <div class="english">August 21st, 2017</div></td>
+                <td>Se quita los campos: subsector, ramo y subramo del <a href="../multicast/msg/U.html">mensaje U.</a>
+                    <div class="english">
+                        Subsector, business line and sub-line are removed from <a href="../multicast/msg/U.html">U message.</a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>4.2.6</td>
+                <td>16 de Agosto de 2017 <div class="english">August 16th, 2017</div></td>
+                <td>Se quita formato P del <a href="../multicast/products.html">producto 7</a>
+                    <div class="english">
+                        P format is removed from <a href="../multicast/products.html">product 7.</a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>4.2.5</td>
+                <td>08 de Agosto de 2017 <div class="english">August 8th, 2017</div></td>
+                <td>Se agrega operatividad a <a href="../multicast/msg/structure/catalogs.html#cat_snapshot">Tipo de snapshot 5, 6, 8 y 9.</a>
+                    <div class="english">
+                        Tradability added in <a href="../multicast/msg/structure/catalogs.html#cat_snapshot">Snapshot type 5,6, 8 and 9.</a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>4.2.4</td>
+                <td>04 de Agosto de 2017 <div class="english">August 4th, 2017</div></td>
+                <td>Se agrega <a href="../multicast/msg/structure/catalogs.html#cat_grupo_market_data">grupo de Market Data 25.</a>
+                    <div class="english">
+                        <a href="../multicast/msg/structure/catalogs.html#cat_grupo_market_data">Market data Groups 25</a> added.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>4.2.3</td>
+                <td>01 de Agosto de 2017 <div class="english">August 1st, 2017</div></td>
+                <td>Se agrega estado en <a href="../multicast/msg/admin/snpt_rspns.html">Mensaje respuesta de snapshot.</a>
+                    <div class="english">
+                        Status added in <a href="../multicast/msg/admin/snpt_rspns.html">Snapshot response message</a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>4.2.2</td>
+                <td>20 de Julio de 2017 <div class="english">July 20th, 2017</div></td>
+                <td>Se agrega <a href="../multicast/msg/admin/snpt_request.html#snapshot_indices">solicitud de snapshot &iacute;ndices.</a>
+                	<br/>Se agrega tipo de snapshot &iacute;ndices en <a href="../multicast/msg/structure/catalogs.html#cat_snapshot">Tipo de snapshot</a>
+                    <div class="english">
+                        <a href="../multicast/msg/admin/snpt_request.html#snapshot_indices">Snapshot indices request</a> added.
+                        <br>Snapshot indices type added in <a href="../multicast/msg/structure/catalogs.html#cat_snapshot">Snapshot Type</a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>4.2.1</td>
+                <td>20 de Julio de 2017 <div class="english">July 20th, 2017</div></td>
+                <td>Creación de catálogos <a href="../multicast/msg/structure/catalogs.html#cat_snapshot">Tipo de Snapshot</a> y <a href="../multicast/msg/structure/catalogs.html#cat_snapshot_product">Snapshot por Producto</a>.
+                    <div class="english">
+                        <a href="../multicast/msg/structure/catalogs.html#cat_snapshot">Snapshot Type</a> and <a href="../multicast/msg/structure/catalogs.html#cat_snapshot_product">Snapshot by Product</a> catalogs created.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>4.2.0</td>
+                <td>3 de Julio de 2017 <div class="english">July 3rd, 2017</div></td>
+                <td>Se elimina la difusión del <a href="../multicast/msg/O.html">mensaje O</a> de los canales 1,2 y 15.
+                    <div class="english">
+                        <a href="../multicast/msg/O.html">O message</a> was eliminated from products 1,2 and 15.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>4.1.9</td>
+                <td>13 de Junio de 2017 <div class="english">June 13th, 2017</div></td>
+                <td>Se corrigen campos "emisora" y "acciones inscritas" del <a href="../multicast/msg/W.html">mensaje W</a>.
+                    <div class="english">
+                        "Issuer" and "Registered stock" fields of <a href="../multicast/msg/W.html">W message</a> are corrected.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>4.1.8</td>
+                <td>8 de Junio de 2017 <div class="english">June 8th, 2017</div></td>
+                <td>Aparece dos veces la clave K en la <a href="../multicast/msg/admin/rtx_rspns.html">respuesta de retransmisión</a>.
+                    <div class="english">
+                        The K key appears twice in the <a href="../multicast/msg/admin/rtx_rspns.html">replay response</a>.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>4.1.7</td>
+                <td>30 de Mayo de 2017 <div class="english">May 30th, 2017</div></td>
+                <td>Actualización de <a href="../multicast/msg/structure/catalogs.html#cat_muestra_indices">Catálogo de Muestras de Indices</a> derivado de la alianza con S&amp;P.
+                    <div class="english">
+                        <a href="../multicast/msg/structure/catalogs.html#cat_muestra_indices">Samples of Indices Catalog</a> update derived from the alliance with S&amp;P.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+            	<td>4.1.6</td>
+                <td>26 de Mayo de 2017 <div class="english">May 26th, 2017</div></td>
+                <td>
+                    Se agregan los tipos "z" y "#" al <a href="../multicast/msg/structure/catalogs.html#cat_tipo_concertacion">cat&aacute;logo Tipo de Concertaci&oacute;n</a>.
+                    <br> Se agregan los tipo "I" y "V" al <a href="../multicast/msg/structure/catalogs.html#cat_tipo_oper">cat&aacute;logo Tipo de Operaci&oacute;n</a>.
+                    <div class="english">
+                    	Types "z" and "#" added in <a href="../multicast/msg/structure/catalogs.html#cat_tipo_concertacion">Type of Concertation catalog</a>.
+                        <br> Types "I" and "V" in <a href="../multicast/msg/structure/catalogs.html#cat_tipo_oper">Type of Operation catalog</a>.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+            	<td>4.1.5</td>
+                <td>17 de Mayo de 2017 <div class="english">May 17th, 2017</div></td>
+                <td>
+                    Se corrige el campo 'Notas' de 'Acciones inscritas' del <a href="../multicast/msg/W.html">mensaje W</a>.
+                    <div class="english">
+                        'Notes' field of 'Registered stock' of the <a href="../multicast/msg/W.html">W message</a> is corrected
+                    </div>
+                </td>
+            </tr>
+            <tr>
+            	<td>4.1.4</td>
+                <td>17 de Mayo de 2017 <div class="english">May 17th, 2017</div></td>
+                <td>
+                	Se corrige campo significado en <a href="../multicast/msg/structure/catalogs.html#cat_tipo_concertacion">cat&aacute;logo Tipo de Concertaci&oacute;n</a> para el tipo 's'.
+                    <div class="english">
+                        'Meaning' field is corrected in the <a href="../multicast/msg/structure/catalogs.html#cat_tipo_concertacion">Type of Concertation catalog</a> for type 's'.
+					</div>
+                </td>
+            </tr>
+            	
+            <tr>
+            	<td>4.1.3</td>
+                <td>5 de Mayo de 2017 <div class="english">May 5th, 2017</div></td>
+                <td>
+                    Se cambia a 4 bytes el Número de Instrumento del formato 5. 
+                    <div class="english">
+                        The Instrument Number of format 5 is changed to 4 bytes.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+            	<td>4.1.2</td>
+                <td>26 de Abril de 2017 <div class="english">April 26th, 2017</div></td>
+                <td>
+                    Se agregan los formatos e, G y U del producto 18. 
+                    <div class="english">
+                        The formats e, G and U are added from the product 18.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+            	<td>4.1.1</td>
+                <td>25 de Abril de 2017<div class="english">April 25th, 2017</div></td>
+                <td>Se eliminan los campos de numero de operaciones, alzas, bajas, sin cambios e importe del <a href="../multicast/msg/U.html">mensaje de índices</a>.
+                    <div class="english">
+                        Number operations, amount, increases, downs, with out changes fields deleted from <a href="../multicast/msg/U.html">Indices message</a>.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+            	<td>4.1.0</td>
+                <td>19 de Abril de 2017<div class="english">April 19th, 2017</div></td>
+                <td>Ajuste al <a href="../multicast/msg/1.html">mensaje de profundidad</a> para solo enviar el lado que esta cambiando en vez de enviar los dos lados.
+                    <div class="english">
+                        Adjust to the <a href="../multicast/msg/1.html">depth message</a> to only send the side that is changing instead of sending the two sides.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>4.0.4</td>
+                <td>12 de abril de 2017<div class="english">April 12th, 2017</div></td>
+                <td>Se agregan los tipos X, Y y R en el <a href="../multicast/msg/structure/catalogs.html#cat_estado_instrumento">catálogo de Estado del instrumento</a>.
+                	<div class="english">Types X, Y and R added in the <a href="../multicast/msg/structure/catalogs.html#cat_estado_instrumento">Instrument Status catalog</a>.</div>
+                </td>
+            </tr>
+            <tr>
+                <td>4.0.3</td>
+                <td>30 de Marzo de 2017<div class="english">March 30th, 2017</div></td>
+                <td>Corrección de Offset del <a href="../multicast/msg/Q.html">mensaje Q</a> y longitud total.<br>Se agregan los productos 21 al 24 en <a href="../multicast/msg/structure/catalogs.html#cat_grupo_market_data">catálogo de Grupos de Market Data</a>.<div class="english"><a href="../multicast/msg/Q.html">Q message</a> corrected on offset and total lenght.<br>Products 21 to 24 added in the <a href="../multicast/msg/structure/catalogs.html#cat_grupo_market_data">Market Data Groups catalog</a>.</div></td>
+            </tr>
+            <tr>
+            	<td>4.0.2</td>
+                <td>29 de Marzo de 2017<div class="english">March 29th, 2017</div></td>
+                <td>Recuperación: Lista de instrumentos incluirá la secuencia.
+                    <div class="english">
+                        Recovery: List of instruments include the sequence.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>4.0.1</td>
+                <td>28 de Marzo de 2017<div class="english">March 28th, 2017</div></td>
+                <td>Adición de <a href="../multicast/msg/structure/catalogs.html#cat_tipo_oper_concer">catálogo de operaciones contra concertaciones</a>.<div class="english"><a href="../multicast/msg/structure/catalogs.html#cat_tipo_oper_concer">Operations vs concertations catalog</a> added.</div></td>
+            </tr>
+            <tr>
+            	<td>4.0.0</td>
+                <td>23 de Marzo de 2017<div class="english">March 23th, 2017</div></td>
+                <td>Adición de formatos H2H a mantener en Multicast.<div class="english">Addition of H2H formats to be maintained in Multicast</div></td>
+            </tr>
+            <tr>
+            	<td>3.9.20</td>
+                <td>23 de Marzo de 2017 <div class="english">March 23th, 2017</div></td>
+                <td>
+                    Agregar las IPs de los canales de valor agregado y de retraso de información. 
+                    <div class="english">
+                        Add the IPs of the value-added and information-delay channels.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+            	<td>3.9.19</td>
+                <td>22 de Marzo de 2017 <div class="english">March 22nd, 2017</div></td>
+                <td>Se Agregan 3 nuevos tipos de <a href="../multicast/spec/recovery.html">snapshot</a> combinados. 
+                    <div class="english">3 new <a href="../multicast/spec/recovery.html">snapshot</a> combinations were added.</div>
+                </td>
+	        </tr>
+	        <tr>
+                <td>3.9.18</td>
+                <td>22 de Marzo de 2017 <div class="english">March 22nd, 2017</div></td>
+                <td>
+                    Se eliminan los formatos e, G, U y W del producto 18. 
+                    <div class="english">
+                        The formats e, G, U and W are eliminated from the product 18.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>3.9.17</td>
+                <td>14 de Marzo de 2017 <div class="english">March 14th, 2017</div></td>
+                <td>
+                    Se agrega el participante al mensaje de <a href="../multicast/msg/A.html">Alta de Orden</a>. 
+                    <div class="english">
+                        The participant is added to the <a href="../multicast/msg/A.html">Order Adition</a> message.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>3.9.16</td>
+                <td>22 de febrero de 2017 <div class="english">February 22nd, 2017</div></td>
+                <td>
+                    Mensajes de snapshot. Se Agregan 3 nuevos tipos de snapshot. 
+                    <div class="english">
+                        Snapshot messages. Added three new kind snapshot.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>3.9.15</td>
+                <td>21 febrero de 2017 <div class="english">February 21st, 2017</div></td>
+                <td>
+                    Mensaje f. Campo Clasificación ha cambiado a Calificación.
+                    <div class="english">
+                        f Message. Clasification field has change to Rating.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>3.9.14</td>
+                <td>20 febrero de 2017 <div class="english">February 20th, 2017</div></td>
+                <td>
+                    Mensaje Precio promedio ponderado - Precios de líquidación. Se agrega campo volatilidad.
+                    <div class="english">
+                        Weighted Average Price - Settlement prices. Added volatility field.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>3.9.13</td>
+                <td>20 febrero de 2017 <div class="english">February 20th, 2017</div></td>
+                <td>
+                    Se elimina campo id de sesión en mensajes de respuesta de Retransmisión y Snapshot. 
+                    <div class="english">
+                        Deleted session id field in the Replay and Snapshot response messages.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>3.9.12</td>
+                <td>17 febrero de 2017 <div class="english">February 17th, 2017</div></td>
+                <td>
+                    Source IP. Se corrigen IPs para DRP y para Pruebas. 
+                    <div class="english">
+                        Source IP. DRP and Test IPs are corrected.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>3.9.11</td>
+                <td>16 febrero de 2017 <div class="english">February 16th, 2017</div></td>
+                <td>
+                    Mensaje de Snapshot Terminado. Se enviará el número de secuencia para todas las opciones de SNAPSHOT. 
+                    <div class="english">
+                        Snapshot message completed. A sequence number field will be sent for all SNAPSHOT options.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>3.9.10</td>
+                <td>15 febrero de 2017 <div class="english">February 15th, 2017</div></td>
+                <td>
+                    Se corrige eventos de sistema en mercado de capitales.
+                    <div class="english">
+                        Events system are corrected in the capital market.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>3.9.9</td>
+                <td>8 febrero de 2017 <div class="english">February 8th, 2017</div></td>
+                <td>
+                    Se agregaron los productos de valor agregado y retraso de información.
+                    <div class="english">
+                        Added value and information with delay channels were added.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>3.9.8</td>
+                <td>2 febrero de 2017 <div class="english">February 2nd, 2017</div></td>
+                <td>
+                    Se agregaron el mensaje W y U al producto 18 en la tabla de Productos VS Formatos.
+                    <div class="english">
+                        W and U messages were added to the product 18 in table Products VS Formats.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>3.9.7</td>
+                <td>2 febrero de 2017 <div class="english">February 2nd, 2017</div></td>
+                <td>
+                    Corrección de descripción para el campo "Tipo de operación" del mensaje <a href="../multicast/msg/O.html">O</a>.
+                    <div class="english">
+                        'Type of Operation' field description adjusted for <a href="../multicast/msg/O.html">O</a> message.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>3.9.6</td>
+                <td>27 Enero de 2017 <div class="english">January 27th, 2017</div></td>
+                <td>
+                    Se agregan eventos de sistema de mexder.
+                    <div class="english">
+                        Mexder events system added.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>3.9.5</td>
+                <td>17 Enero de 2017 <div class="english">January 17th, 2017</div></td>
+                <td>
+                    Corrección de descripción para los campos "Folio del Hecho" y "Precio de Ejecución" en inglés del mensaje <a href="../multicast/msg/C.html">C</a>.
+                    <div class="english">
+                        'Fact number' and 'Execution price' fields description adjusted for <a href="../multicast/msg/C.html">C</a> message.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>3.9.4</td>
+                <td>16 Enero de 2017 <div class="english">January 16th, 2017</div></td>
+                <td>
+                    Se agregan dos tipos de valores de fecha, para distinguir la precisión del tiempo.
+                    <div class="english">
+                        Two value types added to send time precision.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>3.9.3</td>
+                <td>12 Enero de 2017 <div class="english">January 12th, 2017</div></td>
+                <td>
+                    Se elimina el campo Fija Precio del mensaje <a href="../multicast/msg/Q.html">Q</a>.
+                    <div class="english">
+                        "Price Setter" field removed for <a href="../multicast/msg/Q.html">Q</a> message.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>3.9.2</td>
+                <td>19 Diciembre de 2016 <div class="english">December 19th, 2016</div></td>
+                <td>
+                    Se indica que las fechas son con horas.
+                    <div class="english">
+                        Indication about the fields type Timestamp are with time.
+                    </div>
+                </td>
+            </tr>    
+             <tr>
+                <td>3.9.1</td>
+                <td>19 Diciembre de 2016 <div class="english">December 19th, 2016</div></td>
+                <td>
+                    Se agrega mensaje nuevo como respuesta a solicitud de snapshot.
+                    <div class="english">
+                        New message added in response to snapshot request.
+                    </div>
+                </td>
+            </tr>    
+             <tr>
+                <td>3.9.0</td>
+                <td>14 Diciembre de 2016 <div class="english">December 14th, 2016</div></td>
+                <td>
+                    Se modifica el sentido del mensaje 'X' ahora es Actualización de volumen.
+                    <div class="english">
+                        The message 'X' is now changed to 'Volume update'.
+                    </div>
+                </td>
+            </tr>    
+             <tr>
+                <td>3.8.1</td>
+                <td>1 Diciembre de 2016 <div class="english">December 1st, 2016</div></td>
+                <td>
+                    Modificación en puertos de servicio de recuperación de ambiente de pruebas.
+                    <div class="english">
+                        Test environment recovery service ports modified.
+                    </div>
+                </td>
+            </tr>    
+            <tr>
+                <td>3.8.0</td>
+                <td>25 Noviembre de 2016 <div class="english">November 25th, 2016</div></td>
+                <td>
+                    Se agregan links para los formatos de valor agregado (<a href="../multicast/msg/_r.html">r</a>,<a href="../multicast/msg/_s.html">s</a>,<a href="../multicast/msg/_t.html">t</a>,<a href="../multicast/msg/_x.html">x</a>,<a href="msg/_z.html">z</a>).
+                    <div class="english">
+                        Links added to formats: <a href="../multicast/msg/_r.html">r</a>,<a href="../multicast/msg/_s.html">s</a>,<a href="../multicast/msg/_t.html">t</a>,<a href="../multicast/msg/_x.html">x</a>,<a href="../multicast/msg/_z.html">z</a>.
+                    </div>
+                </td>
+            </tr>            
+			<tr>
+                <td>3.7.0</td>
+                <td>24 Noviembre de 2016 <div class="english">November 24th, 2016</div></td>
+                <td>
+                    Se agregan nuevos campos al formato <a href="../multicast/msg/_b.html">b</a>.
+                    <div class="english">
+                        New fields added to <a href="../multicast/msg/_b.html">b</a> message.
+                    </div>
+                </td>
+            </tr>            
+            <tr>
+                <td>3.6.1</td>
+                <td>8 Noviembre de 2016 <div class="english">November 8th, 2016</div></td>
+                <td>
+                    Corrección de longitud del campo 'Número de Instrumento' del mensaje <a href="../multicast/msg/4.html">4</a>.
+                    <div class="english">
+                        'Instrument Number' field lenght adjusted for <a href="../multicast/msg/4.html">4</a> message.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>3.6.0</td>
+                <td>1 Noviembre de 2016 <div class="english">November 1st, 2016</div></td>
+                <td>
+                    Campo 'longitud' eliminado de los mensajes
+                    <a href="../multicast/msg/admin/login_rspns.html">Respuesta de Inicio de Sesión</a>, 
+                    <a href="../multicast/msg/admin/rtx_rspns.html">Respuesta de Retransmisión</a>, 
+                    <a href="../multicast/msg/admin/snpt_complete.html">Snapshot Terminado</a> y 
+                    <a href="../multicast/msg/admin/snpt_rspns.html">Respuesta de Snapshot</a>.<br/>
+                    Se agrega informacion de como ajustar contraseñas menores a 10 posiciones en mensaje 
+                    <a href="../multicast/msg/admin/login.html">Inicio de Sesión</a>.<br/>
+                    Se modifica campo 'ID Instrumento' en mensaje
+                    <a href="../multicast/msg/admin/snpt_request.html">Solicitud de Snapshot</a>.
+                    <div class="english">
+                        Removed 'Length field' for messages 
+                        <a href="../multicast/msg/admin/login_rspns.html">Login Response</a>, 
+                        <a href="../multicast/msg/admin/rtx_rspns.html">Replay Response</a>, 
+                        <a href="../multicast/msg/admin/snpt_complete.html">Snapshot Complete</a> and
+                        <a href="../multicast/msg/admin/snpt_rspns.html">Snapshot Response</a>.<br/>
+                        Added information for adjust passwords with size less than 10 positions in 
+                        <a href="../multicast/msg/admin/login.html">Login</a> message.<br/>
+                        'Instrument ID' modified in
+                        <a href="../multicast/msg/admin/snpt_request.html">Snapshot Request</a> message.
+                    </div>
+                </td>
+            </tr>
+	        <tr>
+                <td>3.5.1</td>
+                <td>31 Octubre de 2016 <div class="english">October 31st, 2016</div></td>
+                <td>
+                    Se agrega referencia a la 'Metodología de Índice de Bursatilidad' en el campo 'Bursatilidad Numérica' del formato <a href="../multicast/msg/_a.html">a</a>.
+                    <div class="english">
+                        'BMV Marketability Index Methodology' reference added to' Numeric tradability' field from the <a href="../multicast/msg/_a.html">a</a> format.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>3.5.0</td>
+                <td>27 Octubre de 2016 <div class="english">October 27th, 2016</div></td>
+                <td>
+                    Adición de Manual de Instalación de Certificado de Seguridad en Microsoft Outlook.
+                    <div class="english">
+                        Security Certificate Installation Manual in Microsoft Outlook added.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>3.4.0</td>
+                <td>24 Octubre de 2016 <div class="english">October 24th, 2016</div></td>
+                <td>
+                    Mapeo Formatos Multicast VS H2H agregado en la sección de 'Productos'.
+                    <br>Cambios varios en la redacción en Inglés.
+                    <br>Ajuste de la descripción del campo 'Numero de Instrumento'.
+                    <div class="english">
+                        Mapping Multicast VS H2H added in the 'Products' section.
+                        <br>Several changes in English redaction.
+                        <br>Adjust in description of the 'Instrument number' field.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>3.3</td>
+                <td>11 Octubre de 2016 <div class="english">October 11th, 2016</div></td>
+                <td>
+                    Direcciones IP agregadas en la sección 'Especificación'.
+                    <div class="english">
+                        IP Addresses added in the 'Specification' section.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>3.2</td>
+                <td>3 Octubre de 2016 <div class="english">October 3rd, 2016</div></td>
+                <td>
+                    Direcciones IP agregadas en la sección 'Especificación'.
+                    <br>Campo 'indicador de subasta agregado al formato 'P'.
+                    <div class="english">
+                        IP Addresses added in the 'Specification' section.
+                        <br>Settlement field added to 'P' format.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>3.1</td>
+                <td>22 de Septiembre de 2016 <div class="english">September 22nd, 2016</div></td>
+                <td>
+                    Se agrega el formato '5' (Existencia de posturas A Precio Medio).
+                    <br>Actualización del tamaño de número de operaciones del formato 'E'.
+                    <br>Eliminación de estado de índice inexistente 'S' (DEFINITIVO CON CIFRAS PRELIMINARES) el cual ya no existe.
+                    <br>Corrección de tamaño del mensaje 'X'.
+                    <div class="english">
+                        Format '5' added (To Middle Price existing postures).
+                        <br>Number of operations size from 'E' format updated.
+                        <br>Indices Stated (Final with Preliminary Figures) deleted.
+                        <br>Format 'X' size updated.
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>3.0</td>
+                <td>Septiembre 2016 <div class="english">September 2016</div></td>
+                <td>Migración a versión HTML<div class="english">HTML document migration</div></td>
+            </tr>
+        </table>        
+    </body>
+</html>

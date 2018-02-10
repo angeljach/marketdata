@@ -1,0 +1,61 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Multicast: Mensaje 4</title>
+    <meta name="date" content="2016-09-08">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">Multicast: Mensaje 4 / 4 Message</h1>
+
+    <h2>4: Cambios de estado/ <span class ="english">Status changes </span></h2>
+    
+      <p>Todos los instrumentos se encuentran en algún estado antes y durante la sesión de remate. El mensaje del estado por instrumento se genera al inicio del día y cuando el instrumento entra a alguna fase del remate: Cancelación de Posturas, Subasta de Apertura, Negociación Continua o entra en alguna otra modalidad operativa, como por ejemplo: Subastas y Suspensiones.</p>
+
+
+    <div class="english">
+      <p>All instruments are in a certain status before and during trading session. Instrument status message is generated at the beginning of the day and when the instrument enters into a trading phase: Offers cancellation, Opening Auction, Continuous Trading or when entered into operating mode, for example: Auctions and Suspensions.</p>
+    </div>
+     
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message type</div></td>
+        <td>0</td>
+        <td>1</td>
+        <td>"4"</td>
+        <td>Cambio de Estado del Instrumento<div class="english">Change of Instrument Status</div></td>
+      </tr>
+      <tr>
+        <td>Número de Instrumento<div class="english">Instrument number</div></td>
+        <td>1</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Código único durante la vida del instrumento<div class="english">Unique code during instruments life</div></td>
+      </tr>
+      <tr>
+        <td>Estado del Instrumento<div class="english">Instrument status</div></td>
+        <td>5</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Ver <a href="structure/catalogs.html#cat_estado_instrumento">Catálogo de Estado del Instrumento</a><div class="english">See <a href="structure/catalogs.html#cat_estado_instrumento">Instrument Status Catalog</a></div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>6</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </body>
+</html>

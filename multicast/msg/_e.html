@@ -1,0 +1,119 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Multicast: Mensaje e</title>
+    <meta name="date" content="2016-09-09">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">Multicast: Mensaje e / e Message</h1>
+
+    <h2>e: Catálogo enviado para instrumentos que pertenecen a los TRACS de capitales / <span class ="english">Catalog sent for instruments belonging to capital TRACS</span></h2>
+    
+      
+     
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message type</div></td>
+        <td>0</td>
+        <td>1</td>
+        <td>"e"</td>
+        <td>Carga de cartera de los TRACS de capitales.<div class="english">Capital TRACS loaded portofolio</div></td>
+      </tr>
+      <tr>
+        <td>Número del Trac<div class="english">Trac Number</div></td>
+        <td>1</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Código único durante la vida del instrumento<div class="english">Unique code during instruments life</div></td>
+      </tr>
+      <tr>
+        <td>Nombre del Trac<div class="english">Trac name</div></td>
+        <td>5</td>
+        <td>8</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Identifica el nombre del Trac<div class="english">Identifies trac name</div></td>
+      </tr>
+      <tr>
+        <td>Emisora subyacente<div class="english">Underlying issuer</div></td>
+        <td>13</td>
+        <td>7</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de la emisora del valor subyacente<div class="english">Underlying value issuer code</div></td>  
+      </tr>
+      <tr>
+        <td>Serie subyacente<div class="english">Underlying Series</div></td>
+        <td>20</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de la serie del valor subyacente<div class="english">Underlying value series code</div></td>  
+      </tr>
+      <tr>
+        <td>Títulos<div class="english">Securities</div></td>
+        <td>26</td>
+        <td>8</td>
+        <td>Precio (8)<div class="english">Price (8)</div></td>
+        <td>Número de títulos del valor subyacente<div class="english">Number of underlying value certificates</div></td>   
+      </tr>
+      <tr>
+        <td>Títulos Excluidos<div class="english">Excluded Securities</div></td>
+        <td>34</td>
+        <td>8</td>
+        <td>Precio (8)<div class="english">Price (8)</div></td>
+        <td>Número de títulos excluidos del valor subyacente<div class="english">Number of excluded underlying value securities</div></td>   
+      </tr>
+      <tr>
+        <td>Precio<div class="english">Price</div></td>
+        <td>42</td>
+        <td>8</td>
+        <td>Precio (8)<div class="english">Price (8)</div></td>
+        <td>Precio del valor subyacente<div class="english">Underlying value price</div></td>   
+      </tr>
+      <tr>
+        <td>Componente en Efectivo<div class="english">Cash Component</div></td>
+        <td>50</td>
+        <td>8</td>
+        <td>Precio (8)<div class="english">Price (8)</div></td>
+        <td>Componente de efectivo por unidad<div class="english">Cash component by unit</div></td>   
+      </tr>
+      <tr>
+        <td>Valor Excluido<div class="english">Excluded Value</div></td>
+        <td>58</td>
+        <td>8</td>
+        <td>Precio (8)<div class="english">Price (8)</div></td>
+        <td>Valor estimado de los activos excluidos por unidad<div class="english">Estimated value of excluded assets by unit</div></td>   
+      </tr>
+      <tr>
+        <td>Número de Certificados<div class="english">Number of Certificates</div></td>
+        <td>66</td>
+        <td>8</td>
+        <td>Int64</td>
+        <td>Número de Certificados por unidad<div class="english">Number of Certificates by unit</div></td>
+      </tr>
+      <tr>
+        <td>Precio teórico<div class="english">Theoretical Price</div></td>
+        <td>74</td>
+        <td>8</td>
+        <td>Precio (8)<div class="english">Price (8)</div></td>
+        <td>Precio Teórico por certificado<div class="english">Theoretical Price by certificate</div></td>   
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>82</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </body>
+</html>

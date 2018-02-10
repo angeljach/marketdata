@@ -1,0 +1,67 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Multicast: Mensaje 5 / 5 Message - Existencia de posturas A Precio Medio / To Middle Price existing quotes</title>
+    <meta name="date" content="2016-09-08">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">Multicast: Mensaje 5 / 5 Message</h1>
+
+<h2>5: Existencia de posturas A Precio Medio / <span class ="english">To Middle Price existing quotes</span></h2>
+    
+      <p>Éste mensaje se genera al momento en que un instrumento ingresa una postura en el libro electrónico oculto A Precio Medio. Al momento en que se 
+      retira o se cierran las posturas y el libro oculto del instrumento vuelve a quedar vacío, se reenvía otro mensaje indicando la ausencia de posturas.</p>
+
+
+    <div class="english">
+      <p>Generated when an instrument enters a posture in the hidden electronic To Middle Price book. When postures are cancelled or withdrawed from the To Middle Price hidden electronic book leaving it empty, another message is delivered indicating postures absence.</p>
+    </div>
+     
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message type</div></td>
+        <td>0</td>
+        <td>1</td>
+        <td>"5"</td>
+        <td>Existencia de posturas A Precio Medio <div class ="english">To Middle Price existing posture</div></td>
+      </tr>
+      <tr>
+        <td>Número de Instrumento<div class="english">Instrument number</div></td>
+        <td>1</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Código único durante la vida del instrumento<div class="english">Unique code during instruments life</div></td>
+      </tr>
+      <tr>
+        <td>Existen Posturas<div class="english">Existing Postures</div></td>
+        <td>3</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>
+          En caso de que el valor sea "1", será tomado como verdadero (hay posturas), en cualquier otro caso será falso (no hay posturas).
+          <div class="english">
+          For value equal to "1", True (there are postures), otherwise False (there are no postures).
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>6</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </body>
+</html>

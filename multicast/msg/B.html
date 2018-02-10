@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Multicast: Mensaje B</title>
+    <meta name="date" content="2016-09-07">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">Multicast: Mensaje B / B Message</h1>
+
+    <h2>B: Ofertas Públicas / <span class ="english">Public Offerings</span></h2>
+
+      <p>Hecho generado a partir de la Oferta pública.</p>
+    
+
+    <div class="english">
+      <p>Trade from a Public offering.</p>
+     
+    </div>
+
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message type</div></td>
+        <td>0</td>
+        <td>1</td>
+        <td>"B "</td>
+        <td>Hecho de Oferta Publica<div class="english">Public Offering Trade</div></td>
+      </tr>
+      <tr>
+        <td>Número de Instrumento<div class="english">Instrument number</div></td>
+        <td>1</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Código único durante la vida del instrumento<div class="english">Unique code during instruments life</div></td>
+      </tr>
+      <tr>
+        <td>Folio<div class="english">Number</div></td>
+        <td>5</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Volumen<div class="english">Volume</div></td>
+        <td>9</td>
+        <td>8</td>
+        <td>Int64</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Tasa de descuento o precio<div class="english">Discount rate or price</div></td>
+        <td>17</td>
+        <td>8</td>
+        <td>Precio (8)<div class="english">Price (8)</div></td>
+        <td></td>      
+      </tr>
+      <tr>
+        <td>Tasa de rendimiento<div class="english">Rate of return</div></td>
+        <td>25</td>
+        <td>4</td>
+        <td>Precio (4)<div class="english">Price (4)</div></td>
+        <td></td> 
+      </tr>
+      <tr>
+        <td>Días Plazo<div class="english">Term Days</div></td>
+        <td>29</td>
+        <td>2</td>
+        <td>Int16</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Tipo de moneda<div class="english">Currency type</div></td>
+        <td>31</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>N-Moneda Nacional<br>D-Dólar<div class="english">N – Mexican currency<br>D-Dollar</div></td>
+      </tr>
+      <tr>
+        <td>Liquidación<div class="english">Settlement</div></td>
+        <td>32</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>M-Mismo día<br>2-24 Horas<div class="english">M-Same day<br>2-24 Hours</div></td>
+      </tr>
+      <tr>
+      <tr>
+        <td>Compra<div class="english">Buy</div></td>
+        <td>33</td>
+        <td>5</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Vende<div class="english">Sell</div></td>
+        <td>38</td>
+        <td>5</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Fecha de colocación<div class="english">Placement date</div></td>
+        <td>43</td>
+        <td>8</td>
+        <td>Timestamp(1)</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Fecha de emisión<div class="english">Issue date</div></td>
+        <td>51</td>
+        <td>8</td>
+        <td>Timestamp(1)</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Fecha de vencimiento<div class="english">Maturity date</div></td>
+        <td>59</td>
+        <td>8</td>
+        <td>Timestamp(1)</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>67</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </body>
+</html>

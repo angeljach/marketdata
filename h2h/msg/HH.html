@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  <html lang="es">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>H2H: Mensaje HH</title>
+    <meta name="date" content="2017-03-15">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">H2H: Mensaje HH / HH Message</h1>
+
+    <h2>HH: Vector de Precios Promedio / <span class ="english">Vector of Average Prices</span></h2>
+    <p>Descripción del mensaje.</p>
+    <div class="english">
+      <p>Message description.</p>
+    </div>
+
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message Type</div></td>
+        <td>0</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Fecha del Vector<div class="english">Vector Date</div></td>
+        <td>2</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Fecha de operación<div class="english">Transaction date</div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Valor<div class="english">Security Type</div></td>
+        <td>10</td>
+        <td>4</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Emisora<div class="english">Issuer</div></td>
+        <td>14</td>
+        <td>7</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave que identifica a la emisora del instrumento.<div class="english">Code identifying issuers instrument</div></td>
+      </tr>
+      <tr>
+        <td>Serie<div class="english">Series</div></td>
+        <td>21</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Serie asignada a la emisión<div class="english">Series code assigned to an issue</div></td>
+      </tr>
+      <tr>
+        <td>Precio Promedio Mismo Día<div class="english">Same Day Average Price</div></td>
+        <td>27</td>
+        <td>9,8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Precio Sucio Promedio del instrumento de origen Mismo Día<div class="english">Same day average dirty price instrument</div></td>
+      </tr>
+      <tr>
+        <td>Precio Promedio 24 Horas<div class="english">24 Hours Average Price</div></td>
+        <td>44</td>
+        <td>9,8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Precio Sucio Promedio del Instrumento de origen 24 Horas<div class="english">24 hour average dirty price instrument</div></td>
+      </tr>
+      <tr>
+        <td>Precio Promedio 48 Horas<div class="english">48 Hours Average Price</div></td>
+        <td>61</td>
+        <td>9,8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Precio Sucio Promedio del Instrumento de origen 48 Horas<div class="english">48 hour average dirty price instrument</div></td>
+      </tr>
+      <tr>
+        <td>Aforo<div class="english">Capacity</div></td>
+        <td>78</td>
+        <td>2,4</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Aforo correspondiente a cada emisión<div class="english">Issue capacity</div></td>
+      </tr>
+      <tr>
+        <td>ISIN<div class="english">ISIN</div></td>
+        <td>84</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Número ISIN del Instrumento<div class="english">ISIN instrument number</div></td>
+      </tr>
+      <tr>
+        <td>Calificación más Baja<div class="english">Lowest Rating</div></td>
+        <td>96</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>La que resulte más baja de comparar las calificaciones otorgadas por: S&amp;P, Fitch y Moody’s, de acuerdo a la tabla de homologaciones, el resultado será presentado con Homologación S&amp;P.<div class="english">The lowest rating given by: S&amp;P, Fitch and Moody’s, according to a homologated table. Same result will be presented with S&amp;P Homologation.</div></td>
+      </tr>
+      <tr>
+        <td>Calificación S&amp;P<div class="english">S&amp;P Rating</div></td>
+        <td>108</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Calificación Otorgada por la Calificadora S&amp;P<div class="english">Rating given by the S&amp;P rating agency</div></td>
+      </tr>
+      <tr>
+        <td>Calificación Fitch<div class="english">Fitch Rating</div></td>
+        <td>120</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Calificación Otorgada por la Calificadora Fitch<div class="english">Rating given by the Fitch rating agency</div></td>
+      </tr>
+      <tr>
+        <td>Calificación Moody’s<div class="english">Moody's Rating</div></td>
+        <td>132</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Calificación Otorgada por la Calificadora Moody’s<div class="english">Rating given by the Moody’s rating agency</div></td>
+      </tr>
+      <tr>
+        <td>Calificación HR<div class="english">HR Rating</div></td>
+        <td>144</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Calificación Otorgada por la Calificadora HR.<div class="english">Rating given by the HR rating agency</div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>156</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+</html>

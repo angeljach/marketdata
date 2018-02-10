@@ -1,0 +1,202 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  <html lang="es">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>H2H: Mensaje HA</title>
+    <meta name="date" content="2017-03-15">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">H2H: Mensaje HA / HA Message</h1>
+
+    <h2>HA: Vector de Precios Detallado / <span class ="english">Detailed Price Vector</span></h2>
+    <p>Descripción del mensaje.</p>
+    <div class="english">
+      <p>Message description.</p>
+    </div>
+
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message Type</div></td>
+        <td>0</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Fecha de envío<div class="english">Sending Date</div></td>
+        <td>2</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Estado<div class="english">Status</div></td>
+        <td>10</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>P: Preliminar<br>D: Definitivo <div class="english">P: Preliminar<br>D: Final </div></td>
+      </tr>
+      <tr>
+        <td>Actualizado<div class="english">Updated</div></td>
+        <td>11</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>" ": Sin Cambio<br>C: Actualización <div class="english">" ": Unchanged<br>C: Update</div></td>
+      </tr>
+      <tr>
+        <td>Tipo Mercado<div class="english">Market Type</div></td>
+        <td>12</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>MC: Mercado de Capitales<br>MD: Mercado de Dinero <div class="english">MC: Capitals Market<br>MD: Money Market</div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Valor<div class="english">Security Type</div></td>
+        <td>14</td>
+        <td>4</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Emisora<div class="english">Issuer</div></td>
+        <td>18</td>
+        <td>7</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Serie<div class="english">Series</div></td>
+        <td>25</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Cupón<div class="english">Coupon</div></td>
+        <td>31</td>
+        <td>3</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Precio Sucio 24 hrs<div class="english">Valuation Price Same Day</div></td>
+        <td>34</td>
+        <td>9,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Precio Valuación Último Mes<div class="english">Valuation Price Last Month</div></td>
+        <td>49</td>
+        <td>9,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Rendimiento<div class="english">Valuation Price Last Year</div></td>
+        <td>64</td>
+        <td>9,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Tasa Descuento<div class="english">Discount Rate</div></td>
+        <td>79</td>
+        <td>6,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Precio Sucio<div class="english">Dirty Price</div></td>
+        <td>91</td>
+        <td>9,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Precio Limpio<div class="english">Clean Price</div></td>
+        <td>106</td>
+        <td>9,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Interés Mismo Día<div class="english">Overnight Interest Rate</div></td>
+        <td>121</td>
+        <td>9,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Interés 24 horas<div class="english">24 Hours Interest Rate</div></td>
+        <td>136</td>
+        <td>9,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Precio Limpio 24 Hrs<div class="english">Month Closing Interest Rate</div></td>
+        <td>151</td>
+        <td>9,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Días por vencer<div class="english">Days to Maturity</div></td>
+        <td>166</td>
+        <td>5</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Plazo<div class="english">Term</div></td>
+        <td>171</td>
+        <td>5</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Calificación<div class="english">Rating</div></td>
+        <td>176</td>
+        <td>10</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Bursatilidad Numérica<div class="english">Numerical Marketability</div></td>
+        <td>186</td>
+        <td>2,3</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Sobretasa<div class="english">Surcharge</div></td>
+        <td>191</td>
+        <td>6,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>ISIN<div class="english">ISIN</div></td>
+        <td>203</td>
+        <td>12</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>215</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+</html>

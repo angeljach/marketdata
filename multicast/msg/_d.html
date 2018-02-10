@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Multicast: Mensaje d</title>
+    <meta name="date" content="2017-07-24">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">Multicast: Mensaje d / d Message</h1>
+
+    <h2>d: Catálogo enviado para instrumentos que pertenecen al mercado de derivados
+de futuros, opciones y Swaps / <span class="english">Options, futures and swaps derivatives market instruments catalog</span></h2>
+
+     <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message type</div></td>
+        <td>0</td>
+        <td>1</td>
+        <td>"d"</td>
+        <td>Catálogo del mercado dederivados futuros, opciones y swaps.<div class="english">Catalog on futures, options and swaps derivatives.</div></td>
+      </tr>
+      <tr>
+        <td>Número de Instrumento<div class="english">Instrument number</div></td>
+        <td>1</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Código único durante la vida del instrumento<div class="english">Unique code during instruments life</div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Valor<div class="english">Value type</div></td>
+        <td>5</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave del Tipo de Valor.<br>Ver <a href="http://www.mexder.com.mx/wb3/wb/MEX/market_data" target="_blank">catálogo</a>.<div class="english">Value type code.<br>View <a href="http://www.mexder.com.mx/wb3/wb/MEX/market_data" target="_blank">catalog</a>.</div></td>
+      <tr>
+      <tr>
+        <td>Clase<div class="english">Class</div></td>
+        <td>7</td>
+        <td>7</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Nombre de la clase<div class="english">Class name</div></td>
+      <tr>
+      <tr>
+        <td>Vencimiento<div class="english">Maturity</div></td>
+        <td>14</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave del vencimiento. Para Swaps este campo está en blanco.<div class="english">Maturity code. Blank space for swaps.</div></td>
+      <tr>
+        <td>Tipo de opción<div class="english">Option type</div></td>
+        <td>20</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Tipo de Opción: <br>"C" - Call <br> "P" - Put<div class="english">Option type: <br>"C" - Call <br>"P" - Put </div></td> 
+      <tr>
+        <td>Precio de Ejercicio<div class="english">Exercise Price</div></td>
+        <td>21</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>Precio para ejercer el Derivado<div class="english">Derivative exercise price</td>
+      </tr>
+      <tr>
+        <td>Puja<div class="english">Bid</div></td>
+        <td>29</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>Puja múltiplo del precio<div class="english">Multiple bid price</td>
+      </tr>  
+      <tr>
+        <td>Precio de liquidación del día anterior<div class="english">Prior day settlement price</div></td>
+        <td>37</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>Precio de liquidación anterior<div class="english">Previous settlement price</td>
+      </tr>        
+      <tr>
+        <td>Última Fecha de Operación<div class="english">Last day of operation</div></td>
+        <td>45</td>
+        <td>8</td>
+        <td>Timestamp(1)</td>
+        <td>Fecha de última operación<div class="english">Date of last operation</div></td>
+      </tr>
+      <tr>
+        <td>Fecha de vencimiento<div class="english">Maturity Date</div></td>
+        <td>53</td>
+        <td>8</td>
+        <td>Timestamp(1)</td>
+        <td>Fecha de vencimiento del Derivado<div class="english">Derivative maturity date</div></td>
+      <tr>
+        <td>Contratos abiertos<div class="english">Open contracts<div></td>
+        <td>61</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Número de contratos abiertos al cierre del día anterior <div class="english">Number of open contracts at prior closing day</div></td>
+      </tr>
+      <tr>
+        <td>Tamaño del contrato<div class="english">Contract size</div></td>
+        <td>65</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Número de títulos que ampara un contrato operado.<div class="english">Number of securities covered by an operated contract</div></td>
+      </tr>
+      <tr>
+        <td>Emisora Subyacente<div class="english">Underlying Issuer</div></td>
+        <td>69</td>
+        <td>7</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de la emisora subyacente<div class="english">Underlying issuer code</div></td>
+      </tr>
+      <tr>
+        <td>Serie Subyacente<div class="english">Underlying Series</div></td>
+        <td>76</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de la serie subyacente<div class="english">Underlying series code</div></td>
+      </tr>
+      <tr>
+        <td>TV Subyacente<div class="english">Underlying VT</div></td>
+        <td>82</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave del tipo de valor subyacente<div class="english">Underlying value type code</div></td>
+      </tr>
+      <tr>
+        <td>Código de Producto<div class="english">Product Code</div></td>
+        <td>84</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Folio Asignado a la orden, cuando es registrada<div class="english">CME Identification (Chicago Mercantile Exchange)</div></td>
+      </tr>
+      <tr>
+        <td>Vencimiento Diario<div class="english">Daily maturity</div></td>
+        <td>96</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>1 – En caso de que sea vencimiento diario <br>0 – En caso de que no sea vencimiento diario<div class="english">1-For daily maturity <br> 0-Not daily maturity</div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>97</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </body>
+</html>

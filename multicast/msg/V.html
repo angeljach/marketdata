@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Multicast: Mensaje V</title>
+    <meta name="date" content="2016-09-09">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">Multicast: Mensaje V / V Message</h1>
+
+    <h2>V: Hechos virtuales/ <span class ="english">Virtual trades</span></h2>
+
+      <p>Cuando una operación ha sido pre asignada en los libros electrónicos al cierre y al Precio Promedio del Día se envía un mensaje de hecho virtual con el que se está avisando de esta operación. Al final de la sesión de remate se envía un mensaje P con el que se avisa que la operación deja de ser virtual.</p>
+      
+
+    <div class="english">
+      <p> When an operation has been pre assigned to the at closing and average day Price electronic books, a virtual trade message is send, where also notifying of this operation. At the end of trading session, a P message is where also notifying that the operation stops being virtual.</p>
+    </div>
+     
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message type</div></td>
+        <td>0</td>
+        <td>1</td>
+        <td>"V"</td>
+        <td>Hechos Virtuales del Mercado de Capitales y Global BMV<div class="english">BMV Capital and Global Market Virtual Trades</div></td>
+      </tr>
+      <tr>
+        <td>Número de Instrumento<div class="english">Instrument number</div></td>
+        <td>1</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Código único durante la vida del instrumento<div class="english">Unique code during instruments life</div></td>
+      </tr>
+      <tr>
+        <td>Estado<div class="english">Status</div></td>
+        <td>5</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>A- Alta<br>B-Baja<div class="english">A-Addition<br>B-Deletion</div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Operación<div class="english">Operation type</div></td>
+        <td>6</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Ver <a href="structure/catalogs.html#cat_tipo_oper">Catálogo de Tipo de Operación</a><div class="english">See <a href="structure/catalogs.html#cat_tipo_oper"> Operation Type Catalog</a></div></td>
+      </tr>
+      <tr>
+        <td>Folio<div class="english">Number</div></td>
+        <td>7</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Folio del hecho virtual<div class="english">Virtual trade number</div></td>
+      </tr>
+      <tr>
+        <td>Volumen<div class="english">Volume</div></td>
+        <td>11</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Títulos operados virtualmente<div class="english">Virtually traded securities</div></td>
+      </tr>
+      <tr>
+        <td>Concertación<div class="english">Concertation</div></td>
+        <td>15</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Ver <a href="structure/catalogs.html#cat_tipo_concertacion">Catálogo de Tipo de Concertación</a><div class="english">See <a href="structure/catalogs.html#cat_tipo_concertacion">Concertation Type Catalog</a></div></td>
+      </tr>
+      <tr>
+        <td>Compra<div class="english">Buy</div></td>
+        <td>16</td>
+        <td>5</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de la casa compradora<div class="english">Buyers brokerage house short key</div></td>
+      </tr>
+      <tr>
+        <td>Vende<div class="english">Sell</div></td>
+        <td>21</td>
+        <td>5</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de la casa vendedora<div class="english">Sellers brokerage house short key</div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>26</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </body>
+</html>

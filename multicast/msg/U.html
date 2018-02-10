@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Multicast: Mensaje U</title>
+    <meta name="date" content="2017-08-21">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">Multicast: Mensaje U / U Message</h1>
+
+    <h2>U: Índices Generales / <span class ="english">General indices</span></h2>
+
+    <p>Información de los índices de la Bolsa Mexican de Valores.</p>
+    
+
+    <div class="english">
+      <p>Information about the MSE indices.</p>
+    </div>
+
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message type</div></td>
+        <td>0</td>
+        <td>1</td>
+        <td>"U"</td>
+        <td>Índices Top<div class="english">Top Indices</div></td>
+      </tr>
+      <tr>
+        <td>Muestra<div class="english">Sample</div></td>
+        <td>1</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Ver <a href="structure/catalogs.html#cat_muestra_indices">Catálogo de Muestras de Indices</a><div class="english">See <a href="structure/catalogs.html#cat_muestra_indices">Indices Sample Catalog</a></div></td>
+      </tr>
+      <tr>
+      <td>Sector<div class="english">Sector</div></td>
+        <td>2</td>
+        <td>1</td>
+        <td>Int8</td>
+        <td>Ver <a href="https://www.bmv.com.mx/es/Grupo_BMV/Clasificacion">Clasificación Sectorial</a><div class="english">See <a href="https://www.bmv.com.mx/en/Grupo_BMV/Clasificacion">Industry Classification</a></div></td>
+      </tr>
+      <tr>
+      <td>Hora del Índice<div class="english">Index Hour</div></td>
+        <td>3</td>
+        <td>8</td>
+        <td>Timestamp(2)</td>
+        <td>Hora de cálculo del Índice<div class="english">Time index was calculated</div></td>
+      </tr>
+      <tr>
+        <td>Volumen<div class="english">Volume</div></td>
+        <td>11</td>
+        <td>8</td>
+        <td>Int64</td>
+        <td>Volumen operado en la muestra<div class="english">Traded volume in the sample</div></td>
+      </tr>
+      <tr>
+        <td>Indice<div class="english">Index</div></td>
+        <td>19</td>
+        <td>4</td>
+        <td>Precio (4)<div class="english">Price (4)</div></td>
+        <td>Valor del Indice<div class="english">Index value</div></td>
+      </tr>
+      <tr>
+        <td>Variación<div class="english">Variation</div></td>
+        <td>23</td>
+        <td>4</td>
+        <td>Precio (4)<div class="english">Price (4)</div></td>
+        <td>Puntos de variación<div class="english">Variation points</div></td>
+      </tr>
+      <tr>
+        <td>Porcentaje<div class="english">Percentage</div></td>
+        <td>27</td>
+        <td>4</td>
+        <td>Precio (4)<div class="english">Price (4)</div></td>
+        <td>Porcentaje de variación<div class="english">Percentage points</div></td>
+      </tr>
+      <tr>
+        <td>Tendencia<div class="english">Trend</div></td>
+        <td>31</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Ver <a href="structure/catalogs.html#cat_tendencia">Catálogo de Tendencia</a><div class="english">See <a href="structure/catalogs.html#cat_tendencia">Trend Catalog</a></div></td>
+      </tr>
+      <tr>
+        <td>Estado del Indice<div class="english">Index status</div></td>
+        <td>32</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Ver <a href="structure/catalogs.html#cat_estado_indice">Catálogo de Estado del Indice</a><div class="english">See <a href="structure/catalogs.html#cat_estado_indice">Index Status Catalog</a></div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>33</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </body>
+</html>

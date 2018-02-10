@@ -1,0 +1,314 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  <html lang="es">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>H2H: Mensaje VY</title>
+    <meta name="date" content="2017-11-24">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">H2H: Mensaje VY / VY Message</h1>
+
+    <h2>VY: Vector de Calificaciones Extendido (Intermediarios y Emisores) / <span class ="english">Vector of Ratings Extended (Brokers and Issuers)</span></h2>
+    <p>Descripción del mensaje.</p>
+    <div class="english">
+      <p>Message description.</p>
+    </div>
+
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message Type</div></td>
+        <td>0</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Fecha del Vector<div class="english">Vector Date</div></td>
+        <td>2</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Entidad<div class="english">Entity</div></td>
+        <td>10</td>
+        <td>4</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Tipo de entidad (EMIS, INTER)<div class="english">Entity (EMIS, INTER)</div></td>
+      </tr>
+      <tr>
+        <td>Clave de Entidad<div class="english">Entity Code</div></td>
+        <td>14</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave del intermediario<div class="english">Broker code</div></td>
+      </tr>
+      <tr>
+        <td>País de Origen<div class="english">Country of Origin</div></td>
+        <td>20</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Fitch - Calificación LPL<div class="english">Fitch - LLT Rating</div></td>
+        <td>22</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Calificación Largo Plazo Local otorgada por calificadora Fitch<div class="english">Local long term rating granted by Fitch</div></td>
+      </tr>
+      <tr>
+        <td>Fitch - Calificación CPL<div class="english">Fitch - LST Rating</div></td>
+        <td>34</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Calificación Corto Plazo Local otorgada por calificadora Fitch<div class="english">Local short term rating granted by Fitch</div></td>
+      </tr>
+      <tr>
+        <td>Fitch - Calificación LPG<div class="english">Fitch - GLT Rating</div></td>
+        <td>46</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td> Calificación Largo Plazo Global otorgada por calificadora Fitch<div class="english">Global long term rating granted by Fitch</div></td>
+      </tr>
+      <tr>
+        <td>Fitch - Calificación CPG<div class="english">Fitch - GST Rating</div></td>
+        <td>58</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td> Calificación Corto Plazo Global otorgada por calificadora Fitch<div class="english">Global short term rating granted by Fitch</div></td>
+      </tr>
+      <tr>
+        <td>Fitch - Fecha de Revisión<div class="english">Fitch - Review Date</div></td>
+        <td>70</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Fecha de la última revisión realizada al Instrumento por Fitch<div class="english">Last instruments review date by Fitch</div></td>
+      </tr>
+      <tr>
+        <td>S&amp;P - Calificación LPL<div class="english">S&amp;P - LLT Rating</div></td>
+        <td>78</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Calificación Largo Plazo Local otorgada por calificadora S&amp;P<div class="english">Local long term rating granted by S&amp;P</div></td>
+      </tr>
+      <tr>
+        <td>S&amp;P - Calificación CPL<div class="english">S&amp;P - LST Rating</div></td>
+        <td>90</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Calificación Corto Plazo Local otorgada por calificadora S&amp;P<div class="english">Local Short Term Rating Granted by S&amp;P</div></td>
+      </tr>
+      <tr>
+        <td>S&amp;P - Calificación LPG<div class="english">S&amp;P - GLT Rating</div></td>
+        <td>102</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Calificación Largo Plazo Global otorgada por calificadora S&amp;P<div class="english">Global Long Term Rating Granted by S&amp;P</div></td>
+      </tr>
+      <tr>
+        <td>S&amp;P - Calificación CPG<div class="english">S&amp;P - GST Rating</div></td>
+        <td>114</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Calificación Corto Plazo Globall otorgada por calificadora S&amp;P<div class="english">Global Short Term Rating Granted by S&amp;P</div></td>
+      </tr>
+      <tr>
+        <td>S&amp;P - Fecha de Revisión<div class="english">S&amp;P - Review Date</div></td>
+        <td>126</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Fecha de la última revisión realizada al Instrumento por S&amp;P<div class="english">Last instruments review date by Fitch</div></td>
+      </tr>
+      <tr>
+        <td>Moody's - Calificación LPL<div class="english">Moody's - LLT Rating</div></td>
+        <td>134</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Calificación Largo Plazo Local otorgada por calificadora Moody’s<div class="english">Local Long Term Rating Granted by Moody’S</div></td>
+      </tr>
+      <tr>
+        <td>Moody's - Calificación CPL<div class="english">Moody's - LST Rating</div></td>
+        <td>146</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Calificación Corto Plazo Local otorgada por calificadora Moody’s<div class="english">Local Short Term Rating Granted by Moody’S</div></td>
+      </tr>
+      <tr>
+        <td>Moody's - Calificación LPG<div class="english">Moody's - GLT Rating</div></td>
+        <td>158</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Calificación Largo Plazo Global otorgada por calificadora Moody’s<div class="english">Global Long Term Rating Granted by Moody’S</div></td>
+      </tr>
+      <tr>
+        <td>Moody's - Calificación CPG<div class="english">Moody's - GST Rating</div></td>
+        <td>170</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Calificación Corto Plazo Global otorgada por calificadora Moody’s<div class="english">Global Short Term Rating Granted by Moody’S</div></td>
+      </tr>
+      <tr>
+        <td>Moody's - Fecha de Revisión<div class="english">Moody's - Review Date</div></td>
+        <td>182</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Fecha de la última revisión realizada al Instrumento por Moody’s<div class="english">Last instruments review date by Moody’s</div></td>
+      </tr>
+      <tr>
+        <td>HR - Calificación LPL<div class="english">HR - LLT Rating</div></td>
+        <td>190</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Calificación Largo Plazo Local otorgada por calificadora HR<div class="english">Local long term rating granted by HR</div></td>
+      </tr>
+      <tr>
+        <td>HR - Calificación CPL<div class="english">HR - LST Rating</div></td>
+        <td>202</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Calificación Corto Plazo Local otorgada por calificadora HR<div class="english">Local short term rating granted by HR</div></td>
+      </tr>
+      <tr>
+        <td>HR - Calificación LPG<div class="english">HR - GLT Rating</div></td>
+        <td>214</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Calificación Largo Plazo Global otorgada por calificadora HR<div class="english">Global long term rating granted by HR</div></td>
+      </tr>
+      <tr>
+        <td>HR - Calificación CPG<div class="english">HR - GST Rating</div></td>
+        <td>226</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Calificación Corto Plazo Globall otorgada por calificadora HR<div class="english">Global short term rating granted by HR</div></td>
+      </tr>
+      <tr>
+        <td>HR - Fecha de Revisión<div class="english">HR -  Review Date</div></td>
+        <td>238</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Fecha de la última revisión realizada al Instrumento por HR<div class="english">Last instruments review date by HR</div></td>
+      </tr>
+      <tr>
+        <td>Verum - Calificación LPL<div class="english">Verum - LLT Rating</div></td>
+        <td>246</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Calificación Largo Plazo Local otorgada por calificadora Verum<div class="english">Local long term rating granted by Verum</div></td>
+      </tr>
+      <tr>
+        <td>Verum - Calificación CPL<div class="english">Verum - LST Rating</div></td>
+        <td>258</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Calificación Corto Plazo Local otorgada por calificadora Verum<div class="english">Local short term rating granted by Verum</div></td>
+      </tr>
+      <tr>
+        <td>Verum - Calificación LPG<div class="english">Verum - GLT Rating</div></td>
+        <td>270</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Calificación Largo Plazo Global otorgada por calificadora Verum<div class="english">Global long term rating granted by Verum</div></td>
+      </tr>
+      <tr>
+        <td>Verum - Calificación CPG<div class="english">Verum - GST Rating</div></td>
+        <td>282</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Calificación Corto Plazo Globall otorgada por calificadora Verum<div class="english">Global short term rating granted by Verum</div></td>
+      </tr>
+      <tr>
+        <td>Verum - Fecha de Revisión<div class="english">Verum -  Review Date</div></td>
+        <td>294</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Fecha de la última revisión realizada al Instrumento por Verum<div class="english">Last instruments review date by Verum</div></td>
+      </tr>
+      <tr>
+        <td>Best - Calificación LPL<div class="english">Best - LLT Rating</div></td>
+        <td>302</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Calificación Largo Plazo Local otorgada por calificadora Best<div class="english">Local long term rating granted by Best</div></td>
+      </tr>
+      <tr>
+        <td>Best - Calificación CPL<div class="english">Best - LST Rating</div></td>
+        <td>314</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Calificación Corto Plazo Local otorgada por calificadora Best<div class="english">Local short term rating granted by Best</div></td>
+      </tr>
+      <tr>
+        <td>Best - Calificación LPG<div class="english">Best - GLT Rating</div></td>
+        <td>326</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Calificación Largo Plazo Global otorgada por calificadora Best<div class="english">Global long term rating granted by Best</div></td>
+      </tr>
+      <tr>
+        <td>Best - Calificación CPG<div class="english">Best - GST Rating</div></td>
+        <td>338</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Calificación Corto Plazo Globall otorgada por calificadora Best<div class="english">Global short term rating granted by Best</div></td>
+      </tr>
+      <tr>
+        <td>Best - Fecha de Revisión<div class="english">Best -  Review Date</div></td>
+        <td>350</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Fecha de la última revisión realizada al Instrumento por Best<div class="english">Last instruments review date by Best</div></td>
+      </tr>
+      <tr>
+        <td>DBRS - Calificación LPL<div class="english">DBRS - LLT Rating</div></td>
+        <td>358</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Calificación Largo Plazo Local otorgada por calificadora DBRS<div class="english">Local long term rating granted by DBRS</div></td>
+      </tr>
+      <tr>
+        <td>DBRS - Calificación CPL<div class="english">DBRS - LST Rating</div></td>
+        <td>370</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Calificación Corto Plazo Local otorgada por calificadora DBRS<div class="english">Local short term rating granted by DBRS</div></td>
+      </tr>
+      <tr>
+        <td>DBRS - Calificación LPG<div class="english">DBRS - GLT Rating</div></td>
+        <td>382</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Calificación Largo Plazo Global otorgada por calificadora DBRS<div class="english">Global long term rating granted by DBRS</div></td>
+      </tr>
+      <tr>
+        <td>DBRS - Calificación CPG<div class="english">DBRS - GST Rating</div></td>
+        <td>394</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Calificación Corto Plazo Globall otorgada por calificadora DBRS<div class="english">Global short term rating granted by DBRS</div></td>
+      </tr>
+      <tr>
+        <td>DBRS - Fecha de Revisión<div class="english">DBRS -  Review Date</div></td>
+        <td>406</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Fecha de la última revisión realizada al Instrumento por DBRS<div class="english">Last instruments review date by DBRS</div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>414</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+</html>

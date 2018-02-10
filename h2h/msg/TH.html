@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  <html lang="es">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>H2H: Mensaje TH</title>
+    <meta name="date" content="2017-01-16">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">H2H: Mensaje TH / TH Message</h1>
+
+    <h2>TH: Receso administrativo / <span class ="english">Trading Halt</span></h2>
+    <p>Descripción del mensaje.</p>
+    <div class="english">
+      <p>Message description.</p>
+    </div>
+
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message Type</div></td>
+        <td>0</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Estado<div class="english">Status</div></td>
+        <td>2</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Estado del receso<div class="english">Recess state</div></td>
+      </tr>
+      <tr>
+        <td>Hora Envío<sup><a href="#cite_01">[1]</a></sup><div class="english">Sent Time</div></td>
+        <td>4</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Hora en la que se ejecutó la operación de suspensión o reactivación. "HHMMSS"<div class="english">Time in which the suspension / reactivation operation was executed "HHMMSS"</div></td>
+      </tr>
+      <tr>
+        <td>Mercado<div class="english">Market</div></td>
+        <td>10</td>
+        <td>3</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>MM: Mercado de metales.<br>RF: Renta fija<br>RV: Renta variable<br>SIC: SIC<br>WR: Warrants<br>SI: Sociedades de inversión
+          <div class="english">MM: Metals Market<br>RF: Fixed Income<br>RV: Equity<br>SIC: SIC<br>WR: Warrants<br>SI: Mutual Funds</div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>13</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+    <p id="cite_01"><sup>[1]</sup>: En caso de que el receso sea decretado de forma manual por la DSTC, el valor de la HORA DE ENVÍO será 000000. / <span class ="english">In case trading halt is decreed manually by the DSTC, the SENT TIME value will be 000000.</span></p>
+
+  </body>
+</html>

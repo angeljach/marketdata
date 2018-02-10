@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  <html lang="es">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>H2H: Mensaje FR</title>
+    <meta name="date" content="2017-01-12">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">H2H: Mensaje FR / FR Message</h1>
+
+    <h2>FR: Precios del Mercado (Exclusivo para ASIGNA) / <span class ="english">Market Prices (Exclusive for ASIGNA)</span></h2>
+    <p>Descripción del mensaje.</p>
+    <div class="english">
+      <p>Message description.</p>
+    </div>
+
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message Type</div></td>
+        <td></td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Fecha Mensaje<div class="english">Message Date</div></td>
+        <td>2</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Fecha de mensaje  (AAAAMMDD)<div class="english">Message date (YYYYMMDD)</div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Producto<div class="english"></div></td>
+        <td>10</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>O: Opción<br>F: Futuro<br>U: Subyacente<div class="english">O: Option<br>F: Future<br>U: Underlying</div></td>
+      </tr>
+      <tr>
+        <td>Clase<div class="english">Class</div></td>
+        <td>11</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>(Las 4 primeras posiciones irán llenas, el resto en blancos) (Ejemplo: CMXB que significa Cemex B)<div class="english">(The first 4 positions will be filled out, the rest in blanks) (example: CMXB that means CEMEX B)</div></td>
+      </tr>
+      <tr>
+        <td>Descripción FV<div class="english">FV Description </div></td>
+        <td>17</td>
+        <td>4</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Fecha de Vencimiento (MMAA)<br>Ejemplo: OC95 que significa Octubre 1995<br>Blancos cuando se trata de un SWAP.
+          <div class="english">Maturity date (MMYY)<br>Example: OC95 that means october 1995<br>Blanks when it is a SWAP.</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Precio de Ejercicio<div class="english">Strike Price</div></td>
+        <td>21</td>
+        <td>7,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Precio de ejercicio (solo para Opciones)<div class="english">Exercise Price/Strike (Options only)</div></td>
+      </tr>
+      <tr>
+        <td>Descripción Tipo<div class="english">Type Description </div></td>
+        <td>34</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>C: Call<br>P: Put<div class="english">C: Call<br>P: Put</div></td>
+      </tr>
+      <tr>
+        <td>Fecha Vencimiento<div class="english">Maturity Date</div></td>
+        <td>35</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Fecha de vencimiento AAAAMMDD (solo para opciones y futuros)
+          <div class="english">Maturity date YYYYMMDD (options and futures only)</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Mejor Precio de Compra<div class="english">Best Buy Price</div></td>
+        <td>43</td>
+        <td>6,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Mejor precio de compra en el mercado<div class="english">Best buying price in the market</div></td>
+      </tr>
+      <tr>
+        <td>Mejor Precio de Venta<div class="english">Best Sell Price</div></td>
+        <td>55</td>
+        <td>6,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Mejor precio de venta en el mercado<div class="english">Best selling price in the market</div></td>
+      </tr>
+      <tr>
+        <td>Último Precio<div class="english">Last Price</div></td>
+        <td>67</td>
+        <td>6,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Último precio si es Intradia o Subyacente, Precio de liquidación si es Cierre y el instrumento es Futuro u Opcion<div class="english">Last price if its intraday or underlying, settlement price if it is a closing and instrument is option or future.</div></td>
+      </tr>
+      <tr>
+        <td>Intradía o Cierre<div class="english">Intraday or Closing</div></td>
+        <td>79</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>I: Intradía<br>C: Cierre<div class="english">I: Intraday<br>C: Closing</div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>80</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+</html>

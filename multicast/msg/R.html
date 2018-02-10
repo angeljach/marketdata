@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Multicast: Mensaje R</title>
+    <meta name="date" content="2016-09-07">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">Multicast: Mensaje R / R Message</h1>
+
+    <h2> R: Estadísticas de los instrumentos / <span class ="english">Statistics of instruments</span></h2>
+
+    <p>Mensaje de actualización de estadísticas de derivados que se envía cada que existe una actualización en los corros en cualquier nivel de precio. </p>
+      
+
+    <div class="english">
+      <p>Update message from derivatives statistics sent each time there is an update on the trading floor at any level price.</p>
+    </div>
+
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message type</div></td>
+        <td>0</td>
+        <td>1</td>
+        <td>"R"</td>
+        <td>Estadística por Instrumento <div class="english">Statistics per instrument</div></td>
+      </tr>
+      <tr>
+        <td>Número de Instrumento<div class="english">Instrument number</div></td>
+        <td>1</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Código único durante la vida del instrumento<div class="english">Unique code during instruments life</div></td>
+      </tr>
+      <tr>
+        <td>Precio Liquidación anterior<div class="english">Previous settlement price</div></td>
+        <td>5</td>
+        <td>8</td>
+        <td>Precio (8)<div class="english">Price (8)</div></td>
+        <td>Precio de liquidación del día anterior<div class="english">Last day settlement price</div></td>
+      </tr>
+      <tr>
+        <td>Precio de apertura<div class="english">Opening price</div></td>
+        <td>13</td>
+        <td>8</td>
+        <td>Precio (8)<div class="english">Price (8)</div></td>
+        <td>1er. precio del día o precio de la apertura<div class="english">First price of the day or opening price</div></td>
+      </tr>
+      <tr>
+        <td>Precio máximo del día<div class="english">Max price of the day</div></td>
+        <td>21</td>
+        <td>8</td>
+        <td>Precio (8)<div class="english">Price (8)</div></td>
+        <td>Precio máximo registrado en el día<div class="english">Max price recorded on the day</div></td>
+      </tr>
+      <tr>
+        <td>Precio mínimo del día<div class="english">Lower price of the day</div></td>
+        <td>29</td>
+        <td>8</td>
+        <td>Precio (8)<div class="english">Price (8)</div></td>
+        <td>Precio mínimo registrado en el día<div class="english">Lower price recorded on the day</div></td>
+      </tr>
+      <tr>
+        <td>Precio último del día<div class="english">Last price of the day</div></td>
+        <td>37</td>
+        <td>8</td>
+        <td>Precio (8)<div class="english">Price (8)</div></td>
+        <td>Precio último registrado en el día<div class="english">Last price recorded on the day</div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>45</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Multicast: Mensaje Inicio de Sesión</title>
+        <meta name="date" content="2016-09-06">
+        <link rel="stylesheet" type="text/css" href="../../../css/stylesheet.css" title="Style">
+    </head>
+  <body>
+
+      <h1 class="bar">Multicast: Mensaje Inicio de Sesión / Login Message</h1>
+
+      <h2>Mensaje Inicio de Sesión / <span style="english">Login Message</span></h2>
+
+      <table>
+          <tr>
+              <th>Campo<div class="english">Field</div></th>
+              <th>Offset</th>
+              <th>Tamaño (byte)<div class="english">Size (byte)</div></th>
+              <th>Tipo<div class="english">Type</div></th>
+              <th>Descripción<div class="english">Description</div></th>
+          </tr>
+          <tr>
+              <td>Longitud<div class="english">Length</div></td>
+              <td>0</td>
+              <td>1</td>
+              <td>Int8</td>
+              <td>Longitud de mensaje incluyendo este campo<div class="english">Message length including this field</div></td>
+          </tr>
+          <tr>
+              <td>Tipo Mensaje<div class="english">Message type</div></td>
+              <td>1</td>
+              <td>1</td>
+              <td>ALFA<div class="english">ALPHA</div></td>
+              <td>
+                <table class="insidetable">
+                  <tr>
+                    <th>Valor<div class="english">Value</div></td>
+                    <th>Valor (Hexadecimal)<div class="english">(Hexadecimal) value</div></td>
+                  </tr>
+                  <tr>
+                    <td>!</td>
+                    <td>(0x21)</td>
+                  </tr>
+                </table>
+              </td>
+          </tr>
+          <tr>
+              <td>Grupo Market Data<div class="english">Market Data Group</div></td>
+              <td>2</td>
+              <td>1</td>
+              <td>Int8</td>
+              <td>Ver <a href="../structure/catalogs.html#cat_grupo_market_data">Catálogo de Grupos de Market Data</a><div class="english">See <a href="../structure/catalogs.html#cat_grupo_market_data">Market Data Groups Catalog</a></div></td>
+          </tr>
+          <tr>
+              <td>Usuario<div class="english">User</div></td>
+              <td>3</td>
+              <td>6</td>
+              <td>ALFA<div class="english">ALPHA</div></td>
+              <td>Usuario asignado al receptor<div class="english">User assigned to receiver</div></td>
+          </tr>
+          <tr>
+              <td>Contraseña<div class="english">Password</div></td>
+              <td>9</td>
+              <td>10</td>
+              <td>ALFA<div class="english">ALPHA</div></td>
+              <td>Contraseña asignada al receptor, si la contraseña es menor al tamaño especificado es necesario ajustar la contraseña con espacios a la derecha.<div class="english">Password assigned to receiver. In case of size less than 10, must fill with blankspaces to the right.</div></td>
+          </tr>
+          <tr>
+              <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+              <td>19</td>
+              <td></td>
+          </tr>
+      </table>
+  </body>
+</html>

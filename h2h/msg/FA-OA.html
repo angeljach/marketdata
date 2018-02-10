@@ -1,0 +1,215 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+  <html lang="es">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>H2H: Mensaje FA-OA</title>
+    <meta name="date" content="2017-01-16">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">H2H: Mensaje FA-OA / FA-OA Message</h1>
+
+    <h2>FA-OA: Catálogo de Series / <span class ="english">Series Catalog</span></h2>
+    <p>Descripción del mensaje.</p>
+    <div class="english">
+      <p>Message description.</p>
+    </div>
+
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message Type</div></td>
+        <td>0</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Fecha del Mensaje<div class="english">Message Date</div></td>
+        <td>2</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Descripción<div class="english">Description</div></td>
+        <td>10</td>
+        <td></td>
+        <td><div class="english"></div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Clase<div class="english">Class</div></td>
+        <td>10</td>
+        <td>7</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Las 4 primeras posiciones irán llenas, el resto en blancos.<br>Ejemplo: TMXL que significa Telmex L
+          <div class="english">The first 4 positions will be filled out, the rest in black<br>Example: TMXL means TELMEX L</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Descripción K<div class="english">K Description</div></td>
+        <td>17</td>
+        <td></td>
+        <td><div class="english"></div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Descripción FV<div class="english">FV Description</div></td>
+        <td>17</td>
+        <td>4</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Fecha de vencimiento (MMAA)<br>Ejemplo: SP95, Septiembre 1995
+          <div class="english">Maturity Date (Mmyy)<br>Example: SP95 Which Means September 1995</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Descripción Precio<div class="english">Description Price</div></td>
+        <td>21</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Precio de ejercicio (sólo Opciones)<br>Ejemplo: bbb8.9, significa tres blancos 8.9
+          <div class="english">Exercise price (only warrants)<br>Example: bbb8.9, meaninig three blanks 8.9</div>
+        </td>
+      </tr>
+      <tr>
+        <td>Descripción Tipo<div class="english">Description Type</div></td>
+        <td>27</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Sólo para Opciones<br>C: Call<br>P: Put<div class="english">Options Only<br>C: Call<br>P: Put</div></td>
+      </tr>
+      <tr>
+        <td>Fecha Emisión<div class="english">Issue Date</div></td>
+        <td>28</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>(AAAAMMDD)<div class="english">(YYYYMMDD)</div></td>
+      </tr>
+      <tr>
+        <td>Última Fecha Operación<div class="english">Last Date Trade </div></td>
+        <td>36</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Fecha del último día para operar (AAAAMMDD)<div class="english">Last trading day (YYYYMMDD)</div></td>
+      </tr>
+      <tr>
+        <td>Fecha vencimiento<div class="english">Maturity Date</div></td>
+        <td>44</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>(AAAAMMDD)<div class="english">(YYYYMMDD)</div></td>
+      </tr>
+      <tr>
+        <td>Precio Ejercicio<div class="english">Exercise Price</div></td>
+        <td>52</td>
+        <td>6,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Precio de ejercicio (sólo opciones)<div class="english">Exercise price (options only)</div></td>
+      </tr>
+      <tr>
+        <td>Tamaño Contrato<div class="english">Contract Size</div></td>
+        <td>64</td>
+        <td>7</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Para acciones o divisas expresará el número de la misma por contrato, en caso de índice se expresará N$ X punto del índice<div class="english">For stocks or foreign currencies, it will express the number thereof per agreement. In case of the index, this will be expressed as N$ per index point</div></td>
+      </tr>
+      <tr>
+        <td>Puja<div class="english">Bid</div></td>
+        <td>71</td>
+        <td>6,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Precio Liquidación Anterior<div class="english">Previous Settlement Price</div></td>
+        <td>83</td>
+        <td>6,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Precio de liquidación del día anterior<div class="english">Previous day settlement price </div></td>
+      </tr>
+      <tr>
+        <td>Contratos Abiertos<div class="english">Open Contracts</div></td>
+        <td>95</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Número de contratos abiertos al cierre del día anterior<div class="english">Number of open agreements at the close of the previous day</div></td>
+      </tr>
+      <tr>
+        <td>Precio Última Operación<div class="english">Last Transaction Price</div></td>
+        <td>103</td>
+        <td>6,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Precio de la última operación registrada en piso<div class="english">Price of the last transaction registered in the trading floor</div></td>
+      </tr>
+      <tr>
+        <td>Fecha Última Operación<div class="english">Last Transaction Date</div></td>
+        <td>115</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Fecha de la última operación registrada en piso<div class="english">Date of last transaction registered in the trading floor</div></td>
+      </tr>
+      <tr>
+        <td>Precio Máximo Histórico<div class="english">Maximum Historic Price</div></td>
+        <td>123</td>
+        <td>6,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Precio más alto registrado para el contrato<div class="english">Contracts highest price registered</div></td>
+      </tr>
+      <tr>
+        <td>Fecha Máximo Histórico<div class="english">Maximum Historic Date</div></td>
+        <td>135</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Fecha de registro del precio máximo<div class="english">Maximum price registration date</div></td>
+      </tr>
+      <tr>
+        <td>Precio Mínimo Histórico<div class="english">Minimum Historic Price</div></td>
+        <td>143</td>
+        <td>6,6</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Precio más bajo registrado para el contrato<div class="english">Agreements lowest price registered</div></td>
+      </tr>
+      <tr>
+        <td>Fecha Mínimo Histórico<div class="english">Minimum Historic Date</div></td>
+        <td>155</td>
+        <td>8</td>
+        <td>NUM<div class="english">NUM</div></td>
+        <td>Fecha de registro del precio más bajo<div class="english">Lowest price registration date </div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Valor Subyacente<div class="english">Underlying Value Type</div></td>
+        <td>163</td>
+        <td>4</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Identificación del valor subyacente del contrato de acuerdo a la nomenclatura de la BMV<div class="english">Identification of the underlying value of the agreement in accordance with BMV'S nomenclature</div></td>
+      </tr>
+      <tr>
+        <td>Emisora Subyacente<div class="english">Underlying Issuer</div></td>
+        <td>167</td>
+        <td>7</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td>Serie Subyacente<div class="english">Underlying Series</div></td>
+        <td>174</td>
+        <td>5</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td><div class="english"></div></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>179</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Multicast: Mensaje f</title>
+    <meta name="date" content="2016-09-09">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css" title="Style">
+  </head>
+  <body>
+
+    <h1 class="bar">Multicast: Mensaje f / f Message</h1>
+
+    <h2>f: Catálogo enviado para instrumentos que pertenecen a las Sociedades de inversión / <span class ="english">Catalog sent for instruments belonging to mutual funds</span></h2>
+
+         
+    <table>
+      <tr>
+        <th>Tipo de Información</th>
+        <th>Offset</th>
+        <th>Tamaño</th>
+        <th>Valor</th>
+        <th>Notas</th>
+      </tr>
+      <tr>
+        <td>Tipo de Mensaje<div class="english">Message type</div></td>
+        <td>0</td>
+        <td>1</td>
+        <td>"f"</td>
+        <td>Catálogo de sociedades de inversión.<div class="english">Mutual funds catalog</div></td>
+      </tr>
+      <tr>
+        <td>Número del instrumento<div class="english">Instrument number</div></td>
+        <td>1</td>
+        <td>4</td>
+        <td>Int32</td>
+        <td>Código único durante la vida del instrumento<div class="english">Unique code during instruments life</div></td>
+      </tr>
+      <tr>
+        <td>Tipo de Valor<div class="english">Value type</div></td>
+        <td>5</td>
+        <td>2</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave del Tipo de Valor<div class="english">Value type code</div></td>
+      </tr>
+      <tr>
+        <td>Emisora<div class="english">Issuer</div></td>
+        <td>7</td>
+        <td>7</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de la Emisora<div class="english">Issuer code</div></td>
+      </tr>
+      <tr>
+        <td>Serie<div class="english">Series</div></td>
+        <td>14</td>
+        <td>6</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de la Serie<div class="english">Series code</div></td>
+      </tr>
+      <tr>
+      <td>Sector<div class="english">Sector</div></td>
+        <td>20</td>
+        <td>1</td>
+        <td>Int8</td>
+        <td>Ver <a href="https://www.bmv.com.mx/es/Grupo_BMV/Clasificacion">Clasificación Sectorial</a><div class="english">See <a href="https://www.bmv.com.mx/en/Grupo_BMV/Clasificacion">Industry Classification</a></div></td>
+      </tr>
+      <tr>
+      <td>Subsector<div class="english">Subsector</div></td>
+        <td>21</td>
+        <td>1</td>
+        <td>Int8</td>
+        <td>Ver <a href="https://www.bmv.com.mx/es/Grupo_BMV/Clasificacion">Clasificación Sectorial</a><div class="english">See <a href="https://www.bmv.com.mx/en/Grupo_BMV/Clasificacion">Industry Classification</a></div></td>
+      </tr>
+      <tr>
+      <td>Ramo<div class="english">Business Line</div></td>
+        <td>22</td>
+        <td>1</td>
+        <td>Int8</td>
+        <td>Ver <a href="https://www.bmv.com.mx/es/Grupo_BMV/Clasificacion">Clasificación Sectorial</a><div class="english">See <a href="https://www.bmv.com.mx/en/Grupo_BMV/Clasificacion">Industry Classification</a></div></td>
+      </tr>
+      <tr>
+      <td>Subramo<div class="english">Sub-Line</div></td>
+        <td>23</td>
+        <td>1</td>
+        <td>Int8</td>
+        <td>Ver <a href="https://www.bmv.com.mx/es/Grupo_BMV/Clasificacion">Clasificación Sectorial</a><div class="english">See <a href="https://www.bmv.com.mx/en/Grupo_BMV/Clasificacion">Industry Classification</a></div></td>
+      </tr>
+      <tr>
+        <td>Operadora<div class="english">Operating company</div></td>
+        <td>24</td>
+        <td>10</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de la operadora del fondo de inversión<div class="english">Mutual fund operating company code</div></td>
+      </tr>
+      <tr>
+      <td>Precio de Referencia<div class="english">Reference Price</div></td>
+        <td>34</td>
+        <td>8</td>
+        <td>Precio(8)<div class="english">Price(8)</div></td>
+        <td>Precio o tasa de última referencia<div class="english">Last reference price/rate</div></td>
+      </tr>
+      <tr>
+        <td>Fecha de referencia<div class="english">Reference date</div></td>
+        <td>42</td>
+        <td>8</td>
+        <td>Timestamp(1)</td>
+        <td>Fecha de última referencia<div class="english">Last reference date</div></td>
+      </tr>
+      <tr>
+      <td>Referencia<div class="english">Reference</div></td>
+        <td>50</td>
+        <td>1</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Ver <a href="structure/catalogs.html#cat_referencia">Catálogo de Referencia</a><div class="english">See <a href="structure/catalogs.html#cat_referencia">Reference Catalog</a></div></td>
+      </tr>
+      <tr>
+      <td>ISIN<div class="english">ISIN</div></td>
+        <td>51</td>
+        <td>12</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td>Clave de ISIN del instrumento<div class="english">Instrument ISIN code</div></td>
+      </tr>
+      <tr>
+      <td>Calificación<div class="english">Rating</div></td>
+        <td>63</td>
+        <td>15</td>
+        <td>ALFA<div class="english">ALPHA</div></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right; font-weight:bold">Total: </td>
+        <td>78</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </body>
+</html>
+
+
